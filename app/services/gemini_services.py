@@ -66,7 +66,7 @@ def chatGemini(name,query,session):
     # now generate output in a way that you talk to the user if the user query is something like a purchase order like tomoto 1kg onion 20rs you need to generate a sample po to send to the user to confirm the op
     # by the user just make it simple slno item quantity unit price total and grand total atlast hey always add emart  our company name in the header and po (just po in the generated po header) and always remember just create the po dont tell anything else
     # '''
-    print(333)
+
     filtered_items=search_products(query)
     print(filtered_items)
     print(query)
@@ -76,7 +76,8 @@ def chatGemini(name,query,session):
         query=query,
         name=name,
         session=session.get('items'),
-        filtered_items=filtered_items
+        filtered_items=filtered_items,
+        language=session.get('language')
     )
     except KeyError as e:
      print(f"⚠️ Missing key in prompt template: {e}")

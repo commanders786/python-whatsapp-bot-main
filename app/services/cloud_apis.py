@@ -3,6 +3,8 @@ import json
 import os
 from dotenv import load_dotenv
 
+from app.utils import messages
+
 load_dotenv()
 
 # Replace with your actual access token and business account ID
@@ -98,8 +100,118 @@ def send_gbc(recipient_phone_number):
                       {
                         "type": "reply",
                         "reply": {
-                            "id": "opt5",
+                            "id": "BFC",
                             "title": "Bakeries and Snacks"
+                        }
+                    },
+                     {
+                        "type": "reply",
+                        "reply": {
+                            "id": "backfood",
+                            "title": "Back"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        print("Interactive button message sent successfully!")
+        print(response.json())
+    except requests.exceptions.RequestException as e:
+        print(f"Error sending interactive button message: {e}")
+        if response is not None:
+            print(f"Response status code: {response.status_code}")
+            print(f"Response body: {response.text}")
+
+
+def send_mfc(recipient_phone_number):
+    """Sends an interactive button message."""
+    url = base_url
+    payload = {
+        "messaging_product": "whatsapp",
+        "recipient_type": "individual",
+        "to": recipient_phone_number,
+        "type": "interactive",
+        "interactive": {
+            "type": "button",
+            "body": {
+                "text": "Please choose from the list or directly type your order in the chat"
+            },
+            "action": {
+                "buttons": [
+                  
+                   
+                    {
+                        "type": "reply",
+                        "reply": {
+                            "id": "opt7",
+                            "title": "Meat"
+                        }
+                    },
+                      {
+                        "type": "reply",
+                        "reply": {
+                            "id": "opt8",
+                            "title": "Fish"
+                        }
+                    },
+                     {
+                        "type": "reply",
+                        "reply": {
+                            "id": "backfood",
+                            "title": "Back"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        print("Interactive button message sent successfully!")
+        print(response.json())
+    except requests.exceptions.RequestException as e:
+        print(f"Error sending interactive button message: {e}")
+        if response is not None:
+            print(f"Response status code: {response.status_code}")
+            print(f"Response body: {response.text}")
+
+
+def send_bsc(recipient_phone_number):
+    """Sends an interactive button message."""
+    url = base_url
+    payload = {
+        "messaging_product": "whatsapp",
+        "recipient_type": "individual",
+        "to": recipient_phone_number,
+        "type": "interactive",
+        "interactive": {
+            "type": "button",
+            "body": {
+                "text": "Please choose from the list or directly type your order in the chat"
+            },
+            "action": {
+                "buttons": [
+                  
+                   
+                    {
+                        "type": "reply",
+                        "reply": {
+                            "id": "opt10",
+                            "title": "Bakeries"
+                        }
+                    },
+                      {
+                        "type": "reply",
+                        "reply": {
+                            "id": "opt11",
+                            "title": "Snacks"
                         }
                     },
                      {
@@ -188,8 +300,8 @@ def send_po(recipient_phone_number,response):
                     {
                         "type": "reply",
                         "reply": {
-                            "id": "no",
-                            "title": "Cancel or Re order"
+                            "id": "clear",
+                            "title": "Cancel or clear cart"
                         }
                     }
                 ]
@@ -257,7 +369,7 @@ def get_language(recipient_phone_number):
             print(f"Response body: {response.text}")
 
 
-def send_options(recipient_phone_number):
+def send_options(recipient_phone_number,language):
   
     url = base_url
     payload = {
@@ -269,29 +381,29 @@ def send_options(recipient_phone_number):
             "type": "list",
             "header": {
                 "type": "text",
-                "text": "Please pick your Order"
+                "text": messages.optmsgs["header"][language]
             },
             "body": {
-                "text": "Market items are listed here"
+                "text": messages.optmsgs["body"][language]
             },
             "footer": {
-                "text": "Powered by Aghadi"
+                "text":messages.optmsgs["footer"][language]
             },
             "action": {
-                "button": "View Options",
+                "button": messages.optmsgs["button"][language],
                 "sections": [
                     {
                         "title": "Food",
                         "rows": [
                             {
                                 "id": "food",
-                                "title": "All the Food Items",
-                                "description": "Groceries, vegetables, fruits, meat"
+                                "title": messages.optmsgs["title1"][language],
+                                "description": messages.optmsgs["desc1"][language]
                             },
                             {
                                 "id": "medicine",
-                                "title": "medicine",
-                                "description": "Medicines with valid prescription"
+                                "title":messages.optmsgs["title2"][language],
+                                "description": messages.optmsgs["desc2"][language],
                             }
                         ]
                     }

@@ -7,6 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # File paths
 PICKLE_FILE = "product_embeddings.pkl"
 JSON_FILE = "result.json"
+ALWAYS_CREATE=True
 
 # ✅ Load and flatten product data from result.json
 def load_products_from_json(json_path):
@@ -20,11 +21,14 @@ def load_products_from_json(json_path):
             flat_products.append(product)
     return flat_products
 
-# ✅ Load the model ONCE
 model = SentenceTransformer('all-MiniLM-L6-v2')
 
-# ✅ Load or generate embeddings
-if os.path.exists(PICKLE_FILE):
+# ✅ Load the model ONCE
+
+
+ # ✅ Load or generate embeddings
+if os.path.exists(PICKLE_FILE) and not ALWAYS_CREATE:
+    
     print("✅ Loading embeddings from file...")
     with open(PICKLE_FILE, "rb") as f:
         data = pickle.load(f)
@@ -34,7 +38,7 @@ else:
     print("⚡ Embeddings not found — generating now...")
     products = load_products_from_json(JSON_FILE)
     product_texts = [
-        f"{p['name']} {p.get('fb_product_category', '')} "
+        f"{p['name']}   {p['pattern']}"
         for p in products
     ]
     product_embeddings = model.encode(product_texts)
@@ -43,6 +47,7 @@ else:
             "products": products,
             "embeddings": product_embeddings
         }, f)
+   
 
 # ✅ Product search function
 def search_products(query, top_k=5):
@@ -57,8 +62,14 @@ def search_products(query, top_k=5):
         output += f"\n\n🛒 {product['name']}"
         output += f"\n💰 itemId: {product['retailer_id']}"
         output += f"\n💰 Price: {product['price']}"
+        output += f"\n💰 Unit: {product['unit']}"
+        output += f"\n💰 Other names: {product['pattern']}"
         output += f"\n🔗 Match Score: {score:.2f}"
     return output
+
+
+
+
 
 # # ✅ Search loop
 # while True:

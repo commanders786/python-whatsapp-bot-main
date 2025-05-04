@@ -2,6 +2,8 @@ import json
 import os
 import requests
 
+
+
 FACEBOOK_API_URL = "https://graph.facebook.com/v22.0/1595768864475137/products"
 ACCESS_TOKEN ="EAAQKF56ZAbJQBO8QjZB1Lmr471oHsunN8bqvophvlHGGt08TrOXrE6nKTUwwTBkfBK2ub9i1ZAZANFHsvPP0g2yyJLcZBxhMrLKH4fzv4UM5EbwzsL9PeS7FdfjSbF3Yo59oVmKoc4FMvwRcyJsc6CPyAPTuOrXlKXYhlcJzOqmK4g0Yx3BxG0Yf2AjuLEvPKBOmsLixQgCCpFiKKF9ZC6eNXDvuNEcst27oIap7CF"
 
@@ -11,9 +13,9 @@ def fetch_and_categorize_products():
         response = requests.get(
             FACEBOOK_API_URL,
             params={
-                "fields": "id,name,retailer_id,description,price,availability",
+                "fields": "id,name,retailer_id,description,price,brand,pattern",
                 "access_token": ACCESS_TOKEN,
-                "limit": 25
+                "limit": 50
             }
         )
         data = response.json()
@@ -26,7 +28,10 @@ def fetch_and_categorize_products():
         categorized = {
             "vegetables": {},
             "groceries": {},
-            "fruits": {}
+            "fruits": {},
+            "meat":{},
+            "fish":{},
+            "bakeries":{}
         }
 
         for item in products:
@@ -36,7 +41,8 @@ def fetch_and_categorize_products():
                 "name": item.get("name"),
                 "description": item.get("description"),
                 "price": item.get("price"),
-                "availability": item.get("availability"),
+                "pattern": item.get("pattern") or item.get("brand"),
+                "unit":item.get("size"),
                 "retailer_id": item.get("retailer_id")
             }
 
@@ -46,10 +52,17 @@ def fetch_and_categorize_products():
                 categorized["groceries"][item["retailer_id"]] = product_info
             elif rid.startswith("fr"):
                 categorized["fruits"][item["retailer_id"]] = product_info
+            elif rid.startswith("sn"):
+                categorized["bakeries"][item["retailer_id"]] = product_info
+            elif rid.startswith("ch"):
+                categorized["meat"][item["retailer_id"]] = product_info
+            elif rid.startswith("fs"):
+                categorized["fish"][item["retailer_id"]] = product_info   
 
         with open("result.json", "w", encoding="utf-8") as f:
             json.dump(categorized, f, ensure_ascii=False, indent=2)
-
+        
+        
         return categorized
 
     except Exception as e:
