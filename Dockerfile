@@ -3,7 +3,7 @@ FROM python:3.11-slim-buster
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-WORKDIR /app
+WORKDIR /
 
 # System deps (minimal)
 RUN apt-get update && apt-get install -y --no-install-recommends \
