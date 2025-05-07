@@ -7,7 +7,8 @@ from flask_cors import CORS
 
 def create_app():
     app = Flask(__name__)
-    CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
+    CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "https://emart-ui.vercel.app"]}})
+
 
     # Load configurations and logging settings
     load_configurations(app)
