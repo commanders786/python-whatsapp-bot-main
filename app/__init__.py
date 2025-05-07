@@ -7,7 +7,7 @@ from flask_cors import CORS
 
 def create_app():
     app = Flask(__name__)
-    CORS(app)
+    CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
     # Load configurations and logging settings
     load_configurations(app)

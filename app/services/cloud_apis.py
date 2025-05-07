@@ -21,7 +21,7 @@ headers = {
     "Content-Type": "application/json"
 }
 
-def send_vfc(recipient_phone_number):
+def send_vfc(recipient_phone_number,language):
     """Sends an interactive button message."""
     url = base_url
     payload = {
@@ -32,7 +32,7 @@ def send_vfc(recipient_phone_number):
         "interactive": {
             "type": "button",
             "body": {
-                "text": "Please choose from the list or directly type your order in the chat"
+                "text": messages.button_names["mwbody"][language]
             },
             "action": {
                 "buttons": [
@@ -40,21 +40,21 @@ def send_vfc(recipient_phone_number):
                         "type": "reply",
                         "reply": {
                             "id": "opt1",
-                            "title": "Vegetables"
+                            "title": messages.button_names["veg"][language]
                         }
                     },
                     {
                         "type": "reply",
                         "reply": {
                             "id": "opt4",
-                            "title": "Fruits"
+                            "title":  messages.button_names["fr"][language]
                         }
                     },
                     {
                         "type": "reply",
                         "reply": {
                             "id": "backfood",
-                            "title": "Back"
+                            "title":  messages.button_names["back"][language]
                         }
                     }
                 ]
@@ -73,7 +73,7 @@ def send_vfc(recipient_phone_number):
             print(f"Response status code: {response.status_code}")
             print(f"Response body: {response.text}")
 
-def send_gbc(recipient_phone_number):
+def send_gbc(recipient_phone_number,language):
     """Sends an interactive button message."""
     url = base_url
     payload = {
@@ -84,7 +84,7 @@ def send_gbc(recipient_phone_number):
         "interactive": {
             "type": "button",
             "body": {
-                "text": "Please choose from the list or directly type your order in the chat"
+                "text": messages.button_names["mwbody"][language]
             },
             "action": {
                 "buttons": [
@@ -94,21 +94,21 @@ def send_gbc(recipient_phone_number):
                         "type": "reply",
                         "reply": {
                             "id": "opt2",
-                            "title": "Groceries"
+                            "title": messages.button_names["grains"][language]
                         }
                     },
                       {
                         "type": "reply",
                         "reply": {
                             "id": "BFC",
-                            "title": "Bakeries and Snacks"
+                            "title": messages.button_names["bsc"][language]
                         }
                     },
                      {
                         "type": "reply",
                         "reply": {
                             "id": "backfood",
-                            "title": "Back"
+                            "title":messages.button_names["back"][language]
                         }
                     }
                 ]
@@ -128,7 +128,7 @@ def send_gbc(recipient_phone_number):
             print(f"Response body: {response.text}")
 
 
-def send_mfc(recipient_phone_number):
+def send_mfc(recipient_phone_number,language):
     """Sends an interactive button message."""
     url = base_url
     payload = {
@@ -139,7 +139,7 @@ def send_mfc(recipient_phone_number):
         "interactive": {
             "type": "button",
             "body": {
-                "text": "Please choose from the list or directly type your order in the chat"
+                "text": messages.button_names["mwbody"][language]
             },
             "action": {
                 "buttons": [
@@ -149,21 +149,21 @@ def send_mfc(recipient_phone_number):
                         "type": "reply",
                         "reply": {
                             "id": "opt7",
-                            "title": "Meat"
+                            "title":  messages.button_names["mt"][language]
                         }
                     },
                       {
                         "type": "reply",
                         "reply": {
                             "id": "opt8",
-                            "title": "Fish"
+                            "title":  messages.button_names["fish"][language]
                         }
                     },
                      {
                         "type": "reply",
                         "reply": {
                             "id": "backfood",
-                            "title": "Back"
+                            "title":messages.button_names["back"][language]
                         }
                     }
                 ]
@@ -183,7 +183,7 @@ def send_mfc(recipient_phone_number):
             print(f"Response body: {response.text}")
 
 
-def send_bsc(recipient_phone_number):
+def send_bsc(recipient_phone_number,language):
     """Sends an interactive button message."""
     url = base_url
     payload = {
@@ -194,7 +194,7 @@ def send_bsc(recipient_phone_number):
         "interactive": {
             "type": "button",
             "body": {
-                "text": "Please choose from the list or directly type your order in the chat"
+                "text": messages.button_names["mwbody"][language]
             },
             "action": {
                 "buttons": [
@@ -204,21 +204,21 @@ def send_bsc(recipient_phone_number):
                         "type": "reply",
                         "reply": {
                             "id": "opt10",
-                            "title": "Bakeries"
+                            "title": messages.button_names["bkry"][language]
                         }
                     },
                       {
                         "type": "reply",
                         "reply": {
                             "id": "opt11",
-                            "title": "Snacks"
+                            "title": messages.button_names["snks"][language]
                         }
                     },
                      {
                         "type": "reply",
                         "reply": {
                             "id": "backfood",
-                            "title": "Back"
+                            "title": messages.button_names["back"][language]
                         }
                     }
                 ]
@@ -269,7 +269,7 @@ def request_location_message(recipient_phone_number):
 
 
 
-def send_po(recipient_phone_number,response):
+def send_po(recipient_phone_number,response,language):
     """Sends an interactive button message."""
     url = base_url
     payload = {
@@ -280,7 +280,7 @@ def send_po(recipient_phone_number,response):
         "interactive": {
             "type": "button",
             "body": {
-                "text": f'''{response} \n Confirm your Order'''
+                "text": f'''{response} \n '''
             },
             "action": {
                 "buttons": [
@@ -288,20 +288,20 @@ def send_po(recipient_phone_number,response):
                         "type": "reply",
                         "reply": {
                             "id": "oc",
-                            "title": "Proceed"
+                            "title":  "proceed"
                         }
                     },{
                         "type": "reply",
                         "reply": {
                             "id": "add",
-                            "title": "Add More Items"
+                            "title": "Add Items"
                         }
                     },
                     {
                         "type": "reply",
                         "reply": {
                             "id": "clear",
-                            "title": "Cancel or clear cart"
+                            "title": "clear"
                         }
                     }
                 ]
@@ -333,7 +333,7 @@ def get_language(recipient_phone_number):
         "interactive": {
             "type": "button",
             "body": {
-                "text": "Please choose your Language"
+                "text": "Hi Welcome to അങ്ങാടി 🤗\n Please choose your Language \n ദയവായി നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക "
             },
             "action": {
                 "buttons": [
@@ -395,11 +395,34 @@ def send_options(recipient_phone_number,language):
                     {
                         "title": "Food",
                         "rows": [
-                            {
-                                "id": "food",
-                                "title": messages.optmsgs["title1"][language],
-                                "description": messages.optmsgs["desc1"][language]
+                          
+                             {
+                                "id": "opt1",
+                                "title":messages.button_names["veg"][language],
+                                "description":"Fresh vegetables",
                             },
+                             {
+                                "id": "opt4",
+                                "title":messages.button_names["fr"][language],
+                                "description":"Fresh fruits",
+                            },
+                           
+                            {
+                                "id": "opt8",
+                                "title":messages.button_names["fish"][language],
+                                "description":"Fresh fish",
+                            },
+                             {
+                                "id": "opt7",
+                                "title":messages.button_names["mt"][language],
+                                "description":"Beef Mutton Chicken Kaada ",
+                            },
+                             {
+                                "id": "opt2",
+                                "title":messages.button_names["gr"][language],
+                                "description":"Grains and all masala",
+                            },
+                            
                             {
                                 "id": "medicine",
                                 "title":messages.optmsgs["title2"][language],
@@ -425,7 +448,7 @@ def send_options(recipient_phone_number,language):
 
 
 
-def send_food_category(recipient_phone_number):
+def send_food_category(recipient_phone_number,language):
     """Sends an interactive button message."""
     url = base_url
     payload = {
@@ -436,7 +459,7 @@ def send_food_category(recipient_phone_number):
         "interactive": {
             "type": "button",
             "body": {
-                "text": "Please choose from the list or directly type your order in the chat"
+                "text": messages.button_names["mwbody"][language]
             },
             "action": {
                 "buttons": [
@@ -444,21 +467,21 @@ def send_food_category(recipient_phone_number):
                         "type": "reply",
                         "reply": {
                             "id": "VFC",
-                            "title": "Vegetables & Fruits"
+                            "title":  messages.button_names["vfc"][language]
                         }
                     },
                     {
                         "type": "reply",
                         "reply": {
                             "id": "GBC",
-                            "title": "Groceries & Bakeries"
+                            "title": messages.button_names["gfc"][language]
                         }
                     },
                       {
                         "type": "reply",
                         "reply": {
                             "id": "MFC",
-                            "title": "Meat & Fish"
+                            "title":  messages.button_names["mfc"][language]
                         }
                     }
                   

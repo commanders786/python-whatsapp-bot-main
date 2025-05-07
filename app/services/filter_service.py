@@ -71,7 +71,7 @@ def search_products(query, top_k=5):
 
 
 
-# # ✅ Search loop
+# ✅ Search loop
 # while True:
 #     user_input = input("\n🔍 Enter a product to search (or type 'exit' to quit): ").strip()
 #     if user_input.lower() in ["exit", "quit"]:

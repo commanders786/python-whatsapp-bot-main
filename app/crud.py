@@ -32,7 +32,7 @@ def get_users():
     try:
         with get_db_connection() as conn:
             with conn.cursor() as cur:
-                cur.execute("SELECT id, phone, name, lastlogin, language,created_at FROM users;")
+                cur.execute("SELECT id, phone, name, lastlogin, language,created_at FROM users order by lastlogin desc;")
                 users = cur.fetchall()
                 result = [
                     {"id": u[0], "phone": u[1], "name": u[2], "lastlogin": u[3], "language": u[4],"created_at":u[5]}
@@ -56,16 +56,49 @@ def get_orders():
     try:
         with get_db_connection() as conn:
             with conn.cursor() as cur:
-                cur.execute("SELECT id, created_at, feedback, receipt, bill_amount, userid FROM orders;")
+                cur.execute("SELECT id, created_at, feedback, receipt, bill_amount, userid,status FROM orders;")
                 orders = cur.fetchall()
                 result = [
                     {
                         "id": o[0], "created_at": o[1], "feedback": o[2],
-                        "receipt": o[3], "bill_amount": o[4], "user": o[5]
+                        "receipt": o[3], "bill_amount": o[4], "user": o[5],"status":o[6]
                     }
                     for o in orders
                 ]
         return jsonify(result), 200
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 400
+    
+
+@crud_blueprint.route("/orders/<int:order_id>", methods=["PUT"])
+def update_order_status(order_id):
+    try:
+        data = request.get_json()
+        status = data.get("status")
+        
+        if not status or status not in ["pending", "delivered"]:
+            return jsonify({"status": "error", "message": "Invalid or missing status. Must be 'pending' or 'delivered'"}), 400
+        
+        with get_db_connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute(
+                    "UPDATE orders SET status = %s WHERE id = %s::varchar RETURNING id, status;",
+                    (status, str(order_id))
+                )
+                updated_order = cur.fetchone()
+                
+                if not updated_order:
+                    return jsonify({"status": "error", "message": "Order not found"}), 404
+                    
+                conn.commit()
+                return jsonify({
+                    "status": "success",
+                    "order": {
+                        "id": updated_order[0],
+                        "status": updated_order[1]
+                    }
+                }), 200
+                
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 400
 

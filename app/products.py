@@ -49,6 +49,8 @@ def process_order_message(product_items):
         line = f"{row[0]:<{col_widths[0]}}  {row[1]:<{col_widths[1]}}  {row[2]:<{col_widths[2]}}  {row[3]:<{col_widths[3]}}  {row[4]:<{col_widths[4]}}"
         lines.append(line)
 
+    lines.append(f"\n🛵 Delivey Charge: ₹ 25")
+    grand_total+=25
     # Total
     lines.append(f"\n🧾 Grand Total: ₹{grand_total}")
     return ("\n".join(lines),product_items)
