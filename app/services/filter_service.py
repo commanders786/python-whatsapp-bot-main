@@ -38,7 +38,7 @@ else:
     print("⚡ Embeddings not found — generating now...")
     products = load_products_from_json(JSON_FILE)
     product_texts = [
-        f"{p['name']}   {p['pattern']}"
+        f"{p['retailer_id']} {p['name']} {p['description']}   {p['pattern']}"
         for p in products
     ]
     product_embeddings = model.encode(product_texts)
@@ -50,7 +50,7 @@ else:
    
 
 # ✅ Product search function
-def search_products(query, top_k=5):
+def search_products(query, top_k=15):
     query_embedding = model.encode([query])
     similarities = cosine_similarity(query_embedding, product_embeddings)[0]
     top_indices = similarities.argsort()[-top_k:][::-1]
@@ -59,6 +59,8 @@ def search_products(query, top_k=5):
     for idx in top_indices:
         product = products[idx]
         score = similarities[idx]
+        if score<0.4:
+            continue
         output += f"\n\n🛒 {product['name']}"
         output += f"\n💰 itemId: {product['retailer_id']}"
         output += f"\n💰 Price: {product['price']}"

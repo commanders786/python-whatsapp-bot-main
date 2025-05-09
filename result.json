@@ -11,9 +11,9 @@
     },
     "veg11": {
       "id": "9416655338463541",
-      "name": "പുതിന (MINT)",
+      "name": "പുതിന (MINT) 100g",
       "description": "mint on the door",
-      "price": "₹15.00",
+      "price": "₹12.00",
       "pattern": "പുതിന,pothna, mint",
       "unit": null,
       "retailer_id": "veg11"
@@ -22,7 +22,7 @@
       "id": "9543733689047575",
       "name": "തക്കാളി (Tomato) 500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹20.00",
+      "price": "₹10.00",
       "pattern": "thakkali",
       "unit": null,
       "retailer_id": "veg05"
@@ -36,11 +36,38 @@
       "unit": null,
       "retailer_id": "veg01"
     },
+    "veg08": {
+      "id": "9912679802085871",
+      "name": "ചെറുനാരങ്ങ 200g (Lemon)",
+      "description": "lemon",
+      "price": "₹28.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "veg08"
+    },
+    "veg03": {
+      "id": "24140188105583483",
+      "name": "കറിവേപ്പില 100g(Kariveppila)",
+      "description": "Kariveppila",
+      "price": "₹10.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "veg03"
+    },
+    "veg09": {
+      "id": "24334515559483451",
+      "name": "കാബേജ് 500g (Cabbage)",
+      "description": "Cabbage",
+      "price": "₹13.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "veg09"
+    },
     "veg06": {
       "id": "29112643818384302",
       "name": "ഉരുളക്കിഴങ്ങ് (Potato)  500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹25.00",
+      "price": "₹14.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "veg06"
@@ -56,7 +83,7 @@
     },
     "veg10": {
       "id": "29330952209886560",
-      "name": "ഉള്ളി (onion)",
+      "name": "ഉള്ളി 500g (onion)",
       "description": "fresh to home",
       "price": "₹11.00",
       "pattern": "ഉള്ളി,സവാള,ulli,savaala",
@@ -78,14 +105,14 @@
       "id": "9579259865524655",
       "name": "BOOST 500g",
       "description": "boost mediume pack",
-      "price": "₹245.00",
+      "price": "₹299.00",
       "pattern": "boost",
       "unit": null,
       "retailer_id": "gr04"
     },
     "gr02": {
       "id": "9675077305941190",
-      "name": "ലൂസ് ചായപ്പൊടി (TEA POWDER LOOSE)",
+      "name": "ചായപ്പൊടി ലൂസ് 100g (TEA POWDER LOOSE)",
       "description": "loose tea powder",
       "price": "₹22.00",
       "pattern": "ചായപ്പൊടി, chaaya podi, tea powder",
@@ -114,7 +141,7 @@
       "id": "23946347924972815",
       "name": "HORLICS 500g",
       "description": "classic malt",
-      "price": "₹245.00",
+      "price": "₹299.00",
       "pattern": "horlicks",
       "unit": null,
       "retailer_id": "gr06"
@@ -157,7 +184,7 @@
     },
     "gr11": {
       "id": "23958118587106006",
-      "name": "MAIDA (മൈദ)",
+      "name": "MAIDA 500g (മൈദ)",
       "description": "maida",
       "price": "₹24.00",
       "pattern": "maida",
@@ -175,7 +202,7 @@
     },
     "gr14": {
       "id": "29349475341366131",
-      "name": "ഉപ്പ് (SALT)",
+      "name": "ഉപ്പ് 1kg (SALT)",
       "description": "salt powder",
       "price": "₹12.00",
       "pattern": "upp, salt",
@@ -195,73 +222,73 @@
   "fruits": {
     "fr04": {
       "id": "8859924704110242",
-      "name": "മൈസൂര്‍ പഴം ( MYSORE PAZHAM)",
+      "name": "മൈസൂര്‍ പഴം 500g ( MYSORE PAZHAM)",
       "description": "mysore pazham",
       "price": "₹20.00",
-      "pattern": "മൈസൂര്‍ പഴം, MYSORE PAZHAM",
+      "pattern": "pazham,mysore pazham",
       "unit": null,
       "retailer_id": "fr04"
     },
     "fr08": {
       "id": "9530881703698827",
-      "name": "PAPPAYA (പപ്പായ )",
+      "name": "PAPPAYA 1kg (പപ്പായ )",
       "description": "pappaya, karmoosa",
-      "price": "₹65.00",
-      "pattern": "PAPPAYA, പപ്പായ",
+      "price": "₹45.00",
+      "pattern": "pappaya",
       "unit": null,
       "retailer_id": "fr08"
     },
     "fr01": {
       "id": "9584452581671948",
-      "name": "Orange (ഓറഞ്ച്) 500g",
+      "name": "Citrus Orange 500g (ഓറഞ്ച്)",
       "description": "Fresh and handpicked fruits",
-      "price": "₹150.00",
-      "pattern": null,
+      "price": "₹65.00",
+      "pattern": "orange",
       "unit": null,
       "retailer_id": "fr01"
     },
     "fr06": {
       "id": "9628082667312792",
-      "name": "മുന്തിരി (MUNTHIRI)",
+      "name": "മുന്തിരി 500g (MUNTHIRI)",
       "description": "black munthiri",
       "price": "₹40.00",
-      "pattern": "മുന്തിരി, MUNTHIRI",
+      "pattern": "munthiri",
       "unit": null,
       "retailer_id": "fr06"
     },
     "fr03": {
       "id": "9760673497354410",
-      "name": "റോബസ്റ്റ പഴം (ROBAST)",
+      "name": "റോബസ്റ്റ പഴം 500g (ROBAST)",
       "description": "robast",
       "price": "₹20.00",
-      "pattern": "റോബസ്റ്റ പഴം, ROBAST",
+      "pattern": "robast,pazham",
       "unit": null,
       "retailer_id": "fr03"
     },
     "fr05": {
       "id": "9826504234062744",
-      "name": "പച്ച മുന്തിരി (PACHA MUNTHIRI)",
+      "name": "പച്ച മുന്തിരി 500g (PACHA MUNTHIRI)",
       "description": "pacha munthiri,,,",
-      "price": "₹40.00",
-      "pattern": "പച്ച മുന്തിരി, PACHA MUNTHIRI",
+      "price": "₹70.00",
+      "pattern": "munthiri",
       "unit": null,
       "retailer_id": "fr05"
     },
     "fr07": {
       "id": "9952640064793024",
-      "name": "മാങ്ങ (MANGO)",
+      "name": "മാങ്ങ 1kg (PREYUR MANGO)",
       "description": "mango",
-      "price": "₹55.00",
-      "pattern": "മാങ്ങ, MANGO",
+      "price": "₹70.00",
+      "pattern": "mango,maanga",
       "unit": null,
       "retailer_id": "fr07"
     },
     "fr09": {
       "id": "23905616239021979",
-      "name": "പൂവന്‍ പഴം (POOVAN PAZHAM)",
+      "name": "പൂവന്‍ പഴം 500g (POOVAN PAZHAM)",
       "description": "poovan pazham",
       "price": "₹35.00",
-      "pattern": "പൂവന്‍ പഴം ,POOVAN PAZHAM",
+      "pattern": "pazham ,poovan",
       "unit": null,
       "retailer_id": "fr09"
     },
@@ -269,23 +296,86 @@
       "id": "29331886456457697",
       "name": "Apple (ആപ്പിൾ) 500g",
       "description": "Fresh and handpicked fruits",
-      "price": "₹240.00",
-      "pattern": null,
+      "price": "₹125.00",
+      "pattern": "apple",
       "unit": null,
       "retailer_id": "fr02"
     },
     "fr10": {
       "id": "9495886053842889",
-      "name": "സപ്പോട്ട (SAPOTA)",
+      "name": "സപ്പോട്ട 500g (SAPOTA)",
       "description": "sapota",
-      "price": "₹55.00",
-      "pattern": "സപ്പോട്ട, SAPOTA",
+      "price": "₹40.00",
+      "pattern": "sapota",
       "unit": null,
       "retailer_id": "fr10"
     },
+    "fr17": {
+      "id": "9598972443532794",
+      "name": "തണ്ണിമത്തൻ 1kg (Watermelon)",
+      "description": "normal watermelon",
+      "price": "₹25.00",
+      "pattern": "vathakka,watermelon",
+      "unit": null,
+      "retailer_id": "fr17"
+    },
+    "fr15": {
+      "id": "9731542523594544",
+      "name": "ഞാലി പൂവൻ 500g (Njali Poovan)",
+      "description": "njalipoovan banana",
+      "price": "₹35.00",
+      "pattern": "njali poovan,poovan,pazham,banana",
+      "unit": null,
+      "retailer_id": "fr15"
+    },
+    "fr14": {
+      "id": "9827915653966998",
+      "name": "റുമാൻ പഴം 500g (Pomegranate)",
+      "description": "ഉറുമാൻപഴം",
+      "price": "₹90.00",
+      "pattern": "uruman pazham,anar,mathalam",
+      "unit": null,
+      "retailer_id": "fr14"
+    },
+    "fr13": {
+      "id": "9841857382527165",
+      "name": "കൈതച്ചക്ക 1kg (Pineapple)",
+      "description": "full pice",
+      "price": "₹50.00",
+      "pattern": "pineapple,കൈതച്ചക്ക, kaithachakka",
+      "unit": null,
+      "retailer_id": "fr13"
+    },
+    "fr16": {
+      "id": "9989682194425083",
+      "name": "തായ് പേര 500g  (Thai Guava)",
+      "description": "thai guava",
+      "price": "₹70.00",
+      "pattern": "perakka, pera",
+      "unit": null,
+      "retailer_id": "fr16"
+    },
+    "fr18": {
+      "id": "24020908464194575",
+      "name": "കാരാച്ചി തണ്ണിമത്തൻ 1kg (Karachi Watermelon)",
+      "description": "karaachi watermelon",
+      "price": "₹30.00",
+      "pattern": "vathakka, watermelon",
+      "unit": null,
+      "retailer_id": "fr18"
+    },
+    "fr12": {
+      "id": "24349621434627950",
+      "name": "മുസംബി 500g (Indian Mosambi )",
+      "description": "mosambi",
+      "price": "₹35.00",
+      "pattern": "mosambi,naaranga",
+      "unit": null,
+      "retailer_id": "fr12"
+    },
     "fr11": {
       "id": "30537408062524729",
-      "name": "നേന്ത്രപഴം ( NENTRA PAZHAM)",
+      "name": "നേന്ത്രപഴം500g ( NENTRA PAZHAM)",
       "description": "nentra pazham",
       "price": "₹35.00",
       "pattern": "നേന്ത്രപഴം,NENTRA PAZHAM",
@@ -296,25 +386,25 @@
   "meat": {
     "ch04": {
       "id": "9589655301147089",
-      "name": "Chicken Parts (കോഴി പാർട്സ് )",
+      "name": "Chicken Parts 500g (കോഴി പാർട്സ് )",
       "description": "parts seperated",
-      "price": "₹100.00",
+      "price": "₹50.00",
       "pattern": "കോഴി പാർട്സ് ,chicken parts",
       "unit": null,
       "retailer_id": "ch04"
     },
     "ch01": {
       "id": "9595803053829979",
-      "name": "CHICKEN (alfahm cut)",
+      "name": "CHICKEN 1kg (alfahm cut)",
       "description": "size specified",
-      "price": "₹160.00",
+      "price": "₹180.00",
       "pattern": "കോഴി",
       "unit": null,
       "retailer_id": "ch01"
     },
     "ch03": {
       "id": "9662187900529950",
-      "name": "Leghorn Chicken (ലെഗോൺ കോഴി)",
+      "name": "Leghorn Chicken 1kg (ലെഗോൺ കോഴി)",
       "description": "ലെഗോൺ കോഴി",
       "price": "₹180.00",
       "pattern": "Leghorn Chicken, ലെഗോൺ കോഴി,kozhi",
@@ -323,16 +413,16 @@
     },
     "ch06": {
       "id": "23900145176255969",
-      "name": "നാടൻ കോഴി (chicken)",
-      "description": "നാടൻ കോഴി",
-      "price": "₹220.00",
+      "name": "നാടൻ കോഴി (full chicken)",
+      "description": "നാടൻ കോഴി full chicken only",
+      "price": "₹350.00",
       "pattern": "നാടൻ കോഴി,chicken, kozhi",
       "unit": null,
       "retailer_id": "ch06"
     },
     "ch05": {
       "id": "23987414900862822",
-      "name": "Spring Chicken (സ്പ്രിംഗ് ചിക്കൻ)",
+      "name": "Spring Chicken 1kg (സ്പ്രിംഗ് ചിക്കൻ)",
       "description": "spring chicken",
       "price": "₹220.00",
       "pattern": "Spring Chicken,സ്പ്രിംഗ് ചിക്കൻ, kozhi",
@@ -341,12 +431,21 @@
     },
     "ch02": {
       "id": "29878068125111698",
-      "name": "Chicken for Manthi",
+      "name": "Chicken for Manthi 1kg",
       "description": "meet for manthi",
-      "price": "₹160.00",
+      "price": "₹180.00",
       "pattern": "കോഴി",
       "unit": null,
       "retailer_id": "ch02"
+    },
+    "ch09": {
+      "id": "30322533087346221",
+      "name": "കോഴി (Chicken) 500g",
+      "description": "Normal chicken",
+      "price": "₹180.00",
+      "pattern": "chicken, kozhi",
+      "unit": null,
+      "retailer_id": "ch09"
     },
     "kd01": {
       "id": "9874522829258228",
@@ -359,9 +458,9 @@
     },
     "sk8q2yaim7": {
       "id": "9405626589529680",
-      "name": "Beef Meat 1 Kg",
+      "name": "Beef Meat 500g",
       "description": "Beef meat halal",
-      "price": "₹340.00",
+      "price": "₹170.00",
       "pattern": "beef, poth, erchi",
       "unit": null,
       "retailer_id": "sk8q2yaim7"
@@ -379,34 +478,34 @@
   "fish": {
     "fs03": {
       "id": "9365403160238215",
-      "name": "മാന്തൾ (MAANTHAL)",
+      "name": "മാന്തൾ 500g (MAANTHAL)",
       "description": "fresh fish manthal",
-      "price": "₹220.00",
+      "price": "₹110.00",
       "pattern": "മാന്തൾ, MAANTHAL, fish",
       "unit": null,
       "retailer_id": "fs03"
     },
     "fs02": {
       "id": "9666490573436470",
-      "name": "അയല (AYALA)",
+      "name": "അയല 500g (AYALA)",
       "description": "fresh fish ayala from market",
-      "price": "₹180.00",
+      "price": "₹90.00",
       "pattern": "അയല, AYALA, fish",
       "unit": null,
       "retailer_id": "fs02"
     },
     "fs08": {
       "id": "10070151326380156",
-      "name": "നെയ്മീൻ (King Fish)",
+      "name": "നെയ്മീൻ  500g (King Fish)",
       "description": "King Fish",
-      "price": "₹270.00",
-      "pattern": null,
+      "price": "₹140.00",
+      "pattern": "ney meen",
       "unit": null,
       "retailer_id": "fs08"
     },
     "fs06": {
       "id": "23996998079905556",
-      "name": "സ്രാവ് (SRAAVU)",
+      "name": "സ്രാവ് 500g (SRAAVU)",
       "description": "sraavu full and pice avilable",
       "price": "₹180.00",
       "pattern": "സ്രാവ്, SRAAVU, fish",
@@ -415,27 +514,27 @@
     },
     "fs04": {
       "id": "24046708444913037",
-      "name": "കോര മീൻ (KOORA)",
+      "name": "കോര മീൻ 500g (KOORA)",
       "description": "fresh koora",
-      "price": "₹250.00",
+      "price": "₹110.00",
       "pattern": "കോര,മീൻ,KOORA",
       "unit": null,
       "retailer_id": "fs04"
     },
     "fs01": {
       "id": "24548397954753040",
-      "name": "മത്തി/ചാള  (MATHI/CHAALA)",
+      "name": "മത്തി/ചാള 500g  (MATHI/CHAALA)",
       "description": "മത്തി/ചാള മത്സ്യം",
-      "price": "₹130.00",
+      "price": "₹60.00",
       "pattern": "മത്തി,ചാള,മത്സ്യം,fish",
       "unit": null,
       "retailer_id": "fs01"
     },
     "fs05": {
       "id": "29414862131462631",
-      "name": "ചെമ്മീൻ (chemmeen)",
+      "name": "ചെമ്മീൻ 500g (chemmeen)",
       "description": "fresh chemmeen",
-      "price": "₹400.00",
+      "price": "₹160.00",
       "pattern": "ചെമ്മീൻ, chemmeen, fish",
       "unit": null,
       "retailer_id": "fs05"
