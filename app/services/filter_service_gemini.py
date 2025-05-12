@@ -94,14 +94,14 @@ def search_products(query, top_k=5, threshold=0.5):
         print("⚠️ No good matches found. Try another term!")
 
 # ✅ Input loop
-if __name__ == "__main__":
-    while True:
-        user_input = input("\n🔍 Enter a product to search (or type 'exit' to quit): ").strip()
-        if user_input.lower() in ["exit", "quit"]:
-            print("👋 Exiting search. Have a great day!")
-            break
-        elif user_input == "":
-            print("⚠️ Please enter something!")
-            continue
-        else:
-            search_products(user_input)
+# if __name__ == "__main__":
+#     while True:
+#         user_input = input("\n🔍 Enter a product to search (or type 'exit' to quit): ").strip()
+#         if user_input.lower() in ["exit", "quit"]:
+#             print("👋 Exiting search. Have a great day!")
+#             break
+#         elif user_input == "":
+#             print("⚠️ Please enter something!")
+#             continue
+#         else:
+#             search_products(user_input)

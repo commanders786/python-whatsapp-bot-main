@@ -15,7 +15,7 @@ def fetch_and_categorize_products():
             params={
                 "fields": "id,name,retailer_id,description,price,brand,pattern",
                 "access_token": ACCESS_TOKEN,
-                "limit": 80
+                "limit": 100
             }
         )
         data = response.json()
@@ -27,7 +27,7 @@ def fetch_and_categorize_products():
 
         categorized = {
             "vegetables": {},
-            "groceries": {},
+            "oth": {},
             "fruits": {},
             "meat":{},
             "fish":{},
@@ -49,7 +49,7 @@ def fetch_and_categorize_products():
             if rid.startswith("veg"):
                 categorized["vegetables"][item["retailer_id"]] = product_info
             elif rid.startswith("gr"):
-                categorized["groceries"][item["retailer_id"]] = product_info
+                categorized["oth"][item["retailer_id"]] = product_info
             elif rid.startswith("fr"):
                 categorized["fruits"][item["retailer_id"]] = product_info
             elif rid.startswith("sn"):
@@ -75,22 +75,46 @@ def load_products_by_category(category: str):
     try:
         with open("result.json", "r", encoding="utf-8") as f:
             data = json.load(f)
+            
         return data.get(category, {})
     except Exception as e:
+        print("hhh",e)
         return {}
 
 def send_whatsapp_product_list(category: str, to_number: str):
-    if isinstance(category, list):
+    
+    if isinstance(category, list) and not category[0] in ["vegetables","fruits","oth","meat","fish"]:
         product_items = [{"product_retailer_id": rid} for rid in category]
+        senditems(to_number,product_items)
     else:
         # Otherwise, load from file
-        product_dict = load_products_by_category(category)
+     print("hello")
+     if isinstance(category, str):
+      category = [category] 
+     for i in category:
+        print(1111)
+        product_dict = load_products_by_category(i)
+        print(product_dict)
+        print(222)
         if not product_dict:
             return {"status": "error", "message": "Category not found or empty"}
         product_items = [{"product_retailer_id": rid} for rid in product_dict.keys()]
-    
-    print(product_items)
+        # print(product_items)
+        senditems(to_number,product_items)
+        
+    return
 
+def senditems(to_number, product_items):
+ 
+
+ print(len(product_items))
+
+ if len(product_items)>30: 
+       product_items= split_list(product_items)
+ else:
+     product_items=[product_items]
+
+ for i in product_items:
     payload = {
         "messaging_product": "whatsapp",
         "to": to_number,
@@ -99,7 +123,7 @@ def send_whatsapp_product_list(category: str, to_number: str):
             "type": "product_list",
             "header": {
                 "type": "text",
-                "text": "🛒 eMart Specials"
+                "text": "🛒 Anghadi Specials"
             },
             "body": {
                 "text": "Check out our latest products!"
@@ -112,7 +136,7 @@ def send_whatsapp_product_list(category: str, to_number: str):
                 "sections": [
                     {
                         "title": "Popular Items",
-                        "product_items": product_items
+                        "product_items": i
                     }
                 ]
             }
@@ -123,6 +147,14 @@ def send_whatsapp_product_list(category: str, to_number: str):
         "Authorization": f"Bearer {WHATSAPP_TOKEN}",
         "Content-Type": "application/json"
     }
-
-    response = requests.post(WHATSAPP_API_URL, headers=headers, json=payload)
-    return {"status": "success" if response.ok else "error", "response": response.json()}
+    print(payload)
+    try:
+        response = requests.post(WHATSAPP_API_URL, headers=headers, json=payload)
+        response.raise_for_status()
+       
+    except requests.exceptions.RequestException as e:
+        print(e)
+        return {"status": "error", "message": str(e)}
+ return {"status": "success", "response": response.json()}
+def split_list(lst, chunk_size=30):
+    return [lst[i:i + chunk_size] for i in range(0, len(lst), chunk_size)]

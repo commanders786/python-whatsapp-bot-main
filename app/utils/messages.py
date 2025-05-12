@@ -1,3 +1,6 @@
+import json
+
+
 multilingual_messages = {
 
     "language_selection": {
@@ -172,8 +175,20 @@ def po_template(user_session,order_id=None):
 📍 *Location Links:*
 🔗 [Google Maps]({user_session['location']['google']})
 
-
+Phone number:{user_session.get('number')[2:]}
 Special Notes:{user_session['notes']}
 
 """
  return ont2 if order_id else ont2
+
+
+def get_text_message_input(recipient,text):
+    return json.dumps(
+        {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": recipient,
+            "type": "text",
+            "text": {"preview_url": False, "body": text},
+        }
+    )

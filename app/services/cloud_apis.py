@@ -1,3 +1,5 @@
+import logging
+from flask import current_app, jsonify
 import requests
 import json
 import os
@@ -406,7 +408,11 @@ def send_options(recipient_phone_number,language):
                                 "title":messages.button_names["fr"][language],
                                 "description":"Fresh fruits",
                             },
-                           
+                            {
+                                "id": "rest",
+                                "title":messages.button_names["rest"][language],
+                                "description":"Tastes of koduvally",
+                            },
                             {
                                 "id": "opt8",
                                 "title":messages.button_names["fish"][language],
@@ -528,6 +534,34 @@ def send_whatsapp_image(recipient_phone_number, image_id, caption):
             print(f"Response body: {response.text}")
 
 
+
+def send_message(data):
+    headers = {
+        "Content-type": "application/json",
+        "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
+    }
+    
+    print(current_app.config['ACCESS_TOKEN'])
+    url = f"https://graph.facebook.com/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
+
+    try:
+        response = requests.post(
+            url, data=data, headers=headers, timeout=10
+        )  # 10 seconds timeout as an example
+        response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
+    except requests.Timeout:
+        logging.error("Timeout occurred while sending message")
+        return jsonify({"status": "error", "message": "Request timed out"}), 408
+    except (
+        requests.RequestException
+    ) as e:  # This will catch any general request exception
+        logging.error(f"Request failed due to: {e}")
+        print("data:",data)
+        return jsonify({"status": "error", "message": "Failed to send message"}), 500
+    else:
+        # Process the response as normal
+        print(response)
+        return response
     
     
 

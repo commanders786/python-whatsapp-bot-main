@@ -10,11 +10,11 @@ import re
 
 from app.services.crud_services import insert_order, insert_user, user_exists
 from app.services.product_service import send_whatsapp_product_list
-from app.utils.messages import po_template
+from app.utils.messages import get_text_message_input, po_template
 from app.utils.validations import is_within_radius
 from ..sessions import user_sessions
 
-from app.services.cloud_apis import get_language, request_location_message, send_bsc, send_food_category, send_gbc, send_mfc, send_options, send_po, send_vfc, send_whatsapp_image
+from app.services.cloud_apis import get_language, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_mfc, send_options, send_po, send_vfc, send_whatsapp_image
 
 
 def log_http_response(response):
@@ -23,16 +23,16 @@ def log_http_response(response):
     logging.info(f"Body: {response.text}")
 
 
-def get_text_message_input(recipient,text):
-    return json.dumps(
-        {
-            "messaging_product": "whatsapp",
-            "recipient_type": "individual",
-            "to": recipient,
-            "type": "text",
-            "text": {"preview_url": False, "body": text},
-        }
-    )
+# def get_text_message_input(recipient,text):
+#     return json.dumps(
+#         {
+#             "messaging_product": "whatsapp",
+#             "recipient_type": "individual",
+#             "to": recipient,
+#             "type": "text",
+#             "text": {"preview_url": False, "body": text},
+#         }
+#     )
 
 
 def generate_response(name,response,session):
@@ -41,33 +41,33 @@ def generate_response(name,response,session):
     return AI.chatGemini(name,response,session)
 
 
-def send_message(data):
-    headers = {
-        "Content-type": "application/json",
-        "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
-    }
+# def send_message(data):
+#     headers = {
+#         "Content-type": "application/json",
+#         "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
+#     }
     
-    print(current_app.config['ACCESS_TOKEN'])
-    url = f"https://graph.facebook.com/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
+#     print(current_app.config['ACCESS_TOKEN'])
+#     url = f"https://graph.facebook.com/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
 
-    try:
-        response = requests.post(
-            url, data=data, headers=headers, timeout=10
-        )  # 10 seconds timeout as an example
-        response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
-    except requests.Timeout:
-        logging.error("Timeout occurred while sending message")
-        return jsonify({"status": "error", "message": "Request timed out"}), 408
-    except (
-        requests.RequestException
-    ) as e:  # This will catch any general request exception
-        logging.error(f"Request failed due to: {e}")
-        print("data:",data)
-        return jsonify({"status": "error", "message": "Failed to send message"}), 500
-    else:
-        # Process the response as normal
-        log_http_response(response)
-        return response
+#     try:
+#         response = requests.post(
+#             url, data=data, headers=headers, timeout=10
+#         )  # 10 seconds timeout as an example
+#         response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
+#     except requests.Timeout:
+#         logging.error("Timeout occurred while sending message")
+#         return jsonify({"status": "error", "message": "Request timed out"}), 408
+#     except (
+#         requests.RequestException
+#     ) as e:  # This will catch any general request exception
+#         logging.error(f"Request failed due to: {e}")
+#         print("data:",data)
+#         return jsonify({"status": "error", "message": "Failed to send message"}), 500
+#     else:
+#         # Process the response as normal
+#         log_http_response(response)
+#         return response
 
 
 def process_text_for_whatsapp(text):
@@ -101,6 +101,7 @@ def process_whatsapp_message(body):
         
     if wa_id not in user_sessions:
                 user_sessions[wa_id] = {}
+                user_sessions[wa_id]['number']=wa_id
                 user_sessions[wa_id]['po']=[]
                 user_sessions[wa_id]['level']="F1"
                 user_sessions[wa_id]['items']=[]
@@ -174,6 +175,7 @@ def process_whatsapp_message(body):
                 return None
             
             elif 'searchresult'==response:
+                print("kkk",items)
                 send_whatsapp_product_list(list(items),wa_id)
                 return
       
@@ -217,7 +219,7 @@ def process_whatsapp_message(body):
                 return
             
             elif button_id == "opt2":
-               send_whatsapp_product_list("groceries",wa_id)
+               send_whatsapp_product_list("oth",wa_id)
                return
             
           
@@ -232,6 +234,11 @@ def process_whatsapp_message(body):
                 return
             elif button_id=='opt10':
                 send_whatsapp_product_list("bakeries",wa_id)
+                return
+            elif button_id=='rest':
+                response ="Coming soon.."
+                data = get_text_message_input(wa_id, response)
+                send_message(data)
                 return
             elif button_id=='VFC':
                 send_vfc(wa_id,user_sessions[wa_id]['language'])

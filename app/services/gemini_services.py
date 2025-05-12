@@ -8,9 +8,11 @@ from venv import logger
 from dotenv import load_dotenv
 import google.generativeai as genai
 
+from app.services.cloud_apis import send_message
 from app.services.filter_service import search_products
-from app.utils.whatsapp_utils import process_order_message
-from .promptTemplate import prompt_template
+from app.utils.messages import get_text_message_input
+from app.utils.whatsapp_utils import  process_order_message
+from .promptTemplate import prompt_template,clean_query
 
 def call_gemini(prompt, model_name="gemini-2.0-flash", max_tokens=500, temperature=0.7):
     """
@@ -66,8 +68,13 @@ def chatGemini(name,query,session):
     # now generate output in a way that you talk to the user if the user query is something like a purchase order like tomoto 1kg onion 20rs you need to generate a sample po to send to the user to confirm the op
     # by the user just make it simple slno item quantity unit price total and grand total atlast hey always add emart  our company name in the header and po (just po in the generated po header) and always remember just create the po dont tell anything else
     # '''
+    
 
-    filtered_items=search_products(query)
+    query = call_gemini(clean_query.format(query=query))
+    print("cleaned query",query)
+    filtered_items=search_products(query,session)
+    
+          
     print(filtered_items)
     print(query)
     print('items',session.get('items'))
@@ -107,12 +114,14 @@ def chatGemini(name,query,session):
      print("clean",cleaned_response)
     # Try parsing if it looks like JSON
      if cleaned_response.startswith("["):
+       
         parsed = json.loads(cleaned_response)
        
         print("✅ Parsed JSON:", parsed)
         response,items=process_order_message(parsed)
 
      if cleaned_response.startswith("("):
+          
            parsed = ast.literal_eval(cleaned_response)
            print("tuple",parsed)
            return 'searchresult',list(parsed)

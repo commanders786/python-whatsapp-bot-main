@@ -12,7 +12,7 @@
     "veg11": {
       "id": "9416655338463541",
       "name": "പുതിന (MINT) 100g",
-      "description": "mint on the door",
+      "description": "Fresh mint",
       "price": "₹12.00",
       "pattern": "പുതിന,pothna, mint",
       "unit": null,
@@ -91,12 +91,12 @@
       "retailer_id": "veg10"
     }
   },
-  "groceries": {
+  "oth": {
     "gr01": {
       "id": "9006605912778960",
       "name": "Sugar (പഞ്ചസാര ) 500g",
       "description": "Quality groceries from trusted outlet",
-      "price": "₹50.00",
+      "price": "₹23.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "gr01"
@@ -130,9 +130,9 @@
     },
     "gr08": {
       "id": "23924557233818387",
-      "name": "BRU COFFEE 100g",
-      "description": "rosted bru coffee",
-      "price": "₹57.00",
+      "name": "BRU COFFEE 200g",
+      "description": "bru coffee",
+      "price": "₹280.00",
       "pattern": "coffee,kaappi",
       "unit": null,
       "retailer_id": "gr08"
@@ -173,6 +173,33 @@
       "unit": null,
       "retailer_id": "gr05"
     },
+    "gr18": {
+      "id": "9606990892711438",
+      "name": "ചെറുപയർ 500g (cherupayar)",
+      "description": "cherupayar",
+      "price": "₹80.00",
+      "pattern": "payar, cherupayar,",
+      "unit": null,
+      "retailer_id": "gr18"
+    },
+    "gr19": {
+      "id": "9638698016252891",
+      "name": "തുവര പരിപ്പ് 500g",
+      "description": "thuvaraparipp",
+      "price": "₹80.00",
+      "pattern": "thuavara paripp, paripp, daal",
+      "unit": null,
+      "retailer_id": "gr19"
+    },
+    "gr17": {
+      "id": "9722323361188617",
+      "name": "ശർക്കര 500g (Sharkara)",
+      "description": "sharkara",
+      "price": "₹32.00",
+      "pattern": "sharkkara",
+      "unit": null,
+      "retailer_id": "gr17"
+    },
     "gr10": {
       "id": "9734215706639514",
       "name": "Parle-G Gluco Biscuts",
@@ -182,11 +209,29 @@
       "unit": null,
       "retailer_id": "gr10"
     },
+    "gr16": {
+      "id": "9739232069465530",
+      "name": "നാടൻ മുട്ട 5 units",
+      "description": "Eggs 5 units",
+      "price": "₹30.00",
+      "pattern": "nadan mutta",
+      "unit": null,
+      "retailer_id": "gr16"
+    },
+    "gr15": {
+      "id": "10071002672936807",
+      "name": "മുട്ട 5 units (Eggs)",
+      "description": "Eggs 5 units",
+      "price": "₹30.00",
+      "pattern": "mutta",
+      "unit": null,
+      "retailer_id": "gr15"
+    },
     "gr11": {
       "id": "23958118587106006",
       "name": "MAIDA 500g (മൈദ)",
       "description": "maida",
-      "price": "₹24.00",
+      "price": "₹25.00",
       "pattern": "maida",
       "unit": null,
       "retailer_id": "gr11"
@@ -217,6 +262,150 @@
       "pattern": "soap, lux",
       "unit": null,
       "retailer_id": "gr13"
+    },
+    "gr24": {
+      "id": "8332099753581720",
+      "name": "AJMI puttupodi 1kg",
+      "description": "ajmi steam made puttupodi",
+      "price": "₹70.00",
+      "pattern": "puttupodi,ajmi,puutt",
+      "unit": null,
+      "retailer_id": "gr24"
+    },
+    "gr20": {
+      "id": "9611088565655864",
+      "name": "കടല 500g (KADALA)",
+      "description": "kadala",
+      "price": "₹70.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr20"
+    },
+    "gr29": {
+      "id": "9707724209283250",
+      "name": "വെളിച്ചെണ്ണ  500ml",
+      "description": "multi brand available",
+      "price": "₹160.00",
+      "pattern": "cocunut, oil, velichenna ,enna",
+      "unit": null,
+      "retailer_id": "gr29"
+    },
+    "gr23": {
+      "id": "9753938961310323",
+      "name": "Aashirvaad Atta 1kg",
+      "description": "ashirvaad",
+      "price": "₹70.00",
+      "pattern": "aashirvaad,aatta,atta,chakkiyatta",
+      "unit": null,
+      "retailer_id": "gr23"
+    },
+    "gr26": {
+      "id": "9832591353524058",
+      "name": "മുളക് 200g",
+      "description": "red chilli",
+      "price": "₹30.00",
+      "pattern": "mulak, chilli, red",
+      "unit": null,
+      "retailer_id": "gr26"
+    },
+    "gr21": {
+      "id": "9832658336772032",
+      "name": "ആട്ട 1kg (aatta powder)",
+      "description": "aatta powder",
+      "price": "₹50.00",
+      "pattern": "atta, aatta, chakkiyatta,",
+      "unit": null,
+      "retailer_id": "gr21"
+    },
+    "gr25": {
+      "id": "9898590033522356",
+      "name": "Milma തൈര്",
+      "description": "milma",
+      "price": "₹35.00",
+      "pattern": "thairu, curd",
+      "unit": null,
+      "retailer_id": "gr25"
+    },
+    "gr22": {
+      "id": "10006962402675055",
+      "name": "റവ 500g (Rava)",
+      "description": "rava",
+      "price": "₹25.00",
+      "pattern": "rava, uppuma rava",
+      "unit": null,
+      "retailer_id": "gr22"
+    },
+    "gr27": {
+      "id": "10054748774616069",
+      "name": "മല്ലി 200g",
+      "description": "coriander",
+      "price": "₹30.00",
+      "pattern": "malli",
+      "unit": null,
+      "retailer_id": "gr27"
+    },
+    "gr28": {
+      "id": "29462530646728840",
+      "name": "വെളിച്ചെണ്ണ  1L",
+      "description": "multi brand available",
+      "price": "₹315.00",
+      "pattern": "cocunut, oil, velichenna ,enna",
+      "unit": null,
+      "retailer_id": "gr28"
+    },
+    "gr33": {
+      "id": "9501984516595207",
+      "name": "Ujala 1kg",
+      "description": "washing powder",
+      "price": "₹110.00",
+      "pattern": "soa[,soap powder, podi,washing powder,detergent ​",
+      "unit": null,
+      "retailer_id": "gr33"
+    },
+    "gr31": {
+      "id": "9844625712259557",
+      "name": "Bread",
+      "description": "soft bread",
+      "price": "₹45.00",
+      "pattern": "bread, rotty",
+      "unit": null,
+      "retailer_id": "gr31"
+    },
+    "gr32": {
+      "id": "9969869289757190",
+      "name": "Sunlight 1kg",
+      "description": "washing powder",
+      "price": "₹110.00",
+      "pattern": "soa[,soap powder, podi,washing powder,detergent",
+      "unit": null,
+      "retailer_id": "gr32"
+    },
+    "gr34": {
+      "id": "23996421606610538",
+      "name": "Sunflower Oil 500ml",
+      "description": "sunflower oil",
+      "price": "₹75.00",
+      "pattern": "sunflower, oil",
+      "unit": null,
+      "retailer_id": "gr34"
+    },
+    "gr30": {
+      "id": "24194066560213030",
+      "name": "BRU COFFEE 50g",
+      "description": "bru coffee",
+      "price": "₹99.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr30"
+    },
+    "gr35": {
+      "id": "29595397183409361",
+      "name": "GoodDay Biscuts 200g",
+      "description": "multi flevors available",
+      "price": "₹20.00",
+      "pattern": "good day, biscuts, backery,sweets",
+      "unit": null,
+      "retailer_id": "gr35"
     }
   },
   "fruits": {
@@ -373,6 +562,15 @@
       "unit": null,
       "retailer_id": "fr12"
     },
+    "fr19": {
+      "id": "29413555341593593",
+      "name": "കക്കിരിക്ക 500g (Cucumbar)",
+      "description": "Cucumber",
+      "price": "₹20.00",
+      "pattern": "kakkiri, cucumbar",
+      "unit": null,
+      "retailer_id": "fr19"
+    },
     "fr11": {
       "id": "30537408062524729",
       "name": "നേന്ത്രപഴം500g ( NENTRA PAZHAM)",
@@ -381,6 +579,42 @@
       "pattern": "നേന്ത്രപഴം,NENTRA PAZHAM",
       "unit": null,
       "retailer_id": "fr11"
+    },
+    "fr23": {
+      "id": "9618881154855507",
+      "name": "ഡ്രാഗൺ ഫ്രൂട്ട് 1kg (Dragon fruit)",
+      "description": "Dragon fruit",
+      "price": "₹250.00",
+      "pattern": "dragon fruit",
+      "unit": null,
+      "retailer_id": "fr23"
+    },
+    "fr20": {
+      "id": "9619356114820071",
+      "name": "ബട്ടർ 500g (Avocado)",
+      "description": "avacado",
+      "price": "₹150.00",
+      "pattern": "avacado,batter,vennapazham",
+      "unit": null,
+      "retailer_id": "fr20"
+    },
+    "fr22": {
+      "id": "9734349266613375",
+      "name": "റംബുട്ടാൻ 500g (Rambutan)",
+      "description": "rambutan",
+      "price": "₹200.00",
+      "pattern": "rambuttan",
+      "unit": null,
+      "retailer_id": "fr22"
+    },
+    "fr21": {
+      "id": "23942118818729188",
+      "name": "പാഷൻ ഫ്രൂട്ട് 500g (Passion Fruit)",
+      "description": "vallinaranga, musolikkayi",
+      "price": "₹100.00",
+      "pattern": "passion fruit,vellinaranga,musolikkayi, sarbathumkaayi",
+      "unit": null,
+      "retailer_id": "fr21"
     }
   },
   "meat": {
@@ -494,6 +728,15 @@
       "unit": null,
       "retailer_id": "fs02"
     },
+    "fs09": {
+      "id": "9884918041546377",
+      "name": "നെത്തോല‍ി 500g",
+      "description": "fish",
+      "price": "₹100.00",
+      "pattern": "natholi,nethal, fish",
+      "unit": null,
+      "retailer_id": "fs09"
+    },
     "fs08": {
       "id": "10070151326380156",
       "name": "നെയ്മീൻ  500g (King Fish)",
@@ -538,6 +781,15 @@
       "pattern": "ചെമ്മീൻ, chemmeen, fish",
       "unit": null,
       "retailer_id": "fs05"
+    },
+    "fs10": {
+      "id": "29358589100451623",
+      "name": "ആന ചവിട്ടി 500g",
+      "description": "aanachavitti",
+      "price": "₹100.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "fs10"
     }
   },
   "bakeries": {
