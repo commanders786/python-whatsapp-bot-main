@@ -130,7 +130,7 @@ def send_gbc(recipient_phone_number,language):
             print(f"Response body: {response.text}")
 
 
-def get_notes(recipient_phone_number,language):
+def get_notes_pharmacist(recipient_phone_number,language):
     """Sends an interactive button message."""
     url = base_url
     payload = {
@@ -171,6 +171,47 @@ def get_notes(recipient_phone_number,language):
             print(f"Response status code: {response.status_code}")
             print(f"Response body: {response.text}")
 
+
+def get_notes(recipient_phone_number,language):
+    """Sends an interactive button message."""
+    url = base_url
+    payload = {
+        "messaging_product": "whatsapp",
+        "recipient_type": "individual",
+        "to": recipient_phone_number,
+        "type": "interactive",
+        "interactive": {
+            "type": "button",
+            "body": {
+                "text":  "Please add your notes if any \n Eg: Chicken curry cut" if language=='en' else "ദയവായി നോട്ട് ചേർക്കുക (ഉണ്ടെങ്കിൽ) \n Eg: ചിക്കൻ കറി കട്ട്"
+            },
+            "action": {
+                "buttons": [
+                  
+                   
+                    {
+                        "type": "reply",
+                        "reply": {
+                            "id": "skip",
+                            "title":"Skip"
+                        }
+                    }
+                    
+                ]
+            }
+        }
+    }
+
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        print("Interactive button message sent successfully!")
+        print(response.json())
+    except requests.exceptions.RequestException as e:
+        print(f"Error sending interactive button message: {e}")
+        if response is not None:
+            print(f"Response status code: {response.status_code}")
+            print(f"Response body: {response.text}")
 
 def send_bsc(recipient_phone_number,language):
     """Sends an interactive button message."""

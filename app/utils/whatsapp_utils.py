@@ -14,7 +14,7 @@ from app.utils.messages import get_text_message_input, po_template
 from app.utils.validations import is_within_radius
 from ..sessions import user_sessions
 
-from app.services.cloud_apis import get_language, get_notes, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_options, send_po, send_vfc, send_whatsapp_image
+from app.services.cloud_apis import get_language, get_notes, get_notes_pharmacist, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_options, send_po, send_vfc, send_whatsapp_image
 
 
 def log_http_response(response):
@@ -366,7 +366,7 @@ def process_whatsapp_message(body):
             # response ="Please add your notes to pharmacist 💊 if any, else type anything to move on" if user_sessions[wa_id]['language']=='en' else "നിങ്ങൾ ഫാർമസിസ്റ്റിന് ഇങ്ങനെയുള്ള സന്ദേശങ്ങൾ നൽകാം \n eg:\"മരുന്ന് 5 ദിവസത്തേക്ക് വേണം.\""
             # data = get_text_message_input(wa_id, response)
             # send_message(data)
-            get_notes(wa_id,user_sessions[wa_id]['language'])
+            get_notes_pharmacist(wa_id,user_sessions[wa_id]['language'])
             return
        
 

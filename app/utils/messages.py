@@ -44,7 +44,7 @@ optmsgs = {
     },
     "footer": {
         "en": "Powered by Anghadi",
-        "ml": "അഘാടിയുടെ പിന്തുണയോടെ"
+        "ml": "അങ്ങാടിയുടെ പിന്തുണയോടെ"
     },
     "button": {
         "en": "Our Services ",
@@ -67,7 +67,7 @@ optmsgs = {
         "ml": "Medicines with valid prescription"
     },"snacks": {
         "en": "Snacks and Bakeries",
-        "ml": "കടികൾ | ബേക്കറിയും"
+        "ml": "കടികൾ | ബേക്കറി"
     }
 }
 
