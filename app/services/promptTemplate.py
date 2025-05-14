@@ -15,8 +15,8 @@ Rules:
    - If query is a greeting (e.g., "hi", "hello", "good morning"):
      - Respond in `{language}` (Malayalam for ml, even if query is English).this is must
      - Use a short greeting (<10 words) like: "Hi {name} 👋🏻,  Welcome to Koduvally Anghadi🛒,
-         we  Deliver groceries 🍗🍅🫑🦈🥩🌾 within 20 minutes  🛵"
-     - Output: Plain text.
+         we  Deliver groceries 🍗🍅🫑🦈🥩🌾 within 30 minutes  🛵"
+     - Output: Plain text. in `{language}`
 
 2. **Item Queries**:
    - If query mentions an item (e.g., "tomato", "tomato 1kg"):

@@ -130,7 +130,7 @@ def send_gbc(recipient_phone_number,language):
             print(f"Response body: {response.text}")
 
 
-def send_mfc(recipient_phone_number,language):
+def get_notes(recipient_phone_number,language):
     """Sends an interactive button message."""
     url = base_url
     payload = {
@@ -141,7 +141,7 @@ def send_mfc(recipient_phone_number,language):
         "interactive": {
             "type": "button",
             "body": {
-                "text": messages.button_names["mwbody"][language]
+                "text":  "Please add your notes to pharmacist 💊 if any, else type anything to move on" if language=='en' else "നിങ്ങൾ ഫാർമസിസ്റ്റിന് ഇങ്ങനെയുള്ള സന്ദേശങ്ങൾ നൽകാം \n eg:\"മരുന്ന് 5 ദിവസത്തേക്ക് വേണം.\""
             },
             "action": {
                 "buttons": [
@@ -150,24 +150,11 @@ def send_mfc(recipient_phone_number,language):
                     {
                         "type": "reply",
                         "reply": {
-                            "id": "opt7",
-                            "title":  messages.button_names["mt"][language]
-                        }
-                    },
-                      {
-                        "type": "reply",
-                        "reply": {
-                            "id": "opt8",
-                            "title":  messages.button_names["fish"][language]
-                        }
-                    },
-                     {
-                        "type": "reply",
-                        "reply": {
-                            "id": "backfood",
-                            "title":messages.button_names["back"][language]
+                            "id": "skip",
+                            "title":"Skip"
                         }
                     }
+                    
                 ]
             }
         }
@@ -413,6 +400,12 @@ def send_options(recipient_phone_number,language):
                                 "title":messages.button_names["rest"][language],
                                 "description":"Tastes of koduvally",
                             },
+                            
+                             {
+                                "id": "snacks",
+                                "title":messages.optmsgs["snacks"][language],
+                                "description":" Bakeries  Evening snacks ",
+                            },
                             {
                                 "id": "opt8",
                                 "title":messages.button_names["fish"][language],
@@ -564,6 +557,7 @@ def send_message(data):
         return response
     
     
+
 
 
 

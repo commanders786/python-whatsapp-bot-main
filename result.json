@@ -820,5 +820,70 @@
       "unit": null,
       "retailer_id": "SN02"
     }
+  },
+  "food": {
+    "rf03": {
+      "id": "8871303839639480",
+      "name": "AFC Couple Meal",
+      "description": "2 Pc Chicken, Bun 2pc,\n French Fries,ketchup,\n Garlic Paste-1 \nRestaurant: AFC chicken",
+      "price": "₹229.00",
+      "pattern": "AFC, FREID CHICKEN, food, restaurant",
+      "unit": null,
+      "retailer_id": "rf03"
+    },
+    "rf02": {
+      "id": "8986935258073307",
+      "name": "AFC Favour Meal",
+      "description": "crispy burger,\n1pc chicken,6 strip pc\nfrench fries, ketchup\nrestaurent: AFC Chicken",
+      "price": "₹575.00",
+      "pattern": "AFC, FREID CHICKEN, food, restaurant",
+      "unit": null,
+      "retailer_id": "rf02"
+    },
+    "rf07": {
+      "id": "9667423426699075",
+      "name": "AFC Dinner Special Meal",
+      "description": "6  Pc Chicken,3 Bun\n Ketchup,garlic Paste\n French Fries\n Full- 540/\nRestaurant: AFC Chicken",
+      "price": "₹659.00",
+      "pattern": "AFC, FREID CHICKEN, food, restaurant",
+      "unit": null,
+      "retailer_id": "rf07"
+    },
+    "rf05": {
+      "id": "23887020307569271",
+      "name": "AFC Fab Chicken Fillet",
+      "description": "Fillet,kids Burger,french Fries,\n Ketchup \nRestaurant: AFC Chicken",
+      "price": "₹298.00",
+      "pattern": "AFC, FREID CHICKEN, food, restaurant",
+      "unit": null,
+      "retailer_id": "rf05"
+    },
+    "rf04": {
+      "id": "24001490502770273",
+      "name": "AFC Kids Meal",
+      "description": "1 Pc Chicken,bun 1pc, \nFrench Fries,\n Ketchup\nrestaurant: AFC Chicken",
+      "price": "₹149.00",
+      "pattern": "AFC, FREID CHICKEN, food, restaurant",
+      "unit": null,
+      "retailer_id": "rf04"
+    },
+    "rf01": {
+      "id": "24005991012320509",
+      "name": "AFC Special Meal",
+      "description": "crispy burger,1pc chicken,\nfrench fries,\nketchup\nrestaurent: AFC Chicken",
+      "price": "₹299.00",
+      "pattern": "AFC, FREID CHICKEN",
+      "unit": null,
+      "retailer_id": "rf01"
+    },
+    "rf06": {
+      "id": "29540340458946035",
+      "name": "AFC Dinner Meal",
+      "description": "4 Pc Chicken,2 Bun\n Garlic Paste\n French Fries,ketchup\nRestaurant: AFC chicken",
+      "price": "₹499.00",
+      "pattern": "AFC, FREID CHICKEN, food, restaurant",
+      "unit": null,
+      "retailer_id": "rf06"
+    }
   }
 }

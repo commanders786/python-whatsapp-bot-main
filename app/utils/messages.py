@@ -65,6 +65,9 @@ optmsgs = {
     "desc2": {
         "en": "Medicines with valid prescription",
         "ml": "Medicines with valid prescription"
+    },"snacks": {
+        "en": "Snacks and Bakeries",
+        "ml": "കടികൾ | ബേക്കറിയും"
     }
 }
 

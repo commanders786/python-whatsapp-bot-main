@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 import psycopg2
 
-from app.services.crud_services import insert_order, insert_user, user_exists
+from app.services.crud_services import get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, insert_order, insert_user, update_order_items_service, user_exists
 from app.services.product_service import fetch_and_categorize_products, send_whatsapp_product_list
 
 crud_blueprint = Blueprint("crud", __name__)
@@ -186,3 +186,45 @@ def post_whatsapp_product_list():
     
     return jsonify(result)
 
+
+
+@crud_blueprint.route("/order-items/update", methods=["POST"])
+def update_order_items():
+    data = request.get_json()
+    order_id = data.get("order_id")
+    items = data.get("items", [])
+
+    if not order_id or not items:
+        return jsonify({"error": "Missing order_id or items"}), 400
+
+    success, message = update_order_items_service(order_id, items)
+    if success:
+        return jsonify({"message": message}), 200
+    else:
+        return jsonify({"error": message}), 500
+    
+
+@crud_blueprint.route("/order-items/all", methods=["GET"])
+def get_order_items():
+    order_id = request.args.get("order_id")
+    product_id = request.args.get("product_id")
+    
+    response, status = get_order_items_service(order_id, product_id)
+    return jsonify(response), status
+
+
+
+@crud_blueprint.route("/orders/summary", methods=["GET"])
+def get_order_summary():
+    response, status = get_order_summary_service()
+    return jsonify(response), status
+
+
+@crud_blueprint.route("/product-by-retailerid", methods=["GET"])
+def get_product_by_retailerid():
+    retailer_id = request.args.get("retailer_id")
+    if not retailer_id:
+        return jsonify({"status": "error", "message": "retailer_id is required"}), 400
+
+    result, status_code = get_product_by_retailerid_service(retailer_id)
+    return jsonify(result), status_code

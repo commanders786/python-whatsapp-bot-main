@@ -39,7 +39,7 @@ def process_order_message(product_items):
     col_widths = [max(len(row[i]) for row in rows + [("No", "Item", "Qty", "Unit", "Total")]) for i in range(5)]
 
     # Header
-    lines = ["🛒 *eMart - PO*\n"]
+    lines = ["🛒 *അങ്ങാടി Ai - PO*\n"]
     header = f"{'No':<{col_widths[0]}}  {'Item':<{col_widths[1]}}  {'Qty':<{col_widths[2]}}  {'Unit':<{col_widths[3]}}  {'Total':<{col_widths[4]}}"
     lines.append(header)
     lines.append("")  # extra line between header and items
@@ -49,8 +49,8 @@ def process_order_message(product_items):
         line = f"{row[0]:<{col_widths[0]}}  {row[1]:<{col_widths[1]}}  {row[2]:<{col_widths[2]}}  {row[3]:<{col_widths[3]}}  {row[4]:<{col_widths[4]}}"
         lines.append(line)
 
-    lines.append(f"\n🛵 Delivey Charge: ₹ 25")
-    grand_total+=25
+    lines.append(f"\n🛵 Delivey Charge: ₹ 30")
+    grand_total+=30
     # Total
     lines.append(f"\n🧾 Grand Total: ₹{grand_total}")
     return ("\n".join(lines),product_items)

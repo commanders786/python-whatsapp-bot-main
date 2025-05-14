@@ -15,7 +15,7 @@ def fetch_and_categorize_products():
             params={
                 "fields": "id,name,retailer_id,description,price,brand,pattern",
                 "access_token": ACCESS_TOKEN,
-                "limit": 100
+                "limit": 120
             }
         )
         data = response.json()
@@ -31,7 +31,8 @@ def fetch_and_categorize_products():
             "fruits": {},
             "meat":{},
             "fish":{},
-            "bakeries":{}
+            "bakeries":{},
+              "food":{}
         }
 
         for item in products:
@@ -57,7 +58,9 @@ def fetch_and_categorize_products():
             elif rid.startswith("ch") or rid.startswith("kd") or rid.startswith("wp") or rid.startswith("sk"):
                 categorized["meat"][item["retailer_id"]] = product_info
             elif rid.startswith("fs"):
-                categorized["fish"][item["retailer_id"]] = product_info   
+                categorized["fish"][item["retailer_id"]] = product_info
+            elif rid.startswith("rf"):
+                categorized["food"][item["retailer_id"]] = product_info    
 
         with open("result.json", "w", encoding="utf-8") as f:
             json.dump(categorized, f, ensure_ascii=False, indent=2)

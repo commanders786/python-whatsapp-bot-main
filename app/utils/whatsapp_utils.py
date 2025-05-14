@@ -8,13 +8,13 @@ from app.services import gemini_services as AI
 # from app.services.openai_service import generate_response
 import re
 
-from app.services.crud_services import insert_order, insert_user, user_exists
+from app.services.crud_services import insert_order, insert_user,update_order_items_service, user_exists
 from app.services.product_service import send_whatsapp_product_list
 from app.utils.messages import get_text_message_input, po_template
 from app.utils.validations import is_within_radius
 from ..sessions import user_sessions
 
-from app.services.cloud_apis import get_language, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_mfc, send_options, send_po, send_vfc, send_whatsapp_image
+from app.services.cloud_apis import get_language, get_notes, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_options, send_po, send_vfc, send_whatsapp_image
 
 
 def log_http_response(response):
@@ -213,6 +213,18 @@ def process_whatsapp_message(body):
               user_sessions[wa_id]['language']='ml' 
               send_options(wa_id,user_sessions[wa_id]['language'])
               return
+            
+            elif button_id == "skip":
+                if  user_sessions[wa_id]['level']=="M2":
+                   user_sessions[wa_id]['level']="M3"
+                   user_sessions[wa_id]['notes']=None
+                   request_location_message(wa_id)
+
+                if user_sessions[wa_id]['level']=="F2":
+                    user_sessions[wa_id]['level']="F3"
+                    user_sessions[wa_id]['notes']=None
+                    request_location_message(wa_id)
+                return
 
             elif button_id == "opt1":
                 send_whatsapp_product_list("vegetables",wa_id)
@@ -236,16 +248,23 @@ def process_whatsapp_message(body):
                 send_whatsapp_product_list("bakeries",wa_id)
                 return
             elif button_id=='rest':
-                response ="Coming soon.."
-                data = get_text_message_input(wa_id, response)
-                send_message(data)
+                # response ="Coming soon.."
+                # data = get_text_message_input(wa_id, response)
+                # send_message(data)
+                send_whatsapp_product_list("food",wa_id)
+                return
+            elif button_id=='snacks':
+                # response ="Coming soon.."
+                # data = get_text_message_input(wa_id, response)
+                # send_message(data)
+                send_whatsapp_product_list("bakeries",wa_id)
                 return
             elif button_id=='VFC':
                 send_vfc(wa_id,user_sessions[wa_id]['language'])
             elif button_id=='GBC':
                  send_gbc(wa_id,user_sessions[wa_id]['language'])
-            elif button_id=='MFC':
-                send_mfc(wa_id,user_sessions[wa_id]['language'])
+            # elif button_id=='MFC':
+            #     send_mfc(wa_id,user_sessions[wa_id]['language'])
                 
             elif button_id=='BFC':
                 send_bsc(wa_id, user_sessions[wa_id]['language'])
@@ -254,9 +273,10 @@ def process_whatsapp_message(body):
                
             elif button_id=="oc":
                 user_sessions[wa_id]['level']="F2"
-                response ="Please add your notes  if any, else type any key to move on" if user_sessions[wa_id]['language']=='en' else "ദയവായി നിങ്ങളുടെ കുറിപ്പുകൾ ചേർക്കുക, ഇല്ലെങ്കിൽ തുടരാൻ ഏതെങ്കിലും കീ ടൈപ്പ് ചെയ്യുക."
-                data = get_text_message_input(wa_id, response)
-                send_message(data)
+                # response ="Please add your notes  if any, else type any key to move on" if user_sessions[wa_id]['language']=='en' else "ദയവായി നിങ്ങളുടെ കുറിപ്പുകൾ ചേർക്കുക, ഇല്ലെങ്കിൽ തുടരാൻ ഏതെങ്കിലും കീ ടൈപ്പ് ചെയ്യുക."
+                # data = get_text_message_input(wa_id, response)
+                # send_message(data)
+                get_notes(wa_id,user_sessions[wa_id]['language'])
                 
                 
                 return
@@ -314,7 +334,7 @@ def process_whatsapp_message(body):
                
                 print("order Created",response_status)
                 order_id = response_status[0].get('order_id')
-           
+                update_order_items_service(order_id,user_sessions[wa_id]['items'])
                 order_notification_template = po_template(user_sessions[wa_id],order_id=order_id)
 
                 
@@ -329,12 +349,12 @@ def process_whatsapp_message(body):
             user_sessions[wa_id]['items'].extend(product_items)
             bill_text,items = process_order_message(user_sessions[wa_id]['items'])
             user_sessions[wa_id]['bill']=bill_text
-            
-            print("\n\n user session",user_sessions[wa_id])
+            logging.info(f"items: {user_sessions[wa_id]['items']}")
+
 
             
             data = get_text_message_input(wa_id, bill_text)
-            print("data",data)
+          
             # send_message(data)
             send_po(wa_id,bill_text,user_sessions[wa_id]['language'])
             # request_location_message(wa_id)
@@ -343,9 +363,10 @@ def process_whatsapp_message(body):
             user_sessions[wa_id]['level']="M2"
             imageid=message["image"]["id"]
             user_sessions[wa_id]['medicineimageid']=imageid
-            response ="Please add your notes to pharmacist 💊 if any, else type anything to move on" if user_sessions[wa_id]['language']=='en' else "നിങ്ങൾ ഫാർമസിസ്റ്റിന് ഇങ്ങനെയുള്ള സന്ദേശങ്ങൾ നൽകാം \n eg:\"മരുന്ന് 5 ദിവസത്തേക്ക് വേണം.\""
-            data = get_text_message_input(wa_id, response)
-            send_message(data)
+            # response ="Please add your notes to pharmacist 💊 if any, else type anything to move on" if user_sessions[wa_id]['language']=='en' else "നിങ്ങൾ ഫാർമസിസ്റ്റിന് ഇങ്ങനെയുള്ള സന്ദേശങ്ങൾ നൽകാം \n eg:\"മരുന്ന് 5 ദിവസത്തേക്ക് വേണം.\""
+            # data = get_text_message_input(wa_id, response)
+            # send_message(data)
+            get_notes(wa_id,user_sessions[wa_id]['language'])
             return
        
 
