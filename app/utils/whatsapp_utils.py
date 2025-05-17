@@ -16,6 +16,8 @@ from ..sessions import user_sessions
 
 from app.services.cloud_apis import get_language, get_notes, get_notes_pharmacist, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_options, send_po, send_vfc, send_whatsapp_image
 
+logging.basicConfig(level=logging.INFO)
+
 
 def log_http_response(response):
     logging.info(f"Status: {response.status_code}")
@@ -124,12 +126,12 @@ def process_whatsapp_message(body):
         start_time = time(7, 0, 0)   # 7:00 AM
         end_time = time(20, 0, 0)    # 8:00 PM
         print(now,"hhh")
-        # if now < start_time or now > end_time:
+        if now >= start_time and now <= end_time:
                 
-        #         response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
-        #         data = get_text_message_input(wa_id, response)
-        #         send_message(data)
-                # return
+                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
+                data = get_text_message_input(wa_id, response)
+                send_message(data)
+                return
         if message["type"] == "text":
             
             message_body = message["text"]["body"]
@@ -382,7 +384,7 @@ def process_whatsapp_message(body):
 
     except Exception as e:
         response = "Please enter a valid input"
-        print("xxxxxxxxx",e)
+        logging.info("xxxxxxxxx",e)
 
     # Send text message back
     if response:

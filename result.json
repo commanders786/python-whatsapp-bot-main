@@ -9,6 +9,15 @@
       "unit": null,
       "retailer_id": "veg04"
     },
+    "veg15": {
+      "id": "9372605596178989",
+      "name": "കോവക്ക 500g (KOVAKKA)",
+      "description": "kovakka",
+      "price": "₹30.00",
+      "pattern": "kovakka, veg",
+      "unit": null,
+      "retailer_id": "veg15"
+    },
     "veg11": {
       "id": "9416655338463541",
       "name": "പുതിന (MINT) 100g",
@@ -17,6 +26,15 @@
       "pattern": "പുതിന,pothna, mint",
       "unit": null,
       "retailer_id": "veg11"
+    },
+    "veg13": {
+      "id": "9457423561052201",
+      "name": "കാപ്‌സിക്കം (green)500g",
+      "description": "Capcicum",
+      "price": "₹50.00",
+      "pattern": "capcicum, mulak, vegitable",
+      "unit": null,
+      "retailer_id": "veg13"
     },
     "veg05": {
       "id": "9543733689047575",
@@ -36,6 +54,51 @@
       "unit": null,
       "retailer_id": "veg01"
     },
+    "veg12": {
+      "id": "9675713172524329",
+      "name": "ബീറ്റ്റൂട്ട് 1kg (beetroot)",
+      "description": "beetroot",
+      "price": "₹40.00",
+      "pattern": "beetaroot,vegitable",
+      "unit": null,
+      "retailer_id": "veg12"
+    },
+    "veg17": {
+      "id": "9781691291879273",
+      "name": "ചുരങ്ങ 500g (churanga)",
+      "description": "churanga",
+      "price": "₹15.00",
+      "pattern": "choranga, veg",
+      "unit": null,
+      "retailer_id": "veg17"
+    },
+    "veg24": {
+      "id": "9848046825264660",
+      "name": "ചേമ്പ് 1kg (chembu)",
+      "description": "chembu",
+      "price": "₹35.00",
+      "pattern": "chembu, veg",
+      "unit": null,
+      "retailer_id": "veg24"
+    },
+    "veg26": {
+      "id": "9854092084671571",
+      "name": "കീയാർ 500g (Kiyaar)",
+      "description": "kiyaar",
+      "price": "₹35.00",
+      "pattern": "kiyar, kakkiri, cucumber",
+      "unit": null,
+      "retailer_id": "veg26"
+    },
+    "veg20": {
+      "id": "9889240311192453",
+      "name": "പച്ചമുളക് 100g",
+      "description": "grenn chilly",
+      "price": "₹6.00",
+      "pattern": "pacha mulak, mulaku, chilly,green",
+      "unit": null,
+      "retailer_id": "veg20"
+    },
     "veg08": {
       "id": "9912679802085871",
       "name": "ചെറുനാരങ്ങ 200g (Lemon)",
@@ -44,6 +107,33 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "veg08"
+    },
+    "veg18": {
+      "id": "9918772161512162",
+      "name": "വെണ്ട 500g (venda)",
+      "description": "venda",
+      "price": "₹20.00",
+      "pattern": "venda, veg",
+      "unit": null,
+      "retailer_id": "veg18"
+    },
+    "veg23": {
+      "id": "9959451564146381",
+      "name": "കക്കിരി 500g (cucumber)",
+      "description": "cucumber",
+      "price": "₹25.00",
+      "pattern": "kakkiri, cucumber,",
+      "unit": null,
+      "retailer_id": "veg23"
+    },
+    "veg16": {
+      "id": "23998523573073859",
+      "name": "വെള്ളരിക്ക 1kg (VELLARIKKA)",
+      "description": "vellari",
+      "price": "₹20.00",
+      "pattern": "vellari, vellarikka,vegitable",
+      "unit": null,
+      "retailer_id": "veg16"
     },
     "veg03": {
       "id": "24140188105583483",
@@ -54,6 +144,24 @@
       "unit": null,
       "retailer_id": "veg03"
     },
+    "veg19": {
+      "id": "24140665278853086",
+      "name": "കോളിഫ്ലവർ 1kg",
+      "description": "cauliflower",
+      "price": "₹45.00",
+      "pattern": "cauliflower, flower, veg",
+      "unit": null,
+      "retailer_id": "veg19"
+    },
+    "veg22": {
+      "id": "24161141980136598",
+      "name": "മത്തൻ 1kg",
+      "description": "mathan",
+      "price": "₹20.00",
+      "pattern": "mathan, veg",
+      "unit": null,
+      "retailer_id": "veg22"
+    },
     "veg09": {
       "id": "24334515559483451",
       "name": "കാബേജ് 500g (Cabbage)",
@@ -62,6 +170,15 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "veg09"
+    },
+    "veg25": {
+      "id": "24644470158486794",
+      "name": "വഴുതന 500g (vazhuthana)",
+      "description": "vazhuthana",
+      "price": "₹20.00",
+      "pattern": "vazhuthana, veg",
+      "unit": null,
+      "retailer_id": "veg25"
     },
     "veg06": {
       "id": "29112643818384302",
@@ -89,6 +206,33 @@
       "pattern": "ഉള്ളി,സവാള,ulli,savaala",
       "unit": null,
       "retailer_id": "veg10"
+    },
+    "veg21": {
+      "id": "29466562389657054",
+      "name": "ചേന 500g",
+      "description": "cheena",
+      "price": "₹40.00",
+      "pattern": "cheena,veg",
+      "unit": null,
+      "retailer_id": "veg21"
+    },
+    "veg14": {
+      "id": "29512156601732512",
+      "name": "ചെറിയുള്ളി (expo) 500g",
+      "description": "cheriyulli",
+      "price": "₹40.00",
+      "pattern": "ulli,cheriyulli, chuvannulli, vegitable",
+      "unit": null,
+      "retailer_id": "veg14"
+    },
+    "veg27": {
+      "id": "33285653517700071",
+      "name": "പടവലങ്ങ 500g (padavalam)",
+      "description": "padavalanga",
+      "price": "₹20.00",
+      "pattern": "padavalam, veg",
+      "unit": null,
+      "retailer_id": "veg27"
     }
   },
   "oth": {
@@ -301,7 +445,7 @@
     },
     "gr26": {
       "id": "9832591353524058",
-      "name": "മുളക് 200g",
+      "name": "ചുവന്ന മുളക് 200g",
       "description": "red chilli",
       "price": "₹30.00",
       "pattern": "mulak, chilli, red",
@@ -380,6 +524,15 @@
       "unit": null,
       "retailer_id": "gr32"
     },
+    "gr36": {
+      "id": "9993746823981079",
+      "name": "AMULYA പാൽ പൊടി (sample pack)",
+      "description": "sample pack",
+      "price": "₹10.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr36"
+    },
     "gr34": {
       "id": "23996421606610538",
       "name": "Sunflower Oil 500ml",
@@ -406,6 +559,51 @@
       "pattern": "good day, biscuts, backery,sweets",
       "unit": null,
       "retailer_id": "gr35"
+    },
+    "gr47": {
+      "id": "9942043892527657",
+      "name": "yippee",
+      "description": "15 rupees pack",
+      "price": "₹15.00",
+      "pattern": "yippee",
+      "unit": null,
+      "retailer_id": "gr47"
+    },
+    "gr46": {
+      "id": "9995020673946809",
+      "name": "മാഗി (noodles)",
+      "description": "45 rupees pack",
+      "price": "₹45.00",
+      "pattern": "noodles,maggie,yipee",
+      "unit": null,
+      "retailer_id": "gr46"
+    },
+    "gr45": {
+      "id": "23974760028806777",
+      "name": "മാഗി (maggie)",
+      "description": "12 rupees pack",
+      "price": "₹15.00",
+      "pattern": "noodles,maggie,yipee",
+      "unit": null,
+      "retailer_id": "gr45"
+    },
+    "gr51": {
+      "id": "9892838707467118",
+      "name": "wayanad Milk",
+      "description": "Rs:30",
+      "price": "₹30.00",
+      "pattern": "paal,milk",
+      "unit": null,
+      "retailer_id": "gr51"
+    },
+    "gr50": {
+      "id": "29887124124219345",
+      "name": "wayanad Milk",
+      "description": "Rs:28",
+      "price": "₹28.00",
+      "pattern": "paal,milk,പാൽ",
+      "unit": null,
+      "retailer_id": "gr50"
     }
   },
   "fruits": {
@@ -631,7 +829,7 @@
       "id": "9595803053829979",
       "name": "CHICKEN 1kg (alfahm cut)",
       "description": "size specified",
-      "price": "₹180.00",
+      "price": "₹300.00",
       "pattern": "കോഴി",
       "unit": null,
       "retailer_id": "ch01"
@@ -640,7 +838,7 @@
       "id": "9662187900529950",
       "name": "Leghorn Chicken 1kg (ലെഗോൺ കോഴി)",
       "description": "ലെഗോൺ കോഴി",
-      "price": "₹180.00",
+      "price": "₹140.00",
       "pattern": "Leghorn Chicken, ലെഗോൺ കോഴി,kozhi",
       "unit": null,
       "retailer_id": "ch03"
@@ -676,10 +874,28 @@
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹180.00",
+      "price": "₹95.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09"
+    },
+    "ch15": {
+      "id": "9714611515291014",
+      "name": "എല്ലില്ലാത്ത  ബീഫ്  500g",
+      "description": "Beef meat",
+      "price": "₹190.00",
+      "pattern": "poth,irachi,ellillatha,",
+      "unit": null,
+      "retailer_id": "ch15"
+    },
+    "ch10": {
+      "id": "29558127333833794",
+      "name": "Boneless Chicken 1kg",
+      "description": "bonless chicken",
+      "price": "₹150.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "ch10"
     },
     "kd01": {
       "id": "9874522829258228",
@@ -692,8 +908,8 @@
     },
     "sk8q2yaim7": {
       "id": "9405626589529680",
-      "name": "Beef Meat 500g",
-      "description": "Beef meat halal",
+      "name": "Beef  പോത്തിറച്ചി 500g",
+      "description": "ബീഫ് എളില്ലാത്തവ\n-190 Rs",
       "price": "₹170.00",
       "pattern": "beef, poth, erchi",
       "unit": null,
@@ -701,7 +917,7 @@
     },
     "wph1a21c06": {
       "id": "9721024201293028",
-      "name": "Mutton  500g",
+      "name": "മട്ടൺ (Mutton)   500g",
       "description": "Mutton",
       "price": "₹450.00",
       "pattern": "aadu, mutton, atterchi",
@@ -713,8 +929,8 @@
     "fs03": {
       "id": "9365403160238215",
       "name": "മാന്തൾ 500g (MAANTHAL)",
-      "description": "fresh fish manthal",
-      "price": "₹110.00",
+      "description": "മാന്തൽ ചെറുത്",
+      "price": "₹130.00",
       "pattern": "മാന്തൾ, MAANTHAL, fish",
       "unit": null,
       "retailer_id": "fs03"
@@ -723,7 +939,7 @@
       "id": "9666490573436470",
       "name": "അയല 500g (AYALA)",
       "description": "fresh fish ayala from market",
-      "price": "₹90.00",
+      "price": "₹100.00",
       "pattern": "അയല, AYALA, fish",
       "unit": null,
       "retailer_id": "fs02"
@@ -732,7 +948,7 @@
       "id": "9884918041546377",
       "name": "നെത്തോല‍ി 500g",
       "description": "fish",
-      "price": "₹100.00",
+      "price": "₹80.00",
       "pattern": "natholi,nethal, fish",
       "unit": null,
       "retailer_id": "fs09"
@@ -757,7 +973,7 @@
     },
     "fs04": {
       "id": "24046708444913037",
-      "name": "കോര മീൻ 500g (KOORA)",
+      "name": "മഞ്ഞ കോര   500g (KOORA)",
       "description": "fresh koora",
       "price": "₹110.00",
       "pattern": "കോര,മീൻ,KOORA",
@@ -768,7 +984,7 @@
       "id": "24548397954753040",
       "name": "മത്തി/ചാള 500g  (MATHI/CHAALA)",
       "description": "മത്തി/ചാള മത്സ്യം",
-      "price": "₹60.00",
+      "price": "₹130.00",
       "pattern": "മത്തി,ചാള,മത്സ്യം,fish",
       "unit": null,
       "retailer_id": "fs01"
@@ -776,27 +992,72 @@
     "fs05": {
       "id": "29414862131462631",
       "name": "ചെമ്മീൻ 500g (chemmeen)",
-      "description": "fresh chemmeen",
-      "price": "₹160.00",
+      "description": "ചെമ്മീൻ വലുത്",
+      "price": "₹220.00",
       "pattern": "ചെമ്മീൻ, chemmeen, fish",
       "unit": null,
       "retailer_id": "fs05"
+    },
+    "fs17": {
+      "id": "9990099271055890",
+      "name": "ചെമ്പല്ലി 500g",
+      "description": "ചെമ്പല്ലി",
+      "price": "₹180.00",
+      "pattern": "chemballi,fish,meen",
+      "unit": null,
+      "retailer_id": "fs17"
+    },
+    "fs16": {
+      "id": "10032987833417814",
+      "name": "പാപ്പാൻസ്  500g",
+      "description": "പാപ്പാൻസ്",
+      "price": "₹200.00",
+      "pattern": "pappans,fish,meen",
+      "unit": null,
+      "retailer_id": "fs16"
     },
     "fs10": {
       "id": "29358589100451623",
       "name": "ആന ചവിട്ടി 500g",
       "description": "aanachavitti",
-      "price": "₹100.00",
+      "price": "₹110.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "fs10"
+    },
+    "fs21": {
+      "id": "9709025602514484",
+      "name": "അയക്കൂറ 500g",
+      "description": "Fish",
+      "price": "₹225.00",
+      "pattern": "ayakkoora,fish",
+      "unit": null,
+      "retailer_id": "fs21"
+    },
+    "fs22": {
+      "id": "9920951511332508",
+      "name": "ആഘോലി 500g",
+      "description": "Fish",
+      "price": "₹225.00",
+      "pattern": "agholi,fish",
+      "unit": null,
+      "retailer_id": "fs22"
+    },
+    "fs20": {
+      "id": "29636193869361033",
+      "name": "സൂദ 500g",
+      "description": "Soodha",
+      "price": "₹180.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "fs20"
     }
   },
   "bakeries": {
     "SN01": {
       "id": "9395913967197870",
       "name": "കട്ട്ലറ്റ് (cutlet)",
-      "description": "Home Made chicken cutlet",
+      "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും",
       "price": "₹15.00",
       "pattern": "Sarees Kitchen",
       "unit": null,
@@ -805,7 +1066,7 @@
     "SN03": {
       "id": "9567582903335144",
       "name": "ചട്ടിപത്തിരി ( Cake) 1.5kg",
-      "description": "Malabar style egg based cake",
+      "description": "ലൈവ് ആയി ചെയ്യുന്നതോണ്ട് 3 മണിക്കൂർ വരേ എടുക്കാം",
       "price": "₹350.00",
       "pattern": "chattipathiri,home made cake,snacks",
       "unit": null,
@@ -814,7 +1075,7 @@
     "SN02": {
       "id": "29438708865743345",
       "name": "ഉന്നക്കാഴ (fried banana snack)",
-      "description": "Home Made (banana,egg)",
+      "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും  Home Made (banana,egg)",
       "price": "₹12.00",
       "pattern": "Sarees Kitchen",
       "unit": null,
