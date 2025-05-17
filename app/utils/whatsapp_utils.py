@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime, timezone,time
 import logging
 from flask import current_app, jsonify
 import json
@@ -94,9 +94,6 @@ def process_whatsapp_message(body):
     message = body["entry"][0]["changes"][0]["value"]["messages"][0]
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-       
-    
-    
 
         
     if wa_id not in user_sessions:
@@ -114,7 +111,7 @@ def process_whatsapp_message(body):
                   return
                 user_sessions[wa_id]['language']=user['user']['language']
    
-
+    
     response = ""  # Default response
     print("Recieved message :",message)
     print("\n \n User Session ----",user_sessions[wa_id])
@@ -123,6 +120,15 @@ def process_whatsapp_message(body):
         # If it's a regular text message
         ts = int(message['timestamp'])
         if (datetime.now(timezone.utc) - datetime.fromtimestamp(ts, timezone.utc)).total_seconds() > 60: return
+        now = datetime.now().time()
+        start_time = time(7, 0, 0)   # 7:00 AM
+        end_time = time(20, 0, 0)    # 8:00 PM
+        if now < start_time or now > end_time:
+                
+                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
+                data = get_text_message_input(wa_id, response)
+                send_message(data)
+                return
         if message["type"] == "text":
             
             message_body = message["text"]["body"]
@@ -309,7 +315,7 @@ def process_whatsapp_message(body):
                 if (is_within_radius(location["latitude"],location["longitude"])):
                  coordinates=extract_location_link(body)
                  user_sessions[wa_id]['location']=coordinates
-                 response ="Your order will be in your doors within 20 minutes.\n Please contact +91 99615 75781 for further queries." if user_sessions[wa_id]['language']=="en" else "നിങ്ങളുടെ ഓർഡർ 20 മിനിറ്റിനകം നിങ്ങളുടെ വാതിലിൽ എത്തിച്ചേരും.കൂടുതൽ വിവരങ്ങൾക്ക് ദയവായി +91 99615 75781 എന്ന നമ്പറിൽ ബന്ധപ്പെടുക."
+                 response ="Thank you 🤝\n Your order will be in your doors within 20 minutes.\n Please contact +91 99615 75781 for further queries." if user_sessions[wa_id]['language']=="en" else "നന്ദി 🤝 \nനിങ്ങളുടെ ഓർഡർ 20 മിനിറ്റിനകം നിങ്ങളുടെ വാതിലിൽ എത്തിച്ചേരും.കൂടുതൽ വിവരങ്ങൾക്ക് ദയവായി +91 99615 75781 എന്ന നമ്പറിൽ ബന്ധപ്പെടുക."
                 else:
                  response ="Sorry for now we are not providing our service in your location" if user_sessions[wa_id]['language']=='en' else "ക്ഷമിക്കണം, ഇപ്പോഴെത്തന്നെ നിങ്ങളുടെ സ്ഥലത്ത് ഞങ്ങൾ സേവനം നൽകുന്നില്ല" 
                  data= get_text_message_input(wa_id,response)

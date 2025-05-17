@@ -183,7 +183,7 @@ def get_notes(recipient_phone_number,language):
         "interactive": {
             "type": "button",
             "body": {
-                "text":  "Please add your notes if any \n Eg: Chicken curry cut" if language=='en' else "ദയവായി നോട്ട് ചേർക്കുക (ഉണ്ടെങ്കിൽ) \n Eg: ചിക്കൻ കറി കട്ട്"
+                "text":  "Please add your notes if any \n Eg: Chicken curry cut" if language=='en' else "ദയവായി കുറിപ്പ്  ചേർക്കുക (ഉണ്ടെങ്കിൽ) \n Eg: ചിക്കൻ കറി കട്ട്"
             },
             "action": {
                 "buttons": [
@@ -363,7 +363,7 @@ def get_language(recipient_phone_number):
         "interactive": {
             "type": "button",
             "body": {
-                "text": "Hi Welcome to അങ്ങാടി 🤗\n Please choose your Language \n ദയവായി നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക "
+                "text": "Hi Welcome to AI അങ്ങാടി 57 👋🏻\n Please choose your Language \n ദയവായി നിങ്ങളുടെ ഭാഷ തിരഞ്ഞെടുക്കുക "
             },
             "action": {
                 "buttons": [

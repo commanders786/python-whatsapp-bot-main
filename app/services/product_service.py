@@ -15,7 +15,7 @@ def fetch_and_categorize_products():
             params={
                 "fields": "id,name,retailer_id,description,price,brand,pattern",
                 "access_token": ACCESS_TOKEN,
-                "limit": 120
+                "limit": 150
             }
         )
         data = response.json()
