@@ -1,5 +1,6 @@
 from datetime import datetime, timezone,time
 import logging
+from zoneinfo import ZoneInfo
 from flask import current_app, jsonify
 import json
 import requests
@@ -43,33 +44,6 @@ def generate_response(name,response,session):
     return AI.chatGemini(name,response,session)
 
 
-# def send_message(data):
-#     headers = {
-#         "Content-type": "application/json",
-#         "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
-#     }
-    
-#     print(current_app.config['ACCESS_TOKEN'])
-#     url = f"https://graph.facebook.com/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
-
-#     try:
-#         response = requests.post(
-#             url, data=data, headers=headers, timeout=10
-#         )  # 10 seconds timeout as an example
-#         response.raise_for_status()  # Raises an HTTPError if the HTTP request returned an unsuccessful status code
-#     except requests.Timeout:
-#         logging.error("Timeout occurred while sending message")
-#         return jsonify({"status": "error", "message": "Request timed out"}), 408
-#     except (
-#         requests.RequestException
-#     ) as e:  # This will catch any general request exception
-#         logging.error(f"Request failed due to: {e}")
-#         print("data:",data)
-#         return jsonify({"status": "error", "message": "Failed to send message"}), 500
-#     else:
-#         # Process the response as normal
-#         log_http_response(response)
-#         return response
 
 
 def process_text_for_whatsapp(text):
@@ -122,11 +96,11 @@ def process_whatsapp_message(body):
         # If it's a regular text message
         ts = int(message['timestamp'])
         if (datetime.now(timezone.utc) - datetime.fromtimestamp(ts, timezone.utc)).total_seconds() > 60: return
-        now = datetime.now().time()
+        now= datetime.now(ZoneInfo("Asia/Kolkata")).time()
         start_time = time(7, 0, 0)   # 7:00 AM
         end_time = time(20, 0, 0)    # 8:00 PM
-        print(now,"hhh")
-        if now >= start_time and now <= end_time:
+        
+        if now < start_time or now > end_time:
                 
                 response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
                 data = get_text_message_input(wa_id, response)
@@ -136,9 +110,7 @@ def process_whatsapp_message(body):
             
             message_body = message["text"]["body"]
 
-            
-                 #  send_interactive_button_message(wa_id)
-            
+
 
             if  user_sessions[wa_id]['level']=="M2":
                 user_sessions[wa_id]['level']="M3"
@@ -176,7 +148,7 @@ def process_whatsapp_message(body):
                   get_language(wa_id)
                   return
                 else:
-                 #  send_interactive_button_message(wa_id)
+             
                   user_sessions[wa_id]['language']=user['user']['language']
                  
                   send_options(wa_id,user_sessions[wa_id]['language'])
@@ -184,7 +156,7 @@ def process_whatsapp_message(body):
                 return None
             
             elif 'searchresult'==response:
-                print("kkk",items)
+               
                 send_whatsapp_product_list(list(items),wa_id)
                 return
       
@@ -192,13 +164,13 @@ def process_whatsapp_message(body):
             
             if message["interactive"]['type']=='list_reply':
                 button_id = message["interactive"]["list_reply"]["id"]
-                print(222)
+           
             else:
                 button_id = message["interactive"]["button_reply"]["id"]
             
             
             if button_id in ['food','backfood']:
-               print(333)
+            
                send_food_category(wa_id,user_sessions[wa_id]['language'])
                return
             elif button_id=='medicine':
@@ -208,6 +180,7 @@ def process_whatsapp_message(body):
                 data = get_text_message_input(wa_id, response)
                 send_message(data)
                 return
+           
             elif button_id =='en':
               new_user = {"id": wa_id, "phone": wa_id, "name": name, "lastlogin": current_time, "language": "en"}
               response_status = insert_user(new_user)
@@ -215,6 +188,7 @@ def process_whatsapp_message(body):
               user_sessions[wa_id]['language']='en' 
               send_options(wa_id,user_sessions[wa_id]['language'])
               return   
+           
             elif button_id =='ml':
               new_user = {"id": wa_id, "phone": wa_id, "name": name, "lastlogin": current_time, "language": "ml"}
               response_status = insert_user(new_user)
@@ -256,35 +230,21 @@ def process_whatsapp_message(body):
             elif button_id=='opt10':
                 send_whatsapp_product_list("bakeries",wa_id)
                 return
+            
             elif button_id=='rest':
-                # response ="Coming soon.."
-                # data = get_text_message_input(wa_id, response)
-                # send_message(data)
+             
                 send_whatsapp_product_list("food",wa_id)
                 return
+           
             elif button_id=='snacks':
-                # response ="Coming soon.."
-                # data = get_text_message_input(wa_id, response)
-                # send_message(data)
+              
                 send_whatsapp_product_list("bakeries",wa_id)
                 return
-            elif button_id=='VFC':
-                send_vfc(wa_id,user_sessions[wa_id]['language'])
-            elif button_id=='GBC':
-                 send_gbc(wa_id,user_sessions[wa_id]['language'])
-            # elif button_id=='MFC':
-            #     send_mfc(wa_id,user_sessions[wa_id]['language'])
-                
-            elif button_id=='BFC':
-                send_bsc(wa_id, user_sessions[wa_id]['language'])
-                return
+           
             
                
             elif button_id=="oc":
                 user_sessions[wa_id]['level']="F2"
-                # response ="Please add your notes  if any, else type any key to move on" if user_sessions[wa_id]['language']=='en' else "ദയവായി നിങ്ങളുടെ കുറിപ്പുകൾ ചേർക്കുക, ഇല്ലെങ്കിൽ തുടരാൻ ഏതെങ്കിലും കീ ടൈപ്പ് ചെയ്യുക."
-                # data = get_text_message_input(wa_id, response)
-                # send_message(data)
                 get_notes(wa_id,user_sessions[wa_id]['language'])
                 
                 
@@ -372,9 +332,6 @@ def process_whatsapp_message(body):
             user_sessions[wa_id]['level']="M2"
             imageid=message["image"]["id"]
             user_sessions[wa_id]['medicineimageid']=imageid
-            # response ="Please add your notes to pharmacist 💊 if any, else type anything to move on" if user_sessions[wa_id]['language']=='en' else "നിങ്ങൾ ഫാർമസിസ്റ്റിന് ഇങ്ങനെയുള്ള സന്ദേശങ്ങൾ നൽകാം \n eg:\"മരുന്ന് 5 ദിവസത്തേക്ക് വേണം.\""
-            # data = get_text_message_input(wa_id, response)
-            # send_message(data)
             get_notes_pharmacist(wa_id,user_sessions[wa_id]['language'])
             return
        
