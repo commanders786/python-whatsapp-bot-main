@@ -7,7 +7,8 @@
       "price": "₹12.00",
       "pattern": "garlic, veluthulli,veg",
       "unit": null,
-      "retailer_id": "veg04"
+      "retailer_id": "veg04",
+      "availability": "in stock"
     },
     "veg15": {
       "id": "9372605596178989",
@@ -16,7 +17,8 @@
       "price": "₹30.00",
       "pattern": "kovakka, veg",
       "unit": null,
-      "retailer_id": "veg15"
+      "retailer_id": "veg15",
+      "availability": "in stock"
     },
     "veg11": {
       "id": "9416655338463541",
@@ -25,7 +27,8 @@
       "price": "₹12.00",
       "pattern": "പുതിന,pothna, mint",
       "unit": null,
-      "retailer_id": "veg11"
+      "retailer_id": "veg11",
+      "availability": "in stock"
     },
     "veg13": {
       "id": "9457423561052201",
@@ -34,7 +37,8 @@
       "price": "₹50.00",
       "pattern": "capcicum, mulak, vegitable",
       "unit": null,
-      "retailer_id": "veg13"
+      "retailer_id": "veg13",
+      "availability": "in stock"
     },
     "veg05": {
       "id": "9543733689047575",
@@ -43,7 +47,8 @@
       "price": "₹10.00",
       "pattern": "thakkali",
       "unit": null,
-      "retailer_id": "veg05"
+      "retailer_id": "veg05",
+      "availability": "in stock"
     },
     "veg01": {
       "id": "9594744720603057",
@@ -52,16 +57,18 @@
       "price": "₹20.00",
       "pattern": "carrot,",
       "unit": null,
-      "retailer_id": "veg01"
+      "retailer_id": "veg01",
+      "availability": "in stock"
     },
     "veg12": {
       "id": "9675713172524329",
-      "name": "ബീറ്റ്റൂട്ട് 1kg (beetroot)",
+      "name": "ബീറ്റ്റൂട്ട് 500 g (beetroot)",
       "description": "beetroot",
-      "price": "₹40.00",
+      "price": "₹35.00",
       "pattern": "beetaroot,vegitable",
       "unit": null,
-      "retailer_id": "veg12"
+      "retailer_id": "veg12",
+      "availability": "in stock"
     },
     "veg17": {
       "id": "9781691291879273",
@@ -70,7 +77,8 @@
       "price": "₹15.00",
       "pattern": "choranga, veg",
       "unit": null,
-      "retailer_id": "veg17"
+      "retailer_id": "veg17",
+      "availability": "in stock"
     },
     "veg24": {
       "id": "9848046825264660",
@@ -79,7 +87,8 @@
       "price": "₹35.00",
       "pattern": "chembu, veg",
       "unit": null,
-      "retailer_id": "veg24"
+      "retailer_id": "veg24",
+      "availability": "in stock"
     },
     "veg26": {
       "id": "9854092084671571",
@@ -88,7 +97,8 @@
       "price": "₹35.00",
       "pattern": "kiyar, kakkiri, cucumber",
       "unit": null,
-      "retailer_id": "veg26"
+      "retailer_id": "veg26",
+      "availability": "in stock"
     },
     "veg20": {
       "id": "9889240311192453",
@@ -97,7 +107,8 @@
       "price": "₹6.00",
       "pattern": "pacha mulak, mulaku, chilly,green",
       "unit": null,
-      "retailer_id": "veg20"
+      "retailer_id": "veg20",
+      "availability": "in stock"
     },
     "veg08": {
       "id": "9912679802085871",
@@ -106,7 +117,8 @@
       "price": "₹28.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "veg08"
+      "retailer_id": "veg08",
+      "availability": "in stock"
     },
     "veg18": {
       "id": "9918772161512162",
@@ -115,16 +127,18 @@
       "price": "₹20.00",
       "pattern": "venda, veg",
       "unit": null,
-      "retailer_id": "veg18"
+      "retailer_id": "veg18",
+      "availability": "in stock"
     },
     "veg23": {
       "id": "9959451564146381",
       "name": "കക്കിരി 500g (cucumber)",
       "description": "cucumber",
-      "price": "₹25.00",
+      "price": "₹20.00",
       "pattern": "kakkiri, cucumber,",
       "unit": null,
-      "retailer_id": "veg23"
+      "retailer_id": "veg23",
+      "availability": "in stock"
     },
     "veg16": {
       "id": "23998523573073859",
@@ -133,7 +147,8 @@
       "price": "₹20.00",
       "pattern": "vellari, vellarikka,vegitable",
       "unit": null,
-      "retailer_id": "veg16"
+      "retailer_id": "veg16",
+      "availability": "in stock"
     },
     "veg03": {
       "id": "24140188105583483",
@@ -142,7 +157,8 @@
       "price": "₹10.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "veg03"
+      "retailer_id": "veg03",
+      "availability": "in stock"
     },
     "veg19": {
       "id": "24140665278853086",
@@ -151,7 +167,8 @@
       "price": "₹45.00",
       "pattern": "cauliflower, flower, veg",
       "unit": null,
-      "retailer_id": "veg19"
+      "retailer_id": "veg19",
+      "availability": "in stock"
     },
     "veg22": {
       "id": "24161141980136598",
@@ -160,7 +177,8 @@
       "price": "₹20.00",
       "pattern": "mathan, veg",
       "unit": null,
-      "retailer_id": "veg22"
+      "retailer_id": "veg22",
+      "availability": "in stock"
     },
     "veg09": {
       "id": "24334515559483451",
@@ -169,7 +187,8 @@
       "price": "₹13.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "veg09"
+      "retailer_id": "veg09",
+      "availability": "in stock"
     },
     "veg25": {
       "id": "24644470158486794",
@@ -178,7 +197,8 @@
       "price": "₹20.00",
       "pattern": "vazhuthana, veg",
       "unit": null,
-      "retailer_id": "veg25"
+      "retailer_id": "veg25",
+      "availability": "in stock"
     },
     "veg06": {
       "id": "29112643818384302",
@@ -187,7 +207,8 @@
       "price": "₹14.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "veg06"
+      "retailer_id": "veg06",
+      "availability": "in stock"
     },
     "veg02": {
       "id": "29132399203071007",
@@ -196,7 +217,8 @@
       "price": "₹20.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "veg02"
+      "retailer_id": "veg02",
+      "availability": "in stock"
     },
     "veg10": {
       "id": "29330952209886560",
@@ -205,7 +227,8 @@
       "price": "₹11.00",
       "pattern": "ഉള്ളി,സവാള,ulli,savaala",
       "unit": null,
-      "retailer_id": "veg10"
+      "retailer_id": "veg10",
+      "availability": "in stock"
     },
     "veg21": {
       "id": "29466562389657054",
@@ -214,7 +237,8 @@
       "price": "₹40.00",
       "pattern": "cheena,veg",
       "unit": null,
-      "retailer_id": "veg21"
+      "retailer_id": "veg21",
+      "availability": "in stock"
     },
     "veg14": {
       "id": "29512156601732512",
@@ -223,7 +247,8 @@
       "price": "₹40.00",
       "pattern": "ulli,cheriyulli, chuvannulli, vegitable",
       "unit": null,
-      "retailer_id": "veg14"
+      "retailer_id": "veg14",
+      "availability": "in stock"
     },
     "veg27": {
       "id": "33285653517700071",
@@ -232,7 +257,8 @@
       "price": "₹20.00",
       "pattern": "padavalam, veg",
       "unit": null,
-      "retailer_id": "veg27"
+      "retailer_id": "veg27",
+      "availability": "in stock"
     }
   },
   "oth": {
@@ -243,7 +269,8 @@
       "price": "₹23.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "gr01"
+      "retailer_id": "gr01",
+      "availability": "in stock"
     },
     "gr04": {
       "id": "9579259865524655",
@@ -252,7 +279,8 @@
       "price": "₹299.00",
       "pattern": "boost",
       "unit": null,
-      "retailer_id": "gr04"
+      "retailer_id": "gr04",
+      "availability": "in stock"
     },
     "gr02": {
       "id": "9675077305941190",
@@ -261,7 +289,8 @@
       "price": "₹22.00",
       "pattern": "ചായപ്പൊടി, chaaya podi, tea powder",
       "unit": null,
-      "retailer_id": "gr02"
+      "retailer_id": "gr02",
+      "availability": "in stock"
     },
     "gr07": {
       "id": "9681010465351267",
@@ -270,7 +299,8 @@
       "price": "₹5.00",
       "pattern": "horlicks",
       "unit": null,
-      "retailer_id": "gr07"
+      "retailer_id": "gr07",
+      "availability": "in stock"
     },
     "gr08": {
       "id": "23924557233818387",
@@ -279,7 +309,8 @@
       "price": "₹280.00",
       "pattern": "coffee,kaappi",
       "unit": null,
-      "retailer_id": "gr08"
+      "retailer_id": "gr08",
+      "availability": "in stock"
     },
     "gr06": {
       "id": "23946347924972815",
@@ -288,7 +319,8 @@
       "price": "₹299.00",
       "pattern": "horlicks",
       "unit": null,
-      "retailer_id": "gr06"
+      "retailer_id": "gr06",
+      "availability": "in stock"
     },
     "gr03": {
       "id": "24041286622130594",
@@ -297,7 +329,8 @@
       "price": "₹95.00",
       "pattern": "പാൽ പൊടി, paal podi, milk powder",
       "unit": null,
-      "retailer_id": "gr03"
+      "retailer_id": "gr03",
+      "availability": "in stock"
     },
     "gr09": {
       "id": "24088500547455397",
@@ -306,7 +339,8 @@
       "price": "₹20.00",
       "pattern": "pappadam",
       "unit": null,
-      "retailer_id": "gr09"
+      "retailer_id": "gr09",
+      "availability": "in stock"
     },
     "gr05": {
       "id": "29245319335111896",
@@ -315,7 +349,8 @@
       "price": "₹5.00",
       "pattern": "boost",
       "unit": null,
-      "retailer_id": "gr05"
+      "retailer_id": "gr05",
+      "availability": "in stock"
     },
     "gr18": {
       "id": "9606990892711438",
@@ -324,7 +359,8 @@
       "price": "₹80.00",
       "pattern": "payar, cherupayar,",
       "unit": null,
-      "retailer_id": "gr18"
+      "retailer_id": "gr18",
+      "availability": "in stock"
     },
     "gr19": {
       "id": "9638698016252891",
@@ -333,7 +369,8 @@
       "price": "₹80.00",
       "pattern": "thuavara paripp, paripp, daal",
       "unit": null,
-      "retailer_id": "gr19"
+      "retailer_id": "gr19",
+      "availability": "in stock"
     },
     "gr17": {
       "id": "9722323361188617",
@@ -342,7 +379,8 @@
       "price": "₹32.00",
       "pattern": "sharkkara",
       "unit": null,
-      "retailer_id": "gr17"
+      "retailer_id": "gr17",
+      "availability": "in stock"
     },
     "gr10": {
       "id": "9734215706639514",
@@ -351,7 +389,8 @@
       "price": "₹30.00",
       "pattern": "biscuts, backery",
       "unit": null,
-      "retailer_id": "gr10"
+      "retailer_id": "gr10",
+      "availability": "in stock"
     },
     "gr16": {
       "id": "9739232069465530",
@@ -360,16 +399,18 @@
       "price": "₹30.00",
       "pattern": "nadan mutta",
       "unit": null,
-      "retailer_id": "gr16"
+      "retailer_id": "gr16",
+      "availability": "out of stock"
     },
     "gr15": {
       "id": "10071002672936807",
       "name": "മുട്ട 5 units (Eggs)",
       "description": "Eggs 5 units",
-      "price": "₹30.00",
+      "price": "₹35.00",
       "pattern": "mutta",
       "unit": null,
-      "retailer_id": "gr15"
+      "retailer_id": "gr15",
+      "availability": "in stock"
     },
     "gr11": {
       "id": "23958118587106006",
@@ -378,7 +419,8 @@
       "price": "₹25.00",
       "pattern": "maida",
       "unit": null,
-      "retailer_id": "gr11"
+      "retailer_id": "gr11",
+      "availability": "in stock"
     },
     "gr12": {
       "id": "24248489971408050",
@@ -387,7 +429,8 @@
       "price": "₹70.00",
       "pattern": "close up, tooth paste,paste",
       "unit": null,
-      "retailer_id": "gr12"
+      "retailer_id": "gr12",
+      "availability": "in stock"
     },
     "gr14": {
       "id": "29349475341366131",
@@ -396,7 +439,8 @@
       "price": "₹12.00",
       "pattern": "upp, salt",
       "unit": null,
-      "retailer_id": "gr14"
+      "retailer_id": "gr14",
+      "availability": "in stock"
     },
     "gr13": {
       "id": "30297127316552869",
@@ -405,16 +449,18 @@
       "price": "₹40.00",
       "pattern": "soap, lux",
       "unit": null,
-      "retailer_id": "gr13"
+      "retailer_id": "gr13",
+      "availability": "in stock"
     },
     "gr24": {
       "id": "8332099753581720",
       "name": "AJMI puttupodi 1kg",
       "description": "ajmi steam made puttupodi",
-      "price": "₹70.00",
+      "price": "₹75.00",
       "pattern": "puttupodi,ajmi,puutt",
       "unit": null,
-      "retailer_id": "gr24"
+      "retailer_id": "gr24",
+      "availability": "in stock"
     },
     "gr20": {
       "id": "9611088565655864",
@@ -423,7 +469,8 @@
       "price": "₹70.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "gr20"
+      "retailer_id": "gr20",
+      "availability": "in stock"
     },
     "gr29": {
       "id": "9707724209283250",
@@ -432,7 +479,8 @@
       "price": "₹160.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
-      "retailer_id": "gr29"
+      "retailer_id": "gr29",
+      "availability": "in stock"
     },
     "gr23": {
       "id": "9753938961310323",
@@ -441,7 +489,8 @@
       "price": "₹70.00",
       "pattern": "aashirvaad,aatta,atta,chakkiyatta",
       "unit": null,
-      "retailer_id": "gr23"
+      "retailer_id": "gr23",
+      "availability": "in stock"
     },
     "gr26": {
       "id": "9832591353524058",
@@ -450,7 +499,8 @@
       "price": "₹30.00",
       "pattern": "mulak, chilli, red",
       "unit": null,
-      "retailer_id": "gr26"
+      "retailer_id": "gr26",
+      "availability": "in stock"
     },
     "gr21": {
       "id": "9832658336772032",
@@ -459,7 +509,8 @@
       "price": "₹50.00",
       "pattern": "atta, aatta, chakkiyatta,",
       "unit": null,
-      "retailer_id": "gr21"
+      "retailer_id": "gr21",
+      "availability": "in stock"
     },
     "gr25": {
       "id": "9898590033522356",
@@ -468,7 +519,8 @@
       "price": "₹35.00",
       "pattern": "thairu, curd",
       "unit": null,
-      "retailer_id": "gr25"
+      "retailer_id": "gr25",
+      "availability": "in stock"
     },
     "gr22": {
       "id": "10006962402675055",
@@ -477,7 +529,8 @@
       "price": "₹25.00",
       "pattern": "rava, uppuma rava",
       "unit": null,
-      "retailer_id": "gr22"
+      "retailer_id": "gr22",
+      "availability": "in stock"
     },
     "gr27": {
       "id": "10054748774616069",
@@ -486,7 +539,8 @@
       "price": "₹30.00",
       "pattern": "malli",
       "unit": null,
-      "retailer_id": "gr27"
+      "retailer_id": "gr27",
+      "availability": "in stock"
     },
     "gr28": {
       "id": "29462530646728840",
@@ -495,7 +549,8 @@
       "price": "₹315.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
-      "retailer_id": "gr28"
+      "retailer_id": "gr28",
+      "availability": "in stock"
     },
     "gr33": {
       "id": "9501984516595207",
@@ -504,7 +559,8 @@
       "price": "₹110.00",
       "pattern": "soa[,soap powder, podi,washing powder,detergent ​",
       "unit": null,
-      "retailer_id": "gr33"
+      "retailer_id": "gr33",
+      "availability": "in stock"
     },
     "gr31": {
       "id": "9844625712259557",
@@ -513,7 +569,8 @@
       "price": "₹45.00",
       "pattern": "bread, rotty",
       "unit": null,
-      "retailer_id": "gr31"
+      "retailer_id": "gr31",
+      "availability": "in stock"
     },
     "gr32": {
       "id": "9969869289757190",
@@ -522,7 +579,8 @@
       "price": "₹110.00",
       "pattern": "soa[,soap powder, podi,washing powder,detergent",
       "unit": null,
-      "retailer_id": "gr32"
+      "retailer_id": "gr32",
+      "availability": "in stock"
     },
     "gr36": {
       "id": "9993746823981079",
@@ -531,7 +589,8 @@
       "price": "₹10.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "gr36"
+      "retailer_id": "gr36",
+      "availability": "in stock"
     },
     "gr34": {
       "id": "23996421606610538",
@@ -540,7 +599,8 @@
       "price": "₹75.00",
       "pattern": "sunflower, oil",
       "unit": null,
-      "retailer_id": "gr34"
+      "retailer_id": "gr34",
+      "availability": "in stock"
     },
     "gr30": {
       "id": "24194066560213030",
@@ -549,7 +609,8 @@
       "price": "₹99.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "gr30"
+      "retailer_id": "gr30",
+      "availability": "in stock"
     },
     "gr35": {
       "id": "29595397183409361",
@@ -558,7 +619,8 @@
       "price": "₹20.00",
       "pattern": "good day, biscuts, backery,sweets",
       "unit": null,
-      "retailer_id": "gr35"
+      "retailer_id": "gr35",
+      "availability": "in stock"
     },
     "gr47": {
       "id": "9942043892527657",
@@ -567,7 +629,8 @@
       "price": "₹15.00",
       "pattern": "yippee",
       "unit": null,
-      "retailer_id": "gr47"
+      "retailer_id": "gr47",
+      "availability": "in stock"
     },
     "gr46": {
       "id": "9995020673946809",
@@ -576,7 +639,8 @@
       "price": "₹45.00",
       "pattern": "noodles,maggie,yipee",
       "unit": null,
-      "retailer_id": "gr46"
+      "retailer_id": "gr46",
+      "availability": "in stock"
     },
     "gr45": {
       "id": "23974760028806777",
@@ -585,7 +649,8 @@
       "price": "₹15.00",
       "pattern": "noodles,maggie,yipee",
       "unit": null,
-      "retailer_id": "gr45"
+      "retailer_id": "gr45",
+      "availability": "in stock"
     },
     "gr51": {
       "id": "9892838707467118",
@@ -594,7 +659,8 @@
       "price": "₹30.00",
       "pattern": "paal,milk",
       "unit": null,
-      "retailer_id": "gr51"
+      "retailer_id": "gr51",
+      "availability": "in stock"
     },
     "gr50": {
       "id": "29887124124219345",
@@ -603,7 +669,8 @@
       "price": "₹28.00",
       "pattern": "paal,milk,പാൽ",
       "unit": null,
-      "retailer_id": "gr50"
+      "retailer_id": "gr50",
+      "availability": "in stock"
     }
   },
   "fruits": {
@@ -611,10 +678,11 @@
       "id": "8859924704110242",
       "name": "മൈസൂര്‍ പഴം 500g ( MYSORE PAZHAM)",
       "description": "mysore pazham",
-      "price": "₹20.00",
+      "price": "₹21.00",
       "pattern": "pazham,mysore pazham",
       "unit": null,
-      "retailer_id": "fr04"
+      "retailer_id": "fr04",
+      "availability": "in stock"
     },
     "fr08": {
       "id": "9530881703698827",
@@ -623,7 +691,8 @@
       "price": "₹45.00",
       "pattern": "pappaya",
       "unit": null,
-      "retailer_id": "fr08"
+      "retailer_id": "fr08",
+      "availability": "in stock"
     },
     "fr01": {
       "id": "9584452581671948",
@@ -632,7 +701,8 @@
       "price": "₹65.00",
       "pattern": "orange",
       "unit": null,
-      "retailer_id": "fr01"
+      "retailer_id": "fr01",
+      "availability": "in stock"
     },
     "fr06": {
       "id": "9628082667312792",
@@ -641,7 +711,8 @@
       "price": "₹40.00",
       "pattern": "munthiri",
       "unit": null,
-      "retailer_id": "fr06"
+      "retailer_id": "fr06",
+      "availability": "in stock"
     },
     "fr03": {
       "id": "9760673497354410",
@@ -650,7 +721,8 @@
       "price": "₹20.00",
       "pattern": "robast,pazham",
       "unit": null,
-      "retailer_id": "fr03"
+      "retailer_id": "fr03",
+      "availability": "in stock"
     },
     "fr05": {
       "id": "9826504234062744",
@@ -659,7 +731,8 @@
       "price": "₹70.00",
       "pattern": "munthiri",
       "unit": null,
-      "retailer_id": "fr05"
+      "retailer_id": "fr05",
+      "availability": "in stock"
     },
     "fr07": {
       "id": "9952640064793024",
@@ -668,7 +741,8 @@
       "price": "₹70.00",
       "pattern": "mango,maanga",
       "unit": null,
-      "retailer_id": "fr07"
+      "retailer_id": "fr07",
+      "availability": "in stock"
     },
     "fr09": {
       "id": "23905616239021979",
@@ -677,7 +751,8 @@
       "price": "₹35.00",
       "pattern": "pazham ,poovan",
       "unit": null,
-      "retailer_id": "fr09"
+      "retailer_id": "fr09",
+      "availability": "in stock"
     },
     "fr02": {
       "id": "29331886456457697",
@@ -686,7 +761,8 @@
       "price": "₹125.00",
       "pattern": "apple",
       "unit": null,
-      "retailer_id": "fr02"
+      "retailer_id": "fr02",
+      "availability": "in stock"
     },
     "fr10": {
       "id": "9495886053842889",
@@ -695,7 +771,8 @@
       "price": "₹40.00",
       "pattern": "sapota",
       "unit": null,
-      "retailer_id": "fr10"
+      "retailer_id": "fr10",
+      "availability": "in stock"
     },
     "fr17": {
       "id": "9598972443532794",
@@ -704,7 +781,8 @@
       "price": "₹25.00",
       "pattern": "vathakka,watermelon",
       "unit": null,
-      "retailer_id": "fr17"
+      "retailer_id": "fr17",
+      "availability": "in stock"
     },
     "fr15": {
       "id": "9731542523594544",
@@ -713,7 +791,8 @@
       "price": "₹35.00",
       "pattern": "njali poovan,poovan,pazham,banana",
       "unit": null,
-      "retailer_id": "fr15"
+      "retailer_id": "fr15",
+      "availability": "in stock"
     },
     "fr14": {
       "id": "9827915653966998",
@@ -722,7 +801,8 @@
       "price": "₹90.00",
       "pattern": "uruman pazham,anar,mathalam",
       "unit": null,
-      "retailer_id": "fr14"
+      "retailer_id": "fr14",
+      "availability": "in stock"
     },
     "fr13": {
       "id": "9841857382527165",
@@ -731,7 +811,8 @@
       "price": "₹50.00",
       "pattern": "pineapple,കൈതച്ചക്ക, kaithachakka",
       "unit": null,
-      "retailer_id": "fr13"
+      "retailer_id": "fr13",
+      "availability": "in stock"
     },
     "fr16": {
       "id": "9989682194425083",
@@ -740,7 +821,8 @@
       "price": "₹70.00",
       "pattern": "perakka, pera",
       "unit": null,
-      "retailer_id": "fr16"
+      "retailer_id": "fr16",
+      "availability": "in stock"
     },
     "fr18": {
       "id": "24020908464194575",
@@ -749,7 +831,8 @@
       "price": "₹30.00",
       "pattern": "vathakka, watermelon",
       "unit": null,
-      "retailer_id": "fr18"
+      "retailer_id": "fr18",
+      "availability": "in stock"
     },
     "fr12": {
       "id": "24349621434627950",
@@ -758,7 +841,8 @@
       "price": "₹35.00",
       "pattern": "mosambi,naaranga",
       "unit": null,
-      "retailer_id": "fr12"
+      "retailer_id": "fr12",
+      "availability": "in stock"
     },
     "fr19": {
       "id": "29413555341593593",
@@ -767,7 +851,8 @@
       "price": "₹20.00",
       "pattern": "kakkiri, cucumbar",
       "unit": null,
-      "retailer_id": "fr19"
+      "retailer_id": "fr19",
+      "availability": "in stock"
     },
     "fr11": {
       "id": "30537408062524729",
@@ -776,7 +861,8 @@
       "price": "₹35.00",
       "pattern": "നേന്ത്രപഴം,NENTRA PAZHAM",
       "unit": null,
-      "retailer_id": "fr11"
+      "retailer_id": "fr11",
+      "availability": "in stock"
     },
     "fr23": {
       "id": "9618881154855507",
@@ -785,7 +871,8 @@
       "price": "₹250.00",
       "pattern": "dragon fruit",
       "unit": null,
-      "retailer_id": "fr23"
+      "retailer_id": "fr23",
+      "availability": "in stock"
     },
     "fr20": {
       "id": "9619356114820071",
@@ -794,7 +881,8 @@
       "price": "₹150.00",
       "pattern": "avacado,batter,vennapazham",
       "unit": null,
-      "retailer_id": "fr20"
+      "retailer_id": "fr20",
+      "availability": "in stock"
     },
     "fr22": {
       "id": "9734349266613375",
@@ -803,7 +891,8 @@
       "price": "₹200.00",
       "pattern": "rambuttan",
       "unit": null,
-      "retailer_id": "fr22"
+      "retailer_id": "fr22",
+      "availability": "in stock"
     },
     "fr21": {
       "id": "23942118818729188",
@@ -812,7 +901,8 @@
       "price": "₹100.00",
       "pattern": "passion fruit,vellinaranga,musolikkayi, sarbathumkaayi",
       "unit": null,
-      "retailer_id": "fr21"
+      "retailer_id": "fr21",
+      "availability": "in stock"
     }
   },
   "meat": {
@@ -820,28 +910,21 @@
       "id": "9589655301147089",
       "name": "Chicken Parts 500g (കോഴി പാർട്സ് )",
       "description": "parts seperated",
-      "price": "₹50.00",
+      "price": "₹75.00",
       "pattern": "കോഴി പാർട്സ് ,chicken parts",
       "unit": null,
-      "retailer_id": "ch04"
-    },
-    "ch01": {
-      "id": "9595803053829979",
-      "name": "CHICKEN 1kg (alfahm cut)",
-      "description": "size specified",
-      "price": "₹300.00",
-      "pattern": "കോഴി",
-      "unit": null,
-      "retailer_id": "ch01"
+      "retailer_id": "ch04",
+      "availability": "in stock"
     },
     "ch03": {
       "id": "9662187900529950",
       "name": "Leghorn Chicken 1kg (ലെഗോൺ കോഴി)",
       "description": "ലെഗോൺ കോഴി",
-      "price": "₹140.00",
+      "price": "₹150.00",
       "pattern": "Leghorn Chicken, ലെഗോൺ കോഴി,kozhi",
       "unit": null,
-      "retailer_id": "ch03"
+      "retailer_id": "ch03",
+      "availability": "in stock"
     },
     "ch06": {
       "id": "23900145176255969",
@@ -850,7 +933,8 @@
       "price": "₹350.00",
       "pattern": "നാടൻ കോഴി,chicken, kozhi",
       "unit": null,
-      "retailer_id": "ch06"
+      "retailer_id": "ch06",
+      "availability": "in stock"
     },
     "ch05": {
       "id": "23987414900862822",
@@ -859,25 +943,18 @@
       "price": "₹220.00",
       "pattern": "Spring Chicken,സ്പ്രിംഗ് ചിക്കൻ, kozhi",
       "unit": null,
-      "retailer_id": "ch05"
-    },
-    "ch02": {
-      "id": "29878068125111698",
-      "name": "Chicken for Manthi 1kg",
-      "description": "meet for manthi",
-      "price": "₹180.00",
-      "pattern": "കോഴി",
-      "unit": null,
-      "retailer_id": "ch02"
+      "retailer_id": "ch05",
+      "availability": "in stock"
     },
     "ch09": {
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹95.00",
+      "price": "₹100.00",
       "pattern": "chicken, kozhi",
       "unit": null,
-      "retailer_id": "ch09"
+      "retailer_id": "ch09",
+      "availability": "in stock"
     },
     "ch15": {
       "id": "9714611515291014",
@@ -886,7 +963,8 @@
       "price": "₹190.00",
       "pattern": "poth,irachi,ellillatha,",
       "unit": null,
-      "retailer_id": "ch15"
+      "retailer_id": "ch15",
+      "availability": "in stock"
     },
     "ch10": {
       "id": "29558127333833794",
@@ -895,7 +973,8 @@
       "price": "₹150.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "ch10"
+      "retailer_id": "ch10",
+      "availability": "in stock"
     },
     "kd01": {
       "id": "9874522829258228",
@@ -904,7 +983,8 @@
       "price": "₹60.00",
       "pattern": "കാട, KAADA, meet",
       "unit": null,
-      "retailer_id": "kd01"
+      "retailer_id": "kd01",
+      "availability": "in stock"
     },
     "sk8q2yaim7": {
       "id": "9405626589529680",
@@ -913,7 +993,8 @@
       "price": "₹170.00",
       "pattern": "beef, poth, erchi",
       "unit": null,
-      "retailer_id": "sk8q2yaim7"
+      "retailer_id": "sk8q2yaim7",
+      "availability": "in stock"
     },
     "wph1a21c06": {
       "id": "9721024201293028",
@@ -922,7 +1003,8 @@
       "price": "₹450.00",
       "pattern": "aadu, mutton, atterchi",
       "unit": null,
-      "retailer_id": "wph1a21c06"
+      "retailer_id": "wph1a21c06",
+      "availability": "in stock"
     }
   },
   "fish": {
@@ -930,19 +1012,21 @@
       "id": "9365403160238215",
       "name": "മാന്തൾ 500g (MAANTHAL)",
       "description": "മാന്തൽ ചെറുത്",
-      "price": "₹130.00",
+      "price": "₹140.00",
       "pattern": "മാന്തൾ, MAANTHAL, fish",
       "unit": null,
-      "retailer_id": "fs03"
+      "retailer_id": "fs03",
+      "availability": "out of stock"
     },
     "fs02": {
       "id": "9666490573436470",
       "name": "അയല 500g (AYALA)",
       "description": "fresh fish ayala from market",
-      "price": "₹100.00",
+      "price": "₹150.00",
       "pattern": "അയല, AYALA, fish",
       "unit": null,
-      "retailer_id": "fs02"
+      "retailer_id": "fs02",
+      "availability": "in stock"
     },
     "fs09": {
       "id": "9884918041546377",
@@ -951,7 +1035,8 @@
       "price": "₹80.00",
       "pattern": "natholi,nethal, fish",
       "unit": null,
-      "retailer_id": "fs09"
+      "retailer_id": "fs09",
+      "availability": "in stock"
     },
     "fs08": {
       "id": "10070151326380156",
@@ -960,7 +1045,8 @@
       "price": "₹140.00",
       "pattern": "ney meen",
       "unit": null,
-      "retailer_id": "fs08"
+      "retailer_id": "fs08",
+      "availability": "out of stock"
     },
     "fs06": {
       "id": "23996998079905556",
@@ -969,61 +1055,78 @@
       "price": "₹180.00",
       "pattern": "സ്രാവ്, SRAAVU, fish",
       "unit": null,
-      "retailer_id": "fs06"
+      "retailer_id": "fs06",
+      "availability": "out of stock"
     },
     "fs04": {
       "id": "24046708444913037",
       "name": "മഞ്ഞ കോര   500g (KOORA)",
       "description": "fresh koora",
-      "price": "₹110.00",
+      "price": "₹100.00",
       "pattern": "കോര,മീൻ,KOORA",
       "unit": null,
-      "retailer_id": "fs04"
+      "retailer_id": "fs04",
+      "availability": "in stock"
     },
     "fs01": {
       "id": "24548397954753040",
       "name": "മത്തി/ചാള 500g  (MATHI/CHAALA)",
-      "description": "മത്തി/ചാള മത്സ്യം",
-      "price": "₹130.00",
+      "description": "മത്തി വലുത്",
+      "price": "₹100.00",
       "pattern": "മത്തി,ചാള,മത്സ്യം,fish",
       "unit": null,
-      "retailer_id": "fs01"
+      "retailer_id": "fs01",
+      "availability": "in stock"
     },
     "fs05": {
       "id": "29414862131462631",
       "name": "ചെമ്മീൻ 500g (chemmeen)",
       "description": "ചെമ്മീൻ വലുത്",
-      "price": "₹220.00",
+      "price": "₹225.00",
       "pattern": "ചെമ്മീൻ, chemmeen, fish",
       "unit": null,
-      "retailer_id": "fs05"
+      "retailer_id": "fs05",
+      "availability": "in stock"
     },
     "fs17": {
       "id": "9990099271055890",
       "name": "ചെമ്പല്ലി 500g",
       "description": "ചെമ്പല്ലി",
-      "price": "₹180.00",
+      "price": "₹200.00",
       "pattern": "chemballi,fish,meen",
       "unit": null,
-      "retailer_id": "fs17"
+      "retailer_id": "fs17",
+      "availability": "in stock"
     },
     "fs16": {
       "id": "10032987833417814",
-      "name": "പാപ്പാൻസ്  500g",
+      "name": "പപ്പൻസ്  500g",
       "description": "പാപ്പാൻസ്",
       "price": "₹200.00",
       "pattern": "pappans,fish,meen",
       "unit": null,
-      "retailer_id": "fs16"
+      "retailer_id": "fs16",
+      "availability": "in stock"
     },
     "fs10": {
       "id": "29358589100451623",
       "name": "ആന ചവിട്ടി 500g",
       "description": "aanachavitti",
-      "price": "₹110.00",
+      "price": "₹80.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "fs10"
+      "retailer_id": "fs10",
+      "availability": "in stock"
+    },
+    "fs27": {
+      "id": "9667495853348803",
+      "name": "ചൂള  500g",
+      "description": "ചൂള",
+      "price": "₹80.00",
+      "pattern": "choola,methal,nethal",
+      "unit": null,
+      "retailer_id": "fs27",
+      "availability": "in stock"
     },
     "fs21": {
       "id": "9709025602514484",
@@ -1032,7 +1135,8 @@
       "price": "₹225.00",
       "pattern": "ayakkoora,fish",
       "unit": null,
-      "retailer_id": "fs21"
+      "retailer_id": "fs21",
+      "availability": "out of stock"
     },
     "fs22": {
       "id": "9920951511332508",
@@ -1041,16 +1145,58 @@
       "price": "₹225.00",
       "pattern": "agholi,fish",
       "unit": null,
-      "retailer_id": "fs22"
+      "retailer_id": "fs22",
+      "availability": "out of stock"
+    },
+    "fs26": {
+      "id": "24027412443531479",
+      "name": "വട്ടപ്പാര  500g",
+      "description": "വട്ടപ്പാര",
+      "price": "₹150.00",
+      "pattern": "mean,vattappara,fish",
+      "unit": null,
+      "retailer_id": "fs26",
+      "availability": "in stock"
+    },
+    "fs25": {
+      "id": "24517065654548777",
+      "name": "കേതർ  500g (King Fish)",
+      "description": "കേതൽ",
+      "price": "₹180.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "fs25",
+      "availability": "out of stock"
     },
     "fs20": {
       "id": "29636193869361033",
       "name": "സൂദ 500g",
       "description": "Soodha",
-      "price": "₹180.00",
+      "price": "₹100.00",
       "pattern": null,
       "unit": null,
-      "retailer_id": "fs20"
+      "retailer_id": "fs20",
+      "availability": "out of stock"
+    },
+    "fs31": {
+      "id": "9520741201382267",
+      "name": "ചൂള",
+      "description": "ചൂള  fish",
+      "price": "₹70.00",
+      "pattern": "choola,meen,fish",
+      "unit": null,
+      "retailer_id": "fs31",
+      "availability": "in stock"
+    },
+    "fs30": {
+      "id": "29865289903086861",
+      "name": "വട്ടപ്പാര",
+      "description": "വട്ടപ്പാര fish",
+      "price": "₹150.00",
+      "pattern": "vattappara",
+      "unit": null,
+      "retailer_id": "fs30",
+      "availability": "in stock"
     }
   },
   "bakeries": {
@@ -1061,7 +1207,8 @@
       "price": "₹15.00",
       "pattern": "Sarees Kitchen",
       "unit": null,
-      "retailer_id": "SN01"
+      "retailer_id": "SN01",
+      "availability": "in stock"
     },
     "SN03": {
       "id": "9567582903335144",
@@ -1070,7 +1217,8 @@
       "price": "₹350.00",
       "pattern": "chattipathiri,home made cake,snacks",
       "unit": null,
-      "retailer_id": "SN03"
+      "retailer_id": "SN03",
+      "availability": "in stock"
     },
     "SN02": {
       "id": "29438708865743345",
@@ -1079,7 +1227,8 @@
       "price": "₹12.00",
       "pattern": "Sarees Kitchen",
       "unit": null,
-      "retailer_id": "SN02"
+      "retailer_id": "SN02",
+      "availability": "in stock"
     }
   },
   "food": {
@@ -1090,7 +1239,8 @@
       "price": "₹229.00",
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
-      "retailer_id": "rf03"
+      "retailer_id": "rf03",
+      "availability": "in stock"
     },
     "rf02": {
       "id": "8986935258073307",
@@ -1099,7 +1249,8 @@
       "price": "₹575.00",
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
-      "retailer_id": "rf02"
+      "retailer_id": "rf02",
+      "availability": "in stock"
     },
     "rf07": {
       "id": "9667423426699075",
@@ -1108,7 +1259,8 @@
       "price": "₹659.00",
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
-      "retailer_id": "rf07"
+      "retailer_id": "rf07",
+      "availability": "in stock"
     },
     "rf05": {
       "id": "23887020307569271",
@@ -1117,7 +1269,8 @@
       "price": "₹298.00",
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
-      "retailer_id": "rf05"
+      "retailer_id": "rf05",
+      "availability": "in stock"
     },
     "rf04": {
       "id": "24001490502770273",
@@ -1126,7 +1279,8 @@
       "price": "₹149.00",
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
-      "retailer_id": "rf04"
+      "retailer_id": "rf04",
+      "availability": "in stock"
     },
     "rf01": {
       "id": "24005991012320509",
@@ -1135,7 +1289,8 @@
       "price": "₹299.00",
       "pattern": "AFC, FREID CHICKEN",
       "unit": null,
-      "retailer_id": "rf01"
+      "retailer_id": "rf01",
+      "availability": "in stock"
     },
     "rf06": {
       "id": "29540340458946035",
@@ -1144,7 +1299,8 @@
       "price": "₹499.00",
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
-      "retailer_id": "rf06"
+      "retailer_id": "rf06",
+      "availability": "in stock"
     }
   }
 }

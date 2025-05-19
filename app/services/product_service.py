@@ -13,7 +13,7 @@ def fetch_and_categorize_products():
         response = requests.get(
             FACEBOOK_API_URL,
             params={
-                "fields": "id,name,retailer_id,description,price,brand,pattern",
+                "fields": "id,name,retailer_id,description,price,brand,pattern,availability",
                 "access_token": ACCESS_TOKEN,
                 "limit": 150
             }
@@ -44,7 +44,8 @@ def fetch_and_categorize_products():
                 "price": item.get("price"),
                 "pattern": item.get("pattern") or item.get("brand"),
                 "unit":item.get("size"),
-                "retailer_id": item.get("retailer_id")
+                "retailer_id": item.get("retailer_id"),
+                "availability": item.get("availability")
             }
 
             if rid.startswith("veg"):

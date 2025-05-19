@@ -20,7 +20,7 @@ Rules:
 
 2. **Item Queries**:
    - If query mentions an item (e.g., "tomato", "tomato 1kg"):
-     - Search `{filtered_items}` for matches.
+     - Search in above given filtered items for matches.
      - If any item has a similarity score > 0.4:
        - Return a tuple of matching `retailer_ids`, e.g., `('id1', 'id2')`.
      - If no match > 0.4:
@@ -43,6 +43,7 @@ fish, fishes, Fish	:("fish",)
 supermarket, masala, palacharakk, store items	:("oth",)
 groceries or general words for household items	"("vegetables", "oth", "fruits")
 
+in this case just pass the category id even if you have many match items in filtered items from product cz in some case you are not passing fish category id even if the user query is fish
 Note:
 
 User queries can be in Malayalam or Manglish.

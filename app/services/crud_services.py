@@ -1,3 +1,4 @@
+import json
 import logging
 import psycopg2
 
@@ -118,7 +119,7 @@ def get_order_items_service(order_id=None, product_id=None):
         with get_db_connection() as conn:
             with conn.cursor() as cur:
                 query = """
-                    SELECT order_id, product_id, qty, total
+                    SELECT order_id, product_id, qty, total,name
                     FROM order_items
                 """
                 params = []
@@ -223,3 +224,147 @@ def get_product_by_retailerid_service(retailer_id):
 
     except Exception as e:
         return {"status": "error", "message": str(e)}, 500
+
+
+
+def get_products_service(product_ids=None):
+    try:
+        with open("result.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        if product_ids:
+            # Flat lookup: search across all categories
+            filtered_products = {}
+            for category_items in data.values():
+                for product in category_items.values():
+                    if product["retailer_id"] in product_ids:
+                        filtered_products[product["retailer_id"]] = product["name"]
+            return filtered_products, 200
+
+        # If no product_ids, return full category-wise data
+        result = {}
+        for category, items in data.items():
+            result[category] = []
+            for product in items.values():
+                product_data = {
+                    "id": product.get("id"),
+                    "name": product.get("name"),
+                    "description": product.get("description"),
+                    "price": product.get("price"),
+                    "availability": product.get("availability")
+                }
+                result[category].append(product_data)
+
+        return result, 200
+
+    except Exception as e:
+        print("Error while loading products:", e)
+        return {"error": "Internal Server Error"}, 500
+    
+def get_reciept_service(order_id):
+    try:
+        with get_db_connection() as conn:
+            with conn.cursor() as cur:
+                query = """
+                    SELECT receipt
+                    FROM orders
+                    WHERE id= %s
+                """
+                cur.execute(query, (order_id,))
+                row = cur.fetchone()
+
+                if row:
+                    return {"order_id": order_id, "reciept": row[0]}, 200
+                else:
+                    return {"error": "Order not found"}, 404
+
+    except Exception as e:
+        print("Error while loading reciept:", e)
+        return {"error": "Internal Server Error"}, 500
+
+
+def update_price_service(item_id, price):
+    """
+    Update the price for a WhatsApp Business API item using the Facebook Graph API.
+    
+    Args:
+        item_id (str): The ID of the item (e.g., '10071002672936807').
+        price (str): The price to set (e.g., '4200').
+        access_token (str): The Bearer token for authentication.
+    
+    Returns:
+        dict: The API response as a JSON object, or None if the request fails.
+    """
+    url = f"https://graph.facebook.com/v22.0/{item_id}"
+    headers = {
+        "Authorization": f"Bearer {ACCESS_TOKEN}",
+        "Content-Type": "application/json",
+    }
+    payload = {
+        "price": price
+    }
+
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()  # Raises an HTTPError for 4xx/5xx responses
+        
+        print(f"Response status: {response.status_code}")
+        print(f"Response data: {response.json()}")
+        return {"message":"success"}, 200
+        # return response.json()
+    
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error occurred: {http_err}")
+        print(f"Response text: {response.text}")
+        return response.text,500
+    except requests.exceptions.RequestException as req_err:
+        print(f"Request error occurred: {req_err}")
+        return req_err,500
+    except ValueError as json_err:
+        print(f"JSON decode error: {json_err}")
+        print(f"Response text: {response.text}")
+        return response.text,500
+    
+
+def update_availability_service(item_id, availability):
+    """
+    Update the availability for a WhatsApp Business API item using the Facebook Graph API.
+    
+    Args:
+        item_id (str): The ID of the item (e.g., '9395913967197870').
+        availability (str): The availability to set (e.g., 'out of stock').
+        access_token (str): The Bearer token for authentication.
+    
+    Returns:
+        dict: The API response as a JSON object, or None if the request fails.
+    """
+    url = f"https://graph.facebook.com/v22.0/{item_id}"
+    headers = {
+        "Authorization": f"Bearer {ACCESS_TOKEN}",
+        "Content-Type": "application/json",
+    }
+    payload = {
+        "availability": availability
+    }
+
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()  # Raises an HTTPError for 4xx/5xx responses
+        
+        print(f"Response status: {response.status_code}")
+        print(f"Response data: {response.json()}")
+        
+        return {"message":"success"}, 200
+        # return response.json()
+    
+    except requests.exceptions.HTTPError as http_err:
+        print(f"HTTP error occurred: {http_err}")
+        print(f"Response text: {response.text}")
+        return response.text,500
+    except requests.exceptions.RequestException as req_err:
+        print(f"Request error occurred: {req_err}")
+        return req_err,500
+    except ValueError as json_err:
+        print(f"JSON decode error: {json_err}")
+        print(f"Response text: {response.text}")
+        return response.text,500

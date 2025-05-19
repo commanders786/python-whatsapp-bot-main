@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 import psycopg2
 
-from app.services.crud_services import get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, insert_order, insert_user, update_order_items_service, user_exists
+from app.services.crud_services import get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_reciept_service, insert_order, insert_user, update_availability_service, update_order_items_service, update_price_service, user_exists
 from app.services.product_service import fetch_and_categorize_products, send_whatsapp_product_list
 
 crud_blueprint = Blueprint("crud", __name__)
@@ -219,6 +219,23 @@ def get_order_summary():
     response, status = get_order_summary_service()
     return jsonify(response), status
 
+@crud_blueprint.route("/products", methods=["GET"])
+def get_products():
+    product_ids_param = request.args.get("product_ids")
+    product_ids = product_ids_param.split(",") if product_ids_param else None
+
+    response, status = get_products_service(product_ids)
+    return jsonify(response), status
+
+@crud_blueprint.route("/reciept", methods=["GET"])
+def get_reciept():
+    order_id = request.args.get("order_id")
+    
+
+    response, status = get_reciept_service(order_id)
+    return jsonify(response), status
+
+
 
 @crud_blueprint.route("/product-by-retailerid", methods=["GET"])
 def get_product_by_retailerid():
@@ -228,3 +245,34 @@ def get_product_by_retailerid():
 
     result, status_code = get_product_by_retailerid_service(retailer_id)
     return jsonify(result), status_code
+
+
+
+@crud_blueprint.route("/updatePrice", methods=["POST"])
+def update_price():
+    data = request.get_json()
+    price = data.get("price")
+    product_id=data.get("id")
+
+    
+
+    success, message = update_price_service(product_id, price)
+    if success:
+        return jsonify({"message": message}), 200
+    else:
+        return jsonify({"error": message}), 500
+    
+
+@crud_blueprint.route("/updateStock", methods=["POST"])
+def update_stock():
+    data = request.get_json()
+    availability = data.get("availability")
+    product_id=data.get("id")
+
+    
+
+    success, message = update_availability_service(product_id, availability)
+    if success:
+        return jsonify({"message": message}), 200
+    else:
+        return jsonify({"error": message}), 500
