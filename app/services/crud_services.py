@@ -119,7 +119,7 @@ def get_order_items_service(order_id=None, product_id=None):
         with get_db_connection() as conn:
             with conn.cursor() as cur:
                 query = """
-                    SELECT order_id, product_id, qty, total,name
+                    SELECT order_id, product_id, qty, total
                     FROM order_items
                 """
                 params = []

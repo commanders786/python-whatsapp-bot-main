@@ -309,6 +309,11 @@ def process_whatsapp_message(body):
                 
                 data= get_text_message_input(wa_id,order_notification_template)
                 send_message(data)
+                try:
+                 data= get_text_message_input("918593060090",order_notification_template)
+                 send_message(data)
+                except:
+                    print("not sent to basi")
                 user_sessions[wa_id]['level']=="F1"
                 user_sessions[wa_id]['items']=[]
 
