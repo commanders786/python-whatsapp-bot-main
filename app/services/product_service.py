@@ -87,7 +87,7 @@ def load_products_by_category(category: str):
 
 def send_whatsapp_product_list(category: str, to_number: str):
     
-    if isinstance(category, list) and not category[0] in ["vegetables","fruits","oth","meat","fish"]:
+    if isinstance(category, list) and not category[0] in ["vegetables","fruits","oth","meat","fish","bakeries"]:
         product_items = [{"product_retailer_id": rid} for rid in category]
         senditems(to_number,product_items)
     else:

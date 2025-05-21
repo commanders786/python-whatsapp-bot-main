@@ -9,7 +9,7 @@ from app.services import gemini_services as AI
 # from app.services.openai_service import generate_response
 import re
 
-from app.services.crud_services import insert_order, insert_user,update_order_items_service, user_exists
+from app.services.crud_services import insert_order, insert_user,update_order_items_service, update_user_lastlogin, user_exists
 from app.services.product_service import send_whatsapp_product_list
 from app.utils.messages import get_text_message_input, po_template
 from app.utils.validations import is_within_radius
@@ -71,14 +71,14 @@ def process_whatsapp_message(body):
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
-        
+    
     if wa_id not in user_sessions:
                 user_sessions[wa_id] = {}
                 user_sessions[wa_id]['number']=wa_id
                 user_sessions[wa_id]['po']=[]
                 user_sessions[wa_id]['level']="F1"
                 user_sessions[wa_id]['items']=[]
-                user_sessions[wa_id]['notes']=""
+                user_sessions[wa_id]['notes']="no notes"
                 user_sessions[wa_id]['language']=""
                 user=user_exists(wa_id)[0]
                 if  not user["exists"]:
@@ -86,7 +86,7 @@ def process_whatsapp_message(body):
                   
                   return
                 user_sessions[wa_id]['language']=user['user']['language']
-   
+                update_user_lastlogin(wa_id)  
     
     response = ""  # Default response
     print("Recieved message :",message)
@@ -100,12 +100,12 @@ def process_whatsapp_message(body):
         start_time = time(7, 0, 0)   # 7:00 AM
         end_time = time(20, 0, 0)    # 8:00 PM
         
-        if now < start_time or now > end_time:
+        # if now < start_time or now > end_time:
                 
-                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
-                data = get_text_message_input(wa_id, response)
-                send_message(data)
-                return
+        #         response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
+        #         data = get_text_message_input(wa_id, response)
+        #         send_message(data)
+        #         return
         if message["type"] == "text":
             
             message_body = message["text"]["body"]
@@ -200,12 +200,12 @@ def process_whatsapp_message(body):
             elif button_id == "skip":
                 if  user_sessions[wa_id]['level']=="M2":
                    user_sessions[wa_id]['level']="M3"
-                   user_sessions[wa_id]['notes']=None
+                   user_sessions[wa_id]['notes']="no notes"
                    request_location_message(wa_id)
 
                 if user_sessions[wa_id]['level']=="F2":
                     user_sessions[wa_id]['level']="F3"
-                    user_sessions[wa_id]['notes']=None
+                    user_sessions[wa_id]['notes']="no notes"
                     request_location_message(wa_id)
                 return
 
@@ -287,16 +287,17 @@ def process_whatsapp_message(body):
                 
                 data = get_text_message_input(wa_id, response)
                 send_message(data)
-                if user_sessions[wa_id]['level']=="M3":
+                if user_sessions[wa_id]['level'] in ["M3","F1"]:
                     
                     user_sessions[wa_id]['level']="F1"
                     
 
                     response_status=insert_order({"receipt": user_sessions[wa_id]['notes']+user_sessions[wa_id]['medicineimageid'],"bill_amount":0,"userid":wa_id})
                
-                    order_notification_template=response_status[0].get('order_id')+"\n"+user_sessions[wa_id]['notes']+"\n"+user_sessions[wa_id]['location']['google']+"\n"+wa_id
+                    order_notification_template=response_status[0].get('order_id')+"\n"+user_sessions[wa_id]['notes']+"\n"+user_sessions[wa_id]['location']['google']+"\n"+"+"+wa_id
                     
                     send_whatsapp_image("919645846341", user_sessions[wa_id]['medicineimageid'],order_notification_template)
+                    send_whatsapp_image("918593060090", user_sessions[wa_id]['medicineimageid'],order_notification_template)
                     return
                 order_notification_template = po_template(user_sessions[wa_id])
                 response_status=insert_order({"receipt":order_notification_template,"bill_amount":0,"userid":wa_id})
@@ -333,7 +334,8 @@ def process_whatsapp_message(body):
             send_po(wa_id,bill_text,user_sessions[wa_id]['language'])
             # request_location_message(wa_id)
             return
-        elif user_sessions[wa_id]['level']=='M1' and  message["type"] == "image":
+      
+        elif user_sessions[wa_id]['level'] in ['M1','F1'] and  message["type"] == "image":
             user_sessions[wa_id]['level']="M2"
             imageid=message["image"]["id"]
             user_sessions[wa_id]['medicineimageid']=imageid

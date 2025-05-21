@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 import json
 import logging
 import psycopg2
@@ -368,3 +369,30 @@ def update_availability_service(item_id, availability):
         print(f"JSON decode error: {json_err}")
         print(f"Response text: {response.text}")
         return response.text,500
+    
+
+
+
+
+
+def update_user_lastlogin(user_id):
+    try:
+        # Get current GMT/UTC time
+        now_gmt = datetime.now(timezone.utc)
+
+        with get_db_connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    UPDATE users
+                    SET lastlogin = %s
+                    WHERE id = %s;
+                """, (now_gmt, user_id))
+                if cur.rowcount == 0:
+                    
+                    
+                    return {"status": "error", "message": "User not found."}, 404
+        print("last login updated...")
+        return {"status": "success", "message": "Last login updated."}, 200
+      
+    except Exception as e:
+        return {"status": "error", "message": str(e)}, 400

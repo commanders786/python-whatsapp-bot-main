@@ -400,7 +400,7 @@
       "pattern": "nadan mutta",
       "unit": null,
       "retailer_id": "gr16",
-      "availability": "out of stock"
+      "availability": "in stock"
     },
     "gr15": {
       "id": "10071002672936807",
@@ -552,6 +552,16 @@
       "retailer_id": "gr28",
       "availability": "in stock"
     },
+    "gr37": {
+      "id": "8463239320467865",
+      "name": "Pampers (SMALL)",
+      "description": "Picture only for reference",
+      "price": "₹22.00",
+      "pattern": "pampers,baby",
+      "unit": null,
+      "retailer_id": "gr37",
+      "availability": "in stock"
+    },
     "gr33": {
       "id": "9501984516595207",
       "name": "Ujala 1kg",
@@ -560,6 +570,16 @@
       "pattern": "soa[,soap powder, podi,washing powder,detergent ​",
       "unit": null,
       "retailer_id": "gr33",
+      "availability": "in stock"
+    },
+    "gr38": {
+      "id": "9785575811524234",
+      "name": "Pampers (MEDIUM)",
+      "description": "Picture only for reference",
+      "price": "₹28.00",
+      "pattern": "pampers,baby",
+      "unit": null,
+      "retailer_id": "gr38",
       "availability": "in stock"
     },
     "gr31": {
@@ -612,6 +632,16 @@
       "retailer_id": "gr30",
       "availability": "in stock"
     },
+    "gr39": {
+      "id": "24451146437809008",
+      "name": "Pampers (LARGE)",
+      "description": "Picture only for reference",
+      "price": "₹35.00",
+      "pattern": "pampers,baby",
+      "unit": null,
+      "retailer_id": "gr39",
+      "availability": "in stock"
+    },
     "gr35": {
       "id": "29595397183409361",
       "name": "GoodDay Biscuts 200g",
@@ -620,6 +650,66 @@
       "pattern": "good day, biscuts, backery,sweets",
       "unit": null,
       "retailer_id": "gr35",
+      "availability": "in stock"
+    },
+    "gr49": {
+      "id": "9578436832278290",
+      "name": "Chicken Maggi Noodils",
+      "description": "chicken noodils 71g",
+      "price": "₹20.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr49",
+      "availability": "in stock"
+    },
+    "gr41": {
+      "id": "9750897975026071",
+      "name": "Maggi Noodils 280g",
+      "description": "noodils",
+      "price": "₹60.00",
+      "pattern": "maggi,noodils",
+      "unit": null,
+      "retailer_id": "gr41",
+      "availability": "in stock"
+    },
+    "gr48": {
+      "id": "9814693498600188",
+      "name": "Chicken Maggi Noodils",
+      "description": "chicken noodils 142g",
+      "price": "₹40.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr48",
+      "availability": "in stock"
+    },
+    "gr43": {
+      "id": "9886218224767079",
+      "name": "Maggi Noodils 70g",
+      "description": "noodils",
+      "price": "₹12.00",
+      "pattern": "maggi,noodils",
+      "unit": null,
+      "retailer_id": "gr43",
+      "availability": "in stock"
+    },
+    "gr42": {
+      "id": "9898191613583973",
+      "name": "Maggi Noodils 140g",
+      "description": "noodils",
+      "price": "₹30.00",
+      "pattern": "maggi,noodils",
+      "unit": null,
+      "retailer_id": "gr42",
+      "availability": "in stock"
+    },
+    "gr40": {
+      "id": "9903230056464185",
+      "name": "Pampers (X LARGE)",
+      "description": "Picture only for reference",
+      "price": "₹38.00",
+      "pattern": "pampers,baby",
+      "unit": null,
+      "retailer_id": "gr40",
       "availability": "in stock"
     },
     "gr47": {
@@ -640,6 +730,16 @@
       "pattern": "noodles,maggie,yipee",
       "unit": null,
       "retailer_id": "gr46",
+      "availability": "in stock"
+    },
+    "gr44": {
+      "id": "23953984050892264",
+      "name": "Chicken Maggi Noodils",
+      "description": "chicken noodils 284g",
+      "price": "₹80.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr44",
       "availability": "in stock"
     },
     "gr45": {
@@ -1032,7 +1132,7 @@
       "id": "9884918041546377",
       "name": "നെത്തോല‍ി 500g",
       "description": "fish",
-      "price": "₹80.00",
+      "price": "₹120.00",
       "pattern": "natholi,nethal, fish",
       "unit": null,
       "retailer_id": "fs09",
@@ -1046,7 +1146,7 @@
       "pattern": "ney meen",
       "unit": null,
       "retailer_id": "fs08",
-      "availability": "out of stock"
+      "availability": "in stock"
     },
     "fs06": {
       "id": "23996998079905556",
@@ -1060,9 +1160,9 @@
     },
     "fs04": {
       "id": "24046708444913037",
-      "name": "മഞ്ഞ കോര   500g (KOORA)",
+      "name": "കോര  500g (KOORA)",
       "description": "fresh koora",
-      "price": "₹100.00",
+      "price": "₹120.00",
       "pattern": "കോര,മീൻ,KOORA",
       "unit": null,
       "retailer_id": "fs04",
@@ -1082,7 +1182,7 @@
       "id": "29414862131462631",
       "name": "ചെമ്മീൻ 500g (chemmeen)",
       "description": "ചെമ്മീൻ വലുത്",
-      "price": "₹225.00",
+      "price": "₹200.00",
       "pattern": "ചെമ്മീൻ, chemmeen, fish",
       "unit": null,
       "retailer_id": "fs05",
@@ -1116,7 +1216,7 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "fs10",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs27": {
       "id": "9667495853348803",
@@ -1126,7 +1226,7 @@
       "pattern": "choola,methal,nethal",
       "unit": null,
       "retailer_id": "fs27",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs21": {
       "id": "9709025602514484",
@@ -1186,7 +1286,7 @@
       "pattern": "choola,meen,fish",
       "unit": null,
       "retailer_id": "fs31",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs30": {
       "id": "29865289903086861",
@@ -1220,11 +1320,21 @@
       "retailer_id": "SN03",
       "availability": "in stock"
     },
+    "sn01": {
+      "id": "9859269464141510",
+      "name": "കുനാഫ ചോക്ലേറ്റ് (KUNAFA CHOCOLATE ) 200g",
+      "description": "pistachio kunafa chocolate 200g\nrestaurant: nice bakery",
+      "price": "₹525.00",
+      "pattern": "kunafa,chocolate",
+      "unit": null,
+      "retailer_id": "sn01",
+      "availability": "in stock"
+    },
     "SN02": {
       "id": "29438708865743345",
       "name": "ഉന്നക്കാഴ (fried banana snack)",
       "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും  Home Made (banana,egg)",
-      "price": "₹12.00",
+      "price": "₹15.00",
       "pattern": "Sarees Kitchen",
       "unit": null,
       "retailer_id": "SN02",

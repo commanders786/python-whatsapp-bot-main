@@ -1,6 +1,7 @@
 import math
-
-def is_within_radius(lat, lon, ref_lat=11.360499024193635, ref_lon=75.90958223007394, radius_km=2):
+# 11.358386753972075, 75.91277067332773
+# lat, lon, ref_lat=11.360499024193635, ref_lon=75.90958223007394, radius_km=2):
+def is_within_radius(lat, lon, ref_lat=11.358386753972075, ref_lon=75.91277067332773, radius_km=4):
     # Radius of Earth in kilometers
     R = 6371.0
 

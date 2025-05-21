@@ -178,8 +178,8 @@ def po_template(user_session,order_id=None):
 📍 *Location Links:*
 🔗 [Google Maps]({user_session['location']['google']})
 
-Phone number:{user_session.get('number')[2:]}
-Special Notes:{user_session['notes']}
+Phone number: {user_session.get('number')[2:]}
+Special Notes: {user_session['notes']}
 
 """
  return ont2 if order_id else ont2

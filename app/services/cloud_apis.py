@@ -141,7 +141,7 @@ def get_notes_pharmacist(recipient_phone_number,language):
         "interactive": {
             "type": "button",
             "body": {
-                "text":  "Please add your notes to pharmacist 💊 if any, else type anything to move on" if language=='en' else "നിങ്ങൾ ഫാർമസിസ്റ്റിന് ഇങ്ങനെയുള്ള സന്ദേശങ്ങൾ നൽകാം \n eg:\"മരുന്ന് 5 ദിവസത്തേക്ക് വേണം.\""
+                "text":  "Please add your special notes  if any, else type anything to move on" if language=='en' else "നിങ്ങൾ ഇങ്ങനെയുള്ള സന്ദേശങ്ങൾ നൽകാം \n eg: മരുന്ന് 5 ദിവസത്തേക്ക് വേണം. \n eg: കോഴി -കറി കട്ട് \n ഇല്ലെങ്കിൽ Skip ചെയ്യുക  "
             },
             "action": {
                 "buttons": [
@@ -318,20 +318,20 @@ def send_po(recipient_phone_number,response,language):
                         "type": "reply",
                         "reply": {
                             "id": "oc",
-                            "title":  "proceed"
+                            "title":  "proceed" if language=='en' else 'തുടരുക '
                         }
                     },{
                         "type": "reply",
                         "reply": {
                             "id": "add",
-                            "title": "Add Items"
+                            "title": "Add Items" if language=='en' else 'കൂടുതൽ സാധനങ്ങൾ'
                         }
                     },
                     {
                         "type": "reply",
                         "reply": {
                             "id": "clear",
-                            "title": "clear"
+                            "title": "clear" if language=='en' else 'ഒഴിവാക്കുക'
                         }
                     }
                 ]
