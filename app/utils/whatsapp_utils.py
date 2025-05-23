@@ -278,8 +278,10 @@ def process_whatsapp_message(body):
                 if (is_within_radius(location["latitude"],location["longitude"])):
                  coordinates=extract_location_link(body)
                  user_sessions[wa_id]['location']=coordinates
-                 response ="Thank you 🤝\n Your order will be in your doors within 20 minutes.\n Please contact +91 99615 75781 for further queries." if user_sessions[wa_id]['language']=="en" else "നന്ദി 🤝 \nനിങ്ങളുടെ ഓർഡർ 20 മിനിറ്റിനകം നിങ്ങളുടെ വാതിലിൽ എത്തിച്ചേരും.കൂടുതൽ വിവരങ്ങൾക്ക് ദയവായി +91 99615 75781 എന്ന നമ്പറിൽ ബന്ധപ്പെടുക."
+                 response ="Thank you 🤝\n Your order will be in your doors within 30 minutes.\n Please contact +91 99615 75781 for further queries." if user_sessions[wa_id]['language']=="en" else "നന്ദി 🤝 \nനിങ്ങളുടെ ഓർഡർ 30 മിനിറ്റിനകം നിങ്ങളുടെ വാതിലിൽ എത്തിച്ചേരും.കൂടുതൽ വിവരങ്ങൾക്ക് ദയവായി +91 99615 75781 എന്ന നമ്പറിൽ ബന്ധപ്പെടുക."
                 else:
+                 user_sessions[wa_id]['level']='F1'
+                 user_sessions[wa_id]['notes']='nothing'
                  response ="Sorry for now we are not providing our service in your location" if user_sessions[wa_id]['language']=='en' else "ക്ഷമിക്കണം, ഇപ്പോഴെത്തന്നെ നിങ്ങളുടെ സ്ഥലത്ത് ഞങ്ങൾ സേവനം നൽകുന്നില്ല" 
                  data= get_text_message_input(wa_id,response)
                  send_message(data)

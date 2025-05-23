@@ -4,7 +4,7 @@
       "id": "9209406235832373",
       "name": "വെളുത്തുള്ളി (Garlic) 100g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹12.00",
+      "price": "₹13.00",
       "pattern": "garlic, veluthulli,veg",
       "unit": null,
       "retailer_id": "veg04",
@@ -114,7 +114,7 @@
       "id": "9912679802085871",
       "name": "ചെറുനാരങ്ങ 200g (Lemon)",
       "description": "lemon",
-      "price": "₹28.00",
+      "price": "₹24.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "veg08",
@@ -212,9 +212,9 @@
     },
     "veg02": {
       "id": "29132399203071007",
-      "name": "ഇഞ്ചി (Ginger) 100g",
+      "name": "ഇഞ്ചി (Ginger) 250g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹20.00",
+      "price": "₹15.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "veg02",
@@ -248,6 +248,16 @@
       "pattern": "ulli,cheriyulli, chuvannulli, vegitable",
       "unit": null,
       "retailer_id": "veg14",
+      "availability": "in stock"
+    },
+    "veg28": {
+      "id": "29570859552561522",
+      "name": "മല്ലി ഇല 200g (Mallichapp)",
+      "description": "malli leaf",
+      "price": "₹10.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "veg28",
       "availability": "in stock"
     },
     "veg27": {
@@ -872,7 +882,7 @@
       "pattern": "sapota",
       "unit": null,
       "retailer_id": "fr10",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fr17": {
       "id": "9598972443532794",
@@ -898,7 +908,7 @@
       "id": "9827915653966998",
       "name": "റുമാൻ പഴം 500g (Pomegranate)",
       "description": "ഉറുമാൻപഴം",
-      "price": "₹90.00",
+      "price": "₹100.00",
       "pattern": "uruman pazham,anar,mathalam",
       "unit": null,
       "retailer_id": "fr14",
@@ -938,7 +948,7 @@
       "id": "24349621434627950",
       "name": "മുസംബി 500g (Indian Mosambi )",
       "description": "mosambi",
-      "price": "₹35.00",
+      "price": "₹40.00",
       "pattern": "mosambi,naaranga",
       "unit": null,
       "retailer_id": "fr12",
@@ -1002,7 +1012,7 @@
       "pattern": "passion fruit,vellinaranga,musolikkayi, sarbathumkaayi",
       "unit": null,
       "retailer_id": "fr21",
-      "availability": "in stock"
+      "availability": "out of stock"
     }
   },
   "meat": {
@@ -1112,7 +1122,7 @@
       "id": "9365403160238215",
       "name": "മാന്തൾ 500g (MAANTHAL)",
       "description": "മാന്തൽ ചെറുത്",
-      "price": "₹140.00",
+      "price": "₹170.00",
       "pattern": "മാന്തൾ, MAANTHAL, fish",
       "unit": null,
       "retailer_id": "fs03",
@@ -1122,7 +1132,7 @@
       "id": "9666490573436470",
       "name": "അയല 500g (AYALA)",
       "description": "fresh fish ayala from market",
-      "price": "₹150.00",
+      "price": "₹240.00",
       "pattern": "അയല, AYALA, fish",
       "unit": null,
       "retailer_id": "fs02",
@@ -1146,7 +1156,7 @@
       "pattern": "ney meen",
       "unit": null,
       "retailer_id": "fs08",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs06": {
       "id": "23996998079905556",
@@ -1162,7 +1172,7 @@
       "id": "24046708444913037",
       "name": "കോര  500g (KOORA)",
       "description": "fresh koora",
-      "price": "₹120.00",
+      "price": "₹100.00",
       "pattern": "കോര,മീൻ,KOORA",
       "unit": null,
       "retailer_id": "fs04",
@@ -1172,7 +1182,7 @@
       "id": "24548397954753040",
       "name": "മത്തി/ചാള 500g  (MATHI/CHAALA)",
       "description": "മത്തി വലുത്",
-      "price": "₹100.00",
+      "price": "₹120.00",
       "pattern": "മത്തി,ചാള,മത്സ്യം,fish",
       "unit": null,
       "retailer_id": "fs01",
@@ -1186,6 +1196,26 @@
       "pattern": "ചെമ്മീൻ, chemmeen, fish",
       "unit": null,
       "retailer_id": "fs05",
+      "availability": "in stock"
+    },
+    "fs12": {
+      "id": "9310658559057580",
+      "name": "കടുക മീൻ 500g (Kaduga)",
+      "description": "Kaduga fish",
+      "price": "₹180.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "fs12",
+      "availability": "in stock"
+    },
+    "fs11": {
+      "id": "9558992500885969",
+      "name": "പൂമീൻ 500g (Poomeen)",
+      "description": "fresh poomeen",
+      "price": "₹250.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "fs11",
       "availability": "in stock"
     },
     "fs17": {
@@ -1222,7 +1252,7 @@
       "id": "9667495853348803",
       "name": "ചൂള  500g",
       "description": "ചൂള",
-      "price": "₹80.00",
+      "price": "₹75.00",
       "pattern": "choola,methal,nethal",
       "unit": null,
       "retailer_id": "fs27",
@@ -1256,17 +1286,17 @@
       "pattern": "mean,vattappara,fish",
       "unit": null,
       "retailer_id": "fs26",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs25": {
       "id": "24517065654548777",
       "name": "കേതർ  500g (King Fish)",
       "description": "കേതൽ",
-      "price": "₹180.00",
+      "price": "₹170.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "fs25",
-      "availability": "out of stock"
+      "availability": "in stock"
     },
     "fs20": {
       "id": "29636193869361033",
@@ -1292,11 +1322,11 @@
       "id": "29865289903086861",
       "name": "വട്ടപ്പാര",
       "description": "വട്ടപ്പാര fish",
-      "price": "₹150.00",
+      "price": "₹130.00",
       "pattern": "vattappara",
       "unit": null,
       "retailer_id": "fs30",
-      "availability": "in stock"
+      "availability": "out of stock"
     }
   },
   "bakeries": {
@@ -1372,6 +1402,26 @@
       "retailer_id": "rf07",
       "availability": "in stock"
     },
+    "rf08": {
+      "id": "9882045685219063",
+      "name": "Masala Shawai  (Quater)",
+      "description": "with 1 kuboos\nrestaurant : shawai spot",
+      "price": "₹140.00",
+      "pattern": "shawai, chicken,food,restaurent",
+      "unit": null,
+      "retailer_id": "rf08",
+      "availability": "in stock"
+    },
+    "rf09": {
+      "id": "9905653886168344",
+      "name": "Masala Shawai (Half)",
+      "description": "with 2 kuboos\nrestaurant : shawai spot",
+      "price": "₹260.00",
+      "pattern": "shawai, chicken,food,restaurent",
+      "unit": null,
+      "retailer_id": "rf09",
+      "availability": "in stock"
+    },
     "rf05": {
       "id": "23887020307569271",
       "name": "AFC Fab Chicken Fillet",
@@ -1410,6 +1460,106 @@
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
       "retailer_id": "rf06",
+      "availability": "in stock"
+    },
+    "rf13": {
+      "id": "9158469134254295",
+      "name": "Chicken Mdhooth Rise (Three Quater)",
+      "description": "Chicken Madhooth Rice\nrestaurent: shawai spot",
+      "price": "₹550.00",
+      "pattern": "food,shawai,madhooth",
+      "unit": null,
+      "retailer_id": "rf13",
+      "availability": "in stock"
+    },
+    "rf15": {
+      "id": "9483572835101807",
+      "name": "Chicken Mdhooth Rise (Quater)",
+      "description": "Chicken Madhooth Rice\nrestaurent: shawai spot",
+      "price": "₹190.00",
+      "pattern": "food,shawai,madhooth",
+      "unit": null,
+      "retailer_id": "rf15",
+      "availability": "in stock"
+    },
+    "rf12": {
+      "id": "9524993217624038",
+      "name": "Chicken Mdhooth Rise (Full)",
+      "description": "Chicken Madhooth Rice\nrestaurent: shawai spot",
+      "price": "₹720.00",
+      "pattern": "food,shawai,madhooth",
+      "unit": null,
+      "retailer_id": "rf12",
+      "availability": "in stock"
+    },
+    "rf14": {
+      "id": "10058272830902962",
+      "name": "Chicken Mdhooth Rise (Half)",
+      "description": "Chicken Madhooth Rice\nrestaurent: shawai spot",
+      "price": "₹370.00",
+      "pattern": "food,shawai,madhooth",
+      "unit": null,
+      "retailer_id": "rf14",
+      "availability": "in stock"
+    },
+    "rf10": {
+      "id": "23932850619685426",
+      "name": "Masala Shawai (Three Quater)",
+      "description": "with 3kuboos\nrestaurant : shawai spot",
+      "price": "₹380.00",
+      "pattern": "shawai, chicken,food,restaurent",
+      "unit": null,
+      "retailer_id": "rf10",
+      "availability": "in stock"
+    },
+    "rf19": {
+      "id": "23940440992281834",
+      "name": "Shawai with Arabian Rice (Quater)",
+      "description": "masala shawayi with arabian rice\nrestaurant: Shawai spot",
+      "price": "₹190.00",
+      "pattern": "shawai,rice,food,manthi",
+      "unit": null,
+      "retailer_id": "rf19",
+      "availability": "in stock"
+    },
+    "rf17": {
+      "id": "24003716782579538",
+      "name": "Shawai with Arabian Rice (Three Quater)",
+      "description": "masala shawayi with arabian rice\nrestaurant: Shawai spot",
+      "price": "₹550.00",
+      "pattern": "shawai,rice,food,manthi",
+      "unit": null,
+      "retailer_id": "rf17",
+      "availability": "in stock"
+    },
+    "rf16": {
+      "id": "24140363712227879",
+      "name": "Shawai with Arabian Rice (Full)",
+      "description": "masala shawayi with arabian rice\nrestaurant: Shawai spot",
+      "price": "₹720.00",
+      "pattern": "shawai,rice,food,manthi",
+      "unit": null,
+      "retailer_id": "rf16",
+      "availability": "in stock"
+    },
+    "rf18": {
+      "id": "24423818480539491",
+      "name": "Shawai with Arabian Rice (Half)",
+      "description": "masala shawayi with arabian rice\nrestaurant: Shawai spot",
+      "price": "₹370.00",
+      "pattern": "shawai,rice,food,manthi",
+      "unit": null,
+      "retailer_id": "rf18",
+      "availability": "in stock"
+    },
+    "rf11": {
+      "id": "29965910253007245",
+      "name": "Masala Shawai  (Full)",
+      "description": "with 4 kuboos\nrestaurant : shawai spot",
+      "price": "₹500.00",
+      "pattern": "shawai, chicken,food,restaurent",
+      "unit": null,
+      "retailer_id": "rf11",
       "availability": "in stock"
     }
   }
