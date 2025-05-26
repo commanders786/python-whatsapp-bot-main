@@ -390,9 +390,10 @@ def update_user_lastlogin(user_id):
                 if cur.rowcount == 0:
                     
                     
-                    return {"status": "error", "message": "User not found."}, 404
-        print("last login updated...")
-        return {"status": "success", "message": "Last login updated."}, 200
+                    logging.warning(f"User not found for ID: {user_id}")
+                    return
+        logging.info("last login updated...")
+        
       
     except Exception as e:
-        return {"status": "error", "message": str(e)}, 400
+        logging.error(f"Failed to update last login for user {user_id}: {e}")

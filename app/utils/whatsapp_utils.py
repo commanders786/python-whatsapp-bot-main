@@ -71,7 +71,7 @@ def process_whatsapp_message(body):
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
-    
+    update_user_lastlogin(wa_id) 
     if wa_id not in user_sessions:
                 user_sessions[wa_id] = {}
                 user_sessions[wa_id]['number']=wa_id
@@ -86,7 +86,7 @@ def process_whatsapp_message(body):
                   
                   return
                 user_sessions[wa_id]['language']=user['user']['language']
-                update_user_lastlogin(wa_id)  
+                 
     
     response = ""  # Default response
     print("Recieved message :",message)

@@ -110,6 +110,16 @@
       "retailer_id": "veg20",
       "availability": "in stock"
     },
+    "veg29": {
+      "id": "9895931580498415",
+      "name": "പൂള 1 kg (Kappa)",
+      "description": "kappa aloo",
+      "price": "₹30.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "veg29",
+      "availability": "in stock"
+    },
     "veg08": {
       "id": "9912679802085871",
       "name": "ചെറുനാരങ്ങ 200g (Lemon)",
@@ -410,7 +420,7 @@
       "pattern": "nadan mutta",
       "unit": null,
       "retailer_id": "gr16",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "gr15": {
       "id": "10071002672936807",
@@ -802,7 +812,7 @@
       "pattern": "pappaya",
       "unit": null,
       "retailer_id": "fr08",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fr01": {
       "id": "9584452581671948",
@@ -838,7 +848,7 @@
       "id": "9826504234062744",
       "name": "പച്ച മുന്തിരി 500g (PACHA MUNTHIRI)",
       "description": "pacha munthiri,,,",
-      "price": "₹70.00",
+      "price": "₹80.00",
       "pattern": "munthiri",
       "unit": null,
       "retailer_id": "fr05",
@@ -848,7 +858,7 @@
       "id": "9952640064793024",
       "name": "മാങ്ങ 1kg (PREYUR MANGO)",
       "description": "mango",
-      "price": "₹70.00",
+      "price": "₹80.00",
       "pattern": "mango,maanga",
       "unit": null,
       "retailer_id": "fr07",
@@ -902,7 +912,7 @@
       "pattern": "njali poovan,poovan,pazham,banana",
       "unit": null,
       "retailer_id": "fr15",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fr14": {
       "id": "9827915653966998",
@@ -932,7 +942,7 @@
       "pattern": "perakka, pera",
       "unit": null,
       "retailer_id": "fr16",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fr18": {
       "id": "24020908464194575",
@@ -942,7 +952,7 @@
       "pattern": "vathakka, watermelon",
       "unit": null,
       "retailer_id": "fr18",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fr12": {
       "id": "24349621434627950",
@@ -982,7 +992,7 @@
       "pattern": "dragon fruit",
       "unit": null,
       "retailer_id": "fr23",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fr20": {
       "id": "9619356114820071",
@@ -992,7 +1002,7 @@
       "pattern": "avacado,batter,vennapazham",
       "unit": null,
       "retailer_id": "fr20",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fr22": {
       "id": "9734349266613375",
@@ -1002,6 +1012,16 @@
       "pattern": "rambuttan",
       "unit": null,
       "retailer_id": "fr22",
+      "availability": "out of stock"
+    },
+    "fr24": {
+      "id": "9984712418308433",
+      "name": "മാങ്ങ 1kg (CHELAN MANGO)",
+      "description": "mango",
+      "price": "₹60.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "fr24",
       "availability": "in stock"
     },
     "fr21": {
@@ -1060,7 +1080,7 @@
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹100.00",
+      "price": "₹105.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
@@ -1084,7 +1104,7 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "ch10",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "kd01": {
       "id": "9874522829258228",
@@ -1122,17 +1142,17 @@
       "id": "9365403160238215",
       "name": "മാന്തൾ 500g (MAANTHAL)",
       "description": "മാന്തൽ ചെറുത്",
-      "price": "₹170.00",
+      "price": "₹150.00",
       "pattern": "മാന്തൾ, MAANTHAL, fish",
       "unit": null,
       "retailer_id": "fs03",
-      "availability": "out of stock"
+      "availability": "in stock"
     },
     "fs02": {
       "id": "9666490573436470",
       "name": "അയല 500g (AYALA)",
       "description": "fresh fish ayala from market",
-      "price": "₹240.00",
+      "price": "₹150.00",
       "pattern": "അയല, AYALA, fish",
       "unit": null,
       "retailer_id": "fs02",
@@ -1142,11 +1162,11 @@
       "id": "9884918041546377",
       "name": "നെത്തോല‍ി 500g",
       "description": "fish",
-      "price": "₹120.00",
+      "price": "₹130.00",
       "pattern": "natholi,nethal, fish",
       "unit": null,
       "retailer_id": "fs09",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs08": {
       "id": "10070151326380156",
@@ -1162,17 +1182,17 @@
       "id": "23996998079905556",
       "name": "സ്രാവ് 500g (SRAAVU)",
       "description": "sraavu full and pice avilable",
-      "price": "₹180.00",
+      "price": "₹250.00",
       "pattern": "സ്രാവ്, SRAAVU, fish",
       "unit": null,
       "retailer_id": "fs06",
-      "availability": "out of stock"
+      "availability": "in stock"
     },
     "fs04": {
       "id": "24046708444913037",
       "name": "കോര  500g (KOORA)",
       "description": "fresh koora",
-      "price": "₹100.00",
+      "price": "₹120.00",
       "pattern": "കോര,മീൻ,KOORA",
       "unit": null,
       "retailer_id": "fs04",
@@ -1182,7 +1202,7 @@
       "id": "24548397954753040",
       "name": "മത്തി/ചാള 500g  (MATHI/CHAALA)",
       "description": "മത്തി വലുത്",
-      "price": "₹120.00",
+      "price": "₹150.00",
       "pattern": "മത്തി,ചാള,മത്സ്യം,fish",
       "unit": null,
       "retailer_id": "fs01",
@@ -1202,17 +1222,17 @@
       "id": "9310658559057580",
       "name": "കടുക മീൻ 500g (Kaduga)",
       "description": "Kaduga fish",
-      "price": "₹180.00",
+      "price": "₹170.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "fs12",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs11": {
       "id": "9558992500885969",
       "name": "പൂമീൻ 500g (Poomeen)",
       "description": "fresh poomeen",
-      "price": "₹250.00",
+      "price": "₹150.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "fs11",
@@ -1226,13 +1246,13 @@
       "pattern": "chemballi,fish,meen",
       "unit": null,
       "retailer_id": "fs17",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs16": {
       "id": "10032987833417814",
       "name": "പപ്പൻസ്  500g",
       "description": "പാപ്പാൻസ്",
-      "price": "₹200.00",
+      "price": "₹150.00",
       "pattern": "pappans,fish,meen",
       "unit": null,
       "retailer_id": "fs16",
@@ -1278,21 +1298,11 @@
       "retailer_id": "fs22",
       "availability": "out of stock"
     },
-    "fs26": {
-      "id": "24027412443531479",
-      "name": "വട്ടപ്പാര  500g",
-      "description": "വട്ടപ്പാര",
-      "price": "₹150.00",
-      "pattern": "mean,vattappara,fish",
-      "unit": null,
-      "retailer_id": "fs26",
-      "availability": "out of stock"
-    },
     "fs25": {
       "id": "24517065654548777",
       "name": "കേതർ  500g (King Fish)",
       "description": "കേതൽ",
-      "price": "₹170.00",
+      "price": "₹150.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "fs25",
@@ -1306,7 +1316,7 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "fs20",
-      "availability": "out of stock"
+      "availability": "in stock"
     },
     "fs31": {
       "id": "9520741201382267",
@@ -1560,6 +1570,96 @@
       "pattern": "shawai, chicken,food,restaurent",
       "unit": null,
       "retailer_id": "rf11",
+      "availability": "in stock"
+    },
+    "rf27": {
+      "id": "7984474418343474",
+      "name": "Shawrma Plate",
+      "description": "shawarma plate\nrestaurant: felafel king",
+      "price": "₹100.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf27",
+      "availability": "in stock"
+    },
+    "rf21": {
+      "id": "9157977434303066",
+      "name": "Felfel Burger",
+      "description": "felafel burger\nrestaurant: felafel king",
+      "price": "₹30.00",
+      "pattern": "felafel, food, burger",
+      "unit": null,
+      "retailer_id": "rf21",
+      "availability": "in stock"
+    },
+    "rf26": {
+      "id": "9543184809142022",
+      "name": "Chicken Shawarma Burger",
+      "description": "chicken burger  shawarma filling\nrestaurant: felafil king",
+      "price": "₹70.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf26",
+      "availability": "in stock"
+    },
+    "rf23": {
+      "id": "9762639817158988",
+      "name": "Chicken Sandwich",
+      "description": "chicken sandwich\nrestaurant: felafil king",
+      "price": "₹60.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf23",
+      "availability": "in stock"
+    },
+    "rf24": {
+      "id": "9824134227642070",
+      "name": "Chicken Burger",
+      "description": "chicken burger\nrestaurant: felafil king",
+      "price": "₹60.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf24",
+      "availability": "in stock"
+    },
+    "rf25": {
+      "id": "9827360364037603",
+      "name": "Chicken Shawarma Sandwich",
+      "description": "chicken sandwich shawarma filling\nrestaurant: felafil king",
+      "price": "₹70.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf25",
+      "availability": "in stock"
+    },
+    "rf20": {
+      "id": "24154751550783286",
+      "name": "Felfel Roll",
+      "description": "felafel roll\nrestaurant: felafel king",
+      "price": "₹20.00",
+      "pattern": "felafel, food, roll",
+      "unit": null,
+      "retailer_id": "rf20",
+      "availability": "in stock"
+    },
+    "rf28": {
+      "id": "29911075291839338",
+      "name": "Shawrma Roll",
+      "description": "shawarma roll\nrestaurant: felafel king",
+      "price": "₹100.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf28",
+      "availability": "in stock"
+    },
+    "rf22": {
+      "id": "30168831642715483",
+      "name": "Felfel Sandwich",
+      "description": "felafel sandwich\nrestaurant: felafel king",
+      "price": "₹30.00",
+      "pattern": "felafel, food, sandwich",
+      "unit": null,
+      "retailer_id": "rf22",
       "availability": "in stock"
     }
   }

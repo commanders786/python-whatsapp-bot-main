@@ -97,43 +97,5 @@ def search_products(query,session, top_k=15):
 
 
 
-#Audio filter
+# Audio filter
 
-# import requests
-
-# def download_audio_and_save_as_wav(audio_id):
-#     # Step 1: First API call to get audio URL
-#     first_api_url = "https://graph.facebook.com/v22.0/{audio_id}"
-#     headers = {
-#         'Authorization': 'Bearer EAAQKF56ZAbJQBOyWTBZAEQdGBL18R3HcRF1gyo6rQ6XV1uMTrT7ANBWvrSly6TSiUaXESTgPlXBFAfBVJ9c62piJHuNUqtA0Jbsgp2LACMIrfNffq2ZAW6qrQlObtlpSZCZBTQGpYh6KtxiZBkDWXPlbBCIb5emVVB2zf9mPM7ZAgV8XdDwrlxgzJD68ZBWvV4W98VNDb5gXykkQJgGjYBnBGo13Md7HumDaZC5IS'
-#     }
-
-#     try:
-#         # Making the first API call
-#         response = requests.get(first_api_url, headers=headers)
-        
-#         if response.status_code == 200:
-#             # Extract the audio URL from the response
-#             audio_url = response.json()['url']
-#             print(f"Audio URL: {audio_url}")
-#         else:
-#             print(f"Failed to retrieve audio URL. Status Code: {response.status_code}")
-#             print(response.text)
-#             return
-
-#         # Step 2: Second API call to download the audio file
-#         audio_response = requests.get(audio_url, headers=headers)
-
-#         if audio_response.status_code == 200:
-#             # Save the audio file as .wav
-#             with open('downloaded_audio.wav', 'wb') as f:
-#                 f.write(audio_response.content)
-#             print("Audio file has been saved as 'downloaded_audio.wav'")
-#         else:
-#             print(f"Failed to download audio. Status Code: {audio_response.status_code}")
-#             print(audio_response.text)
-#     except requests.exceptions.RequestException as e:
-#         print(f"An error occurred: {e}")
-
-# # Call the function to download and save audio
-# download_audio_and_save_as_wav()
