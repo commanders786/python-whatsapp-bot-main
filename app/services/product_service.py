@@ -130,7 +130,7 @@ def senditems(to_number, product_items):
                 "text": "🛒 Anghadi Specials"
             },
             "body": {
-                "text": "Check out our latest products!"
+                "text": "Check out our  products! \n ഉത്പന്നങ്ങൾക്കായി  കാർഡ് പരിശോധിക്കുക !"
             },
             "footer": {
                 "text": "Tap a product to view more."

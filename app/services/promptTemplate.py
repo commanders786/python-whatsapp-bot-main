@@ -104,6 +104,8 @@ ulli / savala	onion
 chattipathiri (ചട്ടിപത്തിരി)	chattipathiri (ചട്ടിപത്തിരി)
 toothpaste   toothpaste  (no change required)
 
+we also have food items like arabic food shawaya,madhood,mandhi,biriyani etc
+
 5.if it is a general query related to shoping how to shop or asking our bussiness information like what we sell and how convert those to english even if it is in malayalam or manglish
 important :considering after all thease apply above things only ifrequired else just pass it as it is .because you may get queries like questions or normal interactions for those just pass it by making clear if required
 ***user prompt***

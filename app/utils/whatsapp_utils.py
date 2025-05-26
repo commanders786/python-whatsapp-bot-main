@@ -1,5 +1,6 @@
 from datetime import datetime, timezone,time
 import logging
+import threading
 from zoneinfo import ZoneInfo
 from flask import current_app, jsonify
 import json
@@ -63,6 +64,8 @@ def process_text_for_whatsapp(text):
 
     return whatsapp_style_text
 
+def call_last_login_update(user_id):
+    threading.Thread(target=update_user_lastlogin, args=(user_id,)).start()
 
 def process_whatsapp_message(body):
     wa_id = body["entry"][0]["changes"][0]["value"]["contacts"][0]["wa_id"]
@@ -71,7 +74,7 @@ def process_whatsapp_message(body):
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
-    update_user_lastlogin(wa_id) 
+    call_last_login_update(wa_id)  
     if wa_id not in user_sessions:
                 user_sessions[wa_id] = {}
                 user_sessions[wa_id]['number']=wa_id
@@ -100,12 +103,12 @@ def process_whatsapp_message(body):
         start_time = time(7, 0, 0)   # 7:00 AM
         end_time = time(20, 0, 0)    # 8:00 PM
         
-        if now < start_time or now > end_time:
+        # if now < start_time or now > end_time:
                 
-                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
-                data = get_text_message_input(wa_id, response)
-                send_message(data)
-                return
+        #         response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
+        #         data = get_text_message_input(wa_id, response)
+        #         send_message(data)
+        #         return
         if message["type"] == "text":
             
             message_body = message["text"]["body"]
