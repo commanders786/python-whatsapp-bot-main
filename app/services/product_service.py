@@ -35,6 +35,8 @@ def fetch_and_categorize_products():
               "food":{}
         }
 
+        restaurants={}
+
         for item in products:
             rid = item.get("retailer_id", "").lower()
             product_info = {
@@ -61,8 +63,24 @@ def fetch_and_categorize_products():
             elif rid.startswith("fs"):
                 categorized["fish"][item["retailer_id"]] = product_info
             elif rid.startswith("rf"):
-                categorized["food"][item["retailer_id"]] = product_info    
+                categorized["food"][item["retailer_id"]] = product_info 
+                key = "restaurant:"   
+                desc=item.get("description", "")
+                index = desc.lower().find(key)
+                if index != -1:
+                     restaurant = desc[index + len(key):].strip().title()
+                     if restaurant not in restaurants:
+                       restaurants[restaurant]=[]
+                     
+                     restaurants[restaurant].append(rid) 
+                     print(restaurant,rid)  # Output: AFC chicken
+                else:
+                     print("Restaurant not found.",rid)
+                pass
+        # categorized['food']=restaurants
 
+        with open("restaurants.json", "w", encoding="utf-8") as f:
+            json.dump(restaurants, f, ensure_ascii=False, indent=2)
         with open("result.json", "w", encoding="utf-8") as f:
             json.dump(categorized, f, ensure_ascii=False, indent=2)
         
@@ -70,6 +88,7 @@ def fetch_and_categorize_products():
         return categorized
 
     except Exception as e:
+        print(e)
         return {"status": "error", "message": str(e)}
 
 
@@ -84,12 +103,26 @@ def load_products_by_category(category: str):
     except Exception as e:
         print("hhh",e)
         return {}
-
-def send_whatsapp_product_list(category: str, to_number: str):
+def load_restaurants(restaurant=None):
+    try:
+        with open("restaurants.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+            
+        return data.get(restaurant, []) if restaurant else data
+    except Exception as e:
+        print("hhh",e)
+        return {}
+def send_whatsapp_product_list(category: str, to_number: str,restaurant=None):
     
     if isinstance(category, list) and not category[0] in ["vegetables","fruits","oth","meat","fish","bakeries"]:
         product_items = [{"product_retailer_id": rid} for rid in category]
         senditems(to_number,product_items)
+
+    elif restaurant:
+        product_items=load_restaurants(restaurant)
+        product_items = [{"product_retailer_id": rid} for rid in product_items]
+        senditems(to_number,product_items)
+        
     else:
         # Otherwise, load from file
      print("hello")
@@ -130,7 +163,7 @@ def senditems(to_number, product_items):
                 "text": "🛒 Anghadi Specials"
             },
             "body": {
-                "text": "Check out our  products! \n ഉത്പന്നങ്ങൾക്കായി  കാർഡ് പരിശോധിക്കുക !"
+                "text": "Check out our  products! \n ഉത്പന്നങ്ങൾക്കായി  ലിസ്റ്റ്  പരിശോധിക്കുക !"
             },
             "footer": {
                 "text": "Tap a product to view more."

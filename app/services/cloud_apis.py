@@ -5,6 +5,7 @@ import json
 import os
 from dotenv import load_dotenv
 
+from app.services.product_service import load_restaurants
 from app.utils import messages
 
 load_dotenv()
@@ -485,6 +486,63 @@ def send_options(recipient_phone_number,language):
         if response is not None:
             print(f"Response status code: {response.status_code}")
             print(f"Response body: {response.text}")
+
+
+def send_restaurants(recipient_phone_number, language):
+    restaurant_keys = sorted(list(load_restaurants().keys()))
+    # Get restaurant names
+    url = base_url
+
+    # Dynamically generate rows for each restaurant
+    restaurant_rows = [
+        {
+            "id": restaurant_name,           # Unique ID
+            "title": restaurant_name,          # Restaurant name as title
+            "description": f"Tastes of {restaurant_name}"
+        }
+        for i, restaurant_name in enumerate(restaurant_keys)
+    ]
+
+    payload = {
+        "messaging_product": "whatsapp",
+        "recipient_type": "individual",
+        "to": recipient_phone_number,
+        "type": "interactive",
+        "interactive": {
+            "type": "list",
+            "header": {
+                "type": "text",
+                "text": messages.optmsgs["header"][language]
+            },
+            "body": {
+                "text": messages.optmsgs["food_body"][language]
+            },
+            "footer": {
+                "text": messages.optmsgs["footer"][language]
+            },
+            "action": {
+                "button": messages.optmsgs["button"][language],
+                "sections": [
+                    {
+                        "title": "Restaurants",
+                        "rows": restaurant_rows
+                    }
+                ]
+            }
+        }
+    }
+
+    try:
+        response = requests.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        print("Interactive button message sent successfully!")
+        print(response.json())
+    except requests.exceptions.RequestException as e:
+        print(f"Error sending interactive button message: {e}")
+        if response is not None:
+            print(f"Response status code: {response.status_code}")
+            print(f"Response body: {response.text}")
+
 
 
 

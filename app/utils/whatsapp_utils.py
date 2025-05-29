@@ -11,12 +11,12 @@ from app.services import gemini_services as AI
 import re
 
 from app.services.crud_services import insert_order, insert_user,update_order_items_service, update_user_lastlogin, user_exists
-from app.services.product_service import send_whatsapp_product_list
+from app.services.product_service import load_restaurants, send_whatsapp_product_list
 from app.utils.messages import get_text_message_input, po_template
 from app.utils.validations import is_within_radius
 from ..sessions import user_sessions
 
-from app.services.cloud_apis import get_language, get_notes, get_notes_pharmacist, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_options, send_po, send_vfc, send_whatsapp_image
+from app.services.cloud_apis import get_language, get_notes, get_notes_pharmacist, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_options, send_po, send_restaurants, send_vfc, send_whatsapp_image
 
 logging.basicConfig(level=logging.INFO)
 
@@ -95,6 +95,7 @@ def process_whatsapp_message(body):
     print("Recieved message :",message)
     print("\n \n User Session ----",user_sessions[wa_id])
     print("\n\n")
+    print("hihihihi",list(load_restaurants().keys()))
     try:
         # If it's a regular text message
         ts = int(message['timestamp'])
@@ -103,12 +104,12 @@ def process_whatsapp_message(body):
         start_time = time(7, 0, 0)   # 7:00 AM
         end_time = time(20, 0, 0)    # 8:00 PM
         
-        if now < start_time or now > end_time:
+        # if now < start_time or now > end_time:
                 
-                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
-                data = get_text_message_input(wa_id, response)
-                send_message(data)
-                return
+        #         response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
+        #         data = get_text_message_input(wa_id, response)
+        #         send_message(data)
+        #         return
         if message["type"] == "text":
             
             message_body = message["text"]["body"]
@@ -219,7 +220,15 @@ def process_whatsapp_message(body):
             elif button_id == "opt2":
                send_whatsapp_product_list("oth",wa_id)
                return
-            
+             
+            # elif button_id == "rfs":
+            # #    send_whatsapp_product_list("rfs",wa_id)
+            #      send_restaurants()
+            #      return
+            elif button_id in list(load_restaurants().keys()):
+                print("gggggg")
+                send_whatsapp_product_list(button_id,wa_id,button_id)
+                return
           
             elif button_id=='opt4':
                send_whatsapp_product_list("fruits",wa_id)
@@ -235,8 +244,10 @@ def process_whatsapp_message(body):
                 return
             
             elif button_id=='rest':
+
+                send_restaurants(wa_id, user_sessions[wa_id]['language'])
              
-                send_whatsapp_product_list("food",wa_id)
+                # send_whatsapp_product_list("food",wa_id)
                 return
            
             elif button_id=='snacks':

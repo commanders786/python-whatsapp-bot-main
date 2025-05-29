@@ -1,6 +1,8 @@
 
 import json
 
+from app.services.product_service import load_restaurants
+
 def load_all_products():
     with open("result.json", "r", encoding="utf-8") as f:
         return json.load(f)
@@ -54,3 +56,4 @@ def process_order_message(product_items):
     # Total
     lines.append(f"\n🧾 Grand Total: ₹{grand_total}")
     return ("\n".join(lines),product_items)
+

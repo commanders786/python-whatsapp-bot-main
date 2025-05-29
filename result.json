@@ -234,7 +234,7 @@
       "id": "29330952209886560",
       "name": "ഉള്ളി 500g (onion)",
       "description": "fresh to home",
-      "price": "₹11.00",
+      "price": "₹13.00",
       "pattern": "ഉള്ളി,സവാള,ulli,savaala",
       "unit": null,
       "retailer_id": "veg10",
@@ -306,7 +306,7 @@
       "id": "9675077305941190",
       "name": "ചായപ്പൊടി ലൂസ് 100g (TEA POWDER LOOSE)",
       "description": "loose tea powder",
-      "price": "₹22.00",
+      "price": "₹26.00",
       "pattern": "ചായപ്പൊടി, chaaya podi, tea powder",
       "unit": null,
       "retailer_id": "gr02",
@@ -336,7 +336,7 @@
       "id": "23946347924972815",
       "name": "HORLICS 500g",
       "description": "classic malt",
-      "price": "₹299.00",
+      "price": "₹294.00",
       "pattern": "horlicks",
       "unit": null,
       "retailer_id": "gr06",
@@ -446,7 +446,7 @@
       "id": "24248489971408050",
       "name": "CLOSE-UP (90g)",
       "description": "close up tooth paste",
-      "price": "₹70.00",
+      "price": "₹72.00",
       "pattern": "close up, tooth paste,paste",
       "unit": null,
       "retailer_id": "gr12",
@@ -496,7 +496,7 @@
       "id": "9707724209283250",
       "name": "വെളിച്ചെണ്ണ  500ml",
       "description": "multi brand available",
-      "price": "₹160.00",
+      "price": "₹165.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr29",
@@ -566,7 +566,7 @@
       "id": "29462530646728840",
       "name": "വെളിച്ചെണ്ണ  1L",
       "description": "multi brand available",
-      "price": "₹315.00",
+      "price": "₹330.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr28",
@@ -772,6 +772,26 @@
       "retailer_id": "gr45",
       "availability": "in stock"
     },
+    "gr56": {
+      "id": "9732112883567256",
+      "name": "Normal Bun",
+      "description": "normal bun 4 ps",
+      "price": "₹35.00",
+      "pattern": "bun, snacks",
+      "unit": null,
+      "retailer_id": "gr56",
+      "availability": "in stock"
+    },
+    "gr52": {
+      "id": "9835096179913544",
+      "name": "Rain Coat (plastic)",
+      "description": "plastic rain coat",
+      "price": "₹110.00",
+      "pattern": "rain coat,",
+      "unit": null,
+      "retailer_id": "gr52",
+      "availability": "in stock"
+    },
     "gr51": {
       "id": "9892838707467118",
       "name": "wayanad Milk",
@@ -780,6 +800,56 @@
       "pattern": "paal,milk",
       "unit": null,
       "retailer_id": "gr51",
+      "availability": "in stock"
+    },
+    "gr57": {
+      "id": "9895499690533657",
+      "name": "Chappathi 10 nos",
+      "description": "half cooked packed chappathi",
+      "price": "₹45.00",
+      "pattern": "chappathi,packet",
+      "unit": null,
+      "retailer_id": "gr57",
+      "availability": "in stock"
+    },
+    "gr55": {
+      "id": "10022367441212008",
+      "name": "Cream Bun",
+      "description": "cream bun 4 ps",
+      "price": "₹45.00",
+      "pattern": "bun, snacks",
+      "unit": null,
+      "retailer_id": "gr55",
+      "availability": "in stock"
+    },
+    "gr54": {
+      "id": "24152546934353566",
+      "name": "Packed Poratta 10 ps",
+      "description": "poratta",
+      "price": "₹70.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr54",
+      "availability": "in stock"
+    },
+    "gr53": {
+      "id": "24227158086920789",
+      "name": "Aldan KUBZ",
+      "description": "packed kubooz",
+      "price": "₹45.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr53",
+      "availability": "in stock"
+    },
+    "gr58": {
+      "id": "24299029406349442",
+      "name": "Chappathi 12 nos",
+      "description": "half cooked packed chappathi",
+      "price": "₹50.00",
+      "pattern": "chappathi,packet",
+      "unit": null,
+      "retailer_id": "gr58",
       "availability": "in stock"
     },
     "gr50": {
@@ -812,7 +882,7 @@
       "pattern": "pappaya",
       "unit": null,
       "retailer_id": "fr08",
-      "availability": "out of stock"
+      "availability": "in stock"
     },
     "fr01": {
       "id": "9584452581671948",
@@ -848,7 +918,7 @@
       "id": "9826504234062744",
       "name": "പച്ച മുന്തിരി 500g (PACHA MUNTHIRI)",
       "description": "pacha munthiri,,,",
-      "price": "₹80.00",
+      "price": "₹50.00",
       "pattern": "munthiri",
       "unit": null,
       "retailer_id": "fr05",
@@ -862,7 +932,7 @@
       "pattern": "mango,maanga",
       "unit": null,
       "retailer_id": "fr07",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fr09": {
       "id": "23905616239021979",
@@ -1016,9 +1086,9 @@
     },
     "fr24": {
       "id": "9984712418308433",
-      "name": "മാങ്ങ 1kg (CHELAN MANGO)",
+      "name": "മാങ്ങ 1kg (NEELAN MANGO)",
       "description": "mango",
-      "price": "₹60.00",
+      "price": "₹80.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "fr24",
@@ -1040,7 +1110,7 @@
       "id": "9589655301147089",
       "name": "Chicken Parts 500g (കോഴി പാർട്സ് )",
       "description": "parts seperated",
-      "price": "₹75.00",
+      "price": "₹60.00",
       "pattern": "കോഴി പാർട്സ് ,chicken parts",
       "unit": null,
       "retailer_id": "ch04",
@@ -1050,7 +1120,7 @@
       "id": "9662187900529950",
       "name": "Leghorn Chicken 1kg (ലെഗോൺ കോഴി)",
       "description": "ലെഗോൺ കോഴി",
-      "price": "₹150.00",
+      "price": "₹160.00",
       "pattern": "Leghorn Chicken, ലെഗോൺ കോഴി,kozhi",
       "unit": null,
       "retailer_id": "ch03",
@@ -1080,7 +1150,7 @@
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹105.00",
+      "price": "₹110.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
@@ -1146,7 +1216,7 @@
       "pattern": "മാന്തൾ, MAANTHAL, fish",
       "unit": null,
       "retailer_id": "fs03",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs02": {
       "id": "9666490573436470",
@@ -1156,7 +1226,7 @@
       "pattern": "അയല, AYALA, fish",
       "unit": null,
       "retailer_id": "fs02",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs09": {
       "id": "9884918041546377",
@@ -1186,7 +1256,7 @@
       "pattern": "സ്രാവ്, SRAAVU, fish",
       "unit": null,
       "retailer_id": "fs06",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs04": {
       "id": "24046708444913037",
@@ -1196,7 +1266,7 @@
       "pattern": "കോര,മീൻ,KOORA",
       "unit": null,
       "retailer_id": "fs04",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs01": {
       "id": "24548397954753040",
@@ -1206,7 +1276,7 @@
       "pattern": "മത്തി,ചാള,മത്സ്യം,fish",
       "unit": null,
       "retailer_id": "fs01",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs05": {
       "id": "29414862131462631",
@@ -1216,7 +1286,7 @@
       "pattern": "ചെമ്മീൻ, chemmeen, fish",
       "unit": null,
       "retailer_id": "fs05",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs12": {
       "id": "9310658559057580",
@@ -1236,7 +1306,7 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "fs11",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs17": {
       "id": "9990099271055890",
@@ -1256,7 +1326,7 @@
       "pattern": "pappans,fish,meen",
       "unit": null,
       "retailer_id": "fs16",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs10": {
       "id": "29358589100451623",
@@ -1306,7 +1376,7 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "fs25",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs20": {
       "id": "29636193869361033",
@@ -1316,7 +1386,7 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "fs20",
-      "availability": "in stock"
+      "availability": "out of stock"
     },
     "fs31": {
       "id": "9520741201382267",
@@ -1360,6 +1430,16 @@
       "retailer_id": "SN03",
       "availability": "in stock"
     },
+    "sn09": {
+      "id": "9841801725885634",
+      "name": "Pazham Pori (പഴം പൊരി )",
+      "description": "Pazham Pori",
+      "price": "₹15.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "sn09",
+      "availability": "in stock"
+    },
     "sn01": {
       "id": "9859269464141510",
       "name": "കുനാഫ ചോക്ലേറ്റ് (KUNAFA CHOCOLATE ) 200g",
@@ -1379,13 +1459,43 @@
       "unit": null,
       "retailer_id": "SN02",
       "availability": "in stock"
+    },
+    "sn11": {
+      "id": "9560573757373556",
+      "name": "Kukkar Appam (കുക്കറപ്പം)",
+      "description": "Kukkar Appam (കുക്കറപ്പം) per piece",
+      "price": "₹15.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "sn11",
+      "availability": "in stock"
+    },
+    "sn10": {
+      "id": "9613349562125129",
+      "name": "Chicken Smoosa (ചിക്കൻ സമൂസ)",
+      "description": "Chicken Smoosa",
+      "price": "₹15.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "sn10",
+      "availability": "in stock"
+    },
+    "sn12": {
+      "id": "29641612152152766",
+      "name": "Chatti Pathiri (ചട്ടിപത്തിരി)",
+      "description": "Chatti Pathiri (ചട്ടിപത്തിരി) per piece",
+      "price": "₹25.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "sn12",
+      "availability": "in stock"
     }
   },
   "food": {
     "rf03": {
       "id": "8871303839639480",
       "name": "AFC Couple Meal",
-      "description": "2 Pc Chicken, Bun 2pc,\n French Fries,ketchup,\n Garlic Paste-1 \nRestaurant: AFC chicken",
+      "description": "2 Pc Chicken, Bun 2pc,\n French Fries,ketchup,\n Garlic Paste-1 \nRestaurant: AFC Chicken",
       "price": "₹229.00",
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
@@ -1395,7 +1505,7 @@
     "rf02": {
       "id": "8986935258073307",
       "name": "AFC Favour Meal",
-      "description": "crispy burger,\n1pc chicken,6 strip pc\nfrench fries, ketchup\nrestaurent: AFC Chicken",
+      "description": "crispy burger,\n1pc chicken,6 strip pc\nfrench fries, ketchup\nrestaurant: AFC Chicken",
       "price": "₹575.00",
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
@@ -1415,7 +1525,7 @@
     "rf08": {
       "id": "9882045685219063",
       "name": "Masala Shawai  (Quater)",
-      "description": "with 1 kuboos\nrestaurant : shawai spot",
+      "description": "with 1 kuboos\nrestaurant: shawai spot",
       "price": "₹140.00",
       "pattern": "shawai, chicken,food,restaurent",
       "unit": null,
@@ -1425,7 +1535,7 @@
     "rf09": {
       "id": "9905653886168344",
       "name": "Masala Shawai (Half)",
-      "description": "with 2 kuboos\nrestaurant : shawai spot",
+      "description": "with 2 kuboos\nrestaurant: shawai spot",
       "price": "₹260.00",
       "pattern": "shawai, chicken,food,restaurent",
       "unit": null,
@@ -1455,7 +1565,7 @@
     "rf01": {
       "id": "24005991012320509",
       "name": "AFC Special Meal",
-      "description": "crispy burger,1pc chicken,\nfrench fries,\nketchup\nrestaurent: AFC Chicken",
+      "description": "crispy burger,1pc chicken,\nfrench fries,\nketchup\nrestaurant: AFC Chicken",
       "price": "₹299.00",
       "pattern": "AFC, FREID CHICKEN",
       "unit": null,
@@ -1465,7 +1575,7 @@
     "rf06": {
       "id": "29540340458946035",
       "name": "AFC Dinner Meal",
-      "description": "4 Pc Chicken,2 Bun\n Garlic Paste\n French Fries,ketchup\nRestaurant: AFC chicken",
+      "description": "4 Pc Chicken,2 Bun\n Garlic Paste\n French Fries,ketchup\nRestaurant: AFC Chicken",
       "price": "₹499.00",
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
@@ -1475,7 +1585,7 @@
     "rf13": {
       "id": "9158469134254295",
       "name": "Chicken Mdhooth Rise (Three Quater)",
-      "description": "Chicken Madhooth Rice\nrestaurent: shawai spot",
+      "description": "Chicken Madhooth Rice\nrestaurant: shawai spot",
       "price": "₹550.00",
       "pattern": "food,shawai,madhooth",
       "unit": null,
@@ -1485,7 +1595,7 @@
     "rf15": {
       "id": "9483572835101807",
       "name": "Chicken Mdhooth Rise (Quater)",
-      "description": "Chicken Madhooth Rice\nrestaurent: shawai spot",
+      "description": "Chicken Madhooth Rice\nrestaurant: shawai spot",
       "price": "₹190.00",
       "pattern": "food,shawai,madhooth",
       "unit": null,
@@ -1495,7 +1605,7 @@
     "rf12": {
       "id": "9524993217624038",
       "name": "Chicken Mdhooth Rise (Full)",
-      "description": "Chicken Madhooth Rice\nrestaurent: shawai spot",
+      "description": "Chicken Madhooth Rice\nrestaurant: shawai spot",
       "price": "₹720.00",
       "pattern": "food,shawai,madhooth",
       "unit": null,
@@ -1505,7 +1615,7 @@
     "rf14": {
       "id": "10058272830902962",
       "name": "Chicken Mdhooth Rise (Half)",
-      "description": "Chicken Madhooth Rice\nrestaurent: shawai spot",
+      "description": "Chicken Madhooth Rice\nrestaurant: shawai spot",
       "price": "₹370.00",
       "pattern": "food,shawai,madhooth",
       "unit": null,
@@ -1515,7 +1625,7 @@
     "rf10": {
       "id": "23932850619685426",
       "name": "Masala Shawai (Three Quater)",
-      "description": "with 3kuboos\nrestaurant : shawai spot",
+      "description": "with 3kuboos\nrestaurant: shawai spot",
       "price": "₹380.00",
       "pattern": "shawai, chicken,food,restaurent",
       "unit": null,
@@ -1525,7 +1635,7 @@
     "rf19": {
       "id": "23940440992281834",
       "name": "Shawai with Arabian Rice (Quater)",
-      "description": "masala shawayi with arabian rice\nrestaurant: Shawai spot",
+      "description": "masala shawayi with arabian rice\nrestaurant: shawai spot",
       "price": "₹190.00",
       "pattern": "shawai,rice,food,manthi",
       "unit": null,
@@ -1535,7 +1645,7 @@
     "rf17": {
       "id": "24003716782579538",
       "name": "Shawai with Arabian Rice (Three Quater)",
-      "description": "masala shawayi with arabian rice\nrestaurant: Shawai spot",
+      "description": "masala shawayi with arabian rice\nrestaurant: shawai spot",
       "price": "₹550.00",
       "pattern": "shawai,rice,food,manthi",
       "unit": null,
@@ -1545,7 +1655,7 @@
     "rf16": {
       "id": "24140363712227879",
       "name": "Shawai with Arabian Rice (Full)",
-      "description": "masala shawayi with arabian rice\nrestaurant: Shawai spot",
+      "description": "masala shawayi with arabian rice\nrestaurant: shawai spot",
       "price": "₹720.00",
       "pattern": "shawai,rice,food,manthi",
       "unit": null,
@@ -1555,7 +1665,7 @@
     "rf18": {
       "id": "24423818480539491",
       "name": "Shawai with Arabian Rice (Half)",
-      "description": "masala shawayi with arabian rice\nrestaurant: Shawai spot",
+      "description": "masala shawayi with arabian rice\nrestaurant: shawai spot",
       "price": "₹370.00",
       "pattern": "shawai,rice,food,manthi",
       "unit": null,
@@ -1565,7 +1675,7 @@
     "rf11": {
       "id": "29965910253007245",
       "name": "Masala Shawai  (Full)",
-      "description": "with 4 kuboos\nrestaurant : shawai spot",
+      "description": "with 4 kuboos\nrestaurant: shawai spot",
       "price": "₹500.00",
       "pattern": "shawai, chicken,food,restaurent",
       "unit": null,
@@ -1584,7 +1694,7 @@
     },
     "rf21": {
       "id": "9157977434303066",
-      "name": "Felfel Burger",
+      "name": "Felafel Burger",
       "description": "felafel burger\nrestaurant: felafel king",
       "price": "₹30.00",
       "pattern": "felafel, food, burger",
@@ -1595,7 +1705,7 @@
     "rf26": {
       "id": "9543184809142022",
       "name": "Chicken Shawarma Burger",
-      "description": "chicken burger  shawarma filling\nrestaurant: felafil king",
+      "description": "chicken burger  shawarma filling\nrestaurant: felafel king",
       "price": "₹70.00",
       "pattern": null,
       "unit": null,
@@ -1605,7 +1715,7 @@
     "rf23": {
       "id": "9762639817158988",
       "name": "Chicken Sandwich",
-      "description": "chicken sandwich\nrestaurant: felafil king",
+      "description": "chicken sandwich\nrestaurant: felafel king",
       "price": "₹60.00",
       "pattern": null,
       "unit": null,
@@ -1615,7 +1725,7 @@
     "rf24": {
       "id": "9824134227642070",
       "name": "Chicken Burger",
-      "description": "chicken burger\nrestaurant: felafil king",
+      "description": "chicken burger\nrestaurant: felafel king",
       "price": "₹60.00",
       "pattern": null,
       "unit": null,
@@ -1625,7 +1735,7 @@
     "rf25": {
       "id": "9827360364037603",
       "name": "Chicken Shawarma Sandwich",
-      "description": "chicken sandwich shawarma filling\nrestaurant: felafil king",
+      "description": "chicken sandwich shawarma filling\nrestaurant: felafel king",
       "price": "₹70.00",
       "pattern": null,
       "unit": null,
@@ -1634,12 +1744,22 @@
     },
     "rf20": {
       "id": "24154751550783286",
-      "name": "Felfel Roll",
+      "name": "Felafel Roll",
       "description": "felafel roll\nrestaurant: felafel king",
       "price": "₹20.00",
       "pattern": "felafel, food, roll",
       "unit": null,
       "retailer_id": "rf20",
+      "availability": "in stock"
+    },
+    "rf29": {
+      "id": "24188884680717340",
+      "name": "Beef Biriyani",
+      "description": "Beef Biriyani\nRESTAURANT: BIRIYANI CHEMB",
+      "price": "₹140.00",
+      "pattern": "lunch,biriyani",
+      "unit": null,
+      "retailer_id": "rf29",
       "availability": "in stock"
     },
     "rf28": {
@@ -1654,12 +1774,32 @@
     },
     "rf22": {
       "id": "30168831642715483",
-      "name": "Felfel Sandwich",
+      "name": "Felafel Sandwich",
       "description": "felafel sandwich\nrestaurant: felafel king",
       "price": "₹30.00",
       "pattern": "felafel, food, sandwich",
       "unit": null,
       "retailer_id": "rf22",
+      "availability": "in stock"
+    },
+    "rf31": {
+      "id": "9476135162509438",
+      "name": "ഊൺ (Meals)",
+      "description": "meals with above 8 side items \nrestaurant: malayoram mess house",
+      "price": "₹70.00",
+      "pattern": "oon,sadya,meals,ഊൺ,lunch",
+      "unit": null,
+      "retailer_id": "rf31",
+      "availability": "in stock"
+    },
+    "rf30": {
+      "id": "9722971677825478",
+      "name": "Chicken Biriyani",
+      "description": "Chicken Biriyani\nRESTAURANT: BIRIYANI CHEMB",
+      "price": "₹140.00",
+      "pattern": "biriyani,lunch",
+      "unit": null,
+      "retailer_id": "rf30",
       "availability": "in stock"
     }
   }
