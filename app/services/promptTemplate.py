@@ -103,6 +103,7 @@ carret	     carrot
 ulli / savala	onion
 chattipathiri (ചട്ടിപത്തിരി)	chattipathiri (ചട്ടിപത്തിരി)
 toothpaste   toothpaste  (no change required)
+oon/ഊൺ /sadhya/chor/ചോർ   meals
 
 we also have food items like arabic food shawaya,madhood,mandhi,biriyani etc
 
