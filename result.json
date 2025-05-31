@@ -832,6 +832,16 @@
       "retailer_id": "gr54",
       "availability": "in stock"
     },
+    "gr59": {
+      "id": "24173155228955676",
+      "name": "Parle Rusk",
+      "description": "rusk snack",
+      "price": "₹35.00",
+      "pattern": "rusk, snack",
+      "unit": null,
+      "retailer_id": "gr59",
+      "availability": "in stock"
+    },
     "gr53": {
       "id": "24227158086920789",
       "name": "Aldan KUBZ",
@@ -860,6 +870,16 @@
       "pattern": "paal,milk,പാൽ",
       "unit": null,
       "retailer_id": "gr50",
+      "availability": "in stock"
+    },
+    "gr60": {
+      "id": "9785991061483892",
+      "name": "Dalda 200ml",
+      "description": "dalda",
+      "price": "₹46.00",
+      "pattern": "dalda, ghee",
+      "unit": null,
+      "retailer_id": "gr60",
       "availability": "in stock"
     }
   },
@@ -1110,7 +1130,7 @@
       "id": "9589655301147089",
       "name": "Chicken Parts 500g (കോഴി പാർട്സ് )",
       "description": "parts seperated",
-      "price": "₹60.00",
+      "price": "₹75.00",
       "pattern": "കോഴി പാർട്സ് ,chicken parts",
       "unit": null,
       "retailer_id": "ch04",
@@ -1150,7 +1170,7 @@
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹110.00",
+      "price": "₹115.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
@@ -1160,7 +1180,7 @@
       "id": "9714611515291014",
       "name": "എല്ലില്ലാത്ത  ബീഫ്  500g",
       "description": "Beef meat",
-      "price": "₹190.00",
+      "price": "₹200.00",
       "pattern": "poth,irachi,ellillatha,",
       "unit": null,
       "retailer_id": "ch15",
@@ -1190,7 +1210,7 @@
       "id": "9405626589529680",
       "name": "Beef  പോത്തിറച്ചി 500g",
       "description": "ബീഫ് എളില്ലാത്തവ\n-190 Rs",
-      "price": "₹170.00",
+      "price": "₹180.00",
       "pattern": "beef, poth, erchi",
       "unit": null,
       "retailer_id": "sk8q2yaim7",
@@ -1424,7 +1444,7 @@
       "id": "9567582903335144",
       "name": "ചട്ടിപത്തിരി ( Cake) 1.5kg",
       "description": "ലൈവ് ആയി ചെയ്യുന്നതോണ്ട് 3 മണിക്കൂർ വരേ എടുക്കാം",
-      "price": "₹350.00",
+      "price": "₹450.00",
       "pattern": "chattipathiri,home made cake,snacks",
       "unit": null,
       "retailer_id": "SN03",
@@ -1800,6 +1820,246 @@
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf30",
+      "availability": "in stock"
+    },
+    "rf34": {
+      "id": "9883732651681494",
+      "name": "Afghani Chicken Tikka",
+      "description": "Afghani Chicken tikka\nrestaurant: ZABAQ",
+      "price": "₹180.00",
+      "pattern": "food, chicken tikka,",
+      "unit": null,
+      "retailer_id": "rf34",
+      "availability": "in stock"
+    },
+    "rf37": {
+      "id": "9959274287520803",
+      "name": "Normal Alfahm (QUATER)",
+      "description": "Alfahm\nrestaurant: ZABAQ",
+      "price": "₹120.00",
+      "pattern": "food,alfahm chicken",
+      "unit": null,
+      "retailer_id": "rf37",
+      "availability": "in stock"
+    },
+    "rf38": {
+      "id": "9981738638535963",
+      "name": "Peri Peri Alfahm (FULL)",
+      "description": "Alfahm\nrestaurant: ZABAQ",
+      "price": "₹470.00",
+      "pattern": "food,alfahm chicken",
+      "unit": null,
+      "retailer_id": "rf38",
+      "availability": "in stock"
+    },
+    "rf39": {
+      "id": "9990149124405430",
+      "name": "Peri Peri Alfahm (HALF)",
+      "description": "Alfahm\nrestaurant: ZABAQ",
+      "price": "₹240.00",
+      "pattern": "food,alfahm chicken",
+      "unit": null,
+      "retailer_id": "rf39",
+      "availability": "in stock"
+    },
+    "rf33": {
+      "id": "24310130535259494",
+      "name": "Hariyali  Chicken Tikka",
+      "description": "Hariyali Chicken tikka\nrestaurant: ZABAQ",
+      "price": "₹180.00",
+      "pattern": "food, chicken tikka,",
+      "unit": null,
+      "retailer_id": "rf33",
+      "availability": "in stock"
+    },
+    "rf35": {
+      "id": "24426844400251092",
+      "name": "Normal Alfahm (FULL)",
+      "description": "Alfahm\nrestaurant: ZABAQ",
+      "price": "₹450.00",
+      "pattern": "food,alfahm chicken",
+      "unit": null,
+      "retailer_id": "rf35",
+      "availability": "in stock"
+    },
+    "rf32": {
+      "id": "29773562008955219",
+      "name": "Chicken Tikka",
+      "description": "Chicken tikka\nrestaurant: ZABAQ",
+      "price": "₹180.00",
+      "pattern": "food, chicken tikka,",
+      "unit": null,
+      "retailer_id": "rf32",
+      "availability": "in stock"
+    },
+    "rf36": {
+      "id": "29783574187924288",
+      "name": "Normal Alfahm (HALF)",
+      "description": "Alfahm\nrestaurant: ZABAQ",
+      "price": "₹230.00",
+      "pattern": "food,alfahm chicken",
+      "unit": null,
+      "retailer_id": "rf36",
+      "availability": "in stock"
+    },
+    "rf47": {
+      "id": "8282639905193639",
+      "name": "Al Fahm Mandhi (FULL)",
+      "description": "Mandhi\nrestaurant: ZABAQ",
+      "price": "₹670.00",
+      "pattern": "food,chicken manthi,",
+      "unit": null,
+      "retailer_id": "rf47",
+      "availability": "in stock"
+    },
+    "rf49": {
+      "id": "9856957527756180",
+      "name": "Al Fahm Mandhi (QUATER)",
+      "description": "Mandhi\nrestaurant: ZABAQ",
+      "price": "₹170.00",
+      "pattern": "food,chicken manthi,",
+      "unit": null,
+      "retailer_id": "rf49",
+      "availability": "in stock"
+    },
+    "rf42": {
+      "id": "9943391645777344",
+      "name": "Pepper Alfahm (HALF)",
+      "description": "Alfahm\nrestaurant: ZABAQ",
+      "price": "₹240.00",
+      "pattern": "food,alfahm chicken",
+      "unit": null,
+      "retailer_id": "rf42",
+      "availability": "in stock"
+    },
+    "rf41": {
+      "id": "9996777997057635",
+      "name": "Pepper Alfahm (FULL)",
+      "description": "Alfahm\nrestaurant: ZABAQ",
+      "price": "₹470.00",
+      "pattern": "food,alfahm chicken",
+      "unit": null,
+      "retailer_id": "rf41",
+      "availability": "in stock"
+    },
+    "rf40": {
+      "id": "23905959635687112",
+      "name": "Peri Peri Alfahm (QUATER)",
+      "description": "Alfahm\nrestaurant: ZABAQ",
+      "price": "₹130.00",
+      "pattern": "food,alfahm chicken",
+      "unit": null,
+      "retailer_id": "rf40",
+      "availability": "in stock"
+    },
+    "rf45": {
+      "id": "23935609832717051",
+      "name": "Normal Chicken Mandhi (HALF)",
+      "description": "Mandhi\nrestaurant: ZABAQ",
+      "price": "₹310.00",
+      "pattern": "food,chicken manthi,",
+      "unit": null,
+      "retailer_id": "rf45",
+      "availability": "in stock"
+    },
+    "rf44": {
+      "id": "23941518295472919",
+      "name": "Normal Chicken Mandhi (FULL)",
+      "description": "Mandhi\nrestaurant: ZABAQ",
+      "price": "₹600.00",
+      "pattern": "food,chicken manthi,",
+      "unit": null,
+      "retailer_id": "rf44",
+      "availability": "in stock"
+    },
+    "rf48": {
+      "id": "24066485789643890",
+      "name": "Al Fahm Mandhi (HALF)",
+      "description": "Mandhi\nrestaurant: ZABAQ",
+      "price": "₹340.00",
+      "pattern": "food,chicken manthi,",
+      "unit": null,
+      "retailer_id": "rf48",
+      "availability": "in stock"
+    },
+    "rf43": {
+      "id": "29769745865973584",
+      "name": "Pepper Alfahm (QUATER)",
+      "description": "Alfahm\nrestaurant: ZABAQ",
+      "price": "₹130.00",
+      "pattern": "food,alfahm chicken",
+      "unit": null,
+      "retailer_id": "rf43",
+      "availability": "in stock"
+    },
+    "rf46": {
+      "id": "29880291424952480",
+      "name": "Normal Chicken Mandhi (QUATER)",
+      "description": "Mandhi\nrestaurant: ZABAQ",
+      "price": "₹160.00",
+      "pattern": "food,chicken manthi,",
+      "unit": null,
+      "retailer_id": "rf46",
+      "availability": "in stock"
+    },
+    "rf53": {
+      "id": "9241066709327193",
+      "name": "Mutton Mandi (FULL)",
+      "description": "Mutton mandhi\nrestaurant:ZABAQ",
+      "price": "₹1,300.00",
+      "pattern": "mandhi, mandi, mutton mandhi",
+      "unit": null,
+      "retailer_id": "rf53",
+      "availability": "in stock"
+    },
+    "rf51": {
+      "id": "9796440533815236",
+      "name": "Beef Mandi (HALF)",
+      "description": "Beef mandhi\nrestaurant:ZABAQ",
+      "price": "₹420.00",
+      "pattern": "mandhi, mandi, beef mandhi",
+      "unit": null,
+      "retailer_id": "rf51",
+      "availability": "in stock"
+    },
+    "rf55": {
+      "id": "9865447110210523",
+      "name": "Mutton Mandi (QUATER)",
+      "description": "Mutton mandhi\nrestaurant:ZABAQ",
+      "price": "₹340.00",
+      "pattern": "mandhi, mandi, mutton mandhi",
+      "unit": null,
+      "retailer_id": "rf55",
+      "availability": "in stock"
+    },
+    "rf52": {
+      "id": "9875752279198403",
+      "name": "Beef Mandi (QUATER)",
+      "description": "Beef mandhi\nrestaurant:ZABAQ",
+      "price": "₹220.00",
+      "pattern": "mandhi, mandi, beef mandhi",
+      "unit": null,
+      "retailer_id": "rf52",
+      "availability": "in stock"
+    },
+    "rf50": {
+      "id": "23868757866090629",
+      "name": "Beef Mandi (FULL)",
+      "description": "Beef mandhi\nrestaurant:ZABAQ",
+      "price": "₹820.00",
+      "pattern": "mandhi, mandi, beef mandhi",
+      "unit": null,
+      "retailer_id": "rf50",
+      "availability": "in stock"
+    },
+    "rf54": {
+      "id": "24188709637414340",
+      "name": "Mutton Mandi (HALF)",
+      "description": "Mutton mandhi\nrestaurant:ZABAQ",
+      "price": "₹660.00",
+      "pattern": "mandhi, mandi, mutton mandhi",
+      "unit": null,
+      "retailer_id": "rf54",
       "availability": "in stock"
     }
   }
