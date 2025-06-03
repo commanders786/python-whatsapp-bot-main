@@ -72,7 +72,7 @@ def search_products(query,session, top_k=15):
         output += f"\n💰 Unit: {product['unit']}"
         output += f"\n💰 Other names: {product['pattern']}"
         output += f"\n🔗 Match Score: {score:.2f}"
-        print(score)
+        print(product['name'],score)
     if nothing:
      response ="Anghadi AI ⚡ may take take few seconds  (5-10) to process your request" if session.get('language')=='en' else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (5-10) എടുത്തേക്കാം"
      data = get_text_message_input(session.get('number'), response)

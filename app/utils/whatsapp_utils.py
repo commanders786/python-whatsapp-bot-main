@@ -131,6 +131,13 @@ def process_whatsapp_message(body):
                 return
            
 
+            if message_body.lower() in ['hi','hello','h']:
+                response =f"Hi {name} 👋🏻, Koduvally Anghadi-ലേക്ക് സ്വാഗതം🛒, ഞങ്ങൾ 30 മിനിറ്റിനുള്ളിൽ പലചരക്ക് സാധനങ്ങൾ 🍗🍅🫑🦈🥩🌾 ഡെലിവർ ചെയ്യുന്നു "
+                data = get_text_message_input(wa_id, response)
+                send_message(data)
+                send_options(wa_id,user_sessions[wa_id]['language'])
+                return
+
             response,items = generate_response(name, message_body,user_sessions[wa_id])
             if items and isinstance(items[0], dict):
              user_sessions[wa_id]['items'].extend(items)
@@ -313,7 +320,7 @@ def process_whatsapp_message(body):
                     order_notification_template=response_status[0].get('order_id')+"\n"+user_sessions[wa_id]['notes']+"\n"+user_sessions[wa_id]['location']['google']+"\n"+"+"+wa_id
                     
                     send_whatsapp_image("919645846341", user_sessions[wa_id]['medicineimageid'],order_notification_template)
-                    send_whatsapp_image("918593060090", user_sessions[wa_id]['medicineimageid'],order_notification_template)
+                    send_whatsapp_image("917306723535", user_sessions[wa_id]['medicineimageid'],order_notification_template)
                     return
                 order_notification_template = po_template(user_sessions[wa_id])
                 response_status=insert_order({"receipt":order_notification_template,"bill_amount":0,"userid":wa_id})
@@ -327,7 +334,7 @@ def process_whatsapp_message(body):
                 data= get_text_message_input(wa_id,order_notification_template)
                 send_message(data)
                 try:
-                 data= get_text_message_input("918593060090",order_notification_template)
+                 data= get_text_message_input("917306723535",order_notification_template)
                  send_message(data)
                 except:
                     print("not sent to basi")
