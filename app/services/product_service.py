@@ -32,7 +32,8 @@ def fetch_and_categorize_products():
             "meat":{},
             "fish":{},
             "bakeries":{},
-              "food":{}
+              "food":{},
+              "general":{}
         }
 
         restaurants={}
@@ -62,6 +63,8 @@ def fetch_and_categorize_products():
                 categorized["meat"][item["retailer_id"]] = product_info
             elif rid.startswith("fs"):
                 categorized["fish"][item["retailer_id"]] = product_info
+            elif rid.startswith("gn"):
+                categorized["general"][item["retailer_id"]] = product_info
             elif rid.startswith("rf"):
                 categorized["food"][item["retailer_id"]] = product_info 
                 key = "restaurant:"   

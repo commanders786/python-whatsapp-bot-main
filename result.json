@@ -24,7 +24,7 @@
       "id": "9416655338463541",
       "name": "പുതിന (MINT) 100g",
       "description": "Fresh mint",
-      "price": "₹12.00",
+      "price": "₹16.00",
       "pattern": "പുതിന,pothna, mint",
       "unit": null,
       "retailer_id": "veg11",
@@ -44,7 +44,7 @@
       "id": "9543733689047575",
       "name": "തക്കാളി (Tomato) 500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹10.00",
+      "price": "₹11.00",
       "pattern": "thakkali",
       "unit": null,
       "retailer_id": "veg05",
@@ -54,17 +54,27 @@
       "id": "9594744720603057",
       "name": "കാരറ്റ് (Carrot) 500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹20.00",
+      "price": "₹30.00",
       "pattern": "carrot,",
       "unit": null,
       "retailer_id": "veg01",
+      "availability": "in stock"
+    },
+    "veg30": {
+      "id": "9654115898043657",
+      "name": "മുരിങ്ങക്ക 500g (drumstick)",
+      "description": "muringakka",
+      "price": "₹50.00",
+      "pattern": "muringa,drumstick",
+      "unit": null,
+      "retailer_id": "veg30",
       "availability": "in stock"
     },
     "veg12": {
       "id": "9675713172524329",
       "name": "ബീറ്റ്റൂട്ട് 500 g (beetroot)",
       "description": "beetroot",
-      "price": "₹35.00",
+      "price": "₹40.00",
       "pattern": "beetaroot,vegitable",
       "unit": null,
       "retailer_id": "veg12",
@@ -134,10 +144,20 @@
       "id": "9918772161512162",
       "name": "വെണ്ട 500g (venda)",
       "description": "venda",
-      "price": "₹20.00",
+      "price": "₹25.00",
       "pattern": "venda, veg",
       "unit": null,
       "retailer_id": "veg18",
+      "availability": "in stock"
+    },
+    "veg31": {
+      "id": "9920166378090442",
+      "name": "കുമ്പളങ്ങ 1kg (kumbalanga)",
+      "description": "kumbalanga",
+      "price": "₹25.00",
+      "pattern": "kumbalanga, eleven",
+      "unit": null,
+      "retailer_id": "veg31",
       "availability": "in stock"
     },
     "veg23": {
@@ -214,7 +234,7 @@
       "id": "29112643818384302",
       "name": "ഉരുളക്കിഴങ്ങ് (Potato)  500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹14.00",
+      "price": "₹15.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "veg06",
@@ -224,7 +244,7 @@
       "id": "29132399203071007",
       "name": "ഇഞ്ചി (Ginger) 250g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹15.00",
+      "price": "₹18.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "veg02",
@@ -262,9 +282,9 @@
     },
     "veg28": {
       "id": "29570859552561522",
-      "name": "മല്ലി ഇല 200g (Mallichapp)",
+      "name": "മല്ലി ഇല 100g (Mallichapp)",
       "description": "malli leaf",
-      "price": "₹10.00",
+      "price": "₹15.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "veg28",
@@ -496,7 +516,7 @@
       "id": "9707724209283250",
       "name": "വെളിച്ചെണ്ണ  500ml",
       "description": "multi brand available",
-      "price": "₹165.00",
+      "price": "₹175.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr29",
@@ -566,7 +586,7 @@
       "id": "29462530646728840",
       "name": "വെളിച്ചെണ്ണ  1L",
       "description": "multi brand available",
-      "price": "₹330.00",
+      "price": "₹350.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr28",
@@ -1170,7 +1190,7 @@
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹115.00",
+      "price": "₹120.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
@@ -1474,7 +1494,7 @@
       "id": "29438708865743345",
       "name": "ഉന്നക്കാഴ (fried banana snack)",
       "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും  Home Made (banana,egg)",
-      "price": "₹15.00",
+      "price": "₹18.00",
       "pattern": "Sarees Kitchen",
       "unit": null,
       "retailer_id": "SN02",
@@ -1500,14 +1520,54 @@
       "retailer_id": "sn10",
       "availability": "in stock"
     },
+    "sn13": {
+      "id": "9921822237938923",
+      "name": "പരിപ്പുവട (Parippu vada)",
+      "description": "പരിപ്പുവട",
+      "price": "₹15.00",
+      "pattern": "parippu vada",
+      "unit": null,
+      "retailer_id": "sn13",
+      "availability": "in stock"
+    },
+    "sn14": {
+      "id": "10004554332970552",
+      "name": "മുട്ട ബജി(egg bujji)",
+      "description": "മുട്ട ബജി",
+      "price": "₹15.00",
+      "pattern": "egg baji",
+      "unit": null,
+      "retailer_id": "sn14",
+      "availability": "in stock"
+    },
+    "sn15": {
+      "id": "10090429087685586",
+      "name": "ഉള്ളിവട (ulli vada)",
+      "description": "ഉള്ളിവട",
+      "price": "₹15.00",
+      "pattern": "ulli vada",
+      "unit": null,
+      "retailer_id": "sn15",
+      "availability": "in stock"
+    },
     "sn12": {
       "id": "29641612152152766",
       "name": "Chatti Pathiri (ചട്ടിപത്തിരി)",
       "description": "Chatti Pathiri (ചട്ടിപത്തിരി) per piece",
-      "price": "₹25.00",
+      "price": "₹30.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "sn12",
+      "availability": "in stock"
+    },
+    "sn16": {
+      "id": "30604320422500814",
+      "name": "കോഴിയട (kozhi ada)",
+      "description": "കോഴിയട",
+      "price": "₹20.00",
+      "pattern": "kozhi ada",
+      "unit": null,
+      "retailer_id": "sn16",
       "availability": "in stock"
     }
   },
@@ -2012,6 +2072,16 @@
       "retailer_id": "rf53",
       "availability": "in stock"
     },
+    "rf59": {
+      "id": "9620146121446483",
+      "name": "Kodhiyanz Turkish Sawarma Roll",
+      "description": "rummali roll\nrestaurant: kodhiyanz",
+      "price": "₹130.00",
+      "pattern": "kodhiyanz, shawarma",
+      "unit": null,
+      "retailer_id": "rf59",
+      "availability": "in stock"
+    },
     "rf51": {
       "id": "9796440533815236",
       "name": "Beef Mandi (HALF)",
@@ -2042,6 +2112,16 @@
       "retailer_id": "rf52",
       "availability": "in stock"
     },
+    "rf58": {
+      "id": "10071968412886465",
+      "name": "Kodhiyanz Mexican Sawarma Roll",
+      "description": "rummali roll\nrestaurant: kodhiyanz",
+      "price": "₹120.00",
+      "pattern": "kodhiyanz, shawarma",
+      "unit": null,
+      "retailer_id": "rf58",
+      "availability": "in stock"
+    },
     "rf50": {
       "id": "23868757866090629",
       "name": "Beef Mandi (FULL)",
@@ -2060,6 +2140,138 @@
       "pattern": "mandhi, mandi, mutton mandhi",
       "unit": null,
       "retailer_id": "rf54",
+      "availability": "in stock"
+    },
+    "rf57": {
+      "id": "29812368888377654",
+      "name": "Kodhiyanz Classic Sawarma Roll",
+      "description": "rummali roll\nrestaurant: kodhiyanz",
+      "price": "₹100.00",
+      "pattern": "kodhiyanz, shawarma",
+      "unit": null,
+      "retailer_id": "rf57",
+      "availability": "in stock"
+    },
+    "rf56": {
+      "id": "29854167010895803",
+      "name": "Kodhiyanz Mini Sawarma Roll",
+      "description": "rummali roll\nrestaurant: kodhiyanz",
+      "price": "₹80.00",
+      "pattern": "kodhiyanz, shawarma",
+      "unit": null,
+      "retailer_id": "rf56",
+      "availability": "in stock"
+    },
+    "rf64": {
+      "id": "9815923541794303",
+      "name": "Fries (large)",
+      "description": "french fries\nrestaurant: kodhiyanz",
+      "price": "₹80.00",
+      "pattern": "kodhiyanz, shawarma, plate",
+      "unit": null,
+      "retailer_id": "rf64",
+      "availability": "in stock"
+    },
+    "rf60": {
+      "id": "9863090177079739",
+      "name": "Kodhiyanz Arabic Sawarma Roll",
+      "description": "rummali roll\nrestaurant: kodhiyanz",
+      "price": "₹150.00",
+      "pattern": "kodhiyanz, shawarma",
+      "unit": null,
+      "retailer_id": "rf60",
+      "availability": "in stock"
+    },
+    "rf62": {
+      "id": "9886691384702005",
+      "name": "Kodhiyanz  Mexican Plate",
+      "description": "shawarma plate\nrestaurant: kodhiyanz",
+      "price": "₹130.00",
+      "pattern": "kodhiyanz, shawarma, plate",
+      "unit": null,
+      "retailer_id": "rf62",
+      "availability": "in stock"
+    },
+    "rf67": {
+      "id": "9934851719932669",
+      "name": "Loaded Fries",
+      "description": "nugggets\nrestaurant: kodhiyanz",
+      "price": "₹170.00",
+      "pattern": "kodhiyanz, shawarma, plate",
+      "unit": null,
+      "retailer_id": "rf67",
+      "availability": "in stock"
+    },
+    "rf66": {
+      "id": "10001290039908636",
+      "name": "Chicken Nuggets",
+      "description": "nugggets\nrestaurant: kodhiyanz",
+      "price": "₹100.00",
+      "pattern": "kodhiyanz, shawarma, plate",
+      "unit": null,
+      "retailer_id": "rf66",
+      "availability": "in stock"
+    },
+    "rf65": {
+      "id": "10009224565783183",
+      "name": "Fries (spicy)",
+      "description": "french fries\nrestaurant: kodhiyanz",
+      "price": "₹100.00",
+      "pattern": "kodhiyanz, shawarma, plate",
+      "unit": null,
+      "retailer_id": "rf65",
+      "availability": "in stock"
+    },
+    "rf63": {
+      "id": "23867115719574841",
+      "name": "Kodhiyanz  Turkish Plate",
+      "description": "shawarma plate\nrestaurant: kodhiyanz",
+      "price": "₹140.00",
+      "pattern": "kodhiyanz, shawarma, plate",
+      "unit": null,
+      "retailer_id": "rf63",
+      "availability": "in stock"
+    },
+    "rf61": {
+      "id": "23935667582725843",
+      "name": "Kodhiyanz  Classic Plate",
+      "description": "shawarma plate\nrestaurant: kodhiyanz",
+      "price": "₹120.00",
+      "pattern": "kodhiyanz, shawarma, plate",
+      "unit": null,
+      "retailer_id": "rf61",
+      "availability": "in stock"
+    }
+  },
+  "general": {
+    "gn03": {
+      "id": "24032559896380441",
+      "name": "2hand cone+2nil cone(offer)",
+      "description": "henna",
+      "price": "₹190.00",
+      "pattern": "henna, mehandi, hand",
+      "unit": null,
+      "retailer_id": "gn03",
+      "availability": "in stock"
+    },
+    "gn01": {
+      "id": "24189562553984608",
+      "name": "Mehandi Nail Cone",
+      "description": "henna",
+      "price": "₹35.00",
+      "pattern": "henna, mehandi, nil",
+      "unit": null,
+      "retailer_id": "gn01",
+      "availability": "in stock"
+    },
+    "gn02": {
+      "id": "29722483354065719",
+      "name": "Mehandi Hand Cone",
+      "description": "henna",
+      "price": "₹60.00",
+      "pattern": "henna, mehandi, hand",
+      "unit": null,
+      "retailer_id": "gn02",
       "availability": "in stock"
     }
   }
