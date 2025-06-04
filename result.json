@@ -153,9 +153,9 @@
     "veg31": {
       "id": "9920166378090442",
       "name": "കുമ്പളങ്ങ 1kg (kumbalanga)",
-      "description": "kumbalanga",
+      "description": "kumbalanga, ash gourd",
       "price": "₹25.00",
-      "pattern": "kumbalanga, eleven",
+      "pattern": "kumbalanga, eleven,ash gourd",
       "unit": null,
       "retailer_id": "veg31",
       "availability": "in stock"
@@ -168,6 +168,16 @@
       "pattern": "kakkiri, cucumber,",
       "unit": null,
       "retailer_id": "veg23",
+      "availability": "in stock"
+    },
+    "veg32": {
+      "id": "23916657167965615",
+      "name": "കയ്പക്ക 500g (Kayppa)",
+      "description": "kayppa",
+      "price": "₹30.00",
+      "pattern": "kayppa, veg",
+      "unit": null,
+      "retailer_id": "veg32",
       "availability": "in stock"
     },
     "veg16": {
@@ -1550,6 +1560,16 @@
       "retailer_id": "sn15",
       "availability": "in stock"
     },
+    "sn17": {
+      "id": "24093670490326386",
+      "name": "ഉണ്ണിയപ്പം 8 pcs (Unni appam)",
+      "description": "unniappam",
+      "price": "₹55.00",
+      "pattern": "unniappam, unniappam, appam, snacks",
+      "unit": null,
+      "retailer_id": "sn17",
+      "availability": "in stock"
+    },
     "sn12": {
       "id": "29641612152152766",
       "name": "Chatti Pathiri (ചട്ടിപത്തിരി)",
@@ -1864,7 +1884,7 @@
     },
     "rf31": {
       "id": "9476135162509438",
-      "name": "ഊൺ (Meals)",
+      "name": "ഊൺ (Malayoram Meals)",
       "description": "meals with above 8 side items \nrestaurant: malayoram mess house",
       "price": "₹70.00",
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
@@ -2162,6 +2182,16 @@
       "retailer_id": "rf56",
       "availability": "in stock"
     },
+    "rf68": {
+      "id": "9755176971258921",
+      "name": "Masala Dosha",
+      "description": "masala dosha\nrestaurant: sharadha dosa",
+      "price": "₹60.00",
+      "pattern": "dosa,masala dosa, neirost",
+      "unit": null,
+      "retailer_id": "rf68",
+      "availability": "in stock"
+    },
     "rf64": {
       "id": "9815923541794303",
       "name": "Fries (large)",
@@ -2200,6 +2230,16 @@
       "pattern": "kodhiyanz, shawarma, plate",
       "unit": null,
       "retailer_id": "rf67",
+      "availability": "in stock"
+    },
+    "rf69": {
+      "id": "9989867441074746",
+      "name": "Ney Rost",
+      "description": "Ney Rost\nrestaurant: sharadha dosa",
+      "price": "₹50.00",
+      "pattern": "dosa,masala dosa, neirost",
+      "unit": null,
+      "retailer_id": "rf69",
       "availability": "in stock"
     },
     "rf66": {
@@ -2241,13 +2281,53 @@
       "unit": null,
       "retailer_id": "rf61",
       "availability": "in stock"
+    },
+    "rf73": {
+      "id": "9610637892395418",
+      "name": "Beef Dosa",
+      "description": "Beef Dosa\nrestaurant: sharadha dosaha",
+      "price": "₹110.00",
+      "pattern": "dosa,masala dosa, neirost",
+      "unit": null,
+      "retailer_id": "rf73",
+      "availability": "in stock"
+    },
+    "rf74": {
+      "id": "9761836867260937",
+      "name": "Thattu Dosa",
+      "description": "Thattu Dosa\nrestaurant: sharadha dosaha",
+      "price": "₹30.00",
+      "pattern": "dosa,masala dosa, neirost",
+      "unit": null,
+      "retailer_id": "rf74",
+      "availability": "in stock"
+    },
+    "rf70": {
+      "id": "9900023963409076",
+      "name": "Mutta Dosa",
+      "description": "Mutta Dosa\nrestaurant: sharadha dosaha",
+      "price": "₹70.00",
+      "pattern": "dosa,masala dosa, neirost",
+      "unit": null,
+      "retailer_id": "rf70",
+      "availability": "in stock"
+    },
+    "rf71": {
+      "id": "29872509699060076",
+      "name": "Chicken Dosa",
+      "description": "Chicken Dosa\nrestaurant: sharadha dosaha",
+      "price": "₹110.00",
+      "pattern": "dosa,masala dosa, neirost",
+      "unit": null,
+      "retailer_id": "rf71",
+      "availability": "in stock"
     }
   },
   "general": {
     "gn03": {
       "id": "24032559896380441",
-      "name": "Henna Hand Cone -2hand cone+2nil cone(offer)",
-      "description": "henna",
+      "name": "Henna Hand Cone combo offer",
+      "description": "henna -2hand cone,2nil cone",
       "price": "₹190.00",
       "pattern": "henna, mehandi, hand",
       "unit": null,

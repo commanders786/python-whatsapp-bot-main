@@ -106,7 +106,7 @@ def process_whatsapp_message(body):
         
         if now < start_time or now > end_time:
                 
-                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക."
+                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
                 data = get_text_message_input(wa_id, response)
                 send_message(data)
                 return
@@ -271,9 +271,9 @@ def process_whatsapp_message(body):
                 
                 return
             elif button_id=="clear":
-                user_sessions[wa_id]['level']=""
+                user_sessions[wa_id]['level']="F1"
                 user_sessions[wa_id]['items']=[]
-                response ="Now your cart is clear please continue shop with us" if user_sessions[wa_id]['language']=="en" else "നിങ്ങളുടെ കാർട്ട് ഇപ്പോൾ ശൂന്യമാണ്, ദയവായി ഞങ്ങളോടൊപ്പം ഷോപ്പ് ചെയ്യുന്നത് തുടരണം"
+                response ="Now your cart is free please continue shop with us 🛍🛒" if user_sessions[wa_id]['language']=="en" else "നിങ്ങളുടെ കാർട്ട് ഇപ്പോൾ ശൂന്യമാണ്, ദയവായി ഞങ്ങളോടൊപ്പം ഷോപ്പ് ചെയ്യുന്നത് തുടരുക 🛍🛒 "
                 data = get_text_message_input(wa_id, response)
                 send_message(data)
                 send_options(wa_id,user_sessions[wa_id]['language'])

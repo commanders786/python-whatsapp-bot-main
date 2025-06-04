@@ -154,6 +154,13 @@ def get_notes_pharmacist(recipient_phone_number,language):
                             "id": "skip",
                             "title":"Skip"
                         }
+                    },
+                     {
+                        "type": "reply",
+                        "reply": {
+                            "id": "clear",
+                            "title":"Retake/Cancel"
+                        }
                     }
                     
                 ]
