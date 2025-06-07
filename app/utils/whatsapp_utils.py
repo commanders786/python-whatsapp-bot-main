@@ -105,11 +105,12 @@ def process_whatsapp_message(body):
         end_time = time(20, 0, 0)    # 8:00 PM
         
         # if now < start_time or now > end_time:
+        if True:
                 
-        #         response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
-        #         data = get_text_message_input(wa_id, response)
-        #         send_message(data)
-        #         return
+                response ="Eid Mubarak \nഇന്ന് സ്റ്റോർ അവധിയാണ്  "
+                data = get_text_message_input(wa_id, response)
+                send_message(data)
+                return
         if message["type"] == "text":
             
             message_body = message["text"]["body"]
