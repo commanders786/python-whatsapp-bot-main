@@ -193,7 +193,7 @@ import requests
 
 ACCESS_TOKEN = "EAAQKF56ZAbJQBO8QjZB1Lmr471oHsunN8bqvophvlHGGt08TrOXrE6nKTUwwTBkfBK2ub9i1ZAZANFHsvPP0g2yyJLcZBxhMrLKH4fzv4UM5EbwzsL9PeS7FdfjSbF3Yo59oVmKoc4FMvwRcyJsc6CPyAPTuOrXlKXYhlcJzOqmK4g0Yx3BxG0Yf2AjuLEvPKBOmsLixQgCCpFiKKF9ZC6eNXDvuNEcst27oIap7CF"
 GRAPH_API_URL = "https://graph.facebook.com/v22.0/1595768864475137/products"
-FIELDS = "name,retailer_id,price,size,image_url"
+FIELDS = "name,retailer_id,price,size,image_url,sale_price"
 
 def get_product_by_retailerid_service(retailer_id):
     try:
@@ -252,6 +252,7 @@ def get_products_service(product_ids=None):
                     "name": product.get("name"),
                     "description": product.get("description"),
                     "price": product.get("price"),
+                    "sale_price": product.get("sale_price"),
                     "availability": product.get("availability")
                 }
                 result[category].append(product_data)
