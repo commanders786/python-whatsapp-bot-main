@@ -154,11 +154,42 @@ def get_order_items_service(order_id=None, product_id=None):
         return {"status": "error", "message": str(e)}, 500
 
 
-def get_order_summary_service():
+def get_order_summary_service(vendor=None):
     try:
-        with get_db_connection() as conn:
-            with conn.cursor() as cur:
-                cur.execute("""
+
+       
+        if vendor:
+                if len(vendor)>3:
+                    vendor=tuple(vendor.split(","))
+                    query=f"""
+                    SELECT 
+                        o.id AS order_id,
+                        COUNT(oi.product_id) AS item_count,
+                        o.created_at,
+                        o.status
+                    FROM orders o
+                    JOIN order_items oi ON o.id = oi.order_id
+                    where oi.product_id in {vendor}
+                    GROUP BY o.id, o.created_at, o.status
+                    ORDER BY o.created_at DESC
+                    LIMIT 100;
+                """
+                else:
+                   query=f"""
+                      SELECT 
+                        o.id AS order_id,
+                        COUNT(oi.product_id) AS item_count,
+                        o.created_at,
+                        o.status
+                    FROM orders o
+                    JOIN order_items oi ON o.id = oi.order_id
+                    where oi.product_id like '{vendor}%'
+                    GROUP BY o.id, o.created_at, o.status
+                    ORDER BY o.created_at DESC
+                    LIMIT 100;
+                """
+        else:
+             query=f"""
                     SELECT 
                         o.id AS order_id,
                         COUNT(oi.product_id) AS item_count,
@@ -169,7 +200,13 @@ def get_order_summary_service():
                     GROUP BY o.id, o.created_at, o.status
                     ORDER BY o.created_at DESC
                     LIMIT 100;
-                """)
+                """
+             
+        print(query)
+        with get_db_connection() as conn:
+            
+            with conn.cursor() as cur:
+                cur.execute(query)
                 rows = cur.fetchall()
 
                 result = [
@@ -398,3 +435,18 @@ def update_user_lastlogin(user_id):
       
     except Exception as e:
         logging.error(f"Failed to update last login for user {user_id}: {e}")
+
+
+def get_vendor_products(user):
+    conn = get_db_connection()
+    cur = conn.cursor()
+
+    cur.execute("SELECT vendor_products FROM role_users WHERE username = %s", (user,))
+    row = cur.fetchone()
+    cur.close()
+    conn.close()
+
+   
+
+    
+    return {"products": row[0] ,"status": 200}

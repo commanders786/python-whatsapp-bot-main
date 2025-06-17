@@ -433,6 +433,12 @@ def send_options(recipient_phone_number,language):
                     {
                         "title": "Food",
                         "rows": [
+
+                             {
+                                "id": "medicine",
+                                "title":messages.optmsgs["title2"][language],
+                                "description": messages.optmsgs["desc2"][language],
+                            },
                           
                              {
                                 "id": "opt1",
@@ -443,6 +449,11 @@ def send_options(recipient_phone_number,language):
                                 "id": "opt4",
                                 "title":messages.button_names["fr"][language],
                                 "description":"Fresh fruits",
+                            },
+                             {
+                                "id": "opt2",
+                                "title":messages.button_names["gr"][language],
+                                "description":"Grains and all masala",
                             },
                             {
                                 "id": "rest",
@@ -455,6 +466,11 @@ def send_options(recipient_phone_number,language):
                                 "title":messages.optmsgs["snacks"][language],
                                 "description":" Bakeries  Evening snacks ",
                             },
+                              {
+                                "id": "bakeries",
+                                "title":messages.optmsgs["bakeries"][language],
+                                "description":" Bakeries  from nice bakes ",
+                            },
                             {
                                 "id": "opt8",
                                 "title":messages.button_names["fish"][language],
@@ -465,17 +481,9 @@ def send_options(recipient_phone_number,language):
                                 "title":messages.button_names["mt"][language],
                                 "description":"Beef Mutton Chicken Kaada ",
                             },
-                             {
-                                "id": "opt2",
-                                "title":messages.button_names["gr"][language],
-                                "description":"Grains and all masala",
-                            },
                             
-                            {
-                                "id": "medicine",
-                                "title":messages.optmsgs["title2"][language],
-                                "description": messages.optmsgs["desc2"][language],
-                            }
+                            
+                           
                         ]
                     }
                 ]

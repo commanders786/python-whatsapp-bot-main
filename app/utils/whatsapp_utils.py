@@ -95,7 +95,7 @@ def process_whatsapp_message(body):
     print("Recieved message :",message)
     print("\n \n User Session ----",user_sessions[wa_id])
     print("\n\n")
-    print("hihihihi",list(load_restaurants().keys()))
+    print("Rests",list(load_restaurants().keys()))
     try:
         # If it's a regular text message
         ts = int(message['timestamp'])
@@ -234,7 +234,7 @@ def process_whatsapp_message(body):
             #      send_restaurants()
             #      return
             elif button_id in list(load_restaurants().keys()):
-                print("gggggg")
+             
                 send_whatsapp_product_list(button_id,wa_id,button_id)
                 return
           
@@ -259,6 +259,10 @@ def process_whatsapp_message(body):
                 return
            
             elif button_id=='snacks':
+              
+                send_whatsapp_product_list("snacks",wa_id)
+                return
+            elif button_id=='bakeries':
               
                 send_whatsapp_product_list("bakeries",wa_id)
                 return
@@ -304,7 +308,7 @@ def process_whatsapp_message(body):
                 else:
                  user_sessions[wa_id]['level']='F1'
                  user_sessions[wa_id]['notes']='nothing'
-                 response ="Sorry for now we are not providing our service in your location" if user_sessions[wa_id]['language']=='en' else "ക്ഷമിക്കണം, ഇപ്പോഴെത്തന്നെ നിങ്ങളുടെ സ്ഥലത്ത് ഞങ്ങൾ സേവനം നൽകുന്നില്ല" 
+                 response ="Sorry for now we are not providing our service in your location.\nFor Support Call +91 9961575781" if user_sessions[wa_id]['language']=='en' else "ക്ഷമിക്കണം, ഇപ്പോഴെത്തന്നെ നിങ്ങളുടെ സ്ഥലത്ത് ഞങ്ങൾ സേവനം നൽകുന്നില്ല.\n കസ്റ്റമർ സപ്പോർട്ട് : +919961575781" 
                  data= get_text_message_input(wa_id,response)
                  send_message(data)
                  return
@@ -329,7 +333,10 @@ def process_whatsapp_message(body):
                 print("order Created",response_status)
                 order_id = response_status[0].get('order_id')
                 update_order_items_service(order_id,user_sessions[wa_id]['items'])
+                bill_text,items = process_order_message(user_sessions[wa_id]['items'],location)
+                user_sessions[wa_id]['bill']=bill_text
                 order_notification_template = po_template(user_sessions[wa_id],order_id=order_id)
+                
 
                 
                 data= get_text_message_input(wa_id,order_notification_template)

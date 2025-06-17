@@ -2,6 +2,7 @@
 import json
 
 from app.services.product_service import load_restaurants
+from app.utils.validations import calculate_price
 
 def load_all_products():
     with open("result.json", "r", encoding="utf-8") as f:
@@ -15,7 +16,7 @@ def build_product_name_map(all_products):
     return name_map
 import re
 
-def process_order_message(product_items):
+def process_order_message(product_items,location=None):
     
    
     # Load product names from result.json
@@ -51,8 +52,14 @@ def process_order_message(product_items):
         line = f"{row[0]:<{col_widths[0]}}  {row[1]:<{col_widths[1]}}  {row[2]:<{col_widths[2]}}  {row[3]:<{col_widths[3]}}  {row[4]:<{col_widths[4]}}"
         lines.append(line)
 
-    lines.append(f"\n🛵 Delivey Charge: ₹ 30")
-    grand_total+=30
+    if not location:
+     lines.append(f"\n🛵 Delivey Charge: ₹ 30")
+     grand_total+=30
+    else:
+     price=calculate_price(location["latitude"],location["longitude"])
+     lines.append(f"\n🛵 Delivey Charge: ₹ {str(price)}")
+     grand_total+=price
+     grand_total=round(grand_total,2)
     # Total
     lines.append(f"\n🧾 Grand Total: ₹{grand_total}")
     return ("\n".join(lines),product_items)

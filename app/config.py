@@ -14,7 +14,8 @@ def load_configurations(app):
     app.config["VERSION"] = os.getenv("VERSION")
     app.config["PHONE_NUMBER_ID"] = os.getenv("PHONE_NUMBER_ID")
     app.config["VERIFY_TOKEN"] = os.getenv("VERIFY_TOKEN")
-
+    app.config["SECRET_KEY"] = os.getenv("JWT_SECRET", "your-secret-key")
+    app.config["JWT_ALGORITHM"] = "HS256"
 
 def configure_logging():
     logging.basicConfig(
@@ -22,3 +23,7 @@ def configure_logging():
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
         stream=sys.stdout,
     )
+
+
+SECRET_KEY = os.environ.get("JWT_SECRET", "your-secret-key")
+JWT_ALGORITHM = "HS256"

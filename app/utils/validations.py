@@ -1,7 +1,7 @@
 import math
 # 11.358386753972075, 75.91277067332773
 # lat, lon, ref_lat=11.360499024193635, ref_lon=75.90958223007394, radius_km=2):
-def is_within_radius(lat, lon, ref_lat=11.358386753972075, ref_lon=75.91277067332773, radius_km=7):
+def is_within_radius(lat, lon, ref_lat=11.358386753972075, ref_lon=75.91277067332773, radius_km=6):
     # Radius of Earth in kilometers
     R = 6371.0
 
@@ -23,3 +23,35 @@ def is_within_radius(lat, lon, ref_lat=11.358386753972075, ref_lon=75.9127706733
 
     # Check if distance is within radius
     return distance_km <= radius_km
+
+
+def calculate_price(lat, lon):
+    # Reference point coordinates
+    ref_lat = 11.358386753972075
+    ref_lon = 75.91277067332773
+    
+    # Earth's radius in kilometers
+    R = 6371.0
+    
+    # Convert latitude and longitude to radians
+    lat_rad = math.radians(lat)
+    lon_rad = math.radians(lon)
+    ref_lat_rad = math.radians(ref_lat)
+    ref_lon_rad = math.radians(ref_lon)
+    
+    # Differences in coordinates
+    dlat = ref_lat_rad - lat_rad
+    dlon = ref_lon_rad - lon_rad
+    
+    # Haversine formula
+    a = math.sin(dlat/2)**2 + math.cos(lat_rad) * math.cos(ref_lat_rad) * math.sin(dlon/2)**2
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1-a))
+    distance = R * c
+    
+    # Price calculation
+    if distance <= 3:
+        price = 30
+    else:
+        price = 30 + (distance - 3) * 5
+    
+    return round(price, 2)

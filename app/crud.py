@@ -216,7 +216,8 @@ def get_order_items():
 
 @crud_blueprint.route("/orders/summary", methods=["GET"])
 def get_order_summary():
-    response, status = get_order_summary_service()
+    vendor = request.args.get("vendor")
+    response, status = get_order_summary_service(vendor)
     return jsonify(response), status
 
 @crud_blueprint.route("/products", methods=["GET"])

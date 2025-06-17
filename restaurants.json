@@ -1,12 +1,17 @@
 {
   "Afc Chicken": [
     "rf03",
-    "rf02",
-    "rf07",
-    "rf05",
     "rf04",
-    "rf01",
-    "rf06"
+    "rf06",
+    "rf102",
+    "rf103",
+    "rf108",
+    "rf106",
+    "rf100",
+    "rf101",
+    "rf104",
+    "rf105",
+    "rf107"
   ],
   "Shawai Spot": [
     "rf08",
@@ -35,7 +40,8 @@
   ],
   "Biriyani Chemb": [
     "rf29",
-    "rf30"
+    "rf30",
+    "rf72"
   ],
   "Malayoram Mess House": [
     "rf31"

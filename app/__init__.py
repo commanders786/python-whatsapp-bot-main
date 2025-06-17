@@ -2,6 +2,7 @@ from flask import Flask
 from app.config import load_configurations, configure_logging
 from .views import webhook_blueprint
 from .crud import crud_blueprint
+from .auth import auth_bp
 from flask_cors import CORS
 
 
@@ -17,6 +18,7 @@ def create_app():
     # Import and register blueprints, if any
     app.register_blueprint(webhook_blueprint)
     app.register_blueprint(crud_blueprint)
+    app.register_blueprint(auth_bp) 
    
 
     return app

@@ -468,12 +468,12 @@
       "id": "9722323361188617",
       "name": "ശർക്കര 500g (Sharkara)",
       "description": "sharkara",
-      "price": "₹34.00",
+      "price": "₹32.00",
       "pattern": "sharkkara",
       "unit": null,
       "retailer_id": "gr17",
       "availability": "in stock",
-      "sale_price": "₹30.00"
+      "sale_price": null
     },
     "gr10": {
       "id": "9734215706639514",
@@ -902,7 +902,7 @@
       "unit": null,
       "retailer_id": "gr52",
       "availability": "in stock",
-      "sale_price": "₹90.00"
+      "sale_price": "₹100.00"
     },
     "gr51": {
       "id": "9892838707467118",
@@ -1255,8 +1255,8 @@
       "pattern": "rambuttan",
       "unit": null,
       "retailer_id": "fr22",
-      "availability": "out of stock",
-      "sale_price": null
+      "availability": "in stock",
+      "sale_price": "₹170.00"
     },
     "fr25": {
       "id": "9884501904938575",
@@ -1278,7 +1278,7 @@
       "unit": null,
       "retailer_id": "fr24",
       "availability": "in stock",
-      "sale_price": "₹70.00"
+      "sale_price": "₹60.00"
     },
     "fr21": {
       "id": "23942118818729188",
@@ -1290,6 +1290,17 @@
       "retailer_id": "fr21",
       "availability": "out of stock",
       "sale_price": null
+    },
+    "fr26": {
+      "id": "23982478584725865",
+      "name": "മാംഗോസ്റ്റീൻ 500g (MANGOSTEEN)",
+      "description": "Mangosteen",
+      "price": "₹180.00",
+      "pattern": "mango,Mangosteen",
+      "unit": null,
+      "retailer_id": "fr26",
+      "availability": "in stock",
+      "sale_price": "₹150.00"
     }
   },
   "meat": {
@@ -1297,7 +1308,7 @@
       "id": "9589655301147089",
       "name": "Chicken Parts 500g (കോഴി പാർട്സ് )",
       "description": "parts seperated",
-      "price": "₹75.00",
+      "price": "₹70.00",
       "pattern": "കോഴി പാർട്സ് ,chicken parts",
       "unit": null,
       "retailer_id": "ch04",
@@ -1341,7 +1352,7 @@
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹120.00",
+      "price": "₹110.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
@@ -1627,159 +1638,60 @@
     }
   },
   "bakeries": {
-    "SN01": {
-      "id": "9395913967197870",
-      "name": "കട്ട്ലറ്റ് (cutlet)",
-      "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും",
-      "price": "₹15.00",
-      "pattern": "Sarees Kitchen",
+    "bk01": {
+      "id": "9985526044867027",
+      "name": "Nutty Bubble (cake) 500g",
+      "description": "Nutty Bubble 500g from nice bakery",
+      "price": "₹550.00",
+      "pattern": "cake,Nutty Bubble,",
       "unit": null,
-      "retailer_id": "SN01",
+      "retailer_id": "bk01",
       "availability": "in stock",
       "sale_price": null
     },
-    "SN03": {
-      "id": "9567582903335144",
-      "name": "ചട്ടിപത്തിരി ( Cake) 1.5kg",
-      "description": "ലൈവ് ആയി ചെയ്യുന്നതോണ്ട് 3 മണിക്കൂർ വരേ എടുക്കാം",
+    "bk02": {
+      "id": "24731091906479280",
+      "name": "Nutty Bubble (cake)1kg",
+      "description": "Nutty Bubble (cake) 1kg from nice bakery",
+      "price": "₹1,000.00",
+      "pattern": "cake,Nutty Bubble",
+      "unit": null,
+      "retailer_id": "bk02",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk04": {
+      "id": "24808630635394219",
+      "name": "Black Forest Cake 1kg",
+      "description": "Black Forest Cake 1kg from nice bakery",
+      "price": "₹750.00",
+      "pattern": "cake,Black Forest",
+      "unit": null,
+      "retailer_id": "bk04",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk10": {
+      "id": "29828944453415840",
+      "name": "Algeria Dates (അൾജീരിയ ഈത്തപ്പഴം ) 200g",
+      "description": "Algeria Dates from nice bakery",
+      "price": "₹64.00",
+      "pattern": "dates,karakka,eethapazham",
+      "unit": null,
+      "retailer_id": "bk10",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk3": {
+      "id": "29959844233659101",
+      "name": "black forest 500g",
+      "description": "black forest 500g from nice bakery",
       "price": "₹450.00",
-      "pattern": "chattipathiri,home made cake,snacks",
+      "pattern": "cake,black forest",
       "unit": null,
-      "retailer_id": "SN03",
+      "retailer_id": "bk3",
       "availability": "in stock",
       "sale_price": null
-    },
-    "sn09": {
-      "id": "9841801725885634",
-      "name": "Pazham Pori (പഴം പൊരി )",
-      "description": "Pazham Pori",
-      "price": "₹12.00",
-      "pattern": null,
-      "unit": null,
-      "retailer_id": "sn09",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "sn01": {
-      "id": "9859269464141510",
-      "name": "കുനാഫ ചോക്ലേറ്റ് (KUNAFA CHOCOLATE ) 200g",
-      "description": "pistachio kunafa chocolate 200g\nrestaurant: nice bakery",
-      "price": "₹525.00",
-      "pattern": "kunafa,chocolate",
-      "unit": null,
-      "retailer_id": "sn01",
-      "availability": "in stock",
-      "sale_price": "₹400.00"
-    },
-    "SN02": {
-      "id": "29438708865743345",
-      "name": "ഉന്നക്കാഴ (fried banana snack)",
-      "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും  Home Made (banana,egg)",
-      "price": "₹18.00",
-      "pattern": "Sarees Kitchen",
-      "unit": null,
-      "retailer_id": "SN02",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "sn11": {
-      "id": "9560573757373556",
-      "name": "Kukkar Appam (കുക്കറപ്പം)",
-      "description": "Kukkar Appam (കുക്കറപ്പം) per piece",
-      "price": "₹15.00",
-      "pattern": null,
-      "unit": null,
-      "retailer_id": "sn11",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "sn10": {
-      "id": "9613349562125129",
-      "name": "Chicken Smoosa (ചിക്കൻ സമൂസ)",
-      "description": "Chicken Smoosa",
-      "price": "₹15.00",
-      "pattern": null,
-      "unit": null,
-      "retailer_id": "sn10",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "sn13": {
-      "id": "9921822237938923",
-      "name": "പരിപ്പുവട (Parippu vada)",
-      "description": "പരിപ്പുവട",
-      "price": "₹15.00",
-      "pattern": "parippu vada",
-      "unit": null,
-      "retailer_id": "sn13",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "sn14": {
-      "id": "10004554332970552",
-      "name": "മുട്ട ബജി(egg bujji)",
-      "description": "മുട്ട ബജി",
-      "price": "₹15.00",
-      "pattern": "egg baji",
-      "unit": null,
-      "retailer_id": "sn14",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "sn15": {
-      "id": "10090429087685586",
-      "name": "ഉള്ളിവട (ulli vada)",
-      "description": "ഉള്ളിവട",
-      "price": "₹15.00",
-      "pattern": "ulli vada",
-      "unit": null,
-      "retailer_id": "sn15",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "sn17": {
-      "id": "24093670490326386",
-      "name": "ഉണ്ണിയപ്പം 8 pcs (Unni appam)",
-      "description": "unniappam",
-      "price": "₹40.00",
-      "pattern": "unniappam, unniappam, appam, snacks",
-      "unit": null,
-      "retailer_id": "sn17",
-      "availability": "in stock",
-      "sale_price": "₹45.00"
-    },
-    "sn12": {
-      "id": "29641612152152766",
-      "name": "Chatti Pathiri (ചട്ടിപത്തിരി)",
-      "description": "Chatti Pathiri (ചട്ടിപത്തിരി) per piece",
-      "price": "₹30.00",
-      "pattern": null,
-      "unit": null,
-      "retailer_id": "sn12",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "sn16": {
-      "id": "30604320422500814",
-      "name": "കോഴിയട (kozhi ada)",
-      "description": "കോഴിയട",
-      "price": "₹20.00",
-      "pattern": "kozhi ada",
-      "unit": null,
-      "retailer_id": "sn16",
-      "availability": "in stock",
-      "sale_price": "₹15.00"
-    },
-    "sn20": {
-      "id": "23896986286563793",
-      "name": "Cheesy Kunafa",
-      "description": "Cheesy kunafa from Nice Bakery",
-      "price": "₹350.00",
-      "pattern": "kunafa",
-      "unit": null,
-      "retailer_id": "sn20",
-      "availability": "in stock",
-      "sale_price": "₹290.00"
     }
   },
   "food": {
@@ -1791,28 +1703,6 @@
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
       "retailer_id": "rf03",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "rf02": {
-      "id": "8986935258073307",
-      "name": "AFC Favour Meal",
-      "description": "crispy burger,\n1pc chicken,6 strip pc\nfrench fries, ketchup\nrestaurant: AFC Chicken",
-      "price": "₹575.00",
-      "pattern": "AFC, FREID CHICKEN, food, restaurant",
-      "unit": null,
-      "retailer_id": "rf02",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "rf07": {
-      "id": "9667423426699075",
-      "name": "AFC Dinner Special Meal",
-      "description": "6  Pc Chicken,3 Bun\n Ketchup,garlic Paste\n French Fries\n Full- 540/\nRestaurant: AFC Chicken",
-      "price": "₹659.00",
-      "pattern": "AFC, FREID CHICKEN, food, restaurant",
-      "unit": null,
-      "retailer_id": "rf07",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1838,17 +1728,6 @@
       "availability": "in stock",
       "sale_price": null
     },
-    "rf05": {
-      "id": "23887020307569271",
-      "name": "AFC Fab Chicken Fillet",
-      "description": "Fillet,kids Burger,french Fries,\n Ketchup \nRestaurant: AFC Chicken",
-      "price": "₹298.00",
-      "pattern": "AFC, FREID CHICKEN, food, restaurant",
-      "unit": null,
-      "retailer_id": "rf05",
-      "availability": "in stock",
-      "sale_price": null
-    },
     "rf04": {
       "id": "24001490502770273",
       "name": "AFC Kids Meal",
@@ -1857,17 +1736,6 @@
       "pattern": "AFC, FREID CHICKEN, food, restaurant",
       "unit": null,
       "retailer_id": "rf04",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "rf01": {
-      "id": "24005991012320509",
-      "name": "AFC Special Meal",
-      "description": "crispy burger,1pc chicken,\nfrench fries,\nketchup\nrestaurant: AFC Chicken",
-      "price": "₹299.00",
-      "pattern": "AFC, FREID CHICKEN",
-      "unit": null,
-      "retailer_id": "rf01",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1882,6 +1750,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf102": {
+      "id": "9134420923328280",
+      "name": "BBQ CHICKEN Pizza  - L",
+      "description": "Restaurant: AFC Chicken",
+      "price": "₹498.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf102",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf13": {
       "id": "9158469134254295",
       "name": "Chicken Mdhooth Rise (Three Quater)",
@@ -1890,6 +1769,17 @@
       "pattern": "food,shawai,madhooth",
       "unit": null,
       "retailer_id": "rf13",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf103": {
+      "id": "9318818694885182",
+      "name": "CRISPY CHICKEN Pizza   -S",
+      "description": "Restaurant: AFC Chicken",
+      "price": "₹270.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf103",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1915,6 +1805,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf108": {
+      "id": "9611462695625668",
+      "name": "KIDS POP Burger",
+      "description": "Restaurant: AFC Chicken",
+      "price": "₹99.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf108",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf14": {
       "id": "10058272830902962",
       "name": "Chicken Mdhooth Rise (Half)",
@@ -1937,6 +1838,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf106": {
+      "id": "23935314939433713",
+      "name": "CHICKEN CHEESE Burger",
+      "description": "Restaurant: AFC Chicken",
+      "price": "₹149.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf106",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf19": {
       "id": "23940440992281834",
       "name": "Shawai with Arabian Rice (Quater)",
@@ -1948,6 +1860,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf100": {
+      "id": "23981632724766931",
+      "name": "BBQ CHICKEN Pizza  -S",
+      "description": "Restaurant: AFC Chicken",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf100",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf101": {
+      "id": "24000298206274526",
+      "name": "BBQ CHICKEN Pizza  - M",
+      "description": "Restaurant: AFC Chicken",
+      "price": "₹390.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf101",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf17": {
       "id": "24003716782579538",
       "name": "Shawai with Arabian Rice (Three Quater)",
@@ -1956,6 +1890,17 @@
       "pattern": "shawai,rice,food,manthi",
       "unit": null,
       "retailer_id": "rf17",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf104": {
+      "id": "24068419622791203",
+      "name": "CRISPY CHICKEN  Pizza  -M",
+      "description": "Restaurant: AFC Chicken",
+      "price": "₹360.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf104",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1981,6 +1926,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf105": {
+      "id": "29941528232160041",
+      "name": "CRISPY CHICKEN Pizza   -L",
+      "description": "Restaurant: AFC Chicken",
+      "price": "₹460.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf105",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf11": {
       "id": "29965910253007245",
       "name": "Masala Shawai  (Full)",
@@ -1989,6 +1945,17 @@
       "pattern": "shawai, chicken,food,restaurent",
       "unit": null,
       "retailer_id": "rf11",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf107": {
+      "id": "30046337984980728",
+      "name": "CHILLI CHICKEN Burger",
+      "description": "Restaurant: AFC Chicken",
+      "price": "₹169.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf107",
       "availability": "in stock",
       "sale_price": null
     },
@@ -2073,12 +2040,12 @@
       "id": "24188884680717340",
       "name": "Beef Biriyani",
       "description": "Beef Biriyani\nRESTAURANT: BIRIYANI CHEMB",
-      "price": "₹140.00",
+      "price": "₹135.00",
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf29",
       "availability": "in stock",
-      "sale_price": "₹125.00"
+      "sale_price": null
     },
     "rf28": {
       "id": "29911075291839338",
@@ -2117,12 +2084,12 @@
       "id": "9722971677825478",
       "name": "Chicken Biriyani",
       "description": "Chicken Biriyani\nRESTAURANT: BIRIYANI CHEMB",
-      "price": "₹140.00",
+      "price": "₹135.00",
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf30",
       "availability": "in stock",
-      "sale_price": "₹125.00"
+      "sale_price": null
     },
     "rf34": {
       "id": "9883732651681494",
@@ -2176,7 +2143,7 @@
       "pattern": "food, chicken tikka,",
       "unit": null,
       "retailer_id": "rf33",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf35": {
@@ -2187,7 +2154,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf35",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf32": {
@@ -2198,7 +2165,7 @@
       "pattern": "food, chicken tikka,",
       "unit": null,
       "retailer_id": "rf32",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf36": {
@@ -2209,7 +2176,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf36",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf47": {
@@ -2575,6 +2542,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf72": {
+      "id": "24425992413665278",
+      "name": "Chicken Zurbian",
+      "description": "Chicken Zurbian\nRESTAURANT: BIRIYANI CHEMB",
+      "price": "₹145.00",
+      "pattern": "lunch,biriyani",
+      "unit": null,
+      "retailer_id": "rf72",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf71": {
       "id": "29872509699060076",
       "name": "Chicken Dosa",
@@ -2620,6 +2598,162 @@
       "retailer_id": "gn02",
       "availability": "in stock",
       "sale_price": "₹50.00"
+    }
+  },
+  "snacks": {
+    "SN01": {
+      "id": "9395913967197870",
+      "name": "കട്ട്ലറ്റ് (cutlet)",
+      "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും",
+      "price": "₹20.00",
+      "pattern": "Sarees Kitchen",
+      "unit": null,
+      "retailer_id": "SN01",
+      "availability": "in stock",
+      "sale_price": "₹18.00"
+    },
+    "SN03": {
+      "id": "9567582903335144",
+      "name": "ചട്ടിപത്തിരി ( Cake) 1.5kg",
+      "description": "ലൈവ് ആയി ചെയ്യുന്നതോണ്ട് 3 മണിക്കൂർ വരേ എടുക്കാം",
+      "price": "₹450.00",
+      "pattern": "chattipathiri,home made cake,snacks",
+      "unit": null,
+      "retailer_id": "SN03",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn09": {
+      "id": "9841801725885634",
+      "name": "Pazham Pori (പഴം പൊരി )",
+      "description": "Pazham Pori",
+      "price": "₹12.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "sn09",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn01": {
+      "id": "9859269464141510",
+      "name": "കുനാഫ ചോക്ലേറ്റ് (KUNAFA CHOCOLATE ) 200g",
+      "description": "pistachio kunafa chocolate 200g\nrestaurant: nice bakery",
+      "price": "₹525.00",
+      "pattern": "kunafa,chocolate",
+      "unit": null,
+      "retailer_id": "sn01",
+      "availability": "in stock",
+      "sale_price": "₹400.00"
+    },
+    "SN02": {
+      "id": "29438708865743345",
+      "name": "ഉന്നക്കാഴ (fried banana snack)",
+      "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും  Home Made (banana,egg)",
+      "price": "₹18.00",
+      "pattern": "Sarees Kitchen",
+      "unit": null,
+      "retailer_id": "SN02",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn11": {
+      "id": "9560573757373556",
+      "name": "Kukkar Appam (കുക്കറപ്പം)",
+      "description": "Kukkar Appam (കുക്കറപ്പം) per piece",
+      "price": "₹15.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "sn11",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn10": {
+      "id": "9613349562125129",
+      "name": "Chicken Smoosa (ചിക്കൻ സമൂസ)",
+      "description": "Chicken Smoosa",
+      "price": "₹20.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "sn10",
+      "availability": "in stock",
+      "sale_price": "₹15.00"
+    },
+    "sn13": {
+      "id": "9921822237938923",
+      "name": "പരിപ്പുവട (Parippu vada)",
+      "description": "പരിപ്പുവട",
+      "price": "₹15.00",
+      "pattern": "parippu vada",
+      "unit": null,
+      "retailer_id": "sn13",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn14": {
+      "id": "10004554332970552",
+      "name": "മുട്ട ബജി(egg bujji)",
+      "description": "മുട്ട ബജി",
+      "price": "₹15.00",
+      "pattern": "egg baji",
+      "unit": null,
+      "retailer_id": "sn14",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn15": {
+      "id": "10090429087685586",
+      "name": "ഉള്ളിവട (ulli vada)",
+      "description": "ഉള്ളിവട",
+      "price": "₹15.00",
+      "pattern": "ulli vada",
+      "unit": null,
+      "retailer_id": "sn15",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn17": {
+      "id": "24093670490326386",
+      "name": "ഉണ്ണിയപ്പം 8 pcs (Unni appam)",
+      "description": "unniappam",
+      "price": "₹48.00",
+      "pattern": "unniappam, unniappam, appam, snacks",
+      "unit": null,
+      "retailer_id": "sn17",
+      "availability": "in stock",
+      "sale_price": "₹40.00"
+    },
+    "sn12": {
+      "id": "29641612152152766",
+      "name": "Chatti Pathiri (ചട്ടിപത്തിരി)",
+      "description": "Chatti Pathiri (ചട്ടിപത്തിരി) per piece",
+      "price": "₹30.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "sn12",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn16": {
+      "id": "30604320422500814",
+      "name": "കോഴിയട (kozhi ada)",
+      "description": "കോഴിയട",
+      "price": "₹20.00",
+      "pattern": "kozhi ada",
+      "unit": null,
+      "retailer_id": "sn16",
+      "availability": "in stock",
+      "sale_price": "₹15.00"
+    },
+    "sn20": {
+      "id": "23896986286563793",
+      "name": "Cheesy Kunafa",
+      "description": "Cheesy kunafa from Nice Bakery",
+      "price": "₹350.00",
+      "pattern": "kunafa",
+      "unit": null,
+      "retailer_id": "sn20",
+      "availability": "in stock",
+      "sale_price": "₹290.00"
     }
   }
 }

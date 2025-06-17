@@ -27,7 +27,7 @@ Rules:
      - If any item has a similarity score > 0.4:
        - Return a tuple of matching `retailer_ids`, e.g., `('id1', 'id2')`.
      - If no match > 0.4:
-       - Respond: "Sorry, no matching products found.Please call +919961575781 to place the order directly." (in `{language}`).
+       - Respond: "Sorry, no matching products found.Please call +919961575781 to place the order directly." (in `{language}`) convert touser language if needed.
      - Treat queries with units (e.g., "tomato 1kg") same as without (e.g., "tomato").
 
 3. **General Queries** (e.g., "how to order"):
