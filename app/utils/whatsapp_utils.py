@@ -102,7 +102,7 @@ def process_whatsapp_message(body):
         if (datetime.now(timezone.utc) - datetime.fromtimestamp(ts, timezone.utc)).total_seconds() > 60: return
         now= datetime.now(ZoneInfo("Asia/Kolkata")).time()
         start_time = time(7, 0, 0)   # 7:00 AM
-        end_time = time(20, 0, 0)    # 8:00 PM
+        end_time = time(22, 0, 0)    # 8:00 PM
         
         if now < start_time or now > end_time:
         # if True:

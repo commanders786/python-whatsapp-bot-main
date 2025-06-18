@@ -1163,7 +1163,7 @@
       "id": "9841857382527165",
       "name": "കൈതച്ചക്ക 1kg (Pineapple)",
       "description": "full pice",
-      "price": "₹65.00",
+      "price": "₹80.00",
       "pattern": "pineapple,കൈതച്ചക്ക, kaithachakka",
       "unit": null,
       "retailer_id": "fr13",
@@ -1218,7 +1218,7 @@
       "id": "30537408062524729",
       "name": "നേന്ത്രപഴം500g ( NENTRA PAZHAM)",
       "description": "nentra pazham",
-      "price": "₹35.00",
+      "price": "₹30.00",
       "pattern": "നേന്ത്രപഴം,NENTRA PAZHAM",
       "unit": null,
       "retailer_id": "fr11",
@@ -1255,7 +1255,7 @@
       "pattern": "rambuttan",
       "unit": null,
       "retailer_id": "fr22",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": "₹170.00"
     },
     "fr25": {
@@ -1267,7 +1267,7 @@
       "unit": null,
       "retailer_id": "fr25",
       "availability": "in stock",
-      "sale_price": "₹95.00"
+      "sale_price": "₹90.00"
     },
     "fr24": {
       "id": "9984712418308433",
@@ -1638,6 +1638,50 @@
     }
   },
   "bakeries": {
+    "bk06": {
+      "id": "9830423593679269",
+      "name": "Red choco Cake 1kg",
+      "description": "Red choco Cake 1kg from nice bakery",
+      "price": "₹1,000.00",
+      "pattern": "cake,red choco,choco,red",
+      "unit": null,
+      "retailer_id": "bk06",
+      "availability": "out of stock",
+      "sale_price": null
+    },
+    "bk09": {
+      "id": "9845743815537953",
+      "name": "Red Velvet 500g",
+      "description": "Red Velvet 500g from nice bakery",
+      "price": "₹500.00",
+      "pattern": "cake,red velvet,red,velvet",
+      "unit": null,
+      "retailer_id": "bk09",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk05": {
+      "id": "9934801173277458",
+      "name": "Red choco Cake 500g",
+      "description": "Red choco Cake 500g from nice bakery",
+      "price": "₹600.00",
+      "pattern": "cake,red choco,choco,red",
+      "unit": null,
+      "retailer_id": "bk05",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk08": {
+      "id": "9935743269878247",
+      "name": "Vancho Cake 1kg",
+      "description": "Vancho Cake 1kg from nice bakery",
+      "price": "₹1,000.00",
+      "pattern": "cake,vancho",
+      "unit": null,
+      "retailer_id": "bk08",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk01": {
       "id": "9985526044867027",
       "name": "Nutty Bubble (cake) 500g",
@@ -1646,6 +1690,17 @@
       "pattern": "cake,Nutty Bubble,",
       "unit": null,
       "retailer_id": "bk01",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk07": {
+      "id": "10005578649523786",
+      "name": "Vancho Cake 500g",
+      "description": "Vancho Cake 500g from nice bakery",
+      "price": "₹550.00",
+      "pattern": "cake,vancho",
+      "unit": null,
+      "retailer_id": "bk07",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1662,12 +1717,78 @@
     },
     "bk04": {
       "id": "24808630635394219",
-      "name": "Black Forest Cake 1kg",
+      "name": "Black Forest (Cake) 1kg",
       "description": "Black Forest Cake 1kg from nice bakery",
-      "price": "₹750.00",
+      "price": "₹700.00",
       "pattern": "cake,Black Forest",
       "unit": null,
       "retailer_id": "bk04",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk14": {
+      "id": "9773770869412833",
+      "name": "Choconuts Cake 500g",
+      "description": "Choconuts Cake 500g  from nice bakery",
+      "price": "₹600.00",
+      "pattern": "Cake,Choconuts Cake,choco",
+      "unit": null,
+      "retailer_id": "bk14",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk17": {
+      "id": "9997856453585367",
+      "name": "White Forest cake 1kg",
+      "description": "White Forest cake 1kg from nice bakery",
+      "price": "₹700.00",
+      "pattern": "Cake,White Forest",
+      "unit": null,
+      "retailer_id": "bk17",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk16": {
+      "id": "23947140288271285",
+      "name": "White Forest cake 500g",
+      "description": "White Forest cake 500g  from nice bakery",
+      "price": "₹450.00",
+      "pattern": "Cake,White Forest",
+      "unit": null,
+      "retailer_id": "bk16",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk15": {
+      "id": "24311987091720741",
+      "name": "Choconuts Cake 1kg",
+      "description": "Choconuts Cake 1kg  from nice bakery",
+      "price": "₹1,000.00",
+      "pattern": "Cake,Choconuts Cake,choco",
+      "unit": null,
+      "retailer_id": "bk15",
+      "availability": "out of stock",
+      "sale_price": null
+    },
+    "bk13": {
+      "id": "24374532582159846",
+      "name": "Butter Scotch 1kg",
+      "description": "Butter Scotch 1kg from nice bakery",
+      "price": "₹1,000.00",
+      "pattern": "cake,Butter Scotch",
+      "unit": null,
+      "retailer_id": "bk13",
+      "availability": "out of stock",
+      "sale_price": null
+    },
+    "bk12": {
+      "id": "24669190279338141",
+      "name": "Butter Scotch 500g",
+      "description": "Butter Scotch 500g from nice bakery",
+      "price": "₹550.00",
+      "pattern": "cake,Butter Scotch",
+      "unit": null,
+      "retailer_id": "bk12",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1682,10 +1803,21 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk11": {
+      "id": "30067323426247435",
+      "name": "Red Velvet 1kg",
+      "description": "Red Velvet 1kg from nice bakery",
+      "price": "₹900.00",
+      "pattern": "cake,red velvet,red,velvet",
+      "unit": null,
+      "retailer_id": "bk11",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk3": {
       "id": "29959844233659101",
-      "name": "black forest 500g",
-      "description": "black forest 500g from nice bakery",
+      "name": "Black Forest (cake) 500g",
+      "description": "Black Forest 500g from nice bakery",
       "price": "₹450.00",
       "pattern": "cake,black forest",
       "unit": null,
@@ -2754,6 +2886,50 @@
       "retailer_id": "sn20",
       "availability": "in stock",
       "sale_price": "₹290.00"
+    },
+    "sn30": {
+      "id": "23966689346296043",
+      "name": "പൊറോട്ട  2pc (porotta)",
+      "description": "Kerala layer porotta",
+      "price": "₹30.00",
+      "pattern": "breakfast",
+      "unit": null,
+      "retailer_id": "sn30",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn32": {
+      "id": "24030618453216658",
+      "name": "ചപ്പാത്തി 5pc (chappathi)",
+      "description": "Chappathi 5 pcs",
+      "price": "₹30.00",
+      "pattern": "breakfast,kadi",
+      "unit": null,
+      "retailer_id": "sn32",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn33": {
+      "id": "24399449612972755",
+      "name": "വെള്ളപ്പം 3pc (vellappam)",
+      "description": "vellappam",
+      "price": "₹27.00",
+      "pattern": "breakfast,kadi",
+      "unit": null,
+      "retailer_id": "sn33",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn31": {
+      "id": "29989592064020433",
+      "name": "നൂൽപുട്ട് 3pc (idiyappam)",
+      "description": "Kerala idiyappam",
+      "price": "₹27.00",
+      "pattern": "breakfast,kadi",
+      "unit": null,
+      "retailer_id": "sn31",
+      "availability": "in stock",
+      "sale_price": null
     }
   }
 }
