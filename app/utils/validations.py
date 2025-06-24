@@ -52,6 +52,6 @@ def calculate_price(lat, lon):
     if distance <= 3:
         price = 30
     else:
-        price = 30 + (distance - 3) * 5
+        price = 30 + (distance - 3) * 8
     
     return round(price, 2)

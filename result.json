@@ -102,12 +102,12 @@
     "veg24": {
       "id": "9848046825264660",
       "name": "ചേമ്പ് 1kg (chembu)",
-      "description": "chembu",
-      "price": "₹35.00",
+      "description": "Chembu",
+      "price": "₹70.00",
       "pattern": "chembu, veg",
       "unit": null,
       "retailer_id": "veg24",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "veg26": {
@@ -334,7 +334,7 @@
       "id": "33285653517700071",
       "name": "പടവലങ്ങ 500g (padavalam)",
       "description": "padavalanga",
-      "price": "₹20.00",
+      "price": "₹25.00",
       "pattern": "padavalam, veg",
       "unit": null,
       "retailer_id": "veg27",
@@ -532,9 +532,9 @@
     },
     "gr14": {
       "id": "29349475341366131",
-      "name": "ഉപ്പ് 1kg (SALT)",
+      "name": "പൊടിയുപ്പ് 1kg (SALT)",
       "description": "salt powder",
-      "price": "₹12.00",
+      "price": "₹20.00",
       "pattern": "upp, salt",
       "unit": null,
       "retailer_id": "gr14",
@@ -1255,7 +1255,7 @@
       "pattern": "rambuttan",
       "unit": null,
       "retailer_id": "fr22",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": "₹170.00"
     },
     "fr25": {
@@ -1385,7 +1385,7 @@
       "id": "9874522829258228",
       "name": "കാട (KAADA)",
       "description": "കാട",
-      "price": "₹60.00",
+      "price": "₹65.00",
       "pattern": "കാട, KAADA, meet",
       "unit": null,
       "retailer_id": "kd01",
@@ -1704,6 +1704,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk022": {
+      "id": "24315941321322864",
+      "name": "പൂള പൊരി 500gm (Kappa Chips)",
+      "description": "Kappa Chips From Nice Bakery",
+      "price": "₹130.00",
+      "pattern": "kappa chips,chips,bakery",
+      "unit": null,
+      "retailer_id": "bk022",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk02": {
       "id": "24731091906479280",
       "name": "Nutty Bubble (cake)1kg",
@@ -1723,6 +1734,17 @@
       "pattern": "cake,Black Forest",
       "unit": null,
       "retailer_id": "bk04",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk021": {
+      "id": "29898927606417500",
+      "name": "മധുര വര്‍ത്തായി 500gm (Sweet Chips)",
+      "description": "Sweet Chips From Nice Bakery",
+      "price": "₹180.00",
+      "pattern": "banana chips,chips,bakery,sweet chips",
+      "unit": null,
+      "retailer_id": "bk021",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1756,6 +1778,17 @@
       "pattern": "Cake,White Forest",
       "unit": null,
       "retailer_id": "bk16",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk18": {
+      "id": "24148605318109684",
+      "name": "മിക്സ്ചർ 500gm (Mixture)",
+      "description": "Mixture From Nice Bakery",
+      "price": "₹110.00",
+      "pattern": "mixture,bakery items",
+      "unit": null,
+      "retailer_id": "bk18",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1811,6 +1844,50 @@
       "pattern": "cake,red velvet,red,velvet",
       "unit": null,
       "retailer_id": "bk11",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk19": {
+      "id": "31122335647365673",
+      "name": "വര്‍ത്തായി 500gm (Banana Chips)",
+      "description": "Banana Chips From Nice Bakery",
+      "price": "₹200.00",
+      "pattern": "banana chips,chips,bakery items",
+      "unit": null,
+      "retailer_id": "bk19",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk23": {
+      "id": "10022129114531079",
+      "name": "പൂള കൊള്ളി 500gm (Kappa Kolly)",
+      "description": "Kappa Kolly From Nice Bakery",
+      "price": "₹110.00",
+      "pattern": "kappa chips,chips,bakery,kappa kolly",
+      "unit": null,
+      "retailer_id": "bk23",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk24": {
+      "id": "24136098236029740",
+      "name": "ഉരുളക്കിഴങ്ങ് പൊരി 500gm (Potato Chips)",
+      "description": "Potato Chips From Nice Bakery",
+      "price": "₹180.00",
+      "pattern": "potato chips,chips,bakery",
+      "unit": null,
+      "retailer_id": "bk24",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk20": {
+      "id": "24188729590723246",
+      "name": "വര്‍ത്തായി 500gm (Palakutty Chips)",
+      "description": "Banana Chips Special From Nice Bakery",
+      "price": "₹240.00",
+      "pattern": "banana chips,chips,special chips",
+      "unit": null,
+      "retailer_id": "bk20",
       "availability": "in stock",
       "sale_price": null
     },
@@ -2698,6 +2775,61 @@
     }
   },
   "general": {
+    "gn09": {
+      "id": "9989338607851228",
+      "name": "ഫാബ്രോ ലോൻഡ്രി 1kg (Fabro Laundry)",
+      "description": "Fabro Laundry",
+      "price": "₹185.00",
+      "pattern": "Fabro Laundry,home care",
+      "unit": null,
+      "retailer_id": "gn09",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gn08": {
+      "id": "10005116946251313",
+      "name": "ഫ്ലോർ ക്ലീനർ 500ml (Floor Cleaner)",
+      "description": "Floor Cleaner",
+      "price": "₹125.00",
+      "pattern": "cleaner,floor cleaner,home care",
+      "unit": null,
+      "retailer_id": "gn08",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gn07": {
+      "id": "10056064271095688",
+      "name": "സോപ്പ് പൊടി 1kg (Soap Powder)",
+      "description": "Soap Powder",
+      "price": "₹122.00",
+      "pattern": "soap powder,soap,home care",
+      "unit": null,
+      "retailer_id": "gn07",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gn04": {
+      "id": "23916675121329423",
+      "name": "ഹാൻഡ് വാഷ് 300ml (Hand Wash)",
+      "description": "Hand Wash",
+      "price": "₹149.00",
+      "pattern": "hand wash,personal care,home care",
+      "unit": null,
+      "retailer_id": "gn04",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gn06": {
+      "id": "23938898565798554",
+      "name": "ഫാബ്രിക് കണ്ടിഷണർ 500ml (Conditioner)",
+      "description": "Fabric Conditioner",
+      "price": "₹209.00",
+      "pattern": "fabric conditioner,conditioner,personal care,home care",
+      "unit": null,
+      "retailer_id": "gn06",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gn03": {
       "id": "24032559896380441",
       "name": "Henna Hand Cone combo offer",
@@ -2719,6 +2851,17 @@
       "retailer_id": "gn01",
       "availability": "in stock",
       "sale_price": "₹30.00"
+    },
+    "gn05": {
+      "id": "24675560582031782",
+      "name": "സോപ്പ് 100gm (Soap)",
+      "description": "Herb Beauty Soap",
+      "price": "₹65.00",
+      "pattern": "soap,personal care,home care",
+      "unit": null,
+      "retailer_id": "gn05",
+      "availability": "in stock",
+      "sale_price": null
     },
     "gn02": {
       "id": "29722483354065719",
@@ -2776,6 +2919,17 @@
       "retailer_id": "sn01",
       "availability": "in stock",
       "sale_price": "₹400.00"
+    },
+    "SN04": {
+      "id": "24805161312417440",
+      "name": "ഇറാനി പോള (Iranipola) 1kg",
+      "description": "ലൈവ് ആയി ചെയ്യുന്നതോണ്ട് 3 മണിക്കൂർ വരേ എടുക്കാം",
+      "price": "₹450.00",
+      "pattern": "Iranipola",
+      "unit": null,
+      "retailer_id": "SN04",
+      "availability": "in stock",
+      "sale_price": null
     },
     "SN02": {
       "id": "29438708865743345",
@@ -2843,6 +2997,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "sn18": {
+      "id": "23879544265037509",
+      "name": "കോഴിയട 1kg (kozhi ada)",
+      "description": "kozhi ada",
+      "price": "₹500.00",
+      "pattern": "snacks,kozhi ada,ada",
+      "unit": null,
+      "retailer_id": "sn18",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "sn17": {
       "id": "24093670490326386",
       "name": "ഉണ്ണിയപ്പം 8 pcs (Unni appam)",
@@ -2887,6 +3052,17 @@
       "availability": "in stock",
       "sale_price": "₹290.00"
     },
+    "sn35": {
+      "id": "23884653021173527",
+      "name": "ചിക്കൻ കുറുമ  (Chicken Kuruma)",
+      "description": "Chicken Kuruma",
+      "price": "₹80.00",
+      "pattern": "breakfast,chicken kuruma,curry,kuruma",
+      "unit": null,
+      "retailer_id": "sn35",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "sn30": {
       "id": "23966689346296043",
       "name": "പൊറോട്ട  2pc (porotta)",
@@ -2908,6 +3084,17 @@
       "retailer_id": "sn32",
       "availability": "in stock",
       "sale_price": null
+    },
+    "sn34": {
+      "id": "24212578498374000",
+      "name": "ചിക്കൻ കറി  (Chicken Curry)",
+      "description": "Chicken Curry",
+      "price": "₹80.00",
+      "pattern": "breakfast,chicken curry,curry",
+      "unit": null,
+      "retailer_id": "sn34",
+      "availability": "in stock",
+      "sale_price": "₹70.00"
     },
     "sn33": {
       "id": "24399449612972755",
