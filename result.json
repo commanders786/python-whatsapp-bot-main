@@ -578,7 +578,7 @@
       "id": "9707724209283250",
       "name": "വെളിച്ചെണ്ണ  500ml",
       "description": "multi brand available",
-      "price": "₹180.00",
+      "price": "₹195.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr29",
@@ -655,7 +655,7 @@
       "id": "29462530646728840",
       "name": "വെളിച്ചെണ്ണ  1L",
       "description": "multi brand available",
-      "price": "₹350.00",
+      "price": "₹380.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr28",
@@ -743,7 +743,7 @@
       "id": "24194066560213030",
       "name": "BRU COFFEE 50g",
       "description": "bru coffee",
-      "price": "₹99.00",
+      "price": "₹115.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "gr30",
@@ -1013,6 +1013,17 @@
       "retailer_id": "gr62",
       "availability": "in stock",
       "sale_price": "₹70.00"
+    },
+    "gr61": {
+      "id": "24080249274934734",
+      "name": "കാടമുട്ട 20Piece (Quail Eggs)",
+      "description": "Quail  Eggs 20Piece Pack",
+      "price": "₹60.00",
+      "pattern": "mutta,egg",
+      "unit": null,
+      "retailer_id": "gr61",
+      "availability": "in stock",
+      "sale_price": null
     }
   },
   "fruits": {
@@ -1178,7 +1189,7 @@
       "pattern": "perakka, pera",
       "unit": null,
       "retailer_id": "fr16",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "fr18": {
@@ -1858,6 +1869,39 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk27": {
+      "id": "9706329526161609",
+      "name": "ജിലേബി 500gm (Red Jilebi)",
+      "description": "Red Jilebi From Nice Bakery",
+      "price": "₹100.00",
+      "pattern": "Jilebi,bakery,red jilebi",
+      "unit": null,
+      "retailer_id": "bk27",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk26": {
+      "id": "9806611326134805",
+      "name": "മഞ്ഞ ലഡ്ഡു 500gm (Yellow Laddu)",
+      "description": "Yellow Laddu From Nice Bakery",
+      "price": "₹110.00",
+      "pattern": "Laddu,bakery,yellow laddu",
+      "unit": null,
+      "retailer_id": "bk26",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk28": {
+      "id": "10000674683348492",
+      "name": "മഞ്ഞ ജിലേബി 500gm (Yellow Jilebi)",
+      "description": "Yellow Jilebi From Nice Bakery",
+      "price": "₹100.00",
+      "pattern": "jilebi,bakery,yellow jilebi",
+      "unit": null,
+      "retailer_id": "bk28",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk23": {
       "id": "10022129114531079",
       "name": "പൂള കൊള്ളി 500gm (Kappa Kolly)",
@@ -1891,6 +1935,61 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk29": {
+      "id": "24191124770523426",
+      "name": "അച്ചപ്പം 500gm (Achappam Big)",
+      "description": "Achappam Big From Nice Bakery",
+      "price": "₹130.00",
+      "pattern": "Achappam,bakery,big achappam",
+      "unit": null,
+      "retailer_id": "bk29",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk25": {
+      "id": "30420943924218773",
+      "name": "ലഡ്ഡു 500gm (Red Laddu)",
+      "description": "Red Laddu From Nice Bakery",
+      "price": "₹110.00",
+      "pattern": "Laddu,bakery,red laddu",
+      "unit": null,
+      "retailer_id": "bk25",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk32": {
+      "id": "9770336129741622",
+      "name": "ജാഗിരി 500gm (Jagiri)",
+      "description": "Jagiri From Nice Bakery",
+      "price": "₹110.00",
+      "pattern": "Jagiri,bakery",
+      "unit": null,
+      "retailer_id": "bk32",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk31": {
+      "id": "9806755669453790",
+      "name": "ഊട്ടി വർക്കി 500gm(Ooty Varkey)",
+      "description": "Ooty Varkey From Nice Bakery",
+      "price": "₹110.00",
+      "pattern": "Ooty varkey,bakery",
+      "unit": null,
+      "retailer_id": "bk31",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk30": {
+      "id": "23880676574933280",
+      "name": "അച്ചപ്പം 500gm (Achappam Small)",
+      "description": "Achappam Small From Nice Bakery",
+      "price": "₹150.00",
+      "pattern": "Achappam,bakery,small achappam",
+      "unit": null,
+      "retailer_id": "bk30",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk3": {
       "id": "29959844233659101",
       "name": "Black Forest (cake) 500g",
@@ -1899,6 +1998,17 @@
       "pattern": "cake,black forest",
       "unit": null,
       "retailer_id": "bk3",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk33": {
+      "id": "30701317179452546",
+      "name": "മൈസൂർ പാക് 500gm (Maisorepack)",
+      "description": "Maisorepack From Nice Bakery",
+      "price": "₹110.00",
+      "pattern": "Maisorepack,bakery",
+      "unit": null,
+      "retailer_id": "bk33",
       "availability": "in stock",
       "sale_price": null
     }
