@@ -13,7 +13,7 @@ def is_within_radius(lat, lon, ref_lat=11.358386753972075, ref_lon=75.9127706733
 
     # Difference between points
     dlat = lat2_rad - lat1_rad
-    dlon = lon2_rad - lon1_rad
+    dlon = lon2_rad - lon1_rad                                                     
 
     # Haversine formula
     a = math.sin(dlat / 2)**2 + math.cos(lat1_rad) * math.cos(lat2_rad) * math.sin(dlon / 2)**2

@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 import json
 import logging
+from flask import jsonify
 import psycopg2
 
 
@@ -290,7 +291,8 @@ def get_products_service(product_ids=None):
                     "description": product.get("description"),
                     "price": product.get("price"),
                     "sale_price": product.get("sale_price"),
-                    "availability": product.get("availability")
+                    "availability": product.get("availability"),
+                    "retailer_id": product.get("retailer_id"),
                 }
                 result[category].append(product_data)
 
@@ -450,3 +452,278 @@ def get_vendor_products(user):
 
     
     return {"products": row[0] ,"status": 200}
+
+def get_vendor_service():
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        query = """
+       SELECT v.id,username,shop_name,phone FROM role_users r JOIN vendors v ON r.phone = v.id;
+        """
+        cursor.execute(query)
+        rows = cursor.fetchall()
+
+        # Optional: convert to list of dicts
+        columns = [desc[0] for desc in cursor.description]
+        result = [dict(zip(columns, row)) for row in rows]
+
+        return result, 200
+
+    except Exception as e:
+        return {"error": str(e)}, 500
+
+    finally:
+        # cursor.close()
+        conn.close()
+
+
+import pandas as pd
+
+def get_products_service_new(data):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        vendor = data.get("vendorId")
+
+        # Step 1: Check if vendor exists and its product type
+        vendor_query = """
+            SELECT product_type FROM vendors WHERE id = %s
+        """
+        cursor.execute(vendor_query, (vendor,))
+        vendor_result = cursor.fetchone()
+
+        if not vendor_result:
+            return {"error": "Vendor not found"}, 404
+
+        product_type = vendor_result[0]
+
+        # Step 2: Choose query based on product type
+        if product_type == 'multi':
+            order_query = """
+                SELECT 
+                    oi.order_id,
+                    SUM(oi.total) AS bill_amount
+                FROM orders o
+                JOIN order_items oi ON o.id = oi.order_id
+                JOIN products p ON p.retailer_id = oi.product_id
+                JOIN vendors v ON v.id = p.vendor_id
+                WHERE 
+                    oi.payment_done = FALSE AND 
+                    oi.is_cancelled = FALSE AND 
+                    v.id = %s
+                GROUP BY oi.order_id
+                ORDER BY MAX(o.created_at) DESC
+            """
+            cursor.execute(order_query, (vendor,))
+        else:
+            order_query = """
+                SELECT 
+                    oi.order_id,
+                    SUM(oi.total) AS bill_amount
+                FROM orders o
+                JOIN order_items oi ON o.id = oi.order_id
+                WHERE 
+                    oi.product_id LIKE %s AND 
+                    oi.payment_done = FALSE AND 
+                    oi.is_cancelled = FALSE
+                GROUP BY oi.order_id
+                ORDER BY MAX(o.created_at) DESC
+            """
+            cursor.execute(order_query, (f"%{product_type}%",))
+
+        order_rows = cursor.fetchall()
+
+        # Step 3: Use pandas to aggregate and format result
+        df = pd.DataFrame(order_rows, columns=['order_id', 'bill_amount'])
+
+        if df.empty:
+            return {
+                "orders": [],
+                "pending_amount": 0
+            }, 200
+
+        df['bill_amount'] = pd.to_numeric(df['bill_amount'])
+        total_pending = int(df['bill_amount'].sum())
+        orders = df.to_dict(orient='records')
+
+        response = {
+            "orders": orders,
+            "pending_amount": total_pending
+        }
+
+        return response, 200
+
+    except Exception as e:
+        return {"error": str(e)}, 500
+
+    finally:
+        cursor.close()
+        conn.close()
+
+def get_vendor_products_service(data):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        vendor_id = data.get("vendorId")
+
+        # Step 1: Check if vendor exists
+        vendor_query = """
+            SELECT product_type FROM vendors WHERE id = %s
+        """
+        cursor.execute(vendor_query, (vendor_id,))
+        vendor_result = cursor.fetchone()
+
+        if not vendor_result:
+            return jsonify({"error": "Vendor not found"}), 404
+
+        # Step 2: Get products by vendor
+        order_query = """
+            SELECT 
+                p.retailer_id, p.name, p.vendors_price
+            FROM products p
+            JOIN vendors v ON v.id = p.vendor_id
+            WHERE v.id = %s
+        """
+        cursor.execute(order_query, (vendor_id,))
+        order_rows = cursor.fetchall()
+
+        # Step 3: Format the result
+        products = [
+            {
+                "retailer_id": row[0],
+                "name": row[1],
+                "vendors_price": row[2]
+            }
+            for row in order_rows
+        ]
+
+        return jsonify(products), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+    finally:
+        cursor.close()
+        conn.close()
+
+
+def update_order_items_service(data):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        order_id = data.get("order_id")
+        items = data.get("items", [])
+
+        if not order_id:
+            return jsonify({"error": "Missing order_id"}), 400
+
+        for item in items:
+            product_id = item.get("product_id")
+            action = item.get("action")
+
+            if not product_id or not action:
+                continue  # Skip invalid item
+
+            if action == "insert":
+                qty = item.get("qty", 1)
+                vendor_price = item.get("vendor_price", 0)
+                cursor.execute("""
+                    INSERT INTO order_items (order_id, product_id, qty, vendor_price)
+                    VALUES (%s, %s, %s, %s)
+                """, (order_id, product_id, qty, vendor_price))
+
+            elif action == "update":
+                qty = item.get("qty")
+                vendor_price = item.get("vendor_price")
+                cursor.execute("""
+                    UPDATE order_items
+                    SET qty = %s, vendor_price = %s
+                    WHERE order_id = %s AND product_id = %s
+                """, (qty, vendor_price, order_id, product_id))
+
+            elif action == "delete":
+                cursor.execute("""
+                    DELETE FROM order_items
+                    WHERE order_id = %s AND product_id = %s
+                """, (order_id, product_id))
+
+        conn.commit()
+        return jsonify({"message": "Order items updated successfully"}), 200
+
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"error": str(e)}), 500
+
+    finally:
+        cursor.close()
+        
+
+def get_order_details_service(data):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        order_id = data.get("order_id")
+
+        if not order_id:
+            return jsonify({"error": "Missing order_id"}), 400
+
+        # Step 1: Get order info
+        order_query = """
+            SELECT id, userid, bill_amount, status, created_at, feedback, receipt
+            FROM orders
+            WHERE id = %s
+        """
+        cursor.execute(order_query, (order_id,))
+        order = cursor.fetchone()
+
+        if not order:
+            return jsonify({"error": "Order not found"}), 404
+
+        order_info = {
+            "id": order[0],
+            "userid": order[1],
+            "bill_amount": order[2],
+            "status": order[3],
+            "created_at": order[4],
+            "feedback": order[5],
+            "receipt": order[6]
+        }
+
+        # Step 2: Get order items
+        items_query = """
+            SELECT product_id, qty, vendor_price, total, unit, payment_done, is_cancelled
+            FROM order_items
+            WHERE order_id = %s
+        """
+        cursor.execute(items_query, (order_id,))
+        items = cursor.fetchall()
+
+        item_list = [
+            {
+                "product_id": i[0],
+                "qty": i[1],
+                "vendor_price": i[2],
+                "total": i[3],
+                "unit": i[4],
+                "payment_done": i[5],
+                "is_cancelled": i[6]
+            }
+            for i in items
+        ]
+
+        return jsonify({
+            "order": order_info,
+            "items": item_list
+        }), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+    finally:
+        cursor.close()
+        conn.close()

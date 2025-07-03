@@ -104,8 +104,13 @@ def process_whatsapp_message(body):
         start_time = time(7, 0, 0)   # 7:00 AM
         end_time = time(22, 0, 0)    # 8:00 PM
         
-        if now < start_time or now > end_time:
-        # if True:
+        if now < start_time or now > end_time :
+        # # if True:
+
+           if message["type"] == "interactive" and "button_reply" in message["interactive"]:
+                if message["interactive"]["button_reply"]["id"]  in ['en','ml']:
+                  pass
+           else:
                 
                 response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
                 data = get_text_message_input(wa_id, response)
@@ -378,7 +383,7 @@ def process_whatsapp_message(body):
                 
 
     except Exception as e:
-        response = "Please enter a valid input"
+        response = "Please contact customer care and report this issue  \n +917306723535"
         logging.info("xxxxxxxxx",e)
 
     # Send text message back

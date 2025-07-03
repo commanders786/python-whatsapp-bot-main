@@ -29,28 +29,33 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 # ✅ Load the model ONCE
 
 
+
  # ✅ Load or generate embeddings
-if os.path.exists(PICKLE_FILE) and not ALWAYS_CREATE:
-    
-    print("✅ Loading embeddings from file...")
-    with open(PICKLE_FILE, "rb") as f:
-        data = pickle.load(f)
-        product_embeddings = data["embeddings"]
-        products = data["products"]
-else:
-    print("⚡ Embeddings not found — generating now...")
-    products = load_products_from_json(JSON_FILE)
-    product_texts = [
-        f"{p['retailer_id']} {p['name']} {p['description']}   {p['pattern']}"
-        for p in products
-    ]
-    product_embeddings = model.encode(product_texts)
-    with open(PICKLE_FILE, "wb") as f:
-        pickle.dump({
-            "products": products,
-            "embeddings": product_embeddings
-        }, f)
-   
+
+
+def get_product_embeddings():
+    if os.path.exists(PICKLE_FILE) and not ALWAYS_CREATE:
+            
+            print("✅ Loading embeddings from file...")
+            with open(PICKLE_FILE, "rb") as f:
+                data = pickle.load(f)
+                product_embeddings = data["embeddings"]
+                products = data["products"]
+    else:
+            print("⚡ Embeddings not found — generating now...")
+            products = load_products_from_json(JSON_FILE)
+            product_texts = [
+                f"{p['retailer_id']} {p['name']} {p['description']}   {p['pattern']}"
+                for p in products
+            ]
+            product_embeddings = model.encode(product_texts)
+            with open(PICKLE_FILE, "wb") as f:
+                pickle.dump({
+                    "products": products,
+                    "embeddings": product_embeddings
+                }, f)
+            return products, product_embeddings
+        
 
 # ✅ Product search function
 def search_products(query,session, top_k=15):
@@ -79,9 +84,11 @@ def search_products(query,session, top_k=15):
      send_message(data)
     return output,nothing
 
-
-
-
+def main():
+ global products, product_embeddings
+ products, product_embeddings = get_product_embeddings()
+if __name__ == "__main__":
+    main()
 
 # ✅ Search loop
 # while True:

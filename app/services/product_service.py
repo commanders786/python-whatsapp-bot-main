@@ -1,4 +1,5 @@
 import json
+import logging
 import os
 import requests
 
@@ -6,16 +7,18 @@ import requests
 
 FACEBOOK_API_URL = "https://graph.facebook.com/v22.0/1595768864475137/products"
 ACCESS_TOKEN ="EAAQKF56ZAbJQBO3eHvyzD8AERlnLM7hAvtAIZCcSYubLA7JqPq7iv2NGlzlgDfX1DnJ9CJl9ZANyHdiHYNztdvAjf2C4XKWXFMBCjqTagNJDV4VYV59VhzLQ76kZBjrVP3XDsa2UeqBmT9lr01zgImVXPcmeDsyf6KXOaDk61yFzMKS5BkFZBhDX4tsMfuJ4ZA5QZDZD"
-
+restaurants={}
 
 def fetch_and_categorize_products():
+    logging.info("Loading and categorizing...")
+    print("Loading products..")
     try:
         response = requests.get(
             FACEBOOK_API_URL,
             params={
                 "fields": "id,name,retailer_id,description,price,brand,pattern,availability,sale_price",
                 "access_token": ACCESS_TOKEN,
-                "limit": 350
+                "limit": 500
             }
         )
         data = response.json()
@@ -38,7 +41,7 @@ def fetch_and_categorize_products():
 
         }
 
-        restaurants={}
+        
 
         for item in products:
             rid = item.get("retailer_id", "").lower()
@@ -81,7 +84,7 @@ def fetch_and_categorize_products():
                        restaurants[restaurant]=[]
                      
                      restaurants[restaurant].append(rid) 
-                     print(restaurant,rid)  # Output: AFC chicken
+                    #  print(restaurant,rid)  # Output: AFC chicken
                 else:
                      print("Restaurant not found.",rid)
                 pass
@@ -123,8 +126,21 @@ def load_restaurants(restaurant=None):
 def send_whatsapp_product_list(category: str, to_number: str,restaurant=None):
     
     if isinstance(category, list) and not category[0] in ["vegetables","fruits","oth","meat","fish","bakeries"]:
-        product_items = [{"product_retailer_id": rid} for rid in category]
-        senditems(to_number,product_items)
+        
+        # matched = {}
+        # with open('restaurants.json', 'r') as file:
+        #    restaurants = json.load(file)
+        for restaurant, ids in restaurants.items():
+            common = list(set(ids) & set(category))
+            if common:
+                product_items = [{"product_retailer_id": rid} for rid in common]
+                senditems(to_number,product_items,restaurant)
+                # Remove matched IDs from category
+                category = list(set(category) - set(common))
+        if category:
+            product_items = [{"product_retailer_id": rid} for rid in category]
+            print(8888888)
+            senditems(to_number,product_items)
 
     elif restaurant:
         product_items=load_restaurants(restaurant)
@@ -149,7 +165,7 @@ def send_whatsapp_product_list(category: str, to_number: str,restaurant=None):
         
     return
 
-def senditems(to_number, product_items):
+def senditems(to_number, product_items,restaurant=None):
  
 
  print(len(product_items))
@@ -171,7 +187,7 @@ def senditems(to_number, product_items):
                 "text": "🛒 Anghadi Specials"
             },
             "body": {
-                "text": "Check out our  products! \n ഉത്പന്നങ്ങൾക്കായി  ലിസ്റ്റ്  പരിശോധിക്കുക !"
+                "text": restaurant if restaurant else "Check out our  products! \n ഉത്പന്നങ്ങൾക്കായി  ലിസ്റ്റ്  പരിശോധിക്കുക !"
             },
             "footer": {
                 "text": "Tap a product to view more."
@@ -203,3 +219,5 @@ def senditems(to_number, product_items):
  return {"status": "success", "response": response.json()}
 def split_list(lst, chunk_size=30):
     return [lst[i:i + chunk_size] for i in range(0, len(lst), chunk_size)]
+
+# fetch_and_categorize_products()

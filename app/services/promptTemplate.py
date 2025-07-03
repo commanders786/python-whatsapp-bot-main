@@ -38,8 +38,8 @@ Rules:
 4. Category Queries
 Sometimes users may search by category names instead of product names (e.g., vegetables, fruits, medicine, supermarket). In such cases, return the category IDs in tuple format, similar to how you return product IDs. Use the following mapping table:
 
-User Query Includes	Return Category ID(s)
-fruit, fruits, furuits	:("fruits",)
+User Query Includes	Return Category ID(s) <<important>>
+fruit, fruits, furuits	:("fruits",) 
 vegetable, vegetables	:("vegetables",)
 meat	:("meat",)
 fish, fishes, Fish	:("fish",)

@@ -1,7 +1,8 @@
+import logging
 from flask import Blueprint, request, jsonify
 import psycopg2
 
-from app.services.crud_services import get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_reciept_service, insert_order, insert_user, update_availability_service, update_order_items_service, update_price_service, user_exists
+from app.services.crud_services import get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, update_availability_service, update_order_items_service, update_price_service, user_exists
 from app.services.product_service import fetch_and_categorize_products, send_whatsapp_product_list
 
 crud_blueprint = Blueprint("crud", __name__)
@@ -56,12 +57,12 @@ def get_orders():
     try:
         with get_db_connection() as conn:
             with conn.cursor() as cur:
-                cur.execute("SELECT id, created_at, feedback, receipt, bill_amount, userid,status FROM orders;")
+                cur.execute("SELECT id, created_at, feedback, receipt, bill_amount, userid,status,is_offline FROM orders order by created_at desc;")
                 orders = cur.fetchall()
                 result = [
                     {
                         "id": o[0], "created_at": o[1], "feedback": o[2],
-                        "receipt": o[3], "bill_amount": o[4], "user": o[5],"status":o[6]
+                        "receipt": o[3], "bill_amount": o[4], "user": o[5],"status":o[6],"is_offline":o[7]
                     }
                     for o in orders
                 ]
@@ -190,18 +191,24 @@ def post_whatsapp_product_list():
 
 @crud_blueprint.route("/order-items/update", methods=["POST"])
 def update_order_items():
-    data = request.get_json()
-    order_id = data.get("order_id")
-    items = data.get("items", [])
+    try:
+        data = request.get_json()
+        order_id = data.get("order_id")
+        items = data.get("items", [])
 
-    if not order_id or not items:
-        return jsonify({"error": "Missing order_id or items"}), 400
+        if not order_id or not items:
+            return jsonify({"error": "Missing order_id or items"}), 400
 
-    success, message = update_order_items_service(order_id, items)
-    if success:
-        return jsonify({"message": message}), 200
-    else:
-        return jsonify({"error": message}), 500
+        success, message = update_order_items_service(order_id, items)
+        if success:
+            return jsonify({"message": message}), 200
+        else:
+            return jsonify({"error": message}), 500
+
+    except Exception as e:
+        logging.exception("An error occurred while updating order items")
+        return jsonify({"error": "Internal server error", "details": str(e)}), 500
+
     
 
 @crud_blueprint.route("/order-items/all", methods=["GET"])
@@ -277,3 +284,36 @@ def update_stock():
         return jsonify({"message": message}), 200
     else:
         return jsonify({"error": message}), 500
+    
+@crud_blueprint.route("/vendors", methods=["GET"])
+def get_vendors():
+    response, status = get_vendor_service()
+    return jsonify(response), status
+
+
+
+@crud_blueprint.route("/productsNew", methods=["POST"])
+def get_products_new():
+    data = request.get_json()
+    
+    response, status = get_products_service_new(data)
+    return jsonify(response), status
+
+
+
+@crud_blueprint.route("/vendorsproducts", methods=["POST"])
+def get_vendor_products():
+    data = request.get_json()
+    
+    return get_vendor_products_service(data) 
+
+@crud_blueprint.route("/update-order-items", methods=["POST"])
+def update_order_items_new():
+    data = request.get_json()
+    return update_order_items_service(data)
+
+@crud_blueprint.route("/order-details", methods=["POST"])
+def get_order_details():
+    data = request.get_json()
+    return get_order_details_service(data)
+
