@@ -610,7 +610,7 @@ def get_vendor_products_service(data):
         conn.close()
 
 
-def update_order_items_service(data):
+def update_order_items_service_new(data):
     try:
         conn = get_db_connection()
         cursor = conn.cursor()

@@ -2,7 +2,7 @@ import logging
 from flask import Blueprint, request, jsonify
 import psycopg2
 
-from app.services.crud_services import get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, update_availability_service, update_order_items_service, update_price_service, user_exists
+from app.services.crud_services import get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, update_availability_service, update_order_items_service, update_order_items_service_new, update_price_service, user_exists
 from app.services.product_service import fetch_and_categorize_products, send_whatsapp_product_list
 
 crud_blueprint = Blueprint("crud", __name__)
@@ -310,7 +310,7 @@ def get_vendor_products():
 @crud_blueprint.route("/update-order-items", methods=["POST"])
 def update_order_items_new():
     data = request.get_json()
-    return update_order_items_service(data)
+    return update_order_items_service_new(data)
 
 @crud_blueprint.route("/order-details", methods=["POST"])
 def get_order_details():

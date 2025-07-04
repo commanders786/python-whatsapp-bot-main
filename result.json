@@ -457,7 +457,7 @@
       "id": "9606990892711438",
       "name": "ചെറുപയർ 500g (cherupayar)",
       "description": "cherupayar",
-      "price": "₹80.00",
+      "price": "₹65.00",
       "pattern": "payar, cherupayar,",
       "unit": null,
       "retailer_id": "gr18",
@@ -468,7 +468,7 @@
       "id": "9638698016252891",
       "name": "തുവര പരിപ്പ് 500g",
       "description": "thuvaraparipp",
-      "price": "₹80.00",
+      "price": "₹70.00",
       "pattern": "thuavara paripp, paripp, daal",
       "unit": null,
       "retailer_id": "gr19",
@@ -1019,7 +1019,7 @@
       "name": "മുത്താറി / റാഗിപ്പൊടി 400g (Finger Millet Powder)",
       "description": "400g Finger Millet Powder",
       "price": "₹55.00",
-      "pattern": "Healthy products",
+      "pattern": "Healthy products,baby product",
       "unit": null,
       "retailer_id": "gr67",
       "availability": "in stock",
@@ -1195,7 +1195,7 @@
       "name": "ബാർലി പൊടി 150g (Barley Powder)",
       "description": "150g Barley Powder",
       "price": "₹75.00",
-      "pattern": "Healthy products",
+      "pattern": "Healthy products,baby product",
       "unit": null,
       "retailer_id": "gr70",
       "availability": "in stock",
@@ -2507,7 +2507,7 @@
       "unit": null,
       "retailer_id": "rf08",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹99.00"
     },
     "rf09": {
       "id": "9905653886168344",
@@ -2650,7 +2650,7 @@
       "unit": null,
       "retailer_id": "rf19",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹149.00"
     },
     "rf100": {
       "id": "23981632724766931",
