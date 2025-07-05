@@ -7,9 +7,10 @@ import requests
 
 FACEBOOK_API_URL = "https://graph.facebook.com/v22.0/1595768864475137/products"
 ACCESS_TOKEN ="EAAQKF56ZAbJQBO3eHvyzD8AERlnLM7hAvtAIZCcSYubLA7JqPq7iv2NGlzlgDfX1DnJ9CJl9ZANyHdiHYNztdvAjf2C4XKWXFMBCjqTagNJDV4VYV59VhzLQ76kZBjrVP3XDsa2UeqBmT9lr01zgImVXPcmeDsyf6KXOaDk61yFzMKS5BkFZBhDX4tsMfuJ4ZA5QZDZD"
-restaurants={}
+
 
 def fetch_and_categorize_products():
+    restaurants={}
     logging.info("Loading and categorizing...")
     print("Loading products..")
     try:
@@ -128,8 +129,8 @@ def send_whatsapp_product_list(category: str, to_number: str,restaurant=None):
     if isinstance(category, list) and not category[0] in ["vegetables","fruits","oth","meat","fish","bakeries"]:
         
         # matched = {}
-        # with open('restaurants.json', 'r') as file:
-        #    restaurants = json.load(file)
+        with open('restaurants.json', 'r') as file:
+           restaurants = json.load(file)
         for restaurant, ids in restaurants.items():
             common = list(set(ids) & set(category))
             if common:

@@ -508,6 +508,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr102": {
+      "id": "23895471453476427",
+      "name": "Camerry Cone Ice Cream (Chocolate)",
+      "description": "Cone Ice Cream (Chocolate)",
+      "price": "₹50.00",
+      "pattern": "Ice Cream,cone",
+      "unit": null,
+      "retailer_id": "gr102",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr101": {
+      "id": "23895836366744814",
+      "name": "Camerry Cone Ice Cream (Vanilla)",
+      "description": "Cone Ice Cream (Vanilla)",
+      "price": "₹40.00",
+      "pattern": "Ice Cream,cone",
+      "unit": null,
+      "retailer_id": "gr101",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr11": {
       "id": "23958118587106006",
       "name": "MAIDA 500g (മൈദ)",
@@ -530,6 +552,39 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr105": {
+      "id": "24447067331564774",
+      "name": "സോയ ചങ്ക്‌സ് 500g (Soya Chunks Small)",
+      "description": "Soya Chunks Small",
+      "price": "₹70.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr105",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr104": {
+      "id": "24515637344711264",
+      "name": "സോയ ചങ്ക്‌സ് 500g (Soya Chunks Big)",
+      "description": "Soya Chunks Big",
+      "price": "₹70.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr104",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr103": {
+      "id": "24622924660644055",
+      "name": "Camerry Cone Ice Cream (Red Velvet)",
+      "description": "Cone Ice Cream (Red Velvet)",
+      "price": "₹60.00",
+      "pattern": "Ice Cream,cone",
+      "unit": null,
+      "retailer_id": "gr103",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr14": {
       "id": "29349475341366131",
       "name": "പൊടിയുപ്പ് 1kg (SALT)",
@@ -549,6 +604,17 @@
       "pattern": "soap, lux",
       "unit": null,
       "retailer_id": "gr13",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr100": {
+      "id": "30720867707498484",
+      "name": "Camerry Ice Cream 500ml (Vanilla)",
+      "description": "500ml Camerry Ice Cream (Vanilla)",
+      "price": "₹150.00",
+      "pattern": "Ice Cream",
+      "unit": null,
+      "retailer_id": "gr100",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1322,6 +1388,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr98": {
+      "id": "9850815325030355",
+      "name": "നെയ്യ് 100ml (RKG)",
+      "description": "RKG Ghee",
+      "price": "₹108.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr98",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr91": {
       "id": "10058058894312380",
       "name": "Malkist Biscuits 144g",
@@ -1354,6 +1431,17 @@
       "retailer_id": "gr95",
       "availability": "in stock",
       "sale_price": "₹120.00"
+    },
+    "gr97": {
+      "id": "24090627663910215",
+      "name": "നൂട്ടെല്ല 350g (Nutella)",
+      "description": "Nutella",
+      "price": "₹399.00",
+      "pattern": "chocolate",
+      "unit": null,
+      "retailer_id": "gr97",
+      "availability": "in stock",
+      "sale_price": null
     },
     "gr96": {
       "id": "24159607337030395",
@@ -1388,6 +1476,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr99": {
+      "id": "30202321659415929",
+      "name": "നെയ്യ് 200ml (RKG)",
+      "description": "RKG Ghee",
+      "price": "₹195.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr99",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr93": {
       "id": "30344322481882617",
       "name": "Britannia 50 50 200g",
@@ -1416,7 +1515,7 @@
       "id": "9530881703698827",
       "name": "PAPPAYA 1kg (പപ്പായ )",
       "description": "pappaya, karmoosa",
-      "price": "₹45.00",
+      "price": "₹50.00",
       "pattern": "pappaya",
       "unit": null,
       "retailer_id": "fr08",
@@ -1592,11 +1691,11 @@
       "id": "9618881154855507",
       "name": "ഡ്രാഗൺ ഫ്രൂട്ട് 1kg (Dragon fruit)",
       "description": "Dragon fruit",
-      "price": "₹250.00",
+      "price": "₹170.00",
       "pattern": "dragon fruit",
       "unit": null,
       "retailer_id": "fr23",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "fr20": {
@@ -1757,7 +1856,7 @@
     },
     "kd01": {
       "id": "9874522829258228",
-      "name": "കാട (KAADA)",
+      "name": "കാട (Quail)",
       "description": "കാട",
       "price": "₹60.00",
       "pattern": "കാട, KAADA, meet",
@@ -1768,7 +1867,7 @@
     },
     "kd02": {
       "id": "23877207781937846",
-      "name": "കാട Big (KAADA)",
+      "name": "കാട വലുത്  (Quail Big)",
       "description": "കാട",
       "price": "₹70.00",
       "pattern": null,
@@ -2584,7 +2683,7 @@
       "unit": null,
       "retailer_id": "rf15",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹149.00"
     },
     "rf12": {
       "id": "9524993217624038",
@@ -2883,22 +2982,11 @@
       "availability": "in stock",
       "sale_price": null
     },
-    "rf34": {
-      "id": "9883732651681494",
-      "name": "Afghani Chicken Tikka",
-      "description": "Afghani Chicken tikka\nrestaurant: ZABAQ",
-      "price": "₹180.00",
-      "pattern": "food, chicken tikka,",
-      "unit": null,
-      "retailer_id": "rf34",
-      "availability": "in stock",
-      "sale_price": null
-    },
     "rf37": {
       "id": "9959274287520803",
       "name": "Normal Alfahm (QUATER)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹120.00",
+      "price": "₹140.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf37",
@@ -2909,7 +2997,7 @@
       "id": "9981738638535963",
       "name": "Peri Peri Alfahm (FULL)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹470.00",
+      "price": "₹490.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf38",
@@ -2920,21 +3008,10 @@
       "id": "9990149124405430",
       "name": "Peri Peri Alfahm (HALF)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹240.00",
+      "price": "₹280.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf39",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "rf33": {
-      "id": "24310130535259494",
-      "name": "Hariyali  Chicken Tikka",
-      "description": "Hariyali Chicken tikka\nrestaurant: ZABAQ",
-      "price": "₹180.00",
-      "pattern": "food, chicken tikka,",
-      "unit": null,
-      "retailer_id": "rf33",
       "availability": "in stock",
       "sale_price": null
     },
@@ -2949,22 +3026,11 @@
       "availability": "in stock",
       "sale_price": null
     },
-    "rf32": {
-      "id": "29773562008955219",
-      "name": "Chicken Tikka",
-      "description": "Chicken tikka\nrestaurant: ZABAQ",
-      "price": "₹180.00",
-      "pattern": "food, chicken tikka,",
-      "unit": null,
-      "retailer_id": "rf32",
-      "availability": "in stock",
-      "sale_price": null
-    },
     "rf36": {
       "id": "29783574187924288",
       "name": "Normal Alfahm (HALF)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹230.00",
+      "price": "₹260.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf36",
@@ -2997,7 +3063,7 @@
       "id": "9943391645777344",
       "name": "Pepper Alfahm (HALF)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹400.00",
+      "price": "₹280.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf42",
@@ -3008,7 +3074,7 @@
       "id": "9996777997057635",
       "name": "Pepper Alfahm (FULL)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹760.00",
+      "price": "₹490.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf41",
@@ -3019,7 +3085,7 @@
       "id": "23905959635687112",
       "name": "Peri Peri Alfahm (QUATER)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹200.00",
+      "price": "₹150.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf40",
@@ -3063,7 +3129,7 @@
       "id": "29769745865973584",
       "name": "Pepper Alfahm (QUATER)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹230.00",
+      "price": "₹150.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf43",
@@ -3079,17 +3145,6 @@
       "unit": null,
       "retailer_id": "rf46",
       "availability": "in stock",
-      "sale_price": null
-    },
-    "rf53": {
-      "id": "9241066709327193",
-      "name": "Mutton Mandi (FULL)",
-      "description": "Mutton mandhi\nrestaurant:ZABAQ",
-      "price": "₹1,300.00",
-      "pattern": "mandhi, mandi, mutton mandhi",
-      "unit": null,
-      "retailer_id": "rf53",
-      "availability": "out of stock",
       "sale_price": null
     },
     "rf59": {
@@ -3111,17 +3166,6 @@
       "pattern": "mandhi, mandi, beef mandhi",
       "unit": null,
       "retailer_id": "rf51",
-      "availability": "out of stock",
-      "sale_price": null
-    },
-    "rf55": {
-      "id": "9865447110210523",
-      "name": "Mutton Mandi (QUATER)",
-      "description": "Mutton mandhi\nrestaurant:ZABAQ",
-      "price": "₹340.00",
-      "pattern": "mandhi, mandi, mutton mandhi",
-      "unit": null,
-      "retailer_id": "rf55",
       "availability": "out of stock",
       "sale_price": null
     },
@@ -3155,17 +3199,6 @@
       "pattern": "mandhi, mandi, beef mandhi",
       "unit": null,
       "retailer_id": "rf50",
-      "availability": "out of stock",
-      "sale_price": null
-    },
-    "rf54": {
-      "id": "24188709637414340",
-      "name": "Mutton Mandi (HALF)",
-      "description": "Mutton mandhi\nrestaurant:ZABAQ",
-      "price": "₹660.00",
-      "pattern": "mandhi, mandi, mutton mandhi",
-      "unit": null,
-      "retailer_id": "rf54",
       "availability": "out of stock",
       "sale_price": null
     },
@@ -3769,10 +3802,10 @@
     },
     "sn35": {
       "id": "23884653021173527",
-      "name": "ചിക്കൻ കുറുമ  (Chicken Kuruma)",
-      "description": "Chicken Kuruma",
+      "name": "ചിക്കൻ കടായി (Chicken Kadai)",
+      "description": "Chicken Kadai",
       "price": "₹80.00",
-      "pattern": "breakfast,chicken kuruma,curry,kuruma",
+      "pattern": "breakfast,chicken Kadai,curry,kuruma",
       "unit": null,
       "retailer_id": "sn35",
       "availability": "in stock",
