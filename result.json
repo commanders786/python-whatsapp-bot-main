@@ -2551,6 +2551,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk45": {
+      "id": "9815045088604975",
+      "name": "Makrona Nurukk 500g",
+      "description": "500g Makrona Nurukk",
+      "price": "₹110.00",
+      "pattern": "bakery,nurukk",
+      "unit": null,
+      "retailer_id": "bk45",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk41": {
       "id": "9929411670518260",
       "name": "Arabian Baklava 500g",
@@ -2559,6 +2570,39 @@
       "pattern": "Arabian Baklava,bakery",
       "unit": null,
       "retailer_id": "bk41",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk43": {
+      "id": "23869783142663279",
+      "name": "Finger Nurukk 500g",
+      "description": "500g Finger Nurukk",
+      "price": "₹110.00",
+      "pattern": "bakery,nurukk",
+      "unit": null,
+      "retailer_id": "bk43",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk47": {
+      "id": "24576281425305862",
+      "name": "കപ്പ കൊള്ളി 500g (Kappa Kolli)",
+      "description": "500g Kappa Kolli",
+      "price": "₹110.00",
+      "pattern": "bakery,nurukk",
+      "unit": null,
+      "retailer_id": "bk47",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk46": {
+      "id": "24625817830335771",
+      "name": "ചക്ക വറുത്തത് 500g (Jack Fruit Chips)",
+      "description": "500g Jack Fruit Chips",
+      "price": "₹215.00",
+      "pattern": "bakery,nurukk",
+      "unit": null,
+      "retailer_id": "bk46",
       "availability": "in stock",
       "sale_price": null
     },
@@ -2581,6 +2625,17 @@
       "pattern": "Arabian Baklava,bakery",
       "unit": null,
       "retailer_id": "bk42",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk44": {
+      "id": "25512026821747156",
+      "name": "Polo Nurukk 500g",
+      "description": "500g Polo Nurukk",
+      "price": "₹100.00",
+      "pattern": "bakery,nurukk",
+      "unit": null,
+      "retailer_id": "bk44",
       "availability": "in stock",
       "sale_price": null
     }
@@ -2606,7 +2661,7 @@
       "unit": null,
       "retailer_id": "rf08",
       "availability": "in stock",
-      "sale_price": "₹99.00"
+      "sale_price": "₹140.00"
     },
     "rf09": {
       "id": "9905653886168344",
@@ -2683,7 +2738,7 @@
       "unit": null,
       "retailer_id": "rf15",
       "availability": "in stock",
-      "sale_price": "₹149.00"
+      "sale_price": "₹190.00"
     },
     "rf12": {
       "id": "9524993217624038",
@@ -2749,7 +2804,7 @@
       "unit": null,
       "retailer_id": "rf19",
       "availability": "in stock",
-      "sale_price": "₹149.00"
+      "sale_price": "₹190.00"
     },
     "rf100": {
       "id": "23981632724766931",
@@ -2990,7 +3045,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf37",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf38": {
@@ -3001,7 +3056,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf38",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf39": {
@@ -3012,7 +3067,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf39",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf35": {
@@ -3023,7 +3078,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf35",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf36": {
@@ -3034,7 +3089,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf36",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf47": {
@@ -3045,7 +3100,7 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf47",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf49": {
@@ -3056,7 +3111,7 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf49",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf42": {
@@ -3067,7 +3122,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf42",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf41": {
@@ -3078,7 +3133,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf41",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf40": {
@@ -3089,7 +3144,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf40",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf45": {
@@ -3100,7 +3155,7 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf45",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf44": {
@@ -3111,7 +3166,7 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf44",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf48": {
@@ -3122,7 +3177,7 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf48",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf43": {
@@ -3133,7 +3188,7 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf43",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf46": {
@@ -3144,7 +3199,7 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf46",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf59": {
@@ -3466,17 +3521,6 @@
       "availability": "in stock",
       "sale_price": null
     },
-    "rf83": {
-      "id": "10051245544924512",
-      "name": "Fish Ayakura Biriyani",
-      "description": "Fish Ayakura Biriyani            restaurant: BIRIYANI SOUCK",
-      "price": "₹240.00",
-      "pattern": "lunch,biriyani",
-      "unit": null,
-      "retailer_id": "rf83",
-      "availability": "in stock",
-      "sale_price": null
-    },
     "rf89": {
       "id": "24159366330382139",
       "name": "Kaada Biriyani Half",
@@ -3490,8 +3534,8 @@
     },
     "rf85": {
       "id": "24235726316117422",
-      "name": "Fish Avoli Biriyani",
-      "description": "Fish  Avoli  Biriyani                 restaurant: BIRIYANI SOUCK",
+      "name": "Fish Biriyani",
+      "description": "Fish Biriyani                 restaurant: BIRIYANI SOUCK",
       "price": "₹240.00",
       "pattern": "lunch,biriyani",
       "unit": null,
@@ -3519,6 +3563,72 @@
       "unit": null,
       "retailer_id": "rf82",
       "availability": "out of stock",
+      "sale_price": null
+    },
+    "rf90": {
+      "id": "23921630510850631",
+      "name": "Chicken Lagoon Biryani 1kg",
+      "description": "Chicken Lagoon Biryani 1kg\nrestaurant: BIRIYANI SOUCK",
+      "price": "₹890.00",
+      "pattern": "biriyani,lunch",
+      "unit": null,
+      "retailer_id": "rf90",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf95": {
+      "id": "24004304359226361",
+      "name": "Beef Biryani Half Kg",
+      "description": "Beef Biryani Half Kg\nrestaurant: BIRIYANI SOUCK",
+      "price": "₹500.00",
+      "pattern": "biriyani,lunch",
+      "unit": null,
+      "retailer_id": "rf95",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf94": {
+      "id": "24069237776076424",
+      "name": "Beef Biryani 1kg",
+      "description": "Beef Biryani 1kg\nrestaurant: BIRIYANI SOUCK",
+      "price": "₹890.00",
+      "pattern": "biriyani,lunch",
+      "unit": null,
+      "retailer_id": "rf94",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf92": {
+      "id": "24334153199524285",
+      "name": "Chicken Broiler Biryani 1kg",
+      "description": "Chicken Broiler Biryani 1kg\nrestaurant: BIRIYANI SOUCK",
+      "price": "₹890.00",
+      "pattern": "biriyani,lunch",
+      "unit": null,
+      "retailer_id": "rf92",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf93": {
+      "id": "24487007364240589",
+      "name": "Chicken Broiler Biryani Half Kg",
+      "description": "Chicken Broiler Biryani Half Kg\nrestaurant: BIRIYANI SOUCK",
+      "price": "₹500.00",
+      "pattern": "biriyani,lunch",
+      "unit": null,
+      "retailer_id": "rf93",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf91": {
+      "id": "30304416429202311",
+      "name": "Chicken Lagoon Biryani Half Kg",
+      "description": "Chicken Lagoon Biryani Half Kg\nrestaurant: BIRIYANI SOUCK",
+      "price": "₹500.00",
+      "pattern": "biriyani,lunch",
+      "unit": null,
+      "retailer_id": "rf91",
+      "availability": "in stock",
       "sale_price": null
     }
   },

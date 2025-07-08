@@ -582,7 +582,7 @@ def get_vendor_products_service(data):
         # Step 2: Get products by vendor
         order_query = """
             SELECT 
-                p.retailer_id, p.name, p.vendors_price
+                p.p_id,p.retailer_id, p.name, p.vendors_price,p.percentage_on_category
             FROM products p
             JOIN vendors v ON v.id = p.vendor_id
             WHERE v.id = %s
@@ -593,9 +593,11 @@ def get_vendor_products_service(data):
         # Step 3: Format the result
         products = [
             {
-                "retailer_id": row[0],
-                "name": row[1],
-                "vendors_price": row[2]
+                "id": row[0],
+                "retailer_id": row[1],
+                "name": row[2],
+                "vendors_price": row[3],
+                "is_percentage":row[4]
             }
             for row in order_rows
         ]
@@ -727,3 +729,50 @@ def get_order_details_service(data):
     finally:
         cursor.close()
         conn.close()
+
+
+def map_products_service(data):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # Extract relevant fields from the incoming data
+        name = data.get("name")
+        vendor_id = data.get("vendor_id")
+        category = data.get("category")
+        percentage_on_category = data.get("percentage_on_category")
+        vendors_price = data.get("vendors_price")
+        retailer_id = data.get("retailer_id")
+        p_id = data.get("p_id")
+
+        insert_query = """
+            INSERT INTO products (
+                name,
+                vendor_id,
+                category,
+                percentage_on_category,
+                vendors_price,
+                retailer_id,
+                p_id
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+        """
+
+        cursor.execute(insert_query, (
+            name,
+            vendor_id,
+            category,
+            percentage_on_category,
+            vendors_price,
+            retailer_id,
+            p_id
+        ))
+
+        conn.commit()
+        return {"message": "Product mapped successfully"}, 201
+
+    except Exception as e:
+        return {"error": str(e)}, 500
+
+    finally:
+        conn.close()
+
