@@ -10,7 +10,7 @@ from app.services import gemini_services as AI
 # from app.services.openai_service import generate_response
 import re
 
-from app.services.audio_service import transcribe_audio_from_facebook
+# from app.services.audio_service import transcribe_audio_from_facebook
 from app.services.crud_services import insert_order, insert_user,update_order_items_service, update_user_lastlogin, user_exists
 from app.services.product_service import load_restaurants, send_whatsapp_product_list
 from app.utils.messages import get_text_message_input, po_template
@@ -119,20 +119,20 @@ def process_whatsapp_message(body):
         #         send_message(data)
         #         return
 
-        if message["type"] == "audio":
-         try:
-            audio_id=message["audio"]["id"]
-            response ="Anghadi AI ⚡ may take take few seconds  (10-20) to process your request" if user_sessions[wa_id].get('language')=='en' else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (10-20) എടുത്തേക്കാം"
-            data = get_text_message_input(wa_id, response)
-            send_message(data)
+        # if message["type"] == "audio":
+        #  try:
+        #     audio_id=message["audio"]["id"]
+        #     response ="Anghadi AI ⚡ may take take few seconds  (10-20) to process your request" if user_sessions[wa_id].get('language')=='en' else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (10-20) എടുത്തേക്കാം"
+        #     data = get_text_message_input(wa_id, response)
+        #     send_message(data)
                     
-            text=transcribe_audio_from_facebook(audio_id)
-            message["type"] = "text"
-            message.setdefault("text", {})["body"] = text
+        #     text=transcribe_audio_from_facebook(audio_id)
+        #     message["type"] = "text"
+        #     message.setdefault("text", {})["body"] = text
             
-         except Exception as e:
-             print(e)
-             return
+        #  except Exception as e:
+        #      print(e)
+        #      return
 
         if message["type"] == "text":
             
