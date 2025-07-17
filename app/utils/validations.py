@@ -1,7 +1,7 @@
 import math
 # 11.358386753972075, 75.91277067332773
 # lat, lon, ref_lat=11.360499024193635, ref_lon=75.90958223007394, radius_km=2):
-def is_within_radius(lat, lon, ref_lat=11.358386753972075, ref_lon=75.91277067332773, radius_km=6):
+def is_within_radius(lat, lon, ref_lat=11.358386753972075, ref_lon=75.91277067332773, radius_km=1000):
     # Radius of Earth in kilometers
     R = 6371.0
 
@@ -55,3 +55,23 @@ def calculate_price(lat, lon):
         price = 30 + (distance - 3) * 8
     
     return round(price, 2)
+
+def check_product_mix(items):
+    prefixes = {item['product_retailer_id'][:2] for item in items if 'product_retailer_id' in item}
+
+    has_rf = 'rf' in prefixes
+    has_bk = 'bk' in prefixes or 'sn' in prefixes
+    has_other = bool(prefixes - {'rf', 'bk'})  # others like sn, veg, gr, etc.
+
+    
+    if len(items) > 5:
+        if (has_rf or has_bk) and has_other:
+            return 10
+        else:
+            return 5
+    elif (has_rf or has_bk) and has_other:
+        return 5
+    elif has_rf and has_bk:
+        return 5
+    else:
+        return 0

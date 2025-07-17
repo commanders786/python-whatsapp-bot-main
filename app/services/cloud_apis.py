@@ -676,6 +676,72 @@ def send_message(data):
 
 
 
+
+def send_template_message(template_name, receipt, phone_number):
+    """
+    Send a WhatsApp template message with a button component.
+    
+    Args:
+        template_name (str): Name of the template (e.g., 'billorder').
+        receipt (str): Receipt text for the button's flow_action_data.
+        phone_number (str): Recipient phone number (e.g., '919645846341').
+    
+    Returns:
+        Response object or JSON error response.
+    """
+    headers = {
+        "Content-type": "application/json",
+        "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
+    }
+    
+    url = f"https://graph.facebook.com/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
+    
+    payload = {
+        "messaging_product": "whatsapp",
+        "to": phone_number,
+        "type": "template",
+        "template": {
+            "name": template_name,
+            "language": {"code": "en"},
+            "components": [
+                {
+                    "type": "button",
+                    "sub_type": "flow",
+                    "index": 0,
+                    "parameters": [
+                        {
+                            "type": "action",
+                            "action": {
+                                "flow_token": "1418732815996814",
+                                "flow_action_data": {
+                                    "init_values": {
+                                        "receipt": receipt
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+    
+    try:
+        response = requests.post(
+            url, data=json.dumps(payload), headers=headers, timeout=10
+        )
+        response.raise_for_status()
+        print(f"Response: {response.json()}")
+        return response
+    except requests.Timeout:
+        logging.error("Timeout occurred while sending template message")
+        return jsonify({"status": "error", "message": "Request timed out"}), 408
+    except requests.RequestException as e:
+        logging.error(f"Request failed due to: {e}")
+        print(f"Payload: {json.dumps(payload)}")
+        return jsonify({"status": "error", "message": "Failed to send message"}), 500
+
+
 # if __name__ == "__main__":
 #     recipient_number = "919961575781"  # Replace with the actual recipient number
     

@@ -10,13 +10,14 @@ from app.services import gemini_services as AI
 # from app.services.openai_service import generate_response
 import re
 
+from app.services.audio_service import transcribe_audio_from_facebook
 from app.services.crud_services import insert_order, insert_user,update_order_items_service, update_user_lastlogin, user_exists
 from app.services.product_service import load_restaurants, send_whatsapp_product_list
 from app.utils.messages import get_text_message_input, po_template
 from app.utils.validations import is_within_radius
 from ..sessions import user_sessions
 
-from app.services.cloud_apis import get_language, get_notes, get_notes_pharmacist, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_options, send_po, send_restaurants, send_vfc, send_whatsapp_image
+from app.services.cloud_apis import get_language, get_notes, get_notes_pharmacist, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_options, send_po, send_restaurants, send_template_message, send_vfc, send_whatsapp_image
 
 logging.basicConfig(level=logging.INFO)
 
@@ -99,24 +100,40 @@ def process_whatsapp_message(body):
     try:
         # If it's a regular text message
         ts = int(message['timestamp'])
-        if (datetime.now(timezone.utc) - datetime.fromtimestamp(ts, timezone.utc)).total_seconds() > 60: return
+        if (datetime.now(timezone.utc) - datetime.fromtimestamp(ts, timezone.utc)).total_seconds() > 10: return
         now= datetime.now(ZoneInfo("Asia/Kolkata")).time()
         start_time = time(7, 0, 0)   # 7:00 AM
         end_time = time(22, 0, 0)    # 8:00 PM
         
-        if now < start_time or now > end_time :
-        # if True:
+        # if now < start_time or now > end_time :
+        # # if True:
 
-           if message["type"] == "interactive" and "button_reply" in message["interactive"]:
-                if message["interactive"]["button_reply"]["id"]  in ['en','ml']:
-                  pass
-           else:
+        #    if message["type"] == "interactive" and "button_reply" in message["interactive"]:
+        #         if message["interactive"]["button_reply"]["id"]  in ['en','ml']:
+        #           pass
+        #    else:
                 
-                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
-                # response="ഇന്ന് സ്റ്റോർ അവധി ആൺ \nCall +919961575781 "
-                data = get_text_message_input(wa_id, response)
-                send_message(data)
-                return
+        #         response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
+        #         # response="ഇന്ന് സ്റ്റോർ അവധി ആൺ \nCall +919961575781 "
+        #         data = get_text_message_input(wa_id, response)
+        #         send_message(data)
+        #         return
+
+        if message["type"] == "audio":
+         try:
+            audio_id=message["audio"]["id"]
+            response ="Anghadi AI ⚡ may take take few seconds  (10-20) to process your request" if user_sessions[wa_id].get('language')=='en' else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (10-20) എടുത്തേക്കാം"
+            data = get_text_message_input(wa_id, response)
+            send_message(data)
+                    
+            text=transcribe_audio_from_facebook(audio_id)
+            message["type"] = "text"
+            message.setdefault("text", {})["body"] = text
+            
+         except Exception as e:
+             print(e)
+             return
+
         if message["type"] == "text":
             
             message_body = message["text"]["body"]
@@ -177,6 +194,7 @@ def process_whatsapp_message(body):
                
                 send_whatsapp_product_list(list(items),wa_id)
                 return
+        
       
         elif message["type"] == "interactive":
             
@@ -275,7 +293,7 @@ def process_whatsapp_message(body):
            
             
                
-            elif button_id=="oc":
+            elif button_id=="oc" :
                 user_sessions[wa_id]['level']="F2"
                 get_notes(wa_id,user_sessions[wa_id]['language'])
                 
@@ -303,6 +321,32 @@ def process_whatsapp_message(body):
                 # response = "Sorry, I didn't understand your selection."
                 pass
 
+
+        elif message["type"] == "button":
+                message=message["button"]["text"]
+                if message=="Confirm":
+                    user_sessions[wa_id]['level']="F2"
+                    get_notes(wa_id,user_sessions[wa_id]['language'])
+                    return
+                
+                
+                elif message=="Add more":
+                     response ="please add your items " if user_sessions[wa_id]['language']=="en" else "ദയവായി നിങ്ങളുടെ ഐറ്റങ്ങൾ ചേർക്കുക"
+                     data = get_text_message_input(wa_id, response)
+                     send_message(data)
+                     send_options(wa_id,user_sessions[wa_id]['language'])
+                     return
+                
+
+                elif message=="Cancel or Clear":
+                    user_sessions[wa_id]['level']="F1"
+                    user_sessions[wa_id]['items']=[]
+                    response ="Now your cart is free please continue shop with us 🛍🛒" if user_sessions[wa_id]['language']=="en" else "നിങ്ങളുടെ കാർട്ട് ഇപ്പോൾ ശൂന്യമാണ്, ദയവായി ഞങ്ങളോടൊപ്പം ഷോപ്പ് ചെയ്യുന്നത് തുടരുക 🛍🛒 "
+                    data = get_text_message_input(wa_id, response)
+                    send_message(data)
+                    send_options(wa_id,user_sessions[wa_id]['language'])
+                    return
+                
         elif message["type"] == "location":
                 
 
@@ -343,15 +387,20 @@ def process_whatsapp_message(body):
                 user_sessions[wa_id]['bill']=bill_text
                 order_notification_template = po_template(user_sessions[wa_id],order_id=order_id)
                 
-
+                if len(order_notification_template)>900:
+                   send_template_message("billorder", order_notification_template, wa_id)
+                   send_template_message("billorder", order_notification_template, "917306723535")
+                else:
                 
-                data= get_text_message_input(wa_id,order_notification_template)
-                send_message(data)
-                try:
-                 data= get_text_message_input("917306723535",order_notification_template)
-                 send_message(data)
-                except:
-                    print("not sent to basi")
+                    data= get_text_message_input(wa_id,order_notification_template)
+                    send_message(data)
+
+                    try:
+                      data= get_text_message_input("917306723535",order_notification_template)
+                      send_message(data)
+                    except:
+                        print("not sent to basi")
+
                 user_sessions[wa_id]['level']="F1"
                 user_sessions[wa_id]['items']=[]
 
@@ -363,6 +412,9 @@ def process_whatsapp_message(body):
             user_sessions[wa_id]['bill']=bill_text
             logging.info(f"items: {user_sessions[wa_id]['items']}")
 
+            if len(bill_text)>900:
+                send_template_message("mycartitems2", bill_text, wa_id)
+                return
 
             
             data = get_text_message_input(wa_id, bill_text)
@@ -386,6 +438,10 @@ def process_whatsapp_message(body):
     except Exception as e:
         response = "Please contact customer care and report this issue  \n +917306723535"
         logging.info("xxxxxxxxx",e)
+        warning ="some thing happened with "+wa_id 
+        data= get_text_message_input("919645846341",warning)
+        send_message(data)
+      
 
     # Send text message back
     if response:

@@ -1,8 +1,10 @@
 
 import json
 
+import requests
+
 from app.services.product_service import load_restaurants
-from app.utils.validations import calculate_price
+from app.utils.validations import calculate_price, check_product_mix
 
 def load_all_products():
     with open("result.json", "r", encoding="utf-8") as f:
@@ -57,10 +59,50 @@ def process_order_message(product_items,location=None):
      grand_total+=30
     else:
      price=calculate_price(location["latitude"],location["longitude"])
+    #  handling_charge=calculate_handling_charge(product_items)
      lines.append(f"\n🛵 Delivey Charge: ₹ {str(price)}")
      grand_total+=price
-     grand_total=round(grand_total,2)
+
+
+    configs=get_configs()
+    print(configs)
+    print(type(configs))
+    if configs :
+      print("11111")
+      print(configs.get('isRaincharge'))
+    #   if configs.get("isRaincharge") is True:
+    #     print(222222)
+    #     lines.append(f"\n🌧 Rain Charge: ₹ {str(configs.get('rainCharge'))}")
+    #     grand_total+=int(configs.get("rainCharge"))
+    handling_charge=check_product_mix(product_items)
+    if handling_charge :
+        lines.append(f"\n🛍 Multi shop charge: ₹ {str(handling_charge)}")
+        grand_total+=handling_charge
+     
+     
+    
+    grand_total=round(grand_total,2)
     # Total
     lines.append(f"\n🧾 Grand Total: ₹{grand_total}")
     return ("\n".join(lines),product_items)
 
+
+
+import requests
+def get_configs():
+
+
+    url = "https://ashhadmuhammed.pythonanywhere.com/static/anghadiStore.json"
+
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Raises HTTPError for bad responses (4xx or 5xx)
+
+        data = response.json()  # Parse JSON response
+        print("Data received:")
+        print(data)
+        return data
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching data: {e}")
+        return None

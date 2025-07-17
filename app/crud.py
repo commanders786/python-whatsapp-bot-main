@@ -1,9 +1,11 @@
+import json
 import logging
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify,Response
 import psycopg2
-
-from app.services.crud_services import get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, map_products_service, update_availability_service, update_order_items_service, update_order_items_service_new, update_price_service, user_exists
+import queue
+from app.services.crud_services import clear_payment_service, get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, insert_vendor_service, map_products_service, update_availability_service, update_order_items_service, update_order_items_service_new, update_price_service, user_exists
 from app.services.product_service import fetch_and_categorize_products, send_whatsapp_product_list
+
 
 crud_blueprint = Blueprint("crud", __name__)
 
@@ -42,6 +44,42 @@ def get_users():
         return jsonify(result), 200
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 400
+    
+
+    
+@crud_blueprint.route("/users/<phone>/lastlogin", methods=["PUT"])
+def update_lastlogin(phone):
+    data = request.get_json()
+    new_lastlogin = data.get("lastlogin")
+    
+    if not new_lastlogin:
+        return jsonify({"status": "error", "message": "Missing 'lastlogin' field in request."}), 400
+
+    try:
+        with get_db_connection() as conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    UPDATE users
+                    SET lastlogin = %s
+                    WHERE phone = %s;
+                """, (new_lastlogin, phone))
+
+                if cur.rowcount == 0:
+                    return jsonify({"status": "error", "message": "User not found."}), 404
+
+        return jsonify({"status": "success", "message": f"Last login updated for user {phone}."}), 200
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 400
+    
+
+@crud_blueprint.route("/users/exist", methods=["POST"])
+def check_user_existence():
+    data = request.get_json()
+    user_id = data.get("id")
+    phone = data.get("phone")
+
+    response, status = user_exists(user_id=user_id, phone=phone)
+    return jsonify(response), status
 
 # ------------------ ORDERS ------------------
 
@@ -104,29 +142,6 @@ def update_order_status(order_id):
         return jsonify({"status": "error", "message": str(e)}), 400
 
 
-@crud_blueprint.route("/users/<phone>/lastlogin", methods=["PUT"])
-def update_lastlogin(phone):
-    data = request.get_json()
-    new_lastlogin = data.get("lastlogin")
-    
-    if not new_lastlogin:
-        return jsonify({"status": "error", "message": "Missing 'lastlogin' field in request."}), 400
-
-    try:
-        with get_db_connection() as conn:
-            with conn.cursor() as cur:
-                cur.execute("""
-                    UPDATE users
-                    SET lastlogin = %s
-                    WHERE phone = %s;
-                """, (new_lastlogin, phone))
-
-                if cur.rowcount == 0:
-                    return jsonify({"status": "error", "message": "User not found."}), 404
-
-        return jsonify({"status": "success", "message": f"Last login updated for user {phone}."}), 200
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 400
 @crud_blueprint.route("/orders/<string:phone>", methods=["GET"])
 def get_orders_by_phone(phone):
     try:
@@ -150,42 +165,6 @@ def get_orders_by_phone(phone):
         return jsonify(result), 200
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 400
-
-
-@crud_blueprint.route("/users/exist", methods=["POST"])
-def check_user_existence():
-    data = request.get_json()
-    user_id = data.get("id")
-    phone = data.get("phone")
-
-    response, status = user_exists(user_id=user_id, phone=phone)
-    return jsonify(response), status
-
-
-
-@crud_blueprint.route("/products/categorized", methods=["GET"])
-def get_categorized_products():
-    result = fetch_and_categorize_products()
-    if "status" in result and result["status"] == "error":
-        return jsonify(result), 400
-    return jsonify(result), 200
-
-@crud_blueprint.route('/sendCatalogueCategory', methods=['POST'])
-def post_whatsapp_product_list():
-    # Get data from request
-    data = request.get_json()
-    
-    # Extract category and to_number from the request payload
-    category = data.get("category")
-    to_number = data.get("to_number")
-    
-    if not category or not to_number:
-        return jsonify({"status": "error", "message": "Missing category or to_number"}), 400
-    
-    # Call the function to send WhatsApp product list
-    result = send_whatsapp_product_list(category, to_number)
-    
-    return jsonify(result)
 
 
 
@@ -227,13 +206,7 @@ def get_order_summary():
     response, status = get_order_summary_service(vendor)
     return jsonify(response), status
 
-@crud_blueprint.route("/products", methods=["GET"])
-def get_products():
-    product_ids_param = request.args.get("product_ids")
-    product_ids = product_ids_param.split(",") if product_ids_param else None
 
-    response, status = get_products_service(product_ids)
-    return jsonify(response), status
 
 @crud_blueprint.route("/reciept", methods=["GET"])
 def get_reciept():
@@ -242,6 +215,44 @@ def get_reciept():
 
     response, status = get_reciept_service(order_id)
     return jsonify(response), status
+# ------------------ Products ------------------
+
+
+@crud_blueprint.route("/products/categorized", methods=["GET"])
+def get_categorized_products():
+    result = fetch_and_categorize_products()
+    if "status" in result and result["status"] == "error":
+        return jsonify(result), 400
+    return jsonify(result), 200
+
+@crud_blueprint.route('/sendCatalogueCategory', methods=['POST'])
+def post_whatsapp_product_list():
+    # Get data from request
+    data = request.get_json()
+    
+    # Extract category and to_number from the request payload
+    category = data.get("category")
+    to_number = data.get("to_number")
+    
+    if not category or not to_number:
+        return jsonify({"status": "error", "message": "Missing category or to_number"}), 400
+    
+    # Call the function to send WhatsApp product list
+    result = send_whatsapp_product_list(category, to_number)
+    
+    return jsonify(result)
+
+
+
+@crud_blueprint.route("/products", methods=["GET"])
+def get_products():
+    product_ids_param = request.args.get("product_ids")
+    product_ids = product_ids_param.split(",") if product_ids_param else None
+
+    response, status = get_products_service(product_ids)
+    return jsonify(response), status
+
+
 
 
 
@@ -285,10 +296,6 @@ def update_stock():
     else:
         return jsonify({"error": message}), 500
     
-@crud_blueprint.route("/vendors", methods=["GET"])
-def get_vendors():
-    response, status = get_vendor_service()
-    return jsonify(response), status
 
 
 
@@ -300,12 +307,6 @@ def get_products_new():
     return jsonify(response), status
 
 
-
-@crud_blueprint.route("/vendorsproducts", methods=["POST"])
-def get_vendor_products():
-    data = request.get_json()
-    
-    return get_vendor_products_service(data) 
 
 @crud_blueprint.route("/update-order-items", methods=["POST"])
 def update_order_items_new():
@@ -319,8 +320,85 @@ def get_order_details():
 
 
 
+
+# ------------------ Vendors ------------------
+
+
+
+@crud_blueprint.route("/vendors", methods=["GET"])
+def get_vendors():
+    response, status = get_vendor_service()
+    return jsonify(response), status
+
+
+
 @crud_blueprint.route("/mapProducts", methods=["POST"]) 
 def mapProducts():
     data = request.get_json()
     return map_products_service(data) 
 
+
+
+
+
+@crud_blueprint.route("/vendorsproducts", methods=["POST"])
+def get_vendor_products():
+    data = request.get_json()
+    
+    return get_vendor_products_service(data) 
+
+
+@crud_blueprint.route("/vendors", methods=["POST"])
+def insert_vendor():
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "No input data provided"}), 400
+
+        name = data.get("name")
+        product_type = data.get("product_type")
+
+        if not name or not product_type:
+            return jsonify({"error": "Missing required fields: name and product_type"}), 400
+
+        response, status = insert_vendor_service(data)
+        return jsonify(response), status
+
+    except ValueError:
+        return jsonify({"error": "Invalid JSON format"}), 400
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+
+# ------------------ Accounts ------------------
+
+# @crud_blueprint.route("/accounts", methods=["POST"])
+# def get_vendor_accounts():
+#     data = request.get_json()
+    
+#     return get_vendor_accounts_service(data) 
+
+
+
+@crud_blueprint.route("/clearPayment", methods=["POST"])
+def clear_payment():
+    data = request.get_json()
+    
+    return clear_payment_service(data) 
+
+
+# clients=[]
+# @crud_blueprint.get("/events")
+# def sse_stream():
+#     def event_stream(q):
+#         try:
+#             while True:
+#                 data = q.get()
+#                 yield f"data: {json.dumps(data)}\n\n"
+#         except GeneratorExit:
+#             print("Client disconnected")
+
+#     q = queue.Queue()
+#     clients.append(q)
+#     return Response(event_stream(q), mimetype="text/event-stream")

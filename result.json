@@ -26,18 +26,18 @@
       "id": "9416655338463541",
       "name": "പുതിന (MINT) 100g",
       "description": "Fresh mint",
-      "price": "₹20.00",
+      "price": "₹12.00",
       "pattern": "പുതിന,pothna, mint",
       "unit": null,
       "retailer_id": "veg11",
       "availability": "in stock",
-      "sale_price": "₹20.00"
+      "sale_price": "₹12.00"
     },
     "veg13": {
       "id": "9457423561052201",
       "name": "കാപ്‌സിക്കം (green)500g",
       "description": "Capcicum",
-      "price": "₹50.00",
+      "price": "₹60.00",
       "pattern": "capcicum, mulak, vegitable",
       "unit": null,
       "retailer_id": "veg13",
@@ -48,7 +48,7 @@
       "id": "9543733689047575",
       "name": "തക്കാളി (Tomato) 500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹19.00",
+      "price": "₹14.00",
       "pattern": "thakkali",
       "unit": null,
       "retailer_id": "veg05",
@@ -59,12 +59,12 @@
       "id": "9594744720603057",
       "name": "കാരറ്റ് (Carrot) 500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹40.00",
+      "price": "₹45.00",
       "pattern": "carrot,",
       "unit": null,
       "retailer_id": "veg01",
       "availability": "in stock",
-      "sale_price": "₹40.00"
+      "sale_price": "₹45.00"
     },
     "veg30": {
       "id": "9654115898043657",
@@ -114,7 +114,7 @@
       "id": "9854092084671571",
       "name": "കീയാർ 500g (Kiyaar)",
       "description": "kiyaar",
-      "price": "₹30.00",
+      "price": "₹35.00",
       "pattern": "kiyar, kakkiri, cucumber",
       "unit": null,
       "retailer_id": "veg26",
@@ -125,12 +125,12 @@
       "id": "9889240311192453",
       "name": "പച്ചമുളക് 100g",
       "description": "grenn chilly",
-      "price": "₹7.00",
+      "price": "₹10.00",
       "pattern": "pacha mulak, mulaku, chilly,green",
       "unit": null,
       "retailer_id": "veg20",
       "availability": "in stock",
-      "sale_price": "₹7.00"
+      "sale_price": "₹10.00"
     },
     "veg29": {
       "id": "9895931580498415",
@@ -158,7 +158,7 @@
       "id": "9918772161512162",
       "name": "വെണ്ട 500g (venda)",
       "description": "venda",
-      "price": "₹25.00",
+      "price": "₹30.00",
       "pattern": "venda, veg",
       "unit": null,
       "retailer_id": "veg18",
@@ -180,7 +180,7 @@
       "id": "9959451564146381",
       "name": "കക്കിരി 500g (cucumber)",
       "description": "cucumber",
-      "price": "₹20.00",
+      "price": "₹30.00",
       "pattern": "kakkiri, cucumber,",
       "unit": null,
       "retailer_id": "veg23",
@@ -191,18 +191,18 @@
       "id": "10038674232877250",
       "name": "ചെറിയ ഉള്ളി 500g (Cheriya ulli)",
       "description": "Cheriya ulli",
-      "price": "₹35.00",
+      "price": "₹40.00",
       "pattern": "cheriya ulli, veg",
       "unit": null,
       "retailer_id": "veg33",
       "availability": "in stock",
-      "sale_price": "₹35.00"
+      "sale_price": "₹40.00"
     },
     "veg32": {
       "id": "23916657167965615",
       "name": "കയ്പക്ക 500g (Kayppa)",
       "description": "kayppa",
-      "price": "₹35.00",
+      "price": "₹40.00",
       "pattern": "kayppa, veg",
       "unit": null,
       "retailer_id": "veg32",
@@ -213,7 +213,7 @@
       "id": "23998523573073859",
       "name": "വെള്ളരിക്ക 1kg (VELLARIKKA)",
       "description": "vellari",
-      "price": "₹30.00",
+      "price": "₹50.00",
       "pattern": "vellari, vellarikka,vegitable",
       "unit": null,
       "retailer_id": "veg16",
@@ -453,6 +453,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr126": {
+      "id": "8353787831412055",
+      "name": "Parle's Red",
+      "description": "Parles",
+      "price": "₹5.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr126",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr117": {
+      "id": "9332326076870171",
+      "name": "Bella Classic 3x15=45",
+      "description": "Variant : 3x15=45 Maxi Pads",
+      "price": "₹357.00",
+      "pattern": "ladies personal care,pads",
+      "unit": null,
+      "retailer_id": "gr117",
+      "availability": "in stock",
+      "sale_price": "₹238.00"
+    },
     "gr18": {
       "id": "9606990892711438",
       "name": "ചെറുപയർ 500g (cherupayar)",
@@ -472,6 +494,17 @@
       "pattern": "thuavara paripp, paripp, daal",
       "unit": null,
       "retailer_id": "gr19",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr113": {
+      "id": "9692984410803462",
+      "name": "Ball Ice Cream",
+      "description": "Ball Ice Creams",
+      "price": "₹10.00",
+      "pattern": "sweets",
+      "unit": null,
+      "retailer_id": "gr113",
       "availability": "in stock",
       "sale_price": null
     },
@@ -497,6 +530,61 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr123": {
+      "id": "9822750451162377",
+      "name": "Veg Mayonnaise",
+      "description": "Veg Mayonnaise Premium\nNet Quantity : 220g",
+      "price": "₹95.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr123",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr124": {
+      "id": "9919331091529081",
+      "name": "Parle's Black",
+      "description": "Parles",
+      "price": "₹5.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr124",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr136": {
+      "id": "9922093091235757",
+      "name": "Galaxy Chocolate",
+      "description": "Galaxy Milk Chocolate",
+      "price": "₹5.00",
+      "pattern": "sweets",
+      "unit": null,
+      "retailer_id": "gr136",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr138": {
+      "id": "9932232060238721",
+      "name": "Snickers",
+      "description": "Snickers \nFilled Chocolates",
+      "price": "₹10.00",
+      "pattern": "sweets",
+      "unit": null,
+      "retailer_id": "gr138",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr131": {
+      "id": "10017328345029348",
+      "name": "Nabati",
+      "description": "Nabati Wafer",
+      "price": "₹10.00",
+      "pattern": "sweets",
+      "unit": null,
+      "retailer_id": "gr131",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr15": {
       "id": "10071002672936807",
       "name": "മുട്ട 5 units (Eggs)",
@@ -508,9 +596,31 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr116": {
+      "id": "10072386786222722",
+      "name": "Stayfree Secure Xl 6pcs",
+      "description": "Variant : 6pcs",
+      "price": "₹45.00",
+      "pattern": "ladies personal care,pads",
+      "unit": null,
+      "retailer_id": "gr116",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr108": {
+      "id": "10073026336140325",
+      "name": "മഞ്ച് (Munch)",
+      "description": "Munch",
+      "price": "₹65.00",
+      "pattern": "sweets,chocolates",
+      "unit": null,
+      "retailer_id": "gr108",
+      "availability": "in stock",
+      "sale_price": "₹60.00"
+    },
     "gr102": {
       "id": "23895471453476427",
-      "name": "Camerry Cone Ice Cream (Chocolate)",
+      "name": "Camerry Cone Ice Cream Chocolate",
       "description": "Cone Ice Cream (Chocolate)",
       "price": "₹50.00",
       "pattern": "Ice Cream,cone",
@@ -521,12 +631,34 @@
     },
     "gr101": {
       "id": "23895836366744814",
-      "name": "Camerry Cone Ice Cream (Vanilla)",
+      "name": "Camerry Cone Ice Cream Vanilla",
       "description": "Cone Ice Cream (Vanilla)",
       "price": "₹40.00",
       "pattern": "Ice Cream,cone",
       "unit": null,
       "retailer_id": "gr101",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr110": {
+      "id": "23920769467576125",
+      "name": "കിറ്റ് കാറ്റ് (KitKat)",
+      "description": "KitKat",
+      "price": "₹10.00",
+      "pattern": "sweets,chocolates",
+      "unit": null,
+      "retailer_id": "gr110",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr147": {
+      "id": "23941157862213625",
+      "name": "Chiken Masala",
+      "description": "Panda Chiken Masala\nNet Quantity : 100g",
+      "price": "₹48.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr147",
       "availability": "in stock",
       "sale_price": null
     },
@@ -541,6 +673,105 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr135": {
+      "id": "23995643990062919",
+      "name": "Cadbury Dairy Milk",
+      "description": "Dairy Milk Chocolate",
+      "price": "₹10.00",
+      "pattern": "sweets",
+      "unit": null,
+      "retailer_id": "gr135",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr109": {
+      "id": "24015616184739099",
+      "name": "Britannia 50 50 200g",
+      "description": "Britannia 50 50 Sweet and Salty",
+      "price": "₹40.00",
+      "pattern": "Britannia 50 50,Biscuits",
+      "unit": null,
+      "retailer_id": "gr109",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr130": {
+      "id": "24022680537385955",
+      "name": "Nabati Siip",
+      "description": "Nabati",
+      "price": "₹5.00",
+      "pattern": "sweets",
+      "unit": null,
+      "retailer_id": "gr130",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr141": {
+      "id": "24023980213959982",
+      "name": "Pinpoint Blue",
+      "description": "Cello Techno Tip",
+      "price": "₹10.00",
+      "pattern": "pen,ball pen",
+      "unit": null,
+      "retailer_id": "gr141",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr111": {
+      "id": "24046446315004950",
+      "name": "കിറ്റ് കാറ്റ് (KitKat)",
+      "description": "KitKat",
+      "price": "₹60.00",
+      "pattern": "sweets,chocolates",
+      "unit": null,
+      "retailer_id": "gr111",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr145": {
+      "id": "24105029805817450",
+      "name": "എള്ളുണ്ട (Ellunda)",
+      "description": "Ellunda\nNet Quantity : 12pcs",
+      "price": "₹60.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr145",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr119": {
+      "id": "24109517278739335",
+      "name": "Dark Fantasy 4&1 combo",
+      "description": "Dark Fantasy Combo Offer\nBuy 4 Choco & Get 1 Choco Nut Free",
+      "price": "₹200.00",
+      "pattern": "Sweets",
+      "unit": null,
+      "retailer_id": "gr119",
+      "availability": "in stock",
+      "sale_price": "₹160.00"
+    },
+    "gr143": {
+      "id": "24122764167409435",
+      "name": "ഡെറ്റോൾ (Dettol)",
+      "description": "Dettol \nNet Quantity : 125ml",
+      "price": "₹88.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr143",
+      "availability": "in stock",
+      "sale_price": "₹80.00"
+    },
+    "gr118": {
+      "id": "24172797402331896",
+      "name": "Hershey's Syrup",
+      "description": "Strawbery Flavor",
+      "price": "₹110.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr118",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr12": {
       "id": "24248489971408050",
       "name": "CLOSE-UP (90g)",
@@ -549,6 +780,50 @@
       "pattern": "close up, tooth paste,paste",
       "unit": null,
       "retailer_id": "gr12",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr129": {
+      "id": "24290020243969420",
+      "name": "Lays Red",
+      "description": "Lays 10rs",
+      "price": "₹10.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr129",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr144": {
+      "id": "24290297497289761",
+      "name": "മിൽക്ക് മെയ്ഡ് (Milkmaid)",
+      "description": "Milkmaid\nNet Quantity : 380g",
+      "price": "₹152.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr144",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr115": {
+      "id": "24312889611654809",
+      "name": "Whisper Xl 7pcs",
+      "description": "Variant : 6 + 1 pcs",
+      "price": "₹45.00",
+      "pattern": "ladies personal care,pads",
+      "unit": null,
+      "retailer_id": "gr115",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr139": {
+      "id": "24322468924058942",
+      "name": "Techno Tip Blue",
+      "description": "Cello Techno Tip",
+      "price": "₹10.00",
+      "pattern": "pen,ball pen",
+      "unit": null,
+      "retailer_id": "gr139",
       "availability": "in stock",
       "sale_price": null
     },
@@ -563,6 +838,39 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr121": {
+      "id": "24458278553810059",
+      "name": "Disano Oats 1kg",
+      "description": "Oats Buy 1 Get 1",
+      "price": "₹285.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr121",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr149": {
+      "id": "24462242463381095",
+      "name": "കടല മിഠായി (Kadala Mittayi)",
+      "description": "Kadala Mittayi",
+      "price": "₹25.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr149",
+      "availability": "in stock",
+      "sale_price": "₹20.00"
+    },
+    "gr133": {
+      "id": "24502435839363087",
+      "name": "Nabati Choco",
+      "description": "Nabati Wafer",
+      "price": "₹10.00",
+      "pattern": "sweets",
+      "unit": null,
+      "retailer_id": "gr133",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr104": {
       "id": "24515637344711264",
       "name": "സോയ ചങ്ക്‌സ് 500g (Soya Chunks Big)",
@@ -574,14 +882,91 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr122": {
+      "id": "24553120280947225",
+      "name": "Gulab Jamun Mix 160g",
+      "description": "Bambino Gulab Jamun Mix\nBuy 1 Get 1 Free\nNet Quantity : 160g",
+      "price": "₹145.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr122",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr146": {
+      "id": "24611715945092695",
+      "name": "തേനാലി (Then Mittayi)",
+      "description": "Then Mittayi\nNet Quantity : 10pcs",
+      "price": "₹12.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr146",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr103": {
       "id": "24622924660644055",
-      "name": "Camerry Cone Ice Cream (Red Velvet)",
+      "name": "Camerry Cone Ice Cream Red Velvet",
       "description": "Cone Ice Cream (Red Velvet)",
       "price": "₹60.00",
       "pattern": "Ice Cream,cone",
       "unit": null,
       "retailer_id": "gr103",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr125": {
+      "id": "24649469627977999",
+      "name": "Parle's Green",
+      "description": "Parles",
+      "price": "₹5.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr125",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr127": {
+      "id": "24712760104976644",
+      "name": "Fulltoss Green",
+      "description": "Parle Fulltos",
+      "price": "₹5.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr127",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr132": {
+      "id": "24714110024857425",
+      "name": "Nabati",
+      "description": "Nabati Wafer",
+      "price": "₹20.00",
+      "pattern": "sweets",
+      "unit": null,
+      "retailer_id": "gr132",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr142": {
+      "id": "24743604161908268",
+      "name": "Pinpoint Black",
+      "description": "Cello Techno Tip",
+      "price": "₹10.00",
+      "pattern": "pen,ball pen",
+      "unit": null,
+      "retailer_id": "gr142",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr151": {
+      "id": "25144819345118503",
+      "name": "Exo Round",
+      "description": "Exo Round\nNet Wt : 250g",
+      "price": "₹32.00",
+      "pattern": "kitchen washing",
+      "unit": null,
+      "retailer_id": "gr151",
       "availability": "in stock",
       "sale_price": null
     },
@@ -596,6 +981,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr114": {
+      "id": "30295548780093248",
+      "name": "Whisper Regular 6pcs",
+      "description": "Variant : 6pcs",
+      "price": "₹37.00",
+      "pattern": "ladies personal care,pads",
+      "unit": null,
+      "retailer_id": "gr114",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr13": {
       "id": "30297127316552869",
       "name": "Lux Rose Vitamin E Soap",
@@ -607,14 +1003,102 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr150": {
+      "id": "30321001204215243",
+      "name": "Vim",
+      "description": "Vim Maha Tub\nNet Wt : 500g",
+      "price": "₹60.00",
+      "pattern": "kitchen washing",
+      "unit": null,
+      "retailer_id": "gr150",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr148": {
+      "id": "30334210042892871",
+      "name": "Dalda",
+      "description": "Dalda\nNet Quantity : 200ml",
+      "price": "₹48.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr148",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr137": {
+      "id": "30358401037141424",
+      "name": "Galaxy Chocolate",
+      "description": "Galaxy Milk Chocolate",
+      "price": "₹10.00",
+      "pattern": "sweets",
+      "unit": null,
+      "retailer_id": "gr137",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr120": {
+      "id": "30422227840757642",
+      "name": "Peanut Butter",
+      "description": "Sundrop Peanut Butter Crunchy\nNet Quantity : 924g",
+      "price": "₹480.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr120",
+      "availability": "in stock",
+      "sale_price": "₹295.00"
+    },
+    "gr140": {
+      "id": "30434553439523088",
+      "name": "Techno Tip Black",
+      "description": "Cello Techno Tip",
+      "price": "₹10.00",
+      "pattern": "pen,ball pen",
+      "unit": null,
+      "retailer_id": "gr140",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr134": {
+      "id": "30562598226688620",
+      "name": "Cadbury Dairy Milk",
+      "description": "Dairy Milk Chocolate",
+      "price": "₹5.00",
+      "pattern": "sweets",
+      "unit": null,
+      "retailer_id": "gr134",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr112": {
+      "id": "30581122074867988",
+      "name": "Camerry Ice Cream Choco Bar",
+      "description": "Ice Cream (Choco Bar)",
+      "price": "₹30.00",
+      "pattern": "sweets,chocolates",
+      "unit": null,
+      "retailer_id": "gr112",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr100": {
       "id": "30720867707498484",
-      "name": "Camerry Ice Cream 500ml (Vanilla)",
+      "name": "Camerry Ice Cream 500ml Vanilla",
       "description": "500ml Camerry Ice Cream (Vanilla)",
       "price": "₹150.00",
       "pattern": "Ice Cream",
       "unit": null,
       "retailer_id": "gr100",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr128": {
+      "id": "31358867343704028",
+      "name": "Lays Green",
+      "description": "Lays 10rs",
+      "price": "₹10.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr128",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1137,7 +1621,7 @@
     },
     "gr61": {
       "id": "24080249274934734",
-      "name": "കാടമുട്ട 20Piece (Quail Eggs)",
+      "name": "കാടമുട്ട 20Piece (Kaada Eggs)",
       "description": "Quail  Eggs 20Piece Pack",
       "price": "₹60.00",
       "pattern": "mutta,egg",
@@ -1486,17 +1970,6 @@
       "retailer_id": "gr99",
       "availability": "in stock",
       "sale_price": null
-    },
-    "gr93": {
-      "id": "30344322481882617",
-      "name": "Britannia 50 50 200g",
-      "description": "Britannia 50 50 Sweet and Salty",
-      "price": "₹40.00",
-      "pattern": "Britannia 50 50,Biscuits",
-      "unit": null,
-      "retailer_id": "gr93",
-      "availability": "in stock",
-      "sale_price": null
     }
   },
   "fruits": {
@@ -1526,7 +1999,7 @@
       "id": "9584452581671948",
       "name": "Citrus Orange 500g (ഓറഞ്ച്)",
       "description": "Fresh and handpicked fruits",
-      "price": "₹65.00",
+      "price": "₹70.00",
       "pattern": "orange",
       "unit": null,
       "retailer_id": "fr01",
@@ -1592,7 +2065,7 @@
       "id": "29331886456457697",
       "name": "Apple (ആപ്പിൾ) 500g",
       "description": "Fresh and handpicked fruits",
-      "price": "₹125.00",
+      "price": "₹135.00",
       "pattern": "apple",
       "unit": null,
       "retailer_id": "fr02",
@@ -1717,7 +2190,7 @@
       "pattern": "rambuttan",
       "unit": null,
       "retailer_id": "fr22",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": "₹150.00"
     },
     "fr25": {
@@ -1856,18 +2329,18 @@
     },
     "kd01": {
       "id": "9874522829258228",
-      "name": "കാട (Quail)",
+      "name": "കാട (Kaada)",
       "description": "കാട",
       "price": "₹60.00",
       "pattern": "കാട, KAADA, meet",
       "unit": null,
       "retailer_id": "kd01",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "kd02": {
       "id": "23877207781937846",
-      "name": "കാട വലുത്  (Quail Big)",
+      "name": "കാട വലുത്  (Kaada Big)",
       "description": "കാട",
       "price": "₹70.00",
       "pattern": null,
@@ -2584,6 +3057,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk48": {
+      "id": "23971376015844951",
+      "name": "കറുത്തഅപ്പം 500g (Black Appam)",
+      "description": "Black Appam",
+      "price": "₹80.00",
+      "pattern": "cake",
+      "unit": null,
+      "retailer_id": "bk48",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk47": {
       "id": "24576281425305862",
       "name": "കപ്പ കൊള്ളി 500g (Kappa Kolli)",
@@ -3041,55 +3525,55 @@
       "id": "9959274287520803",
       "name": "Normal Alfahm (QUATER)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹140.00",
+      "price": "₹150.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf37",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf38": {
       "id": "9981738638535963",
       "name": "Peri Peri Alfahm (FULL)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹490.00",
+      "price": "₹520.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf38",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf39": {
       "id": "9990149124405430",
       "name": "Peri Peri Alfahm (HALF)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹280.00",
+      "price": "₹300.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf39",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf35": {
       "id": "24426844400251092",
       "name": "Normal Alfahm (FULL)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹450.00",
+      "price": "₹490.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf35",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf36": {
       "id": "29783574187924288",
       "name": "Normal Alfahm (HALF)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹260.00",
+      "price": "₹280.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf36",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf47": {
@@ -3100,7 +3584,7 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf47",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf49": {
@@ -3111,40 +3595,40 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf49",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf42": {
       "id": "9943391645777344",
       "name": "Pepper Alfahm (HALF)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹280.00",
+      "price": "₹300.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf42",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf41": {
       "id": "9996777997057635",
       "name": "Pepper Alfahm (FULL)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹490.00",
+      "price": "₹520.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf41",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf40": {
       "id": "23905959635687112",
       "name": "Peri Peri Alfahm (QUATER)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹150.00",
+      "price": "₹160.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf40",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf45": {
@@ -3155,7 +3639,7 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf45",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf44": {
@@ -3166,7 +3650,7 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf44",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf48": {
@@ -3177,18 +3661,18 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf48",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf43": {
       "id": "29769745865973584",
       "name": "Pepper Alfahm (QUATER)",
       "description": "Alfahm\nrestaurant: ZABAQ",
-      "price": "₹150.00",
+      "price": "₹160.00",
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf43",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf46": {
@@ -3199,7 +3683,7 @@
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf46",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf59": {

@@ -39,8 +39,12 @@
 #         uploaded_file = genai.upload_file(path=local_audio_file, mime_type="audio/wav")
 
 #         # Step 4: Transcribe using Gemini
-#         model = genai.GenerativeModel(model_name="gemini-2.5-flash-preview-05-20")# or "gemini-2.5-flash-preview-05-20"
-#         prompt = "Transcribe the speech in the audio file."
+#         model = genai.GenerativeModel(model_name="gemini-2.5-flash-preview-05-20")
+#         prompt = (
+#         "Transcribe the speech in the audio file. "
+#         "If the spoken language is not English, return the transcription using English letters (transliteration). "
+#         "Do not use any native script; only Roman/Latin characters should be used."
+#     )
 #         response = model.generate_content([prompt, uploaded_file])
 
 #         # Clean up: remove local file and uploaded Gemini file
@@ -55,9 +59,9 @@
 #         return f"Error: {e}"
 
 # # Entry point for script execution
-# if __name__ == "__main__":
-#     # Replace with a valid audio ID for testing
-#     test_audio_id = "576851091746874"
-#     result = transcribe_audio_from_facebook(test_audio_id)
-#     print("Transcription Result:\n", result)  qsl
-#
+# # if __name__ == "__main__":
+# #     # Replace with a valid audio ID for testing
+# #     test_audio_id = "1072441411684863"
+# #     result = transcribe_audio_from_facebook(test_audio_id)
+# #     print("Transcription Result:\n", result)  
+
