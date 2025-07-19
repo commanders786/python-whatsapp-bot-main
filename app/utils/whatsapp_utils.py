@@ -11,6 +11,7 @@ from app.services import gemini_services as AI
 import re
 
 # from app.services.audio_service import transcribe_audio_from_facebook
+from app.services.audio_service import transcribe_audio_from_facebook
 from app.services.crud_services import insert_order, insert_user,update_order_items_service, update_user_lastlogin, user_exists
 from app.services.product_service import load_restaurants, send_whatsapp_product_list
 from app.utils.messages import get_text_message_input, po_template
@@ -105,34 +106,34 @@ def process_whatsapp_message(body):
         start_time = time(7, 0, 0)   # 7:00 AM
         end_time = time(22, 0, 0)    # 8:00 PM
         
-        # if now < start_time or now > end_time :
-        # # if True:
+        if now < start_time or now > end_time :
+        # if True:
 
-        #    if message["type"] == "interactive" and "button_reply" in message["interactive"]:
-        #         if message["interactive"]["button_reply"]["id"]  in ['en','ml']:
-        #           pass
-        #    else:
+           if message["type"] == "interactive" and "button_reply" in message["interactive"]:
+                if message["interactive"]["button_reply"]["id"]  in ['en','ml']:
+                  pass
+           else:
                 
-        #         response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
-        #         # response="ഇന്ന് സ്റ്റോർ അവധി ആൺ \nCall +919961575781 "
-        #         data = get_text_message_input(wa_id, response)
-        #         send_message(data)
-        #         return
+                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
+                # response="ഇന്ന് സ്റ്റോർ അവധി ആൺ \nCall +919961575781 "
+                data = get_text_message_input(wa_id, response)
+                send_message(data)
+                return
 
-        # if message["type"] == "audio":
-        #  try:
-        #     audio_id=message["audio"]["id"]
-        #     response ="Anghadi AI ⚡ may take take few seconds  (10-20) to process your request" if user_sessions[wa_id].get('language')=='en' else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (10-20) എടുത്തേക്കാം"
-        #     data = get_text_message_input(wa_id, response)
-        #     send_message(data)
+        if message["type"] == "audio":
+         try:
+            audio_id=message["audio"]["id"]
+            response ="Anghadi AI ⚡ may take take few seconds  (10-20) to process your request" if user_sessions[wa_id].get('language')=='en' else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (10-20) എടുത്തേക്കാം"
+            data = get_text_message_input(wa_id, response)
+            send_message(data)
                     
-        #     text=transcribe_audio_from_facebook(audio_id)
-        #     message["type"] = "text"
-        #     message.setdefault("text", {})["body"] = text
+            text=transcribe_audio_from_facebook(audio_id)
+            message["type"] = "text"
+            message.setdefault("text", {})["body"] = text
             
-        #  except Exception as e:
-        #      print(e)
-        #      return
+         except Exception as e:
+             print(e)
+             return
 
         if message["type"] == "text":
             

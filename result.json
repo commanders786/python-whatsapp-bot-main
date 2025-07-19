@@ -530,6 +530,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr152": {
+      "id": "9805439102893256",
+      "name": "Toothbrush Ultra Soft",
+      "description": "Sensitive Toothbrush \nVarient : Ultra Soft",
+      "price": "₹40.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr152",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr123": {
       "id": "9822750451162377",
       "name": "Veg Mayonnaise",
@@ -574,6 +585,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr160": {
+      "id": "9965960423530031",
+      "name": "മീൻ മസാല (Fish Masala)",
+      "description": "Eastern Fish Masala\nNet Quantity : 100g",
+      "price": "₹44.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr160",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr131": {
       "id": "10017328345029348",
       "name": "Nabati",
@@ -582,6 +604,17 @@
       "pattern": "sweets",
       "unit": null,
       "retailer_id": "gr131",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr163": {
+      "id": "10035577753234954",
+      "name": "മഞ്ഞൾപ്പൊടി (Turmeric Powder)",
+      "description": "Turmeric Powder \nNet Quantity : 100g",
+      "price": "₹36.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr163",
       "availability": "in stock",
       "sale_price": null
     },
@@ -662,6 +695,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr164": {
+      "id": "23957899037154114",
+      "name": "സാമ്പാർ പൊടി (Sambar Powder)",
+      "description": "Sambar Powder\nNet Quantity : 100g",
+      "price": "₹51.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr164",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr11": {
       "id": "23958118587106006",
       "name": "MAIDA 500g (മൈദ)",
@@ -670,6 +714,28 @@
       "pattern": "maida",
       "unit": null,
       "retailer_id": "gr11",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr162": {
+      "id": "23960092033641597",
+      "name": "മുളക് പൊടി (Red Chilli Powder)",
+      "description": "Red Chilli Powder\nNet Quantity : 100g",
+      "price": "₹34.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr162",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr154": {
+      "id": "23987141614227925",
+      "name": "Toothbrush Medium",
+      "description": "Toothbrush \nVarient : Medium",
+      "price": "₹22.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr154",
       "availability": "in stock",
       "sale_price": null
     },
@@ -684,6 +750,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr169": {
+      "id": "24005508899128828",
+      "name": "Battery 1.5v",
+      "description": "Panasonic Jumbo Heavy Battery \nUnits : 10pcs",
+      "price": "₹170.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr169",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr109": {
       "id": "24015616184739099",
       "name": "Britannia 50 50 200g",
@@ -694,6 +771,17 @@
       "retailer_id": "gr109",
       "availability": "in stock",
       "sale_price": null
+    },
+    "gr168": {
+      "id": "24019310427762909",
+      "name": "മക്രോണി (Macaroni)",
+      "description": "Macaroni\nNet Quantity : 200g",
+      "price": "₹20.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr168",
+      "availability": "in stock",
+      "sale_price": "₹16.00"
     },
     "gr130": {
       "id": "24022680537385955",
@@ -783,6 +871,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr156": {
+      "id": "24257475040528368",
+      "name": "Toothbrush Hard",
+      "description": "Toothbrush \nVarient : Hard",
+      "price": "₹40.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr156",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr129": {
       "id": "24290020243969420",
       "name": "Lays Red",
@@ -849,6 +948,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr155": {
+      "id": "24459899000274819",
+      "name": "Toothbrush Hard",
+      "description": "Toothbrush \nVarient : Hard",
+      "price": "₹22.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr155",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr158": {
+      "id": "24460203566931100",
+      "name": "Garam Masala",
+      "description": "Eastern Garam Masala\nNet Quantity : 50g",
+      "price": "₹54.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr158",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr149": {
       "id": "24462242463381095",
       "name": "കടല മിഠായി (Kadala Mittayi)",
@@ -904,6 +1025,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr161": {
+      "id": "24611847798422608",
+      "name": "മല്ലിപ്പൊടി (Coriander Powder)",
+      "description": "Coriander Powder\nNet Quantity : 100g",
+      "price": "₹27.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr161",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr103": {
       "id": "24622924660644055",
       "name": "Camerry Cone Ice Cream Red Velvet",
@@ -923,6 +1055,17 @@
       "pattern": "lays,sweets",
       "unit": null,
       "retailer_id": "gr125",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr167": {
+      "id": "24705629289038040",
+      "name": "Amul Mithai Mate",
+      "description": "Amul Mithai Mate\nNet Quantity : 400g",
+      "price": "₹130.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr167",
       "availability": "in stock",
       "sale_price": null
     },
@@ -948,6 +1091,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr159": {
+      "id": "24742828761984569",
+      "name": "ഇറച്ചി മസാല (Meat Masala)",
+      "description": "Eastern Meat Masala\nNet Quantity : 100g",
+      "price": "₹55.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr159",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr142": {
       "id": "24743604161908268",
       "name": "Pinpoint Black",
@@ -956,6 +1110,28 @@
       "pattern": "pen,ball pen",
       "unit": null,
       "retailer_id": "gr142",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr166": {
+      "id": "24957803553807332",
+      "name": "ഉപ്പുമാവ് റവ (Uppuma Rava)",
+      "description": "Saico Uppuma Rava\nNet Quantity : 500g",
+      "price": "₹43.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr166",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr165": {
+      "id": "24983510707906207",
+      "name": "കുരുമുളക് പൊടി (Black Pepper Powder)",
+      "description": "Black Pepper Powder\nNet Quantity : 50g",
+      "price": "₹67.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr165",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1025,6 +1201,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr157": {
+      "id": "30354721697505819",
+      "name": "Toothbrush Medium",
+      "description": "Toothbrush \nVarient : Medium",
+      "price": "₹40.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr157",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr137": {
       "id": "30358401037141424",
       "name": "Galaxy Chocolate",
@@ -1055,6 +1242,17 @@
       "pattern": "pen,ball pen",
       "unit": null,
       "retailer_id": "gr140",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr153": {
+      "id": "30559469550364968",
+      "name": "Toothbrush Soft",
+      "description": "Toothbrush \nVarient : Soft",
+      "price": "₹22.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr153",
       "availability": "in stock",
       "sale_price": null
     },
@@ -2142,7 +2340,7 @@
       "id": "29413555341593593",
       "name": "കക്കിരിക്ക 500g (Cucumbar)",
       "description": "Cucumber",
-      "price": "₹20.00",
+      "price": "₹30.00",
       "pattern": "kakkiri, cucumbar",
       "unit": null,
       "retailer_id": "fr19",
@@ -3037,9 +3235,9 @@
     },
     "bk41": {
       "id": "9929411670518260",
-      "name": "Arabian Baklava 500g",
-      "description": "500g Arabian Baklava",
-      "price": "₹600.00",
+      "name": "Arabian Baklava 250g",
+      "description": "Arabian Baklava\n250g",
+      "price": "₹300.00",
       "pattern": "Arabian Baklava,bakery",
       "unit": null,
       "retailer_id": "bk41",
@@ -3103,9 +3301,9 @@
     },
     "bk42": {
       "id": "24665157126405804",
-      "name": "Arabian Baklava 500g",
-      "description": "500g Arabian Baklava",
-      "price": "₹600.00",
+      "name": "Arabian Baklava 250g",
+      "description": "Arabian Baklava\n250g",
+      "price": "₹300.00",
       "pattern": "Arabian Baklava,bakery",
       "unit": null,
       "retailer_id": "bk42",
@@ -3886,7 +4084,7 @@
     },
     "rf74": {
       "id": "9761836867260937",
-      "name": "Thattu Dosa",
+      "name": "Thattu Dosa 3pcs",
       "description": "Thattu Dosa\nrestaurant:  sharadha dosa",
       "price": "₹30.00",
       "pattern": "dosa,masala dosa, neirost",
@@ -4112,6 +4310,17 @@
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf91",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf96": {
+      "id": "30536948112618917",
+      "name": "Kuboos",
+      "description": "Kuboos\nrestaurant: kodhiyanz",
+      "price": "₹10.00",
+      "pattern": "Kodhiyanz,Kuboos",
+      "unit": null,
+      "retailer_id": "rf96",
       "availability": "in stock",
       "sale_price": null
     }
@@ -4409,7 +4618,7 @@
       "id": "23966689346296043",
       "name": "പൊറോട്ട  2pc (porotta)",
       "description": "Kerala layer porotta",
-      "price": "₹30.00",
+      "price": "₹28.00",
       "pattern": "breakfast",
       "unit": null,
       "retailer_id": "sn30",
