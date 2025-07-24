@@ -85,12 +85,12 @@ def insert_order(data):
                     WHERE created_at::date = CURRENT_DATE;
                 """)
                 order_id = cur.fetchone()[0]
-
+                is_offline = data.get('is_offline', False)
                 # Insert order without feedback
                 cur.execute("""
-                    INSERT INTO orders (id, receipt, bill_amount, userid, created_at)
-                    VALUES (%s, %s, %s, %s, NOW());
-                """, (order_id, data['receipt'], data['bill_amount'], data['userid']))
+                    INSERT INTO orders (id, receipt, bill_amount, userid, created_at, is_offline)
+                    VALUES (%s, %s, %s, %s, NOW(), %s);
+                """, (order_id, data['receipt'], data['bill_amount'], data['userid'], is_offline))
 
             for q in get_clients():
                q.put({
@@ -958,3 +958,34 @@ def clear_payment_service(data):
             cursor.close()
         if conn:
             conn.close()
+
+def update_vendor_price_service(data):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        retailer_id = data.get("retailer_id")
+        vendor_price = data.get("vendor_price")
+
+        if not retailer_id or vendor_price is None:
+            return jsonify({"error": "Missing retailer_id or vendor_price"}), 400
+
+        update_query = """
+            UPDATE vendors
+            SET vendor_price = %s
+            WHERE retailer_id = %s
+        """
+        cursor.execute(update_query, (vendor_price, retailer_id))
+        conn.commit()
+
+        if cursor.rowcount == 0:
+            return jsonify({"message": "No record updated, invalid retailer_id?"}), 404
+
+        return jsonify({"message": "Vendor price updated successfully"}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+    finally:
+        cursor.close()
+        conn.close()

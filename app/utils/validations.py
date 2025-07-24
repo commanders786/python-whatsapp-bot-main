@@ -64,7 +64,7 @@ def check_product_mix(items):
     has_other = bool(prefixes - {'rf', 'bk'})  # others like sn, veg, gr, etc.
 
     
-    if len(items) > 5:
+    if len(items) > 10:
         if (has_rf or has_bk) and has_other:
             return 10
         else:

@@ -114,7 +114,7 @@ def process_whatsapp_message(body):
                   pass
            else:
                 
-                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 8 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
+                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 10 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
                 # response="ഇന്ന് സ്റ്റോർ അവധി ആൺ \nCall +919961575781 "
                 data = get_text_message_input(wa_id, response)
                 send_message(data)

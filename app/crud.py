@@ -3,7 +3,7 @@ import logging
 from flask import Blueprint, request, jsonify,Response
 import psycopg2
 import queue
-from app.services.crud_services import clear_payment_service, get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, insert_vendor_service, map_products_service, update_availability_service, update_order_items_service, update_order_items_service_new, update_price_service, user_exists
+from app.services.crud_services import clear_payment_service, get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, insert_vendor_service, map_products_service, update_availability_service, update_order_items_service, update_order_items_service_new, update_price_service, update_vendor_price_service, user_exists
 from app.services.product_service import fetch_and_categorize_products, send_whatsapp_product_list
 
 
@@ -321,6 +321,8 @@ def get_order_details():
 
 
 
+
+
 # ------------------ Vendors ------------------
 
 
@@ -369,6 +371,10 @@ def insert_vendor():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@crud_blueprint.route("/update-vendor-price", methods=["POST"])
+def update_vendor_price():
+    data = request.get_json()
+    return update_vendor_price_service(data)
 
 
 # ------------------ Accounts ------------------

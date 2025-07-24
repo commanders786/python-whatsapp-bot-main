@@ -618,6 +618,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr189": {
+      "id": "10038527646274389",
+      "name": "Pepsi 1.25L",
+      "description": "Pepsi \nNet Quantity : 1.25L",
+      "price": "₹50.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr189",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr188": {
+      "id": "10046389742082627",
+      "name": "Pepsi 750ml",
+      "description": "Pepsi \nNet Quantity : 750ml",
+      "price": "₹40.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr188",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr15": {
       "id": "10071002672936807",
       "name": "മുട്ട 5 units (Eggs)",
@@ -650,6 +672,17 @@
       "retailer_id": "gr108",
       "availability": "in stock",
       "sale_price": "₹60.00"
+    },
+    "gr176": {
+      "id": "23882680028020666",
+      "name": "അണ്ടിപ്പരുപ് 50g (Nuts)",
+      "description": "Nuts\nNet Weight : 50g",
+      "price": "₹50.00",
+      "pattern": "Dry Fruits",
+      "unit": null,
+      "retailer_id": "gr176",
+      "availability": "in stock",
+      "sale_price": null
     },
     "gr102": {
       "id": "23895471453476427",
@@ -728,6 +761,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr181": {
+      "id": "23967136226229710",
+      "name": "Smoodh Drink",
+      "description": "Smoodh Flavoured Drink\nToffe Caramel",
+      "price": "₹20.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr181",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr154": {
       "id": "23987141614227925",
       "name": "Toothbrush Medium",
@@ -739,6 +783,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr186": {
+      "id": "23991568560485898",
+      "name": "Mountain Dew 1.25L",
+      "description": "Mountain Dew \nNet Quantity : 1.25L",
+      "price": "₹65.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr186",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr135": {
       "id": "23995643990062919",
       "name": "Cadbury Dairy Milk",
@@ -747,6 +802,17 @@
       "pattern": "sweets",
       "unit": null,
       "retailer_id": "gr135",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr178": {
+      "id": "24001711559523708",
+      "name": "ജീരകം 100g Small (Cumin)",
+      "description": "Cumin (Small)\nNet Weight : 100g",
+      "price": "₹30.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr178",
       "availability": "in stock",
       "sale_price": null
     },
@@ -805,6 +871,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr187": {
+      "id": "24035034349483169",
+      "name": "Mountain Dew 2.25L",
+      "description": "Mountain Dew \nNet Quantity : 2.25L",
+      "price": "₹85.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr187",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr111": {
       "id": "24046446315004950",
       "name": "കിറ്റ് കാറ്റ് (KitKat)",
@@ -813,6 +890,50 @@
       "pattern": "sweets,chocolates",
       "unit": null,
       "retailer_id": "gr111",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr185": {
+      "id": "24051613397836565",
+      "name": "Mountain Dew 750ml",
+      "description": "Mountain Dew \nNet Quantity : 750ml",
+      "price": "₹40.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr185",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr184": {
+      "id": "24055511460776302",
+      "name": "7up 2.25L",
+      "description": "7up Drink\nNet Quantity : 2.25L",
+      "price": "₹100.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr184",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr173": {
+      "id": "24074879925455580",
+      "name": "അമുൽ ഫ്രഷ് ക്രീം (Amul Fresh Cream)",
+      "description": "Amul Fresh Cream\nNet Weight : 250ml",
+      "price": "₹70.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr173",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr190": {
+      "id": "24098932489726459",
+      "name": "Pepsi 2.25L",
+      "description": "Pepsi\nNet Quantity : 2.25L",
+      "price": "₹94.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr190",
       "availability": "in stock",
       "sale_price": null
     },
@@ -852,11 +973,44 @@
     "gr118": {
       "id": "24172797402331896",
       "name": "Hershey's Syrup",
-      "description": "Strawbery Flavor",
+      "description": "Strawbery Flavor\nNet Quantity: 200g",
       "price": "₹110.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "gr118",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr170": {
+      "id": "24188412250797641",
+      "name": "നൂട്ടെല്ല 180g (Nutella)",
+      "description": "Nutella",
+      "price": "₹239.00",
+      "pattern": "chocolate",
+      "unit": null,
+      "retailer_id": "gr170",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr177": {
+      "id": "24222103944146980",
+      "name": "ജീരകം 100g Big (Cumin)",
+      "description": "Cumin (Big)\nNet Weight : 100g",
+      "price": "₹45.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr177",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr174": {
+      "id": "24235186532779097",
+      "name": "ഉണക്ക മുന്തിരി 50g (dried grape)",
+      "description": "raisins (dried grape) \nഉണക്ക മുന്തിരി\nNet Weight : 50g",
+      "price": "₹25.00",
+      "pattern": "Raisins,Dry Fruits",
+      "unit": null,
+      "retailer_id": "gr174",
       "availability": "in stock",
       "sale_price": null
     },
@@ -871,6 +1025,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr183": {
+      "id": "24256953993915549",
+      "name": "7up 1.25L",
+      "description": "7up Drink\nNet Quantity : 1.25L",
+      "price": "₹50.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr183",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr156": {
       "id": "24257475040528368",
       "name": "Toothbrush Hard",
@@ -881,6 +1046,17 @@
       "retailer_id": "gr156",
       "availability": "in stock",
       "sale_price": null
+    },
+    "gr179": {
+      "id": "24258329780520913",
+      "name": "Maggi Noodils Family Pack",
+      "description": "Noodils\nNet Quantity : 420g",
+      "price": "₹90.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr179",
+      "availability": "in stock",
+      "sale_price": "₹84.00"
     },
     "gr129": {
       "id": "24290020243969420",
@@ -904,6 +1080,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr172": {
+      "id": "24305048335757006",
+      "name": "അമുൽ ചീസ് (Amul Cheese)",
+      "description": "Amul Cheese\nNet Weight : 100g",
+      "price": "₹85.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr172",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr115": {
       "id": "24312889611654809",
       "name": "Whisper Xl 7pcs",
@@ -923,6 +1110,17 @@
       "pattern": "pen,ball pen",
       "unit": null,
       "retailer_id": "gr139",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr175": {
+      "id": "24428216183448653",
+      "name": "ഏലക്ക 10g (cardamom)",
+      "description": "cardamom\nNet Weight : 10g",
+      "price": "₹45.00",
+      "pattern": "cardamom",
+      "unit": null,
+      "retailer_id": "gr175",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1044,6 +1242,17 @@
       "pattern": "Ice Cream,cone",
       "unit": null,
       "retailer_id": "gr103",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr191": {
+      "id": "24634945886111906",
+      "name": "Sprite 750ml",
+      "description": "Sprite \nNet Quantity : 750ml",
+      "price": "₹40.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr191",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1220,7 +1429,7 @@
       "pattern": "sweets",
       "unit": null,
       "retailer_id": "gr137",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "gr120": {
@@ -1289,6 +1498,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr182": {
+      "id": "30725455400401654",
+      "name": "7up  750ml",
+      "description": "7up Drink\nNet Quantity : 750ml",
+      "price": "₹40.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr182",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr171": {
+      "id": "31016786511268397",
+      "name": "അമുൽ ബറ്റർ (Amul Butter)",
+      "description": "Amul Butter \nNet Weight : 100g",
+      "price": "₹65.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr171",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr128": {
       "id": "31358867343704028",
       "name": "Lays Green",
@@ -1297,6 +1528,17 @@
       "pattern": "lays,sweets",
       "unit": null,
       "retailer_id": "gr128",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr192": {
+      "id": "31429712793294306",
+      "name": "Sprite 2.25L",
+      "description": "Sprite \nNet Quantity : 2.25L",
+      "price": "₹100.00",
+      "pattern": "Drinks",
+      "unit": null,
+      "retailer_id": "gr192",
       "availability": "in stock",
       "sale_price": null
     },
@@ -2434,6 +2676,39 @@
       "retailer_id": "fr26",
       "availability": "in stock",
       "sale_price": "₹130.00"
+    },
+    "fr29": {
+      "id": "24012380045077771",
+      "name": "കാരയ്ക്ക 500g (Karakka)",
+      "description": "Karakka",
+      "price": "₹65.00",
+      "pattern": "fruits",
+      "unit": null,
+      "retailer_id": "fr29",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "fr28": {
+      "id": "24166337329719351",
+      "name": "പച്ച ആപ്പിൾ 500mg (Green Apple)",
+      "description": "Green Apple",
+      "price": "₹85.00",
+      "pattern": "fruits",
+      "unit": null,
+      "retailer_id": "fr28",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "fr27": {
+      "id": "31051568627790366",
+      "name": "പ്ലം പഴം 500g (Plum)",
+      "description": "Plum",
+      "price": "₹90.00",
+      "pattern": "fruits",
+      "unit": null,
+      "retailer_id": "fr27",
+      "availability": "in stock",
+      "sale_price": null
     }
   },
   "meat": {
@@ -2533,7 +2808,7 @@
       "pattern": "കാട, KAADA, meet",
       "unit": null,
       "retailer_id": "kd01",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "kd02": {
@@ -2544,7 +2819,7 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "kd02",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "sk8q2yaim7": {
@@ -3672,7 +3947,7 @@
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf29",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf28": {
@@ -3705,7 +3980,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf31",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf30": {
@@ -3716,7 +3991,7 @@
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf30",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf37": {
@@ -4156,7 +4431,7 @@
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf72",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf77": {
@@ -4203,6 +4478,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf86": {
+      "id": "9999667386753147",
+      "name": "റുമാലി റൊട്ടി (Rumali)",
+      "description": "Rumali\nrestaurant: kodhiyanz",
+      "price": "₹16.00",
+      "pattern": "kodhiyanz, shawarma, plate,rumali",
+      "unit": null,
+      "retailer_id": "rf86",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf83": {
+      "id": "10051245544924512",
+      "name": "kuboos",
+      "description": "kuboos\nrestaurant: kodhiyanz",
+      "price": "₹11.00",
+      "pattern": "kodhiyanz, shawarma, plate,kuboos",
+      "unit": null,
+      "retailer_id": "rf83",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf89": {
       "id": "24159366330382139",
       "name": "Kaada Biriyani Half",
@@ -4245,6 +4542,17 @@
       "unit": null,
       "retailer_id": "rf82",
       "availability": "out of stock",
+      "sale_price": null
+    },
+    "rf87": {
+      "id": "31441499425449386",
+      "name": "Mexican Sauce",
+      "description": "Mexican Sauce\nrestaurant: kodhiyanz",
+      "price": "₹16.00",
+      "pattern": "kodhiyanz, shawarma, plate,Mexican Sauce",
+      "unit": null,
+      "retailer_id": "rf87",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf90": {
@@ -4470,6 +4778,17 @@
       "retailer_id": "sn01",
       "availability": "in stock",
       "sale_price": "₹400.00"
+    },
+    "SN05": {
+      "id": "24086342784390060",
+      "name": "Egg Pocket",
+      "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും  Home Made (Egg Pocket)",
+      "price": "₹20.00",
+      "pattern": "Sarees Kitchen",
+      "unit": null,
+      "retailer_id": "SN05",
+      "availability": "in stock",
+      "sale_price": "₹15.00"
     },
     "SN04": {
       "id": "24805161312417440",
