@@ -506,7 +506,7 @@ def get_products_service_new(data):
 
         # Step 1: Check if vendor exists and its product type
         vendor_query = """
-            SELECT product_type FROM vendors WHERE id = %s
+            SELECT product_type, commision FROM vendors WHERE id = %s
         """
         cursor.execute(vendor_query, (vendor,))
         vendor_result = cursor.fetchone()
@@ -514,7 +514,7 @@ def get_products_service_new(data):
         if not vendor_result:
             return {"error": "Vendor not found"}, 404
 
-        product_type = vendor_result[0]
+        product_type, commision = vendor_result
 
         # Step 2: Choose query based on product type
         if product_type == 'multi':
@@ -551,6 +551,7 @@ def get_products_service_new(data):
             cursor.execute(order_query, (f"%{product_type}%", type))
 
         order_rows = cursor.fetchall()
+        
 
         # Step 3: Use pandas to aggregate and format result
         df = pd.DataFrame(order_rows, columns=['order_id', 'bill_amount'])
@@ -564,10 +565,20 @@ def get_products_service_new(data):
         df['bill_amount'] = pd.to_numeric(df['bill_amount'])
         total_pending = int(df['bill_amount'].sum())
         orders = df.to_dict(orient='records')
+        
+        
+        if commision and not type:
+            payable=total_pending-(total_pending*commision/100)
+        else:
+            payable=total_pending
 
+        
         response = {
             "orders": orders,
-            "pending_amount" if type == 0 else "cleared_amount": total_pending
+            "pending_amount" if type == 0 else "cleared_amount": total_pending,
+            "commision":commision ,
+            "payable":payable
+            
         }
 
         return response, 200
@@ -797,6 +808,35 @@ def map_products_service(data):
         conn.close()
 
 
+def de_map_products_service(data):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # Extract relevant fields from the incoming data
+      
+        vendor_id = data.get("vendor_id")
+        
+        
+        retailer_id = data.get("retailer_id")
+       
+
+        delete_query = """
+            delete from products
+                   where retailer_id=%s and vendor_id=%s
+        """
+
+        cursor.execute(delete_query, (retailer_id,vendor_id,))
+
+        conn.commit()
+        return {"message": "Product removed successfully"}, 201
+
+    except Exception as e:
+        return {"error": str(e)}, 500
+
+    finally:
+        conn.close()
+
 def insert_vendor_service(data):
     conn = None
     cursor = None
@@ -966,26 +1006,47 @@ def update_vendor_price_service(data):
 
         retailer_id = data.get("retailer_id")
         vendor_price = data.get("vendor_price")
+        commission = data.get("commision")
+        vendor_id = data.get("vendor_id")
 
-        if not retailer_id or vendor_price is None:
-            return jsonify({"error": "Missing retailer_id or vendor_price"}), 400
+        if not retailer_id:
+            return jsonify({"error": "Missing retailer_id"}), 400
 
-        update_query = """
-            UPDATE vendors
-            SET vendor_price = %s
-            WHERE retailer_id = %s
-        """
-        cursor.execute(update_query, (vendor_price, retailer_id))
+        # When commission is True, set vendors_price to NULL in products and is_percentage True in vendors
+        if commission is True:
+            update_products_query = """
+                UPDATE products
+                SET vendors_price = NULL,
+                percentage_on_category = TRUE
+                WHERE retailer_id = %s and vendor_id= %s
+            """
+          
+            cursor.execute(update_products_query, (retailer_id,vendor_id))
+          
+        
+        else:
+            if vendor_price is None:
+                return jsonify({"error": "Missing vendor_price"}), 400
+
+            update_products_query = """
+                UPDATE products
+                SET vendors_price = %s,
+                 percentage_on_category = FALSE
+                WHERE retailer_id = %s and vendor_id= %s
+            """
+         
+            cursor.execute(update_products_query, (vendor_price, retailer_id,vendor_id))
+            
+
         conn.commit()
-
-        if cursor.rowcount == 0:
-            return jsonify({"message": "No record updated, invalid retailer_id?"}), 404
 
         return jsonify({"message": "Vendor price updated successfully"}), 200
 
     except Exception as e:
+        print(e)
         return jsonify({"error": str(e)}), 500
 
     finally:
         cursor.close()
         conn.close()
+

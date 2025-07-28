@@ -264,6 +264,17 @@
       "availability": "in stock",
       "sale_price": "₹20.00"
     },
+    "veg34": {
+      "id": "24633109229640095",
+      "name": "മധുരക്കിഴങ്ങ് 1kg (Sweet Potato)",
+      "description": "Fresh and handpicked vegetables",
+      "price": "₹30.00",
+      "pattern": "veg,vegetable",
+      "unit": null,
+      "retailer_id": "veg34",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "veg25": {
       "id": "24644470158486794",
       "name": "വഴുതന 500g (vazhuthana)",
@@ -340,6 +351,17 @@
       "retailer_id": "veg28",
       "availability": "in stock",
       "sale_price": "₹12.00"
+    },
+    "veg35": {
+      "id": "30316340884675944",
+      "name": "പയർ 500g (Beans)",
+      "description": "Fresh and handpicked vegetables",
+      "price": "₹30.00",
+      "pattern": "veg,vegetable,payar",
+      "unit": null,
+      "retailer_id": "veg35",
+      "availability": "in stock",
+      "sale_price": null
     },
     "veg27": {
       "id": "33285653517700071",
@@ -644,7 +666,7 @@
       "id": "10071002672936807",
       "name": "മുട്ട 5 units (Eggs)",
       "description": "Eggs 5 units",
-      "price": "₹35.00",
+      "price": "₹30.00",
       "pattern": "mutta",
       "unit": null,
       "retailer_id": "gr15",
@@ -672,6 +694,17 @@
       "retailer_id": "gr108",
       "availability": "in stock",
       "sale_price": "₹60.00"
+    },
+    "gr197": {
+      "id": "10075324279261767",
+      "name": "ഇന്ത്യ ഗേറ്റ് വെള്ള അരി 1kg (India Gate White Rice)",
+      "description": "India Gate White Rice\nKabsa,mandi",
+      "price": "₹125.00",
+      "pattern": "rice,kabsa rice,mandi rice",
+      "unit": null,
+      "retailer_id": "gr197",
+      "availability": "in stock",
+      "sale_price": null
     },
     "gr176": {
       "id": "23882680028020666",
@@ -703,6 +736,17 @@
       "pattern": "Ice Cream,cone",
       "unit": null,
       "retailer_id": "gr101",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr194": {
+      "id": "23910146935275138",
+      "name": "Milma Ghee 200ml",
+      "description": "Milma Ghee\nNet Quantity : 200ml",
+      "price": "₹154.00",
+      "pattern": "ghee",
+      "unit": null,
+      "retailer_id": "gr194",
       "availability": "in stock",
       "sale_price": null
     },
@@ -769,6 +813,17 @@
       "pattern": "Drinks",
       "unit": null,
       "retailer_id": "gr181",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr193": {
+      "id": "23986277630994280",
+      "name": "Milma Ghee 100ml",
+      "description": "Milma Ghee\nNet Quantity : 100ml",
+      "price": "₹79.00",
+      "pattern": "ghee",
+      "unit": null,
+      "retailer_id": "gr193",
       "availability": "in stock",
       "sale_price": null
     },
@@ -868,6 +923,17 @@
       "pattern": "pen,ball pen",
       "unit": null,
       "retailer_id": "gr141",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr199": {
+      "id": "24034579369517636",
+      "name": "Horlicks 20g",
+      "description": "Horlicks Buy 1 Get 1\nPer Pack :20g",
+      "price": "₹10.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr199",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1300,6 +1366,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr198": {
+      "id": "24730386816544808",
+      "name": "Packed Poori 16pcs",
+      "description": "poori",
+      "price": "₹50.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr198",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr159": {
       "id": "24742828761984569",
       "name": "ഇറച്ചി മസാല (Meat Masala)",
@@ -1432,6 +1509,17 @@
       "availability": "out of stock",
       "sale_price": null
     },
+    "gr195": {
+      "id": "30413057251674083",
+      "name": "ജോക്കർ ബാലാജി അരി 1kg (Joker Balaji Rice)",
+      "description": "Joker Balaji Rice",
+      "price": "₹80.00",
+      "pattern": "rice",
+      "unit": null,
+      "retailer_id": "gr195",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr120": {
       "id": "30422227840757642",
       "name": "Peanut Butter",
@@ -1542,6 +1630,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr196": {
+      "id": "31431063513147381",
+      "name": "ഇന്ത്യ ഗേറ്റ് ഗോൾഡ അരി 1kg (India Gate Gold Rice)",
+      "description": "India Gate Gold Rice\nKabsa,mandi",
+      "price": "₹125.00",
+      "pattern": "rice,kabsa rice,mandi rice",
+      "unit": null,
+      "retailer_id": "gr196",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr24": {
       "id": "8332099753581720",
       "name": "AJMI puttupodi 1kg",
@@ -1552,6 +1651,17 @@
       "retailer_id": "gr24",
       "availability": "in stock",
       "sale_price": null
+    },
+    "gr203": {
+      "id": "9398826066887050",
+      "name": "Toothbrush Ultra Soft",
+      "description": "Ajay Toothbrush\nBuy 2 Get 1\nVarient : Ultra Soft\nNet Quantity : 3N (2N+1N Free)",
+      "price": "₹120.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr203",
+      "availability": "in stock",
+      "sale_price": "₹80.00"
     },
     "gr20": {
       "id": "9611088565655864",
@@ -1641,6 +1751,127 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr212": {
+      "id": "23865572006472034",
+      "name": "Dove (Soap)",
+      "description": "Dove Serum Bar\nNet Weight : 100g",
+      "price": "₹65.00",
+      "pattern": "Soap",
+      "unit": null,
+      "retailer_id": "gr212",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr210": {
+      "id": "23986904377646506",
+      "name": "Vim 120ml",
+      "description": "Vim wash",
+      "price": "₹20.00",
+      "pattern": "washing",
+      "unit": null,
+      "retailer_id": "gr210",
+      "availability": "in stock",
+      "sale_price": "₹15.00"
+    },
+    "gr204": {
+      "id": "24000038686343323",
+      "name": "Toothbrush Junior",
+      "description": "Toothbrush",
+      "price": "₹20.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr204",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr200": {
+      "id": "24030235763299116",
+      "name": "Semiya Payasam Mix",
+      "description": "Double Horse Vermicelli Kheer Mix\nNet Quantity : 300g",
+      "price": "₹95.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr200",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr209": {
+      "id": "24182123541427109",
+      "name": "അവൽ 500g (Rice Flakes)",
+      "description": "Rice Flakes Matta Roasted\nNet Weight : 500g",
+      "price": "₹53.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr209",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr208": {
+      "id": "24265852003048389",
+      "name": "Multi Purpose Cleaner 5.kg",
+      "description": "Plus Cleaner Jasmine Fragrance\nNet Weight : 5kg",
+      "price": "₹200.00",
+      "pattern": "cleaner,washing",
+      "unit": null,
+      "retailer_id": "gr208",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr215": {
+      "id": "24376644201973657",
+      "name": "Lifebuoy (Soap)",
+      "description": "Lifebuoy\nNet Weight : 125g",
+      "price": "₹42.00",
+      "pattern": "Soap",
+      "unit": null,
+      "retailer_id": "gr215",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr206": {
+      "id": "24566507526300574",
+      "name": "നവര അരി 500g (Navara Rice)",
+      "description": "Navara Rice \nNet Weight : 500g",
+      "price": "₹50.00",
+      "pattern": "rice",
+      "unit": null,
+      "retailer_id": "gr206",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr214": {
+      "id": "24573884955552705",
+      "name": "Santoor (Soap) Set Pack Of 4",
+      "description": "Santoor\nNet Weight : (4N X 75g)",
+      "price": "₹110.00",
+      "pattern": "Soap",
+      "unit": null,
+      "retailer_id": "gr214",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr205": {
+      "id": "24987690224198603",
+      "name": "കഞ്ഞി അരി 500g (Kanji Rice)",
+      "description": "Kanji Rice\nNet Weight : 500g",
+      "price": "₹28.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr205",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr213": {
+      "id": "25135767682692025",
+      "name": "Santoor (Soap)",
+      "description": "Santoor\nNet Weight : 150g",
+      "price": "₹60.00",
+      "pattern": "Soap",
+      "unit": null,
+      "retailer_id": "gr213",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr28": {
       "id": "29462530646728840",
       "name": "വെളിച്ചെണ്ണ  1L (Coconut oil)",
@@ -1649,6 +1880,61 @@
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr28",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr201": {
+      "id": "30553303680982308",
+      "name": "Palada Payasam Mix",
+      "description": "Double Horse Sadya palada Mix\nNet Quantity : 300g",
+      "price": "₹95.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr201",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr211": {
+      "id": "30646507408296906",
+      "name": "2020 Butter Cookies (150g)",
+      "description": "2020 Butter Cookies",
+      "price": "₹25.00",
+      "pattern": "biscuits",
+      "unit": null,
+      "retailer_id": "gr211",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr216": {
+      "id": "30836590419287872",
+      "name": "Pears (Soap)",
+      "description": "Pears\nNet Weight : 100g",
+      "price": "₹56.00",
+      "pattern": "Soap",
+      "unit": null,
+      "retailer_id": "gr216",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr207": {
+      "id": "31476329988633069",
+      "name": "Ragi Rusi Semiyam 1kg",
+      "description": "Healthy Food For Puttu Makeing",
+      "price": "₹100.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr207",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr202": {
+      "id": "31485455874374985",
+      "name": "Milk Rusk 200g",
+      "description": "Amul Milk Rusk\nNet Quantity : 200g",
+      "price": "₹45.00",
+      "pattern": "rusk,biscuits",
+      "unit": null,
+      "retailer_id": "gr202",
       "availability": "in stock",
       "sale_price": null
     },
@@ -2206,7 +2492,7 @@
       "id": "9682878441818822",
       "name": "ഗ്രീൻ പീസ് 500g (Green Peas)",
       "description": "500g Green Peas",
-      "price": "₹75.00",
+      "price": "₹70.00",
       "pattern": "Green Peas",
       "unit": null,
       "retailer_id": "gr83",
@@ -2228,7 +2514,7 @@
       "id": "9881516968644377",
       "name": "3 മാൻ 1kg (3 Man Rice)",
       "description": "3 Man Rice",
-      "price": "₹145.00",
+      "price": "₹160.00",
       "pattern": "rice,3 man rice",
       "unit": null,
       "retailer_id": "gr86",
@@ -2272,7 +2558,7 @@
       "id": "24023416833989381",
       "name": "റോസ് 1kg (Rose Rice)",
       "description": "Rose Rice",
-      "price": "₹145.00",
+      "price": "₹160.00",
       "pattern": "rice,rose rice",
       "unit": null,
       "retailer_id": "gr87",
@@ -2305,7 +2591,7 @@
       "id": "24637219242532835",
       "name": "വൻപയർ 500g (Vanpayar)",
       "description": "500g Vanpayar",
-      "price": "₹65.00",
+      "price": "₹50.00",
       "pattern": "Vanpayar",
       "unit": null,
       "retailer_id": "gr85",
@@ -2479,17 +2765,6 @@
       "availability": "in stock",
       "sale_price": null
     },
-    "fr07": {
-      "id": "9952640064793024",
-      "name": "മാങ്ങ 1kg (വേങ്ങനപള്ളി )",
-      "description": "mango",
-      "price": "₹90.00",
-      "pattern": "mango,maanga",
-      "unit": null,
-      "retailer_id": "fr07",
-      "availability": "out of stock",
-      "sale_price": "₹75.00"
-    },
     "fr09": {
       "id": "23905616239021979",
       "name": "പൂവന്‍ പഴം 500g (POOVAN PAZHAM)",
@@ -2633,17 +2908,6 @@
       "availability": "in stock",
       "sale_price": "₹150.00"
     },
-    "fr25": {
-      "id": "9884501904938575",
-      "name": "മാങ്ങ 1kg (Mallika andra )",
-      "description": "mango",
-      "price": "₹120.00",
-      "pattern": "mango",
-      "unit": null,
-      "retailer_id": "fr25",
-      "availability": "in stock",
-      "sale_price": "₹90.00"
-    },
     "fr24": {
       "id": "9984712418308433",
       "name": "മാങ്ങ 1kg (NEELAN MANGO)",
@@ -2708,7 +2972,7 @@
       "unit": null,
       "retailer_id": "fr27",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹80.00"
     }
   },
   "meat": {
@@ -3072,7 +3336,7 @@
       "id": "9830423593679269",
       "name": "Red choco Cake 1kg",
       "description": "Red choco Cake 1kg from nice bakery",
-      "price": "₹1,000.00",
+      "price": "₹999.00",
       "pattern": "cake,red choco,choco,red",
       "unit": null,
       "retailer_id": "bk06",
@@ -3255,17 +3519,6 @@
       "availability": "in stock",
       "sale_price": null
     },
-    "bk10": {
-      "id": "29828944453415840",
-      "name": "Algeria Dates (അൾജീരിയ ഈത്തപ്പഴം ) 200g",
-      "description": "Algeria Dates from nice bakery",
-      "price": "₹64.00",
-      "pattern": "dates,karakka,eethapazham",
-      "unit": null,
-      "retailer_id": "bk10",
-      "availability": "in stock",
-      "sale_price": null
-    },
     "bk11": {
       "id": "30067323426247435",
       "name": "Red Velvet 1kg",
@@ -3365,6 +3618,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk22": {
+      "id": "24785624624410296",
+      "name": "Cheese Momos 5pcs",
+      "description": "Cheese Momos\n5pcs with Dishes",
+      "price": "₹170.00",
+      "pattern": "Momos,bakkery",
+      "unit": null,
+      "retailer_id": "bk22",
+      "availability": "in stock",
+      "sale_price": "₹160.00"
+    },
     "bk25": {
       "id": "30420943924218773",
       "name": "ലഡ്ഡു 500gm (Red Laddu)",
@@ -3375,6 +3639,17 @@
       "retailer_id": "bk25",
       "availability": "in stock",
       "sale_price": null
+    },
+    "bk21": {
+      "id": "30474152848897878",
+      "name": "Chicken Momos 5pcs",
+      "description": "Chicken Momos\n5pcs with Dishes",
+      "price": "₹150.00",
+      "pattern": "Momos,bakkery",
+      "unit": null,
+      "retailer_id": "bk21",
+      "availability": "in stock",
+      "sale_price": "₹140.00"
     },
     "bk39": {
       "id": "8359172577540425",
@@ -3541,6 +3816,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk49": {
+      "id": "24515481441422005",
+      "name": "Doughnuts",
+      "description": "Chocolate Doughnuts",
+      "price": "₹50.00",
+      "pattern": "cakes,bakery",
+      "unit": null,
+      "retailer_id": "bk49",
+      "availability": "in stock",
+      "sale_price": "₹40.00"
+    },
     "bk47": {
       "id": "24576281425305862",
       "name": "കപ്പ കൊള്ളി 500g (Kappa Kolli)",
@@ -3595,6 +3881,39 @@
       "retailer_id": "bk44",
       "availability": "in stock",
       "sale_price": null
+    },
+    "bk52": {
+      "id": "24188717677414630",
+      "name": "Special Shawarma",
+      "description": "Special Shawarma from Nice bakery",
+      "price": "₹120.00",
+      "pattern": "Bakery,Snakcs,",
+      "unit": null,
+      "retailer_id": "bk52",
+      "availability": "in stock",
+      "sale_price": "₹110.00"
+    },
+    "bk50": {
+      "id": "24211226805204027",
+      "name": "ഈജിപ്ഷ്യൻ ഉംമ് അലി 200g (Egyptian Ummali)",
+      "description": "Egyption Ummali From Nice Bakery\nNet weight : 200g",
+      "price": "₹180.00",
+      "pattern": "Bakery,Snakcs",
+      "unit": null,
+      "retailer_id": "bk50",
+      "availability": "in stock",
+      "sale_price": "₹150.00"
+    },
+    "bk51": {
+      "id": "30615290171449052",
+      "name": "ഈജിപ്ഷ്യൻ ഉംമ് അലി 1kg (Egyptian Ummali)",
+      "description": "Egyption Ummali From Nice Bakery\nNet weight : 1kg",
+      "price": "₹700.00",
+      "pattern": "Bakery,Snakcs",
+      "unit": null,
+      "retailer_id": "bk51",
+      "availability": "in stock",
+      "sale_price": "₹650.00"
     }
   },
   "food": {
@@ -3947,14 +4266,14 @@
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf29",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf28": {
       "id": "29911075291839338",
       "name": "Shawrma Roll",
       "description": "shawarma roll\nrestaurant: felafel king",
-      "price": "₹100.00",
+      "price": "₹70.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf28",
@@ -3980,7 +4299,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf31",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf30": {
@@ -3991,7 +4310,7 @@
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf30",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf37": {
@@ -4159,6 +4478,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf53": {
+      "id": "9241066709327193",
+      "name": "Kuboos",
+      "description": "Kuboos\nrestaurant: ZABAQ",
+      "price": "₹10.00",
+      "pattern": "zabaq,Kuboos",
+      "unit": null,
+      "retailer_id": "rf53",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf59": {
       "id": "9620146121446483",
       "name": "Kodhiyanz Turkish Sawarma Roll",
@@ -4179,6 +4509,17 @@
       "unit": null,
       "retailer_id": "rf51",
       "availability": "out of stock",
+      "sale_price": null
+    },
+    "rf55": {
+      "id": "9865447110210523",
+      "name": "Kuboos",
+      "description": "Kuboos\nrestaurant: shawai spot",
+      "price": "₹10.00",
+      "pattern": "shawai, chicken,food,restaurent",
+      "unit": null,
+      "retailer_id": "rf55",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf52": {
@@ -4212,6 +4553,17 @@
       "unit": null,
       "retailer_id": "rf50",
       "availability": "out of stock",
+      "sale_price": null
+    },
+    "rf54": {
+      "id": "24188709637414340",
+      "name": "Poratta",
+      "description": "Poratta\nrestaurant: ZABAQ",
+      "price": "₹12.00",
+      "pattern": "zabaq,Kuboos",
+      "unit": null,
+      "retailer_id": "rf54",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf57": {
@@ -4489,17 +4841,6 @@
       "availability": "in stock",
       "sale_price": null
     },
-    "rf83": {
-      "id": "10051245544924512",
-      "name": "kuboos",
-      "description": "kuboos\nrestaurant: kodhiyanz",
-      "price": "₹11.00",
-      "pattern": "kodhiyanz, shawarma, plate,kuboos",
-      "unit": null,
-      "retailer_id": "rf83",
-      "availability": "in stock",
-      "sale_price": null
-    },
     "rf89": {
       "id": "24159366330382139",
       "name": "Kaada Biriyani Half",
@@ -4588,6 +4929,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf98": {
+      "id": "24171695325815551",
+      "name": "Kuboos",
+      "description": "Kuboos\nrestaurant: felafel king",
+      "price": "₹10.00",
+      "pattern": "felafel, food, sandwich",
+      "unit": null,
+      "retailer_id": "rf98",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf92": {
       "id": "24334153199524285",
       "name": "Chicken Broiler Biryani 1kg",
@@ -4629,6 +4981,17 @@
       "pattern": "Kodhiyanz,Kuboos",
       "unit": null,
       "retailer_id": "rf96",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf97": {
+      "id": "30929480556643040",
+      "name": "ഊൺ (Sharadha Meals)",
+      "description": "meals \nrestaurant:  sharadha dosa",
+      "price": "₹60.00",
+      "pattern": "oon,sadya,meals,ഊൺ,lunch",
+      "unit": null,
+      "retailer_id": "rf97",
       "availability": "in stock",
       "sale_price": null
     }
@@ -4732,6 +5095,17 @@
       "retailer_id": "gn02",
       "availability": "in stock",
       "sale_price": "₹50.00"
+    },
+    "gn10": {
+      "id": "24557362487204893",
+      "name": "പിസ്ത കുനാഫ 75g (Pistachio Kunafa)",
+      "description": "Pistachio Kunafa \nZenziya Tasty Home Made\nNet Weight : 75g",
+      "price": "₹250.00",
+      "pattern": "Kunafa,chocolate,sweets",
+      "unit": null,
+      "retailer_id": "gn10",
+      "availability": "in stock",
+      "sale_price": "₹200.00"
     }
   },
   "snacks": {
@@ -4782,7 +5156,7 @@
     "SN05": {
       "id": "24086342784390060",
       "name": "Egg Pocket",
-      "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും  Home Made (Egg Pocket)",
+      "description": "Home Made (Egg Pocket)",
       "price": "₹20.00",
       "pattern": "Sarees Kitchen",
       "unit": null,
@@ -4804,7 +5178,7 @@
     "SN02": {
       "id": "29438708865743345",
       "name": "ഉന്നക്കാഴ (fried banana snack)",
-      "description": "എണ്ണം കൂടുന്നത് അനുസരിച്ച സമയം കൂടും  Home Made (banana,egg)",
+      "description": "Home Made (banana,egg)",
       "price": "₹18.00",
       "pattern": "Sarees Kitchen",
       "unit": null,
@@ -4869,14 +5243,14 @@
     },
     "sn18": {
       "id": "23879544265037509",
-      "name": "കോഴിയട 1kg (kozhi ada)",
-      "description": "kozhi ada",
-      "price": "₹500.00",
+      "name": "കോഴിയട 500g (kozhi ada)",
+      "description": "kozhi ada\nSpecial Packing Available",
+      "price": "₹250.00",
       "pattern": "snacks,kozhi ada,ada",
       "unit": null,
       "retailer_id": "sn18",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹240.00"
     },
     "sn17": {
       "id": "24093670490326386",
@@ -4935,9 +5309,9 @@
     },
     "sn30": {
       "id": "23966689346296043",
-      "name": "പൊറോട്ട  2pc (porotta)",
+      "name": "പൊറോട്ട  1pc (porotta)",
       "description": "Kerala layer porotta",
-      "price": "₹28.00",
+      "price": "₹12.00",
       "pattern": "breakfast",
       "unit": null,
       "retailer_id": "sn30",
@@ -4968,9 +5342,9 @@
     },
     "sn33": {
       "id": "24399449612972755",
-      "name": "വെള്ളപ്പം 3pc (vellappam)",
+      "name": "വെള്ളപ്പം 1pc (vellappam)",
       "description": "vellappam",
-      "price": "₹27.00",
+      "price": "₹10.00",
       "pattern": "breakfast,kadi",
       "unit": null,
       "retailer_id": "sn33",
@@ -4979,12 +5353,23 @@
     },
     "sn31": {
       "id": "29989592064020433",
-      "name": "നൂൽപുട്ട് 3pc (idiyappam)",
+      "name": "നൂൽപുട്ട് 1pc (idiyappam)",
       "description": "Kerala idiyappam",
-      "price": "₹27.00",
+      "price": "₹10.00",
       "pattern": "breakfast,kadi",
       "unit": null,
       "retailer_id": "sn31",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "sn36": {
+      "id": "30945219501743347",
+      "name": "നൈസ് പത്തിരി 1pc (Pathiri)",
+      "description": "Pathiri",
+      "price": "₹6.00",
+      "pattern": "breakfast,kadi",
+      "unit": null,
+      "retailer_id": "sn36",
       "availability": "in stock",
       "sale_price": null
     }

@@ -9,7 +9,7 @@ FACEBOOK_API_URL = "https://graph.facebook.com/v22.0/1595768864475137/products"
 ACCESS_TOKEN ="EAAQKF56ZAbJQBO3eHvyzD8AERlnLM7hAvtAIZCcSYubLA7JqPq7iv2NGlzlgDfX1DnJ9CJl9ZANyHdiHYNztdvAjf2C4XKWXFMBCjqTagNJDV4VYV59VhzLQ76kZBjrVP3XDsa2UeqBmT9lr01zgImVXPcmeDsyf6KXOaDk61yFzMKS5BkFZBhDX4tsMfuJ4ZA5QZDZD"
 
 
-def fetch_and_categorize_products():
+def  fetch_and_categorize_products():
     restaurants={}
     logging.info("Loading and categorizing...")
     print("Loading products..")
@@ -19,7 +19,7 @@ def fetch_and_categorize_products():
             params={
                 "fields": "id,name,retailer_id,description,price,brand,pattern,availability,sale_price",
                 "access_token": ACCESS_TOKEN,
-                "limit": 500
+                "limit": 700
             }
         )
         data = response.json()
