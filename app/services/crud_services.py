@@ -570,7 +570,7 @@ def get_products_service_new(data):
         if commision and not type:
             payable=total_pending-(total_pending*commision/100)
         else:
-            payable=total_pending
+            payable=None
 
         
         response = {
@@ -1048,5 +1048,50 @@ def update_vendor_price_service(data):
 
     finally:
         cursor.close()
+        conn.close()
+
+
+
+
+def vendor_account_updation_service(data):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        order_id = data.get("order_id")
+        vendor_id = data.get("vendor_id")
+
+        if order_id:
+            items_query = '''
+                SELECT orders.id, order_items.product_id, order_items.qty, products.vendors_price
+                FROM order_items
+                JOIN orders ON order_items.order_id = orders.id
+                JOIN products ON products.retailer_id = order_items.product_id
+                WHERE orders.id = %s
+                AND products.percentage_on_category = FALSE;
+            '''
+            cursor.execute(items_query, (order_id,))
+            items = cursor.fetchall()
+
+            for i in items:
+                vendor_amount = i[2] * i[3] if i[3] else 0.0  # handle None vendors_price
+                vendor_amount_update_query = '''
+                    UPDATE order_items
+                    SET vendor_price = %s
+                    WHERE order_id = %s AND product_id = %s
+                '''
+                cursor.execute(vendor_amount_update_query, (vendor_amount, order_id, i[1]))
+
+        if vendor_id:
+            # TODO: Add vendor-specific logic
+            pass
+
+        conn.commit()
+        return {"message": "Vendor price updated successfully"}, 201
+
+    except Exception as e:
+        return {"error": str(e)}, 500
+
+    finally:
         conn.close()
 

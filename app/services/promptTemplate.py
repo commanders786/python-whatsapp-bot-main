@@ -47,6 +47,9 @@ supermarket, masala, palacharakk, store items	:("oth",)
 snacks,oil snacks ,bakeries :("bakeries",)
 groceries or general words for household items	"("vegetables", "oth", "fruits")
 
+if there is no matched results and you are confused where to map then dont map to ("oth",) unless its expeccted keywords are asked
+
+
 in this case just pass the category id even if you have many match items in filtered items from product cz in some case you are not passing fish category id even if the user query is fish
 Note:
 
