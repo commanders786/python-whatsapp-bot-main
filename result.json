@@ -2558,7 +2558,7 @@
       "id": "24023416833989381",
       "name": "റോസ് 1kg (Rose Rice)",
       "description": "Rose Rice",
-      "price": "₹160.00",
+      "price": "₹180.00",
       "pattern": "rice,rose rice",
       "unit": null,
       "retailer_id": "gr87",
@@ -2813,7 +2813,7 @@
       "id": "9841857382527165",
       "name": "കൈതച്ചക്ക 1kg (Pineapple)",
       "description": "full pice",
-      "price": "₹90.00",
+      "price": "₹80.00",
       "pattern": "pineapple,കൈതച്ചക്ക, kaithachakka",
       "unit": null,
       "retailer_id": "fr13",
@@ -2879,7 +2879,7 @@
       "id": "9618881154855507",
       "name": "ഡ്രാഗൺ ഫ്രൂട്ട് 1kg (Dragon fruit)",
       "description": "Dragon fruit",
-      "price": "₹170.00",
+      "price": "₹190.00",
       "pattern": "dragon fruit",
       "unit": null,
       "retailer_id": "fr23",
@@ -3336,12 +3336,12 @@
       "id": "9830423593679269",
       "name": "Red choco Cake 1kg",
       "description": "Red choco Cake 1kg from nice bakery",
-      "price": "₹999.00",
+      "price": "₹9,999.00",
       "pattern": "cake,red choco,choco,red",
       "unit": null,
       "retailer_id": "bk06",
-      "availability": "out of stock",
-      "sale_price": null
+      "availability": "in stock",
+      "sale_price": "₹7,000.00"
     },
     "bk09": {
       "id": "9845743815537953",
@@ -3638,7 +3638,7 @@
       "unit": null,
       "retailer_id": "bk22",
       "availability": "in stock",
-      "sale_price": "₹160.00"
+      "sale_price": null
     },
     "bk25": {
       "id": "30420943924218773",
@@ -3893,6 +3893,50 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk53": {
+      "id": "23885932631105867",
+      "name": "Nuggets 6pcs",
+      "description": "Nuggets 6pcs from nice bakery",
+      "price": "₹100.00",
+      "pattern": "snacks,nuggets",
+      "unit": null,
+      "retailer_id": "bk53",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk59": {
+      "id": "24021685687491362",
+      "name": "Chicken Cheese Loaded Fries",
+      "description": "Chicken Cheese Loaded Fries from nice bakery",
+      "price": "₹230.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk59",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk57": {
+      "id": "24095698453385034",
+      "name": "Veg Sandwiches",
+      "description": "Veg Sandwiches from nice bakery",
+      "price": "₹40.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk57",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk58": {
+      "id": "24100852262915856",
+      "name": "Falafel Sandwiches",
+      "description": "Falafel Sandwiches from nice bakery",
+      "price": "₹40.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk58",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk52": {
       "id": "24188717677414630",
       "name": "Special Shawarma",
@@ -3904,6 +3948,17 @@
       "availability": "in stock",
       "sale_price": "₹110.00"
     },
+    "bk55": {
+      "id": "24203494792632957",
+      "name": "Chicken Waldorf Salad",
+      "description": "Chicken Waldorf Salad from nice bakery",
+      "price": "₹150.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk55",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk50": {
       "id": "24211226805204027",
       "name": "ഈജിപ്ഷ്യൻ ഉംമ് അലി 200g (Egyptian Ummali)",
@@ -3912,8 +3967,30 @@
       "pattern": "Bakery,Snakcs",
       "unit": null,
       "retailer_id": "bk50",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": "₹150.00"
+    },
+    "bk56": {
+      "id": "24674808835450684",
+      "name": "Chicken Sandwiches",
+      "description": "Chicken Sandwiches from nice bakery",
+      "price": "₹70.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk56",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk54": {
+      "id": "30483316801316101",
+      "name": "Nuggets 12pcs",
+      "description": "Nuggets 12pcs from nice bakery",
+      "price": "₹180.00",
+      "pattern": "snacks,nuggets",
+      "unit": null,
+      "retailer_id": "bk54",
+      "availability": "in stock",
+      "sale_price": null
     },
     "bk51": {
       "id": "30615290171449052",
@@ -3923,8 +4000,96 @@
       "pattern": "Bakery,Snakcs",
       "unit": null,
       "retailer_id": "bk51",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": "₹650.00"
+    },
+    "bk65": {
+      "id": "9910308092406545",
+      "name": "Club Sandwich Zinger",
+      "description": "Club Sandwich Zinger from nice bakery",
+      "price": "₹160.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk65",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk62": {
+      "id": "24005715395780272",
+      "name": "French Fries (Large)",
+      "description": "French Fries from nice bakery",
+      "price": "₹120.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk62",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk60": {
+      "id": "24091361590513995",
+      "name": "Pasta",
+      "description": "Pasta from nice bakery",
+      "price": "₹200.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk60",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk61": {
+      "id": "24158409477112713",
+      "name": "French Fries (Medium)",
+      "description": "French Fries from nice bakery",
+      "price": "₹80.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk61",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk66": {
+      "id": "24244716285182462",
+      "name": "Club Sandwich Chicken Classic",
+      "description": "Club Sandwich Zinger from nice bakery",
+      "price": "₹140.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk66",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk63": {
+      "id": "24493971053540568",
+      "name": "Chicken Kunafa Stick 5pcs",
+      "description": "Chicken Kunafa Stick 5pcs from nice bakery",
+      "price": "₹150.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk63",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk67": {
+      "id": "24512274021730300",
+      "name": "Sizzling Brownie",
+      "description": "Sizzling Brownie from nice bakery",
+      "price": "₹150.00",
+      "pattern": "snacks,cake",
+      "unit": null,
+      "retailer_id": "bk67",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk64": {
+      "id": "24946848988237710",
+      "name": "Club Sandwich Veg",
+      "description": "Club Sandwich Veg from nice bakery",
+      "price": "₹100.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk64",
+      "availability": "in stock",
+      "sale_price": null
     }
   },
   "food": {
@@ -4049,6 +4214,39 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf113": {
+      "id": "9670493873050310",
+      "name": "AFC Poppy Chick (Small)",
+      "description": "Poppy Chick Small\nRestaurant: AFC Chicken",
+      "price": "₹99.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf113",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf119": {
+      "id": "9926988624072715",
+      "name": "AFC Veg Wrap Meal",
+      "description": "Veg Wrap + French Fries\nRestaurant: AFC Chicken",
+      "price": "₹149.00",
+      "pattern": "Wrap,shawarama",
+      "unit": null,
+      "retailer_id": "rf119",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf116": {
+      "id": "10002862246486748",
+      "name": "AFC Veg Wrap",
+      "description": "Veg Wrap\nRestaurant: AFC Chicken",
+      "price": "₹120.00",
+      "pattern": "Wrap",
+      "unit": null,
+      "retailer_id": "rf116",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf14": {
       "id": "10058272830902962",
       "name": "Chicken Mdhooth Rise (Half)",
@@ -4057,6 +4255,17 @@
       "pattern": "food,shawai,madhooth",
       "unit": null,
       "retailer_id": "rf14",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf117": {
+      "id": "10088400364619573",
+      "name": "AFC Chicken Wrap",
+      "description": "Chicken Wrap\nRestaurant: AFC Chicken",
+      "price": "₹149.00",
+      "pattern": "Wrap",
+      "unit": null,
+      "retailer_id": "rf117",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4126,6 +4335,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf114": {
+      "id": "24006015072423970",
+      "name": "AFC Poppy Chick (Large)",
+      "description": "Poppy Chick Large\nRestaurant: AFC Chicken",
+      "price": "₹129.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf114",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf122": {
+      "id": "24011429891852589",
+      "name": "AFC Extra Chicken Pc",
+      "description": "Extra Chicken Pc\nRestaurant: AFC Chicken",
+      "price": "₹120.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf122",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf104": {
       "id": "24068419622791203",
       "name": "CRISPY CHICKEN  Pizza  -M",
@@ -4134,6 +4365,50 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf104",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf112": {
+      "id": "24090848633875287",
+      "name": "AFC Jumbo Family Meal",
+      "description": "14pc Chicken French Fries\n5 Bun,2 Garlic Paste Ketchup\n1 Coleslaw\nRestaurant: AFC Chicken",
+      "price": "₹1,579.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf112",
+      "availability": "in stock",
+      "sale_price": "₹1,549.00"
+    },
+    "rf126": {
+      "id": "24092637980393684",
+      "name": "AFC Extra Bun",
+      "description": "Extra Bun\nRestaurant: AFC Chicken",
+      "price": "₹9.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf126",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf124": {
+      "id": "24110067568604470",
+      "name": "AFC Extra Kuboos",
+      "description": "Extra Kuboos\nRestaurant: AFC Chicken",
+      "price": "₹10.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf124",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf125": {
+      "id": "24137209472596166",
+      "name": "AFC Chicken Wrap Meal",
+      "description": "Chicken Wrap + French Fries\nRestaurant: AFC Chicken",
+      "price": "₹178.00",
+      "pattern": "Wrap,shawarama",
+      "unit": null,
+      "retailer_id": "rf125",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4148,6 +4423,50 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf123": {
+      "id": "24155673277417411",
+      "name": "AFC Extra Cheese",
+      "description": "Extra Cheese\nRestaurant: AFC Chicken",
+      "price": "₹20.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf123",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf111": {
+      "id": "24309156638717124",
+      "name": "AFC 16pc Chicken Combo (Full Chicken)",
+      "description": "16pc Chicken,5 Kubboos,\n3 Mayonise,Ketchup,Pepsi (1 Litre)\nRestaurant: AFC Chicken",
+      "price": "₹1,049.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf111",
+      "availability": "in stock",
+      "sale_price": "₹999.00"
+    },
+    "rf121": {
+      "id": "24353423997607371",
+      "name": "AFC Extra Ketchup",
+      "description": "Extra Ketchup\nRestaurant: AFC Chicken",
+      "price": "₹2.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf121",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf115": {
+      "id": "24411659795140806",
+      "name": "AFC Shawarama Meal",
+      "description": "Shawarama \nRestaurant: AFC Chicken",
+      "price": "₹89.00",
+      "pattern": "Wrap,shawarama",
+      "unit": null,
+      "retailer_id": "rf115",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf18": {
       "id": "24423818480539491",
       "name": "Shawai with Arabian Rice (Half)",
@@ -4156,6 +4475,28 @@
       "pattern": "shawai,rice,food,manthi",
       "unit": null,
       "retailer_id": "rf18",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf118": {
+      "id": "24654696337470459",
+      "name": "AFC Shawarama Meal",
+      "description": "Shawarama + French Fries\nRestaurant: AFC Chicken",
+      "price": "₹120.00",
+      "pattern": "Wrap,shawarama",
+      "unit": null,
+      "retailer_id": "rf118",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf120": {
+      "id": "24974681355467979",
+      "name": "AFC Extra Mayonnaise",
+      "description": "Extra Mayonnaise\nRestaurant: AFC Chicken",
+      "price": "₹20.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf120",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4191,6 +4532,28 @@
       "retailer_id": "rf107",
       "availability": "in stock",
       "sale_price": null
+    },
+    "rf109": {
+      "id": "30575773318737571",
+      "name": "AFC 4pc Chicken Combo (Quarter)",
+      "description": "4pc Chicken,2 Kubboos,\nMayonise,Ketchup\nRestaurant: AFC Chicken",
+      "price": "₹289.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf109",
+      "availability": "in stock",
+      "sale_price": "₹249.00"
+    },
+    "rf110": {
+      "id": "30639907025656500",
+      "name": "AFC 8pc Chicken Combo (Half Chicken)",
+      "description": "8pc Chicken,3 Kubboos,\n2 Mayonise,Ketchup,Pepsi (250ml)\nRestaurant: AFC Chicken",
+      "price": "₹539.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf110",
+      "availability": "in stock",
+      "sale_price": "₹499.00"
     },
     "rf27": {
       "id": "7984474418343474",
@@ -4277,7 +4640,7 @@
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf29",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf28": {
@@ -4310,7 +4673,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf31",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf30": {
@@ -4321,7 +4684,7 @@
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf30",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf37": {
@@ -4607,7 +4970,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf68",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf64": {
@@ -4717,7 +5080,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf73",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf74": {
@@ -4728,7 +5091,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf74",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf70": {
@@ -4739,14 +5102,14 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf70",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf79": {
       "id": "10060155640719876",
       "name": "Beef Biriyani",
       "description": "Beef Biriyani\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹170.00",
+      "price": "₹185.00",
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf79",
@@ -4757,7 +5120,7 @@
       "id": "23919059677763422",
       "name": "Chicken Lagoon Biryani (HALF)",
       "description": "Chicken Lagoon Biryani\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹140.00",
+      "price": "₹145.00",
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf76",
@@ -4768,7 +5131,7 @@
       "id": "23928604100161113",
       "name": "Chicken Lagoon Biryani",
       "description": "Chicken Lagoon Biryani\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹170.00",
+      "price": "₹185.00",
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf75",
@@ -4779,7 +5142,7 @@
       "id": "23971963372459134",
       "name": "Chicken Broiler Biryani (HALF)",
       "description": "Chicken Broiler Biryani\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹140.00",
+      "price": "₹145.00",
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf78",
@@ -4801,7 +5164,7 @@
       "id": "24713781474876666",
       "name": "Chicken Broiler Biryani",
       "description": "Chicken Broiler Biryani\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹170.00",
+      "price": "₹185.00",
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf77",
@@ -4816,7 +5179,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf71",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf84": {
@@ -4834,7 +5197,7 @@
       "id": "9994367537267642",
       "name": "Beef Biriyani (HALF)",
       "description": "Beef Biriyani\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹140.00",
+      "price": "₹145.00",
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf80",
@@ -4889,7 +5252,7 @@
       "id": "30338624919116495",
       "name": "Mutton Biriyani",
       "description": "Mutton Biriyani                       restaurant: BIRIYANI SOUCK",
-      "price": "₹260.00",
+      "price": "₹290.00",
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf82",
@@ -4911,7 +5274,7 @@
       "id": "23921630510850631",
       "name": "Chicken Lagoon Biryani 1kg",
       "description": "Chicken Lagoon Biryani 1kg\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹890.00",
+      "price": "₹980.00",
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf90",
@@ -4922,7 +5285,7 @@
       "id": "24004304359226361",
       "name": "Beef Biryani Half Kg",
       "description": "Beef Biryani Half Kg\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹500.00",
+      "price": "₹550.00",
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf95",
@@ -4933,7 +5296,7 @@
       "id": "24069237776076424",
       "name": "Beef Biryani 1kg",
       "description": "Beef Biryani 1kg\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹890.00",
+      "price": "₹980.00",
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf94",
@@ -4955,7 +5318,7 @@
       "id": "24334153199524285",
       "name": "Chicken Broiler Biryani 1kg",
       "description": "Chicken Broiler Biryani 1kg\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹890.00",
+      "price": "₹950.00",
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf92",
@@ -4966,18 +5329,29 @@
       "id": "24487007364240589",
       "name": "Chicken Broiler Biryani Half Kg",
       "description": "Chicken Broiler Biryani Half Kg\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹500.00",
+      "price": "₹530.00",
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf93",
       "availability": "in stock",
       "sale_price": null
     },
+    "rf99": {
+      "id": "24671251125812547",
+      "name": "Thalassery Dum Biriyani",
+      "description": "Thalassery Biriyani restaurant: Thalassery Biriyani",
+      "price": "₹189.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf99",
+      "availability": "in stock",
+      "sale_price": "₹169.00"
+    },
     "rf91": {
       "id": "30304416429202311",
       "name": "Chicken Lagoon Biryani Half Kg",
       "description": "Chicken Lagoon Biryani Half Kg\nrestaurant: BIRIYANI SOUCK",
-      "price": "₹500.00",
+      "price": "₹550.00",
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf91",
@@ -5003,7 +5377,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf97",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     }
   },
@@ -5273,6 +5647,17 @@
       "retailer_id": "sn17",
       "availability": "in stock",
       "sale_price": "₹40.00"
+    },
+    "sn19": {
+      "id": "24428087986787805",
+      "name": "(നെയ്യപ്പം) Neyyappam",
+      "description": "Neyyappam",
+      "price": "₹12.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "sn19",
+      "availability": "in stock",
+      "sale_price": null
     },
     "sn12": {
       "id": "29641612152152766",

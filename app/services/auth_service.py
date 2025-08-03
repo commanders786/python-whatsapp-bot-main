@@ -22,7 +22,7 @@ def login_user(email, password):
     conn = get_db_connection()
     cur = conn.cursor()
 
-    cur.execute("SELECT username, password,role FROM role_users WHERE username = %s", (email,))
+    cur.execute("SELECT username, password,role,phone FROM role_users WHERE username = %s", (email,))
     row = cur.fetchone()
     cur.close()
     conn.close()
@@ -31,4 +31,4 @@ def login_user(email, password):
         return {"message": "Invalid credentials", "status": 401}
 
     token = generate_jwt({"user_id": row[0], "email": email})
-    return {"message": "Login successful", "token": token,"role":row[2] ,"status": 200}
+    return {"message": "Login successful", "token": token,"role":row[2] ,"phone":row[3] ,"status": 200}

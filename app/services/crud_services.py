@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 import json
 import logging
 
+from app.services.product_service import fetch_and_categorize_products
 from app.utils.sse import get_clients
 
 # Configure logging
@@ -472,7 +473,7 @@ def get_vendor_service():
         cursor = conn.cursor()
 
         query = """
-       SELECT v.id,username,shop_name,phone FROM role_users r JOIN vendors v ON r.phone = v.id;
+       SELECT v.id,username,shop_name,phone,commission FROM role_users r JOIN vendors v ON r.phone = v.id;
         """
         cursor.execute(query)
         rows = cursor.fetchall()
@@ -499,99 +500,159 @@ def get_products_service_new(data):
     try:
         conn = get_db_connection()
         cursor = conn.cursor()
-
         vendor = data.get("vendorId")
-        type = data.get("type")
-        type = True if type == "paid" else False
+        is_paid = True if data.get("type") == "paid" else False
+        
+        if is_paid:
+            response = {
+                "transactions": [],
+                "cleared_amount": 0
+            }
+            return jsonify(response), 200
 
-        # Step 1: Check if vendor exists and its product type
+        # Step 1: Get vendor data
         vendor_query = """
-            SELECT product_type, commision FROM vendors WHERE id = %s
+            SELECT product_type, commission, meta_group_id,dbp FROM vendors WHERE id = %s
         """
         cursor.execute(vendor_query, (vendor,))
         vendor_result = cursor.fetchone()
 
         if not vendor_result:
-            return {"error": "Vendor not found"}, 404
+            return jsonify({"error": "Vendor not found"}), 404
 
-        product_type, commision = vendor_result
+        product_type, commission, meta_group_id ,dbp= vendor_result
+        if commission is None:
+            commission = 0
+        
 
-        # Step 2: Choose query based on product type
         if product_type == 'multi':
-            order_query = """
+            # Margin category
+            order_query_margin = """
                 SELECT 
-                    oi.order_id,
-                    SUM(oi.total) AS bill_amount
+                    oi.order_id, SUM(oi.total) AS sold_amount,
+                    SUM(oi.vendor_price) AS vendor_price
                 FROM orders o
                 JOIN order_items oi ON o.id = oi.order_id
                 JOIN products p ON p.retailer_id = oi.product_id
                 JOIN vendors v ON v.id = p.vendor_id
                 WHERE 
-                    oi.payment_done = %s AND 
+                    oi.payment_done = FALSE AND 
                     oi.is_cancelled = FALSE AND 
                     v.id = %s
                 GROUP BY oi.order_id
                 ORDER BY MAX(o.created_at) DESC
             """
-            cursor.execute(order_query, (type, vendor))
+            cursor.execute(order_query_margin, (vendor,))
+            margin_rows = cursor.fetchall()
+            df_margin = pd.DataFrame(margin_rows, columns=['order_id', 'sold_amount', 'vendor_price'])
+            df_margin['commission_amount'] = df_margin['sold_amount'] - df_margin['vendor_price']
+            total_sale_margin = float(df_margin['sold_amount'].sum())
+            df_margin['payable'] = df_margin['vendor_price']
+            total_margin_commission = float(df_margin['commission_amount'].sum())
+            total_margin_payable = float(df_margin['payable'].sum())
+            margin_orders = df_margin.drop(columns=['commission_amount', 'payable']).to_dict(orient='records')
+
+            if dbp:
+                 df_margin['commission_amount'] = df_margin['sold_amount'] * commission / 100
+                 df_margin['payable'] = df_margin['sold_amount'] - df_margin['commission_amount']
+                 total_margin_commission = float(df_margin['commission_amount'].sum())
+                 total_margin_payable = float(df_margin['payable'].sum())
+
+            # Percentage category
+            order_query_percentage = """
+                SELECT 
+                    oi.order_id, SUM(oi.total) AS sold_amount
+                FROM orders o
+                JOIN order_items oi ON o.id = oi.order_id
+                WHERE 
+                    oi.payment_done = FALSE AND    
+                    oi.is_cancelled = FALSE AND 
+                    oi.product_id LIKE %s AND 
+                    oi.product_id NOT IN (
+                        SELECT retailer_id
+                        FROM products 
+                        WHERE retailer_id IS NOT NULL AND vendor_id = %s
+                    )
+                GROUP BY oi.order_id
+                ORDER BY MAX(o.created_at) DESC
+            """
+            cursor.execute(order_query_percentage, (f"%{meta_group_id}%", vendor))
+            percentage_rows = cursor.fetchall()
+            df_percentage = pd.DataFrame(percentage_rows, columns=['order_id', 'sold_amount'])
+            df_percentage['commission_amount'] = df_percentage['sold_amount'] * commission / 100
+            df_percentage['payable'] = df_percentage['sold_amount'] - df_percentage['commission_amount']
+            total_percentage_commission = float(df_percentage['commission_amount'].sum())
+            total_sale_percentage = float(df_percentage['sold_amount'].sum())
+            total_percentage_payable = float(df_percentage['payable'].sum())
+            percentage_orders = df_percentage.drop(columns=['commission_amount', 'payable']).to_dict(orient='records')
+
+            # Final response for 'multi'
+            response = {
+                "margin": {
+                    "total_sale": total_sale_margin,
+                    "commission_amount": total_margin_commission,
+                    "payable": total_margin_payable,
+                    "orders": margin_orders
+                },
+                "percentage": {
+                    "total_sale": total_sale_percentage,
+                    "commission_amount": total_percentage_commission,
+                    "payable": total_percentage_payable,
+                    "orders": percentage_orders
+                }
+            }
+            return jsonify(response), 200  # Fixed: Use jsonify for consistency
+
         else:
+            # Non-multi product_type logic
             order_query = """
                 SELECT 
-                    oi.order_id,
-                    SUM(oi.total) AS bill_amount
+                    oi.order_id, SUM(oi.total) AS sold_amount
                 FROM orders o
                 JOIN order_items oi ON o.id = oi.order_id
                 WHERE 
                     oi.product_id LIKE %s AND 
-                    oi.payment_done = %s AND 
+                    oi.payment_done = FALSE AND 
                     oi.is_cancelled = FALSE
                 GROUP BY oi.order_id
                 ORDER BY MAX(o.created_at) DESC
             """
-            cursor.execute(order_query, (f"%{product_type}%", type))
+            cursor.execute(order_query, (f"%{product_type}%",))
+            order_rows = cursor.fetchall()
+            df = pd.DataFrame(order_rows, columns=['order_id', 'sold_amount'])
 
-        order_rows = cursor.fetchall()
-        
+            if df.empty:
+                return jsonify({
+                    "total_sale": 0,
+                    "commission": 0,
+                    "payable": 0,
+                    "orders": [],
+                }), 200
 
-        # Step 3: Use pandas to aggregate and format result
-        df = pd.DataFrame(order_rows, columns=['order_id', 'bill_amount'])
+            df['sold_amount'] = pd.to_numeric(df['sold_amount'])
+            total_pending = float(df['sold_amount'].sum())
+            commission_value = total_pending * commission / 100
+            payable = float(total_pending - commission_value)
+            orders = df.to_dict(orient='records')
 
-        if df.empty:
-            return {
-                "orders": [],
-                "pending_amount" if type == 0 else "cleared_amount": 0
-            }, 200
-
-        df['bill_amount'] = pd.to_numeric(df['bill_amount'])
-        total_pending = int(df['bill_amount'].sum())
-        orders = df.to_dict(orient='records')
-        
-        
-        if commision and not type:
-            payable=total_pending-(total_pending*commision/100)
-        else:
-            payable=None
-
-        
-        response = {
-            "orders": orders,
-            "pending_amount" if type == 0 else "cleared_amount": total_pending,
-            "commision":commision ,
-            "payable":payable
-            
-        }
-
-        return response, 200
+            response = {
+                "total_sale": total_pending,
+                "commission": commission_value,
+                "payable": payable,
+                "orders": orders,
+            }
+            return jsonify(response), 200
 
     except Exception as e:
-        print(e)
-        return {"error": str(e)}, 500
+        print(f"Error: {e}")
+        return jsonify({"error": str(e)}), 500
 
     finally:
         if cursor:
             cursor.close()
         if conn:
             conn.close()
+
 
 def get_vendor_products_service(data):
     try:
@@ -613,35 +674,74 @@ def get_vendor_products_service(data):
         # Step 2: Get products by vendor
         order_query = """
             SELECT 
-                p.p_id,p.retailer_id, p.name, p.vendors_price,p.percentage_on_category
+                p.p_id, p.retailer_id, p.name, p.vendors_price, p.percentage_on_category
             FROM products p
             JOIN vendors v ON v.id = p.vendor_id
             WHERE v.id = %s
         """
         cursor.execute(order_query, (vendor_id,))
         order_rows = cursor.fetchall()
+        print(order_rows)
 
-        # Step 3: Format the result
-        products = [
-            {
-                "id": row[0],
-                "retailer_id": row[1],
-                "name": row[2],
-                "vendors_price": row[3],
-                "is_percentage":row[4]
+        # Step 3: Fetch additional product details from Facebook Graph API
+        products = []
+        for row in order_rows:
+            product_id = row[0]
+            print(product_id)
+            if not product_id:
+                logger.warning(f"Skipping product with null ID: {row[2]}")
+                products.append({
+                    "id": row[0],
+                    "retailer_id": row[1],
+                    "name": row[2],
+                    "vendors_price": row[3],
+                    "is_percentage": row[4],
+                    "price": "N/A",
+                    "description": "N/A"
+                })
+                continue
+
+            # Make API call to Facebook Graph API
+            api_url = f"https://graph.facebook.com/v22.0/{product_id}?fields=id,name,description,price,retailer_id,availability,sale_price"
+            headers = {
+                "Authorization": "Bearer EAAQKF56ZAbJQBO3eHvyzD8AERlnLM7hAvtAIZCcSYubLA7JqPq7iv2NGlzlgDfX1DnJ9CJl9ZANyHdiHYNztdvAjf2C4XKWXFMBCjqTagNJDV4VYV59VhzLQ76kZBjrVP3XDsa2UeqBmT9lr01zgImVXPcmeDsyf6KXOaDk61yFzMKS5BkFZBhDX4tsMfuJ4ZA5QZDZD"  # Replace with actual token
             }
-            for row in order_rows
-        ]
+            response = requests.get(api_url, headers=headers)
+            
+            if response.status_code == 200:
+                api_data = response.json()
+                products.append({
+                    "id": row[0],
+                    "retailer_id": row[1],
+                    "name": row[2],
+                    "vendors_price": row[3],
+                    "is_percentage": row[4],
+                    "price": api_data.get("price", "N/A"),
+                    # "description": api_data.get("description", "N/A"),
+                    "availability":api_data.get("availability", "N/A"),
+                    "sale_price":api_data.get("sale_price", "-")
+                })
+            else:
+                logger.error(f"API call failed for product ID {product_id}: {response.status_code} - {response.text}")
+                products.append({
+                    "id": row[0],
+                    "retailer_id": row[1],
+                    "name": row[2],
+                    "vendors_price": row[3],
+                    "is_percentage": row[4],
+                    "price": "N/A",
+                    "description": "N/A"
+                })
 
         return jsonify(products), 200
 
     except Exception as e:
+        logger.error(f"Error in get_vendor_products_service: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
     finally:
         cursor.close()
         conn.close()
-
 
 def update_order_items_service_new(data):
     try:
@@ -848,6 +948,7 @@ def insert_vendor_service(data):
         id = data.get("id")
         name = data.get("name")
         product_type = data.get("product_type")
+        commission=data.get("commision")
 
         if not all([id, name, product_type]):
             logger.warning("Missing required fields: id=%s, name=%s, product_type=%s", id, name, product_type)
@@ -855,12 +956,12 @@ def insert_vendor_service(data):
 
         # Insert query
         insert_query = """
-            INSERT INTO vendors (id, shop_name, product_type, created_at)
-            VALUES (%s, %s, %s, %s)
-            RETURNING id, shop_name, product_type, created_at
+            INSERT INTO vendors (id, shop_name, product_type, created_at,commission)
+            VALUES (%s, %s, %s, %s,%s)
+            RETURNING id, shop_name, product_type, created_at,commission
         """
         current_time = datetime.now()
-        cursor.execute(insert_query, (id, name, product_type, current_time))
+        cursor.execute(insert_query, (id, name, product_type, current_time,commission))
 
         vendor_row = cursor.fetchone()
         conn.commit()
@@ -960,7 +1061,7 @@ def clear_payment_service(data):
             return jsonify({"message": "No unpaid orders found"}), 200
 
         order_ids = [row[0] for row in order_rows]
-        total_amount = sum([int(row[1]) for row in order_rows])
+        total_amount = sum([float(row[1]) for row in order_rows])
 
         # Step 3: Insert into transactions table
         insert_tx = """
@@ -1006,7 +1107,7 @@ def update_vendor_price_service(data):
 
         retailer_id = data.get("retailer_id")
         vendor_price = data.get("vendor_price")
-        commission = data.get("commision")
+        commission = data.get("commission")
         vendor_id = data.get("vendor_id")
 
         if not retailer_id:
@@ -1095,3 +1196,67 @@ def vendor_account_updation_service(data):
     finally:
         conn.close()
 
+
+
+def update_product_details_service(data):
+    try:
+        # Extract relevant fields from the incoming data
+        product_id = data.get("product_id")
+        availability = data.get("availability")
+        price = data.get("price")
+        sale_price = data.get("sale_price")
+        
+        # Validate that product_id is provided
+        if not product_id:
+            return {"error": "product_id is required"}, 400
+
+        # Base API URL and headers
+        api_url = f"https://graph.facebook.com/v22.0/{product_id}"
+        headers = {
+            "Authorization": "Bearer EAAQKF56ZAbJQBO3eHvyzD8AERlnLM7hAvtAIZCcSYubLA7JqPq7iv2NGlzlgDfX1DnJ9CJl9ZANyHdiHYNztdvAjf2C4XKWXFMBCjqTagNJDV4VYV59VhzLQ76kZBjrVP3XDsa2UeqBmT9lr01zgImVXPcmeDsyf6KXOaDk61yFzMKS5BkFZBhDX4tsMfuJ4ZA5QZDZD",  # Replace with actual token
+            "Content-Type": "application/json"
+        }
+
+        # Initialize a list to store responses
+        responses = []
+
+        # Update availability if provided
+        if availability:
+            payload = {"availability": availability}
+            response = requests.post(api_url, headers=headers, data=json.dumps(payload))
+            if response.status_code != 200:
+                return {"error": f"Failed to update availability: {response.text}"}, response.status_code
+            responses.append({"message": "Availability updated successfully"})
+
+        # Update price if provided, appending two decimal places
+        if price:
+            try:
+                formatted_price = str(int(float(price) * 100))
+                payload = {"price": formatted_price}
+                response = requests.post(api_url, headers=headers, data=json.dumps(payload))
+                if response.status_code != 200:
+                    return {"error": f"Failed to update price: {response.text}"}, response.status_code
+                responses.append({"message": "Price updated successfully"})
+            except ValueError:
+                return {"error": "Invalid price format"}, 400
+
+        # Update sale_price if provided, appending two decimal places
+        if sale_price:
+            try:
+                formatted_sale_price = str(int(float(sale_price) * 100))
+                payload = {"sale_price": formatted_sale_price}
+                response = requests.post(api_url, headers=headers, data=json.dumps(payload))
+                if response.status_code != 200:
+                    return {"error": f"Failed to update sale_price: {response.text}"}, response.status_code
+                responses.append({"message": "Sale price updated successfully"})
+            except ValueError:
+                return {"error": "Invalid sale_price format"}, 400
+
+        # If no fields were provided to update
+        if not responses:
+            return {"error": "No valid fields provided to update"}, 400
+        fetch_and_categorize_products()
+        return {"message": "Product details updated successfully", "updates": responses}, 200
+
+    except Exception as e:
+        return {"error": str(e)}, 500
