@@ -948,7 +948,7 @@ def insert_vendor_service(data):
         id = data.get("id")
         name = data.get("name")
         product_type = data.get("product_type")
-        commission=data.get("commision")
+        commission=data.get("commission")
 
         if not all([id, name, product_type]):
             logger.warning("Missing required fields: id=%s, name=%s, product_type=%s", id, name, product_type)
@@ -1260,3 +1260,35 @@ def update_product_details_service(data):
 
     except Exception as e:
         return {"error": str(e)}, 500
+    
+
+def update_order_bill_amount(data):
+    try:
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
+        # Extract order ID from input
+        order_id = data.get("order_id")
+        if not order_id:
+            return {"error": "Missing order_id"}, 400
+
+        update_query = """
+            UPDATE orders
+            SET bill_amount = (
+                SELECT SUM(total)
+                FROM order_items
+                WHERE order_items.order_id = orders.id
+            )
+            WHERE orders.id = %s;
+        """
+
+        cursor.execute(update_query, (order_id,))
+        conn.commit()
+
+        return {"message": "Order bill amount updated successfully"}, 200
+
+    except Exception as e:
+        return {"error": str(e)}, 500
+
+    finally:
+        conn.close()

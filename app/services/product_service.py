@@ -109,6 +109,7 @@ def  fetch_and_categorize_products():
 
 WHATSAPP_API_URL = "https://graph.facebook.com/v22.0/579242655280457/messages"
 WHATSAPP_TOKEN = os.getenv("ACCESS_TOKEN")
+print("hii",WHATSAPP_TOKEN)
 def load_products_by_category(category: str):
     try:
         with open("result.json", "r", encoding="utf-8") as f:
@@ -212,7 +213,8 @@ def senditems(to_number, product_items,restaurant=None):
         "Authorization": f"Bearer {WHATSAPP_TOKEN}",
         "Content-Type": "application/json"
     }
-    print(payload)
+    print(WHATSAPP_TOKEN)
+    print("heey",payload)
     try:
         response = requests.post(WHATSAPP_API_URL, headers=headers, json=payload)
         response.raise_for_status()

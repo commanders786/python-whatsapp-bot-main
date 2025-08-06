@@ -12,7 +12,7 @@ import re
 
 # from app.services.audio_service import transcribe_audio_from_facebook
 from app.services.audio_service import transcribe_audio_from_facebook
-from app.services.crud_services import insert_order, insert_user,update_order_items_service, update_user_lastlogin, user_exists
+from app.services.crud_services import insert_order, insert_user, update_order_bill_amount,update_order_items_service, update_user_lastlogin, user_exists
 from app.services.product_service import load_restaurants, send_whatsapp_product_list
 from app.utils.messages import get_text_message_input, po_template
 from app.utils.validations import is_within_radius
@@ -103,8 +103,8 @@ def process_whatsapp_message(body):
         ts = int(message['timestamp'])
         if (datetime.now(timezone.utc) - datetime.fromtimestamp(ts, timezone.utc)).total_seconds() > 10: return
         now= datetime.now(ZoneInfo("Asia/Kolkata")).time()
-        start_time = time(7, 0, 0)   # 7:00 AM
-        end_time = time(22, 0, 0)    # 8:00 PM
+        start_time = time(8, 0, 0)   # 8:00 AM
+        end_time = time(22, 0, 0)    # 10:00 PM
         
         if now < start_time or now > end_time :
         # if True:
@@ -114,7 +114,7 @@ def process_whatsapp_message(body):
                   pass
            else:
                 
-                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 7 മണി മുതൽ രാത്രി 10 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
+                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു. ദയവായി രാവിലെ 8 മണി മുതൽ രാത്രി 10 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക.\nCall +919961575781 "
                 # response="ഇന്ന് സ്റ്റോർ അവധി ആൺ \nCall +919961575781 "
                 data = get_text_message_input(wa_id, response)
                 send_message(data)
@@ -380,11 +380,15 @@ def process_whatsapp_message(body):
                     send_whatsapp_image("917306723535", user_sessions[wa_id]['medicineimageid'],order_notification_template)
                     return
                 order_notification_template = po_template(user_sessions[wa_id])
+                
                 response_status=insert_order({"receipt":order_notification_template,"bill_amount":0,"userid":wa_id})
                
                 print("order Created",response_status)
                 order_id = response_status[0].get('order_id')
+
                 update_order_items_service(order_id,user_sessions[wa_id]['items'])
+                update_order_bill_amount({"order_id": order_id})
+
                 bill_text,items = process_order_message(user_sessions[wa_id]['items'],location)
                 user_sessions[wa_id]['bill']=bill_text
                 order_notification_template = po_template(user_sessions[wa_id],order_id=order_id)

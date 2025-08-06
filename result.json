@@ -35,9 +35,9 @@
     },
     "veg13": {
       "id": "9457423561052201",
-      "name": "കാപ്‌സിക്കം (green)500g",
+      "name": "കാപ്‌സിക്കം (green)250gg",
       "description": "Capcicum",
-      "price": "₹60.00",
+      "price": "₹30.00",
       "pattern": "capcicum, mulak, vegitable",
       "unit": null,
       "retailer_id": "veg13",
@@ -48,7 +48,7 @@
       "id": "9543733689047575",
       "name": "തക്കാളി (Tomato) 500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹20.00",
+      "price": "₹19.00",
       "pattern": "thakkali",
       "unit": null,
       "retailer_id": "veg05",
@@ -108,13 +108,13 @@
       "unit": null,
       "retailer_id": "veg24",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹40.00"
     },
     "veg26": {
       "id": "9854092084671571",
       "name": "കീയാർ 500g (Kiyaar)",
       "description": "kiyaar",
-      "price": "₹35.00",
+      "price": "₹40.00",
       "pattern": "kiyar, kakkiri, cucumber",
       "unit": null,
       "retailer_id": "veg26",
@@ -169,7 +169,7 @@
       "id": "9920166378090442",
       "name": "കുമ്പളങ്ങ 1kg (kumbalanga)",
       "description": "kumbalanga, ash gourd",
-      "price": "₹30.00",
+      "price": "₹40.00",
       "pattern": "kumbalanga, eleven,ash gourd",
       "unit": null,
       "retailer_id": "veg31",
@@ -185,7 +185,7 @@
       "unit": null,
       "retailer_id": "veg23",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹25.00"
     },
     "veg33": {
       "id": "10038674232877250",
@@ -1762,6 +1762,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr224": {
+      "id": "23899092493127240",
+      "name": "Ponds Powder",
+      "description": "Ponds Freshness\nNet Weight : 50g",
+      "price": "₹77.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr224",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr210": {
       "id": "23986904377646506",
       "name": "Vim 120ml",
@@ -1792,6 +1803,61 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "gr200",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr221": {
+      "id": "24105900472436061",
+      "name": "Lays Yellow",
+      "description": "Lays 20rs",
+      "price": "₹20.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr221",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr225": {
+      "id": "24113774828292710",
+      "name": "(കാശ്മീരി പൊടി) 100g Kashmiri Chilly Powder",
+      "description": "Kashmiri Chilly Powder\nNet Quantity : 100g",
+      "price": "₹65.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr225",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr226": {
+      "id": "24153709094284330",
+      "name": "Transparent Tape",
+      "description": "Transparent Tape\nVariant : 1pc",
+      "price": "₹50.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr226",
+      "availability": "in stock",
+      "sale_price": "₹40.00"
+    },
+    "gr218": {
+      "id": "24161265590202615",
+      "name": "Lays Blue",
+      "description": "Lays 50rs",
+      "price": "₹50.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr218",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr223": {
+      "id": "24176953678580140",
+      "name": "Kurkure Red",
+      "description": "Kurkure 20rs",
+      "price": "₹20.00",
+      "pattern": "lays,sweets,Kurkure",
+      "unit": null,
+      "retailer_id": "gr223",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1861,6 +1927,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr222": {
+      "id": "25017489307839250",
+      "name": "Lays Orange",
+      "description": "Lays 20rs",
+      "price": "₹20.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr222",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr213": {
       "id": "25135767682692025",
       "name": "Santoor (Soap)",
@@ -1916,6 +1993,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr220": {
+      "id": "30949479407999442",
+      "name": "Lays Green",
+      "description": "Lays 20rs",
+      "price": "₹20.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr220",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr219": {
+      "id": "30985404947740364",
+      "name": "Lays Red",
+      "description": "Lays 50rs",
+      "price": "₹50.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr219",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr207": {
       "id": "31476329988633069",
       "name": "Ragi Rusi Semiyam 1kg",
@@ -1935,6 +2034,17 @@
       "pattern": "rusk,biscuits",
       "unit": null,
       "retailer_id": "gr202",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr217": {
+      "id": "31622763647322790",
+      "name": "Lays Green",
+      "description": "Lays 50rs",
+      "price": "₹50.00",
+      "pattern": "lays,sweets",
+      "unit": null,
+      "retailer_id": "gr217",
       "availability": "in stock",
       "sale_price": null
     },
@@ -2514,7 +2624,7 @@
       "id": "9881516968644377",
       "name": "3 മാൻ 1kg (3 Man Rice)",
       "description": "3 Man Rice",
-      "price": "₹160.00",
+      "price": "₹210.00",
       "pattern": "rice,3 man rice",
       "unit": null,
       "retailer_id": "gr86",
@@ -2558,7 +2668,7 @@
       "id": "24023416833989381",
       "name": "റോസ് 1kg (Rose Rice)",
       "description": "Rose Rice",
-      "price": "₹180.00",
+      "price": "₹210.00",
       "pattern": "rice,rose rice",
       "unit": null,
       "retailer_id": "gr87",
@@ -2725,7 +2835,7 @@
       "id": "9584452581671948",
       "name": "Citrus Orange 500g (ഓറഞ്ച്)",
       "description": "Fresh and handpicked fruits",
-      "price": "₹70.00",
+      "price": "₹85.00",
       "pattern": "orange",
       "unit": null,
       "retailer_id": "fr01",
@@ -2762,7 +2872,7 @@
       "pattern": "munthiri",
       "unit": null,
       "retailer_id": "fr05",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "fr09": {
@@ -2780,12 +2890,12 @@
       "id": "29331886456457697",
       "name": "Apple (ആപ്പിൾ) 500g",
       "description": "Fresh and handpicked fruits",
-      "price": "₹135.00",
+      "price": "₹130.00",
       "pattern": "apple",
       "unit": null,
       "retailer_id": "fr02",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹100.00"
     },
     "fr10": {
       "id": "9495886053842889",
@@ -2802,12 +2912,12 @@
       "id": "9827915653966998",
       "name": "റുമാൻ പഴം 500g (Pomegranate)",
       "description": "ഉറുമാൻപഴം",
-      "price": "₹100.00",
+      "price": "₹120.00",
       "pattern": "uruman pazham,anar,mathalam",
       "unit": null,
       "retailer_id": "fr14",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹110.00"
     },
     "fr13": {
       "id": "9841857382527165",
@@ -2818,24 +2928,24 @@
       "unit": null,
       "retailer_id": "fr13",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹70.00"
     },
     "fr16": {
       "id": "9989682194425083",
       "name": "തായ് പേര 500g  (Thai Guava)",
       "description": "thai guava",
-      "price": "₹70.00",
+      "price": "₹80.00",
       "pattern": "perakka, pera",
       "unit": null,
       "retailer_id": "fr16",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹60.00"
     },
     "fr18": {
       "id": "24020908464194575",
       "name": "കാരാച്ചി തണ്ണിമത്തൻ 1kg (Karachi Watermelon)",
       "description": "karaachi watermelon",
-      "price": "₹30.00",
+      "price": "₹40.00",
       "pattern": "vathakka, watermelon",
       "unit": null,
       "retailer_id": "fr18",
@@ -2862,7 +2972,7 @@
       "unit": null,
       "retailer_id": "fr19",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹25.00"
     },
     "fr11": {
       "id": "30537408062524729",
@@ -2879,12 +2989,12 @@
       "id": "9618881154855507",
       "name": "ഡ്രാഗൺ ഫ്രൂട്ട് 1kg (Dragon fruit)",
       "description": "Dragon fruit",
-      "price": "₹190.00",
+      "price": "₹220.00",
       "pattern": "dragon fruit",
       "unit": null,
       "retailer_id": "fr23",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹190.00"
     },
     "fr20": {
       "id": "9619356114820071",
@@ -2917,7 +3027,7 @@
       "unit": null,
       "retailer_id": "fr24",
       "availability": "in stock",
-      "sale_price": "₹60.00"
+      "sale_price": "₹75.00"
     },
     "fr21": {
       "id": "23942118818729188",
@@ -2938,7 +3048,7 @@
       "pattern": "mango,Mangosteen",
       "unit": null,
       "retailer_id": "fr26",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": "₹130.00"
     },
     "fr29": {
@@ -2967,7 +3077,7 @@
       "id": "31051568627790366",
       "name": "പ്ലം പഴം 500g (Plum)",
       "description": "Plum",
-      "price": "₹90.00",
+      "price": "₹110.00",
       "pattern": "fruits",
       "unit": null,
       "retailer_id": "fr27",
@@ -3024,12 +3134,12 @@
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹110.00",
+      "price": "₹105.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
       "availability": "in stock",
-      "sale_price": "₹110.00"
+      "sale_price": "₹105.00"
     },
     "ch15": {
       "id": "9714611515291014",
@@ -3336,12 +3446,12 @@
       "id": "9830423593679269",
       "name": "Red choco Cake 1kg",
       "description": "Red choco Cake 1kg from nice bakery",
-      "price": "₹9,999.00",
+      "price": "₹999.00",
       "pattern": "cake,red choco,choco,red",
       "unit": null,
       "retailer_id": "bk06",
       "availability": "in stock",
-      "sale_price": "₹7,000.00"
+      "sale_price": null
     },
     "bk09": {
       "id": "9845743815537953",
@@ -3402,12 +3512,12 @@
       "id": "24315941321322864",
       "name": "പൂള പൊരി 500gm (Kappa Chips)",
       "description": "Kappa Chips From Nice Bakery",
-      "price": "₹130.00",
+      "price": "₹150.00",
       "pattern": "kappa chips,chips,bakery",
       "unit": null,
       "retailer_id": "bk022",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹140.00"
     },
     "bk02": {
       "id": "24731091906479280",
@@ -3638,7 +3748,7 @@
       "unit": null,
       "retailer_id": "bk22",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹160.00"
     },
     "bk25": {
       "id": "30420943924218773",
@@ -3897,12 +4007,12 @@
       "id": "23885932631105867",
       "name": "Nuggets 6pcs",
       "description": "Nuggets 6pcs from nice bakery",
-      "price": "₹100.00",
+      "price": "₹120.00",
       "pattern": "snacks,nuggets",
       "unit": null,
       "retailer_id": "bk53",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹100.00"
     },
     "bk59": {
       "id": "24021685687491362",
@@ -3952,12 +4062,12 @@
       "id": "24203494792632957",
       "name": "Chicken Waldorf Salad",
       "description": "Chicken Waldorf Salad from nice bakery",
-      "price": "₹150.00",
+      "price": "₹200.00",
       "pattern": "snacks",
       "unit": null,
       "retailer_id": "bk55",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹150.00"
     },
     "bk50": {
       "id": "24211226805204027",
@@ -3985,12 +4095,12 @@
       "id": "30483316801316101",
       "name": "Nuggets 12pcs",
       "description": "Nuggets 12pcs from nice bakery",
-      "price": "₹180.00",
+      "price": "₹220.00",
       "pattern": "snacks,nuggets",
       "unit": null,
       "retailer_id": "bk54",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹180.00"
     },
     "bk51": {
       "id": "30615290171449052",
@@ -4029,12 +4139,12 @@
       "id": "24091361590513995",
       "name": "Pasta",
       "description": "Pasta from nice bakery",
-      "price": "₹200.00",
+      "price": "₹240.00",
       "pattern": "snacks",
       "unit": null,
       "retailer_id": "bk60",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹200.00"
     },
     "bk61": {
       "id": "24158409477112713",
@@ -4062,19 +4172,19 @@
       "id": "24493971053540568",
       "name": "Chicken Kunafa Stick 5pcs",
       "description": "Chicken Kunafa Stick 5pcs from nice bakery",
-      "price": "₹150.00",
+      "price": "₹180.00",
       "pattern": "snacks",
       "unit": null,
       "retailer_id": "bk63",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹150.00"
     },
     "bk67": {
       "id": "24512274021730300",
-      "name": "Sizzling Brownie",
-      "description": "Sizzling Brownie from nice bakery",
-      "price": "₹150.00",
-      "pattern": "snacks,cake",
+      "name": "മുട്ട പഫ്സ് (Egg Puffs)",
+      "description": "Egg Puffs from nice bakery",
+      "price": "₹20.00",
+      "pattern": "snacks",
       "unit": null,
       "retailer_id": "bk67",
       "availability": "in stock",
@@ -4093,17 +4203,6 @@
     }
   },
   "food": {
-    "rf03": {
-      "id": "8871303839639480",
-      "name": "AFC Couple Meal",
-      "description": "2 Pc Chicken, Bun 2pc,\n French Fries,ketchup,\n Garlic Paste-1 \nRestaurant: AFC Chicken",
-      "price": "₹229.00",
-      "pattern": "AFC, FREID CHICKEN, food, restaurant",
-      "unit": null,
-      "retailer_id": "rf03",
-      "availability": "in stock",
-      "sale_price": null
-    },
     "rf08": {
       "id": "9882045685219063",
       "name": "Masala Shawai  (Quater)",
@@ -4126,38 +4225,16 @@
       "availability": "in stock",
       "sale_price": null
     },
-    "rf04": {
-      "id": "24001490502770273",
-      "name": "AFC Kids Meal",
-      "description": "1 Pc Chicken,bun 1pc, \nFrench Fries,\n Ketchup\nrestaurant: AFC Chicken",
-      "price": "₹149.00",
-      "pattern": "AFC, FREID CHICKEN, food, restaurant",
-      "unit": null,
-      "retailer_id": "rf04",
-      "availability": "in stock",
-      "sale_price": null
-    },
-    "rf06": {
-      "id": "29540340458946035",
-      "name": "AFC Dinner Meal",
-      "description": "4 Pc Chicken,2 Bun\n Garlic Paste\n French Fries,ketchup\nRestaurant: AFC Chicken",
-      "price": "₹499.00",
-      "pattern": "AFC, FREID CHICKEN, food, restaurant",
-      "unit": null,
-      "retailer_id": "rf06",
-      "availability": "in stock",
-      "sale_price": null
-    },
     "rf102": {
       "id": "9134420923328280",
       "name": "BBQ CHICKEN Pizza  - L",
       "description": "Restaurant: AFC Chicken",
-      "price": "₹498.00",
+      "price": "₹569.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf102",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹498.00"
     },
     "rf13": {
       "id": "9158469134254295",
@@ -4174,12 +4251,12 @@
       "id": "9318818694885182",
       "name": "CRISPY CHICKEN Pizza   -S",
       "description": "Restaurant: AFC Chicken",
-      "price": "₹270.00",
+      "price": "₹299.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf103",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹270.00"
     },
     "rf15": {
       "id": "9483572835101807",
@@ -4218,12 +4295,12 @@
       "id": "9670493873050310",
       "name": "AFC Poppy Chick (Small)",
       "description": "Poppy Chick Small\nRestaurant: AFC Chicken",
-      "price": "₹99.00",
+      "price": "₹119.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf113",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹99.00"
     },
     "rf119": {
       "id": "9926988624072715",
@@ -4306,23 +4383,23 @@
       "id": "23981632724766931",
       "name": "BBQ CHICKEN Pizza  -S",
       "description": "Restaurant: AFC Chicken",
-      "price": "₹290.00",
+      "price": "₹310.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf100",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹290.00"
     },
     "rf101": {
       "id": "24000298206274526",
       "name": "BBQ CHICKEN Pizza  - M",
       "description": "Restaurant: AFC Chicken",
-      "price": "₹390.00",
+      "price": "₹419.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf101",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹390.00"
     },
     "rf17": {
       "id": "24003716782579538",
@@ -4339,12 +4416,12 @@
       "id": "24006015072423970",
       "name": "AFC Poppy Chick (Large)",
       "description": "Poppy Chick Large\nRestaurant: AFC Chicken",
-      "price": "₹129.00",
+      "price": "₹169.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf114",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹129.00"
     },
     "rf122": {
       "id": "24011429891852589",
@@ -4361,18 +4438,18 @@
       "id": "24068419622791203",
       "name": "CRISPY CHICKEN  Pizza  -M",
       "description": "Restaurant: AFC Chicken",
-      "price": "₹360.00",
+      "price": "₹399.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf104",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹360.00"
     },
     "rf112": {
       "id": "24090848633875287",
       "name": "AFC Jumbo Family Meal",
       "description": "14pc Chicken French Fries\n5 Bun,2 Garlic Paste Ketchup\n1 Coleslaw\nRestaurant: AFC Chicken",
-      "price": "₹1,579.00",
+      "price": "₹1,649.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf112",
@@ -4438,7 +4515,7 @@
       "id": "24309156638717124",
       "name": "AFC 16pc Chicken Combo (Full Chicken)",
       "description": "16pc Chicken,5 Kubboos,\n3 Mayonise,Ketchup,Pepsi (1 Litre)\nRestaurant: AFC Chicken",
-      "price": "₹1,049.00",
+      "price": "₹1,119.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf111",
@@ -4458,14 +4535,14 @@
     },
     "rf115": {
       "id": "24411659795140806",
-      "name": "AFC Shawarama Meal",
+      "name": "AFC Shawarama",
       "description": "Shawarama \nRestaurant: AFC Chicken",
-      "price": "₹89.00",
+      "price": "₹110.00",
       "pattern": "Wrap,shawarama",
       "unit": null,
       "retailer_id": "rf115",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹89.00"
     },
     "rf18": {
       "id": "24423818480539491",
@@ -4482,12 +4559,12 @@
       "id": "24654696337470459",
       "name": "AFC Shawarama Meal",
       "description": "Shawarama + French Fries\nRestaurant: AFC Chicken",
-      "price": "₹120.00",
+      "price": "₹160.00",
       "pattern": "Wrap,shawarama",
       "unit": null,
       "retailer_id": "rf118",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹120.00"
     },
     "rf120": {
       "id": "24974681355467979",
@@ -4504,12 +4581,12 @@
       "id": "29941528232160041",
       "name": "CRISPY CHICKEN Pizza   -L",
       "description": "Restaurant: AFC Chicken",
-      "price": "₹460.00",
+      "price": "₹519.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf105",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹460.00"
     },
     "rf11": {
       "id": "29965910253007245",
@@ -4537,7 +4614,7 @@
       "id": "30575773318737571",
       "name": "AFC 4pc Chicken Combo (Quarter)",
       "description": "4pc Chicken,2 Kubboos,\nMayonise,Ketchup\nRestaurant: AFC Chicken",
-      "price": "₹289.00",
+      "price": "₹279.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf109",
@@ -4548,7 +4625,7 @@
       "id": "30639907025656500",
       "name": "AFC 8pc Chicken Combo (Half Chicken)",
       "description": "8pc Chicken,3 Kubboos,\n2 Mayonise,Ketchup,Pepsi (250ml)\nRestaurant: AFC Chicken",
-      "price": "₹539.00",
+      "price": "₹559.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf110",
@@ -4640,7 +4717,7 @@
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf29",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf28": {
@@ -4673,7 +4750,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf31",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf30": {
@@ -4684,7 +4761,7 @@
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf30",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf37": {
@@ -4970,7 +5047,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf68",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf64": {
@@ -5080,7 +5157,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf73",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf74": {
@@ -5091,7 +5168,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf74",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf70": {
@@ -5102,7 +5179,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf70",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf79": {
@@ -5179,7 +5256,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf71",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf84": {
@@ -5377,7 +5454,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf97",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     }
   },

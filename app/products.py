@@ -64,12 +64,12 @@ def process_order_message(product_items,location=None):
      grand_total+=price
 
 
-    configs=get_configs()
-    print(configs)
-    print(type(configs))
-    if configs :
-      print("11111")
-      print(configs.get('isRaincharge'))
+    # configs=get_configs()
+    # print(configs)
+    # print(type(configs))
+    # if configs :
+    #   print("11111")
+    #   print(configs.get('isRaincharge'))
     #   if configs.get("isRaincharge") is True:
     #     print(222222)
     #     lines.append(f"\n🌧 Rain Charge: ₹ {str(configs.get('rainCharge'))}")
