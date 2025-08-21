@@ -121,20 +121,20 @@ def process_whatsapp_message(body):
                 return
 
 
-        if message["type"] == "audio":
-         try:
-            audio_id=message["audio"]["id"]
-            response ="Anghadi AI ⚡ may take take few seconds  (10-20) to process your request" if user_sessions[wa_id].get('language')=='en' else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (10-20) എടുത്തേക്കാം"
-            data = get_text_message_input(wa_id, response)
-            send_message(data)
+        # if message["type"] == "audio":
+        #  try:
+        #     audio_id=message["audio"]["id"]
+        #     response ="Anghadi AI ⚡ may take take few seconds  (10-20) to process your request" if user_sessions[wa_id].get('language')=='en' else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (10-20) എടുത്തേക്കാം"
+        #     data = get_text_message_input(wa_id, response)
+        #     send_message(data)
                     
-            text=transcribe_audio_from_facebook(audio_id)
-            message["type"] = "text"
-            message.setdefault("text", {})["body"] = text
+        #     text=transcribe_audio_from_facebook(audio_id)
+        #     message["type"] = "text"
+        #     message.setdefault("text", {})["body"] = text
             
-         except Exception as e:
-             print(e)
-             return
+        #  except Exception as e:
+        #      print(e)
+        #      return
 
         if message["type"] == "text":
             

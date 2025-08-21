@@ -136,12 +136,12 @@
       "id": "9895931580498415",
       "name": "പൂള 1 kg (Kappa)",
       "description": "kappa aloo",
-      "price": "₹30.00",
+      "price": "₹35.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "veg29",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹35.00"
     },
     "veg08": {
       "id": "9912679802085871",
@@ -209,6 +209,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "veg38": {
+      "id": "23937784799251695",
+      "name": "നേന്ത്രപഴം500g ( NENTRA PAZHAM)",
+      "description": "nentra pazham",
+      "price": "₹30.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "veg38",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "veg16": {
       "id": "23998523573073859",
       "name": "വെള്ളരിക്ക 1kg (VELLARIKKA)",
@@ -250,6 +261,17 @@
       "pattern": "mathan, veg",
       "unit": null,
       "retailer_id": "veg22",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "veg36": {
+      "id": "24195410233456060",
+      "name": "പയർ 250g (Beans Small)",
+      "description": "Fresh and handpicked vegetables",
+      "price": "₹20.00",
+      "pattern": "veg,vegetable,payar",
+      "unit": null,
+      "retailer_id": "veg36",
       "availability": "in stock",
       "sale_price": null
     },
@@ -312,7 +334,7 @@
       "id": "29330952209886560",
       "name": "ഉള്ളി 500g (onion)",
       "description": "fresh to home",
-      "price": "₹12.00",
+      "price": "₹14.00",
       "pattern": "ഉള്ളി,സവാള,ulli,savaala",
       "unit": null,
       "retailer_id": "veg10",
@@ -354,12 +376,23 @@
     },
     "veg35": {
       "id": "30316340884675944",
-      "name": "പയർ 500g (Beans)",
+      "name": "പയർ 250g (Beans Big)",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹35.00",
+      "price": "₹18.00",
       "pattern": "veg,vegetable,payar",
       "unit": null,
       "retailer_id": "veg35",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "veg37": {
+      "id": "30884165871198151",
+      "name": "ചീര 500g (Red Amaranth)",
+      "description": "Fresh and handpicked vegetables",
+      "price": "₹30.00",
+      "pattern": "veg,vegetable,payar",
+      "unit": null,
+      "retailer_id": "veg37",
       "availability": "in stock",
       "sale_price": null
     },
@@ -380,7 +413,7 @@
       "id": "9006605912778960",
       "name": "Sugar (പഞ്ചസാര ) 500g",
       "description": "Quality groceries from trusted outlet",
-      "price": "₹23.00",
+      "price": "₹24.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "gr01",
@@ -446,7 +479,7 @@
       "id": "24041286622130594",
       "name": "അമൂല്യ പാൽ പൊടി 200g, (AMULYA MILK POWDER",
       "description": "amulya",
-      "price": "₹95.00",
+      "price": "₹99.00",
       "pattern": "പാൽ പൊടി, paal podi, milk powder",
       "unit": null,
       "retailer_id": "gr03",
@@ -666,12 +699,12 @@
       "id": "10071002672936807",
       "name": "മുട്ട 5 units (Eggs)",
       "description": "Eggs 5 units",
-      "price": "₹30.00",
+      "price": "₹35.00",
       "pattern": "mutta",
       "unit": null,
       "retailer_id": "gr15",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹32.50"
     },
     "gr116": {
       "id": "10072386786222722",
@@ -1678,7 +1711,7 @@
       "id": "9707724209283250",
       "name": "വെളിച്ചെണ്ണ 500ml (Coconut oil)",
       "description": "multi brand available",
-      "price": "₹220.00",
+      "price": "₹195.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr29",
@@ -1953,7 +1986,7 @@
       "id": "29462530646728840",
       "name": "വെളിച്ചെണ്ണ  1L (Coconut oil)",
       "description": "multi brand available",
-      "price": "₹440.00",
+      "price": "₹395.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr28",
@@ -2602,7 +2635,7 @@
       "id": "9682878441818822",
       "name": "ഗ്രീൻ പീസ് 500g (Green Peas)",
       "description": "500g Green Peas",
-      "price": "₹70.00",
+      "price": "₹80.00",
       "pattern": "Green Peas",
       "unit": null,
       "retailer_id": "gr83",
@@ -2824,34 +2857,34 @@
       "id": "9530881703698827",
       "name": "PAPPAYA 1kg (പപ്പായ )",
       "description": "pappaya, karmoosa",
-      "price": "₹50.00",
+      "price": "₹70.00",
       "pattern": "pappaya",
       "unit": null,
       "retailer_id": "fr08",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹50.00"
     },
     "fr01": {
       "id": "9584452581671948",
       "name": "Citrus Orange 500g (ഓറഞ്ച്)",
       "description": "Fresh and handpicked fruits",
-      "price": "₹85.00",
+      "price": "₹120.00",
       "pattern": "orange",
       "unit": null,
       "retailer_id": "fr01",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹110.00"
     },
     "fr06": {
       "id": "9628082667312792",
       "name": "മുന്തിരി 500g (MUNTHIRI)",
       "description": "black munthiri",
-      "price": "₹40.00",
+      "price": "₹60.00",
       "pattern": "munthiri",
       "unit": null,
       "retailer_id": "fr06",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹50.00"
     },
     "fr03": {
       "id": "9760673497354410",
@@ -2895,7 +2928,7 @@
       "unit": null,
       "retailer_id": "fr02",
       "availability": "in stock",
-      "sale_price": "₹100.00"
+      "sale_price": "₹90.00"
     },
     "fr10": {
       "id": "9495886053842889",
@@ -2943,9 +2976,9 @@
     },
     "fr18": {
       "id": "24020908464194575",
-      "name": "കാരാച്ചി തണ്ണിമത്തൻ 1kg (Karachi Watermelon)",
+      "name": "കാരാച്ചി തണ്ണിമത്തൻ 2kg (Karachi Watermelon)",
       "description": "karaachi watermelon",
-      "price": "₹40.00",
+      "price": "₹80.00",
       "pattern": "vathakka, watermelon",
       "unit": null,
       "retailer_id": "fr18",
@@ -2956,12 +2989,12 @@
       "id": "24349621434627950",
       "name": "മുസംബി 500g (Indian Mosambi )",
       "description": "mosambi",
-      "price": "₹40.00",
+      "price": "₹50.00",
       "pattern": "mosambi,naaranga",
       "unit": null,
       "retailer_id": "fr12",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹35.00"
     },
     "fr19": {
       "id": "29413555341593593",
@@ -2994,7 +3027,7 @@
       "unit": null,
       "retailer_id": "fr23",
       "availability": "in stock",
-      "sale_price": "₹190.00"
+      "sale_price": "₹170.00"
     },
     "fr20": {
       "id": "9619356114820071",
@@ -3016,7 +3049,7 @@
       "unit": null,
       "retailer_id": "fr22",
       "availability": "in stock",
-      "sale_price": "₹150.00"
+      "sale_price": "₹140.00"
     },
     "fr24": {
       "id": "9984712418308433",
@@ -3026,7 +3059,7 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "fr24",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": "₹75.00"
     },
     "fr21": {
@@ -3038,7 +3071,7 @@
       "unit": null,
       "retailer_id": "fr21",
       "availability": "out of stock",
-      "sale_price": null
+      "sale_price": "₹70.00"
     },
     "fr26": {
       "id": "23982478584725865",
@@ -3059,14 +3092,14 @@
       "pattern": "fruits",
       "unit": null,
       "retailer_id": "fr29",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "fr28": {
       "id": "24166337329719351",
-      "name": "പച്ച ആപ്പിൾ 500mg (Green Apple)",
+      "name": "പച്ച ആപ്പിൾ 500g (Green Apple)",
       "description": "Green Apple",
-      "price": "₹85.00",
+      "price": "₹45.00",
       "pattern": "fruits",
       "unit": null,
       "retailer_id": "fr28",
@@ -3083,6 +3116,17 @@
       "retailer_id": "fr27",
       "availability": "in stock",
       "sale_price": "₹80.00"
+    },
+    "fr30": {
+      "id": "24383293601300297",
+      "name": "നാരങ്ങ 500g (Orange)",
+      "description": "Orange",
+      "price": "₹90.00",
+      "pattern": "fruits",
+      "unit": null,
+      "retailer_id": "fr30",
+      "availability": "in stock",
+      "sale_price": "₹70.00"
     }
   },
   "meat": {
@@ -3090,12 +3134,12 @@
       "id": "9589655301147089",
       "name": "Chicken Parts 500g (കോഴി പാർട്സ് )",
       "description": "parts seperated",
-      "price": "₹70.00",
+      "price": "₹60.00",
       "pattern": "കോഴി പാർട്സ് ,chicken parts",
       "unit": null,
       "retailer_id": "ch04",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹60.00"
     },
     "ch03": {
       "id": "9662187900529950",
@@ -3134,12 +3178,12 @@
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹105.00",
+      "price": "₹100.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
       "availability": "in stock",
-      "sale_price": "₹105.00"
+      "sale_price": "₹95.00"
     },
     "ch15": {
       "id": "9714611515291014",
@@ -3182,7 +3226,7 @@
       "pattern": "കാട, KAADA, meet",
       "unit": null,
       "retailer_id": "kd01",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "kd02": {
@@ -3193,7 +3237,7 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "kd02",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "sk8q2yaim7": {
@@ -3205,7 +3249,7 @@
       "unit": null,
       "retailer_id": "sk8q2yaim7",
       "availability": "in stock",
-      "sale_price": "₹180.00"
+      "sale_price": "₹175.00"
     },
     "wph1a21c06": {
       "id": "9721024201293028",
@@ -3721,7 +3765,7 @@
       "id": "24188729590723246",
       "name": "വര്‍ത്തായി 500gm (Palakutty Chips)",
       "description": "Banana Chips Special From Nice Bakery",
-      "price": "₹240.00",
+      "price": "₹260.00",
       "pattern": "banana chips,chips,special chips",
       "unit": null,
       "retailer_id": "bk20",
@@ -3809,7 +3853,7 @@
       "id": "9770336129741622",
       "name": "ജാഗിരി 500gm (Jagiri)",
       "description": "Jagiri From Nice Bakery",
-      "price": "₹110.00",
+      "price": "₹130.00",
       "pattern": "Jagiri,bakery",
       "unit": null,
       "retailer_id": "bk32",
@@ -3831,23 +3875,23 @@
       "id": "9954233044614612",
       "name": "ചുവപ്പ് ഹൽവ 1kg (Red Halwa)",
       "description": "Red Halwa From Nice Bakery",
-      "price": "₹200.00",
+      "price": "₹210.00",
       "pattern": "Red Halwa,bakery",
       "unit": null,
       "retailer_id": "bk35",
       "availability": "in stock",
-      "sale_price": "₹180.00"
+      "sale_price": "₹190.00"
     },
     "bk34": {
       "id": "23879346021726194",
       "name": "കറുത്ത ഹൽവ 1kg (Black Halwa)",
       "description": "Black Halwa From Nice Bakery",
-      "price": "₹200.00",
+      "price": "₹220.00",
       "pattern": "Black Halwa,bakery",
       "unit": null,
       "retailer_id": "bk34",
       "availability": "in stock",
-      "sale_price": "₹180.00"
+      "sale_price": "₹200.00"
     },
     "bk30": {
       "id": "23880676574933280",
@@ -3963,12 +4007,12 @@
       "id": "24625817830335771",
       "name": "ചക്ക വറുത്തത് 500g (Jack Fruit Chips)",
       "description": "500g Jack Fruit Chips",
-      "price": "₹215.00",
+      "price": "₹245.00",
       "pattern": "bakery,nurukk",
       "unit": null,
       "retailer_id": "bk46",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹225.00"
     },
     "bk40": {
       "id": "24653064170947893",
@@ -4049,7 +4093,7 @@
     },
     "bk52": {
       "id": "24188717677414630",
-      "name": "Special Shawarma",
+      "name": "Special Shawarama (Rumali Roll)",
       "description": "Special Shawarma from Nice bakery",
       "price": "₹120.00",
       "pattern": "Bakery,Snakcs,",
@@ -4157,6 +4201,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk69": {
+      "id": "24224849477124197",
+      "name": "Square Cup Cake 500g",
+      "description": "Square Cup Cake from nice bakery",
+      "price": "₹110.00",
+      "pattern": "Cake,Cup Cake",
+      "unit": null,
+      "retailer_id": "bk69",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk66": {
       "id": "24244716285182462",
       "name": "Club Sandwich Chicken Classic",
@@ -4165,6 +4220,17 @@
       "pattern": "snacks",
       "unit": null,
       "retailer_id": "bk66",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk68": {
+      "id": "24333850462920359",
+      "name": "Red Velvet Cup Cake 500g",
+      "description": "Red Velvet Cup Cake from nice bakery",
+      "price": "₹150.00",
+      "pattern": "Cake,Cup Cake",
+      "unit": null,
+      "retailer_id": "bk68",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4200,6 +4266,116 @@
       "retailer_id": "bk64",
       "availability": "in stock",
       "sale_price": null
+    },
+    "bk70": {
+      "id": "23919448977737455",
+      "name": "Chocolate Cup Cake 500g",
+      "description": "Chocolate Cup Cake from nice bakery",
+      "price": "₹120.00",
+      "pattern": "Cake,Cup Cake",
+      "unit": null,
+      "retailer_id": "bk70",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk72": {
+      "id": "24083780391249592",
+      "name": "Normal Cup Cake 500g",
+      "description": "Normal Cup Cake from nice bakery",
+      "price": "₹110.00",
+      "pattern": "Cake,Cup Cake",
+      "unit": null,
+      "retailer_id": "bk72",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk77": {
+      "id": "24346671281640556",
+      "name": "ക്രഞ്ച് ബിസ്ക്കറ്റ് 500g (crunch Biscuits)",
+      "description": "crunch Biscuits from Nice bakery",
+      "price": "₹120.00",
+      "pattern": "Biscuits",
+      "unit": null,
+      "retailer_id": "bk77",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk75": {
+      "id": "24379943961668798",
+      "name": "Arabic Rumali Roll",
+      "description": "Special Shawarma from Nice bakery",
+      "price": "₹150.00",
+      "pattern": "Bakery,Snakcs,",
+      "unit": null,
+      "retailer_id": "bk75",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk78": {
+      "id": "24437789849180955",
+      "name": "എള്ള ബിസ്ക്കറ്റ് 500g (Ellu Biscuits)",
+      "description": "Ellu Biscuits from Nice bakery",
+      "price": "₹120.00",
+      "pattern": "Biscuits",
+      "unit": null,
+      "retailer_id": "bk78",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk79": {
+      "id": "24452974381026120",
+      "name": "കടല ബിസ്ക്കറ്റ് 500g (Kadala Biscuits)",
+      "description": "Kadala Biscuits from Nice bakery",
+      "price": "₹120.00",
+      "pattern": "Biscuits",
+      "unit": null,
+      "retailer_id": "bk79",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk74": {
+      "id": "24465750213058493",
+      "name": "Jam Roll 500g",
+      "description": "Jam Roll from nice bakery",
+      "price": "₹120.00",
+      "pattern": "cake,",
+      "unit": null,
+      "retailer_id": "bk74",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk76": {
+      "id": "24546460078313521",
+      "name": "മസാല ബിസ്ക്കറ്റ് 500g (Masala Biscuits)",
+      "description": "Masala Biscuits from Nice bakery",
+      "price": "₹110.00",
+      "pattern": "Biscuits",
+      "unit": null,
+      "retailer_id": "bk76",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk71": {
+      "id": "24568283666099954",
+      "name": "Tea Cake 500g",
+      "description": "Tea Cup Cake from nice bakery",
+      "price": "₹110.00",
+      "pattern": "Cake,Cup Cake",
+      "unit": null,
+      "retailer_id": "bk71",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk73": {
+      "id": "24643407128616113",
+      "name": "Plum Cake 500g",
+      "description": "Plum Cake from nice bakery",
+      "price": "₹120.00",
+      "pattern": "Cake,",
+      "unit": null,
+      "retailer_id": "bk73",
+      "availability": "in stock",
+      "sale_price": null
     }
   },
   "food": {
@@ -4225,6 +4401,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf132": {
+      "id": "8621227721334580",
+      "name": "Fried Rice Egg",
+      "description": "Fried Rice\nrestaurant: ZABAQ",
+      "price": "₹190.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf132",
+      "availability": "in stock",
+      "sale_price": "₹160.00"
+    },
     "rf102": {
       "id": "9134420923328280",
       "name": "BBQ CHICKEN Pizza  - L",
@@ -4238,7 +4425,7 @@
     },
     "rf13": {
       "id": "9158469134254295",
-      "name": "Chicken Mdhooth Rise (Three Quater)",
+      "name": "Chicken Madhooth Rise (Three Quater)",
       "description": "Chicken Madhooth Rice\nrestaurant: shawai spot",
       "price": "₹550.00",
       "pattern": "food,shawai,madhooth",
@@ -4260,20 +4447,20 @@
     },
     "rf15": {
       "id": "9483572835101807",
-      "name": "Chicken Mdhooth Rise (Quater)",
+      "name": "Chicken Madhooth Rise (Quater)",
       "description": "Chicken Madhooth Rice\nrestaurant: shawai spot",
-      "price": "₹190.00",
+      "price": "₹200.00",
       "pattern": "food,shawai,madhooth",
       "unit": null,
       "retailer_id": "rf15",
       "availability": "in stock",
-      "sale_price": "₹190.00"
+      "sale_price": null
     },
     "rf12": {
       "id": "9524993217624038",
-      "name": "Chicken Mdhooth Rise (Full)",
+      "name": "Chicken Madhooth Rise (Full)",
       "description": "Chicken Madhooth Rice\nrestaurant: shawai spot",
-      "price": "₹720.00",
+      "price": "₹740.00",
       "pattern": "food,shawai,madhooth",
       "unit": null,
       "retailer_id": "rf12",
@@ -4326,9 +4513,9 @@
     },
     "rf14": {
       "id": "10058272830902962",
-      "name": "Chicken Mdhooth Rise (Half)",
+      "name": "Chicken Madhooth Rise (Half)",
       "description": "Chicken Madhooth Rice\nrestaurant: shawai spot",
-      "price": "₹370.00",
+      "price": "₹380.00",
       "pattern": "food,shawai,madhooth",
       "unit": null,
       "retailer_id": "rf14",
@@ -4345,6 +4532,17 @@
       "retailer_id": "rf117",
       "availability": "in stock",
       "sale_price": null
+    },
+    "rf133": {
+      "id": "23894266926935585",
+      "name": "Fried Rice Veg",
+      "description": "Fried Rice\nrestaurant: ZABAQ",
+      "price": "₹160.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf133",
+      "availability": "in stock",
+      "sale_price": "₹140.00"
     },
     "rf10": {
       "id": "23932850619685426",
@@ -4445,6 +4643,17 @@
       "availability": "in stock",
       "sale_price": "₹360.00"
     },
+    "rf131": {
+      "id": "24073555285670528",
+      "name": "Fried Rice Chicken",
+      "description": "Fried Rice\nrestaurant: ZABAQ",
+      "price": "₹220.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf131",
+      "availability": "in stock",
+      "sale_price": "₹180.00"
+    },
     "rf112": {
       "id": "24090848633875287",
       "name": "AFC Jumbo Family Meal",
@@ -4478,6 +4687,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf136": {
+      "id": "24133114759632799",
+      "name": "Peri Peri  Mandi (HALF)",
+      "description": "Peri Peri  Mandi (HALF)\nrestaurant: ZABAQ",
+      "price": "₹400.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf136",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf125": {
       "id": "24137209472596166",
       "name": "AFC Chicken Wrap Meal",
@@ -4500,6 +4720,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf130": {
+      "id": "24143935015269407",
+      "name": "Veg Noodles",
+      "description": "Veg Noodles\nrestaurant: ZABAQ",
+      "price": "₹140.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf130",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf123": {
       "id": "24155673277417411",
       "name": "AFC Extra Cheese",
@@ -4508,6 +4739,17 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf123",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf128": {
+      "id": "24197457113245897",
+      "name": "Chicken Noodles",
+      "description": "Chicken Noodles\nrestaurant: ZABAQ",
+      "price": "₹180.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf128",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4521,6 +4763,39 @@
       "retailer_id": "rf111",
       "availability": "in stock",
       "sale_price": "₹999.00"
+    },
+    "rf137": {
+      "id": "24323290030657301",
+      "name": "Peri Peri  Mandi (FULL)",
+      "description": "Peri Peri  Mandi (FULL)\nrestaurant: ZABAQ",
+      "price": "₹760.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf137",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf144": {
+      "id": "24336859206001393",
+      "name": "Chicken Madhooth (Half) + (Qtr)",
+      "description": "Chicken Madhooth With Rice\nrestaurant: ZABAQ",
+      "price": "₹600.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf144",
+      "availability": "in stock",
+      "sale_price": "₹570.00"
+    },
+    "rf138": {
+      "id": "24341601305534461",
+      "name": "Honey Alfaham Mandi (QUATER)",
+      "description": "Honey Alfaham Mandi (QUATER)\nrestaurant: ZABAQ",
+      "price": "₹210.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf138",
+      "availability": "in stock",
+      "sale_price": null
     },
     "rf121": {
       "id": "24353423997607371",
@@ -4555,6 +4830,39 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf127": {
+      "id": "24447260374899356",
+      "name": "ഉഴുന്നുവട (Uzhunnu vada)",
+      "description": "Chutney + sambar\nrestaurant:  sharadha dosa",
+      "price": "₹18.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "rf127",
+      "availability": "in stock",
+      "sale_price": "₹15.00"
+    },
+    "rf142": {
+      "id": "24551002511190655",
+      "name": "Chicken Madhooth (Half)",
+      "description": "Chicken Madhooth With Rice\nrestaurant: ZABAQ",
+      "price": "₹400.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf142",
+      "availability": "in stock",
+      "sale_price": "₹380.00"
+    },
+    "rf135": {
+      "id": "24597755253182168",
+      "name": "Peri Peri  Mandi (QUATER)",
+      "description": "Peri Peri  Mandi (QUATER)\nrestaurant: ZABAQ",
+      "price": "₹210.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf135",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf118": {
       "id": "24654696337470459",
       "name": "AFC Shawarama Meal",
@@ -4566,6 +4874,28 @@
       "availability": "in stock",
       "sale_price": "₹120.00"
     },
+    "rf143": {
+      "id": "24672627932362735",
+      "name": "Chicken Madhooth (Full)",
+      "description": "Chicken Madhooth With Rice\nrestaurant: ZABAQ",
+      "price": "₹770.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf143",
+      "availability": "in stock",
+      "sale_price": "₹740.00"
+    },
+    "rf140": {
+      "id": "24734467332812506",
+      "name": "Honey Alfaham Mandi (FULL)",
+      "description": "Honey Alfaham Mandi (FULL)\nrestaurant: ZABAQ",
+      "price": "₹760.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf140",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf120": {
       "id": "24974681355467979",
       "name": "AFC Extra Mayonnaise",
@@ -4574,6 +4904,17 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf120",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf134": {
+      "id": "25185227047732511",
+      "name": "Wheat Poratta",
+      "description": "Wheat Poratta\nrestaurant: ZABAQ",
+      "price": "₹18.00",
+      "pattern": "zabaq,poratta",
+      "unit": null,
+      "retailer_id": "rf134",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4631,6 +4972,39 @@
       "retailer_id": "rf110",
       "availability": "in stock",
       "sale_price": "₹499.00"
+    },
+    "rf141": {
+      "id": "30704360542545841",
+      "name": "Chicken Madhooth (Quater)",
+      "description": "Chicken Madhooth With Rice\nrestaurant: ZABAQ",
+      "price": "₹210.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf141",
+      "availability": "in stock",
+      "sale_price": "₹200.00"
+    },
+    "rf129": {
+      "id": "31225691673688517",
+      "name": "Egg Noodles",
+      "description": "Egg Noodles\nrestaurant: ZABAQ",
+      "price": "₹160.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf129",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf139": {
+      "id": "31874743985458141",
+      "name": "Honey Alfaham Mandi (HALF)",
+      "description": "Honey Alfaham Mandi (HALF)\nrestaurant: ZABAQ",
+      "price": "₹400.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf139",
+      "availability": "in stock",
+      "sale_price": null
     },
     "rf27": {
       "id": "7984474418343474",
@@ -4713,12 +5087,12 @@
       "id": "24188884680717340",
       "name": "Beef Biriyani",
       "description": "Beef Biriyani\nRESTAURANT: BIRIYANI CHEMB",
-      "price": "₹135.00",
+      "price": "₹170.00",
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf29",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹149.00"
     },
     "rf28": {
       "id": "29911075291839338",
@@ -4757,12 +5131,12 @@
       "id": "9722971677825478",
       "name": "Chicken Biriyani",
       "description": "Chicken Biriyani\nRESTAURANT: BIRIYANI CHEMB",
-      "price": "₹135.00",
+      "price": "₹170.00",
       "pattern": "biriyani,lunch",
       "unit": null,
       "retailer_id": "rf30",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹149.00"
     },
     "rf37": {
       "id": "9959274287520803",
@@ -4823,23 +5197,23 @@
       "id": "8282639905193639",
       "name": "Al Fahm Mandhi (FULL)",
       "description": "Mandhi\nrestaurant: ZABAQ",
-      "price": "₹700.00",
+      "price": "₹760.00",
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf47",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹720.00"
     },
     "rf49": {
       "id": "9856957527756180",
       "name": "Al Fahm Mandhi (QUATER)",
       "description": "Mandhi\nrestaurant: ZABAQ",
-      "price": "₹190.00",
+      "price": "₹210.00",
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf49",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹200.00"
     },
     "rf42": {
       "id": "9943391645777344",
@@ -4878,7 +5252,7 @@
       "id": "23935609832717051",
       "name": "Normal Chicken Mandhi (HALF)",
       "description": "Mandhi\nrestaurant: ZABAQ",
-      "price": "₹340.00",
+      "price": "₹360.00",
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf45",
@@ -4900,12 +5274,12 @@
       "id": "24066485789643890",
       "name": "Al Fahm Mandhi (HALF)",
       "description": "Mandhi\nrestaurant: ZABAQ",
-      "price": "₹360.00",
+      "price": "₹410.00",
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf48",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹390.00"
     },
     "rf43": {
       "id": "29769745865973584",
@@ -4922,7 +5296,7 @@
       "id": "29880291424952480",
       "name": "Normal Chicken Mandhi (QUATER)",
       "description": "Mandhi\nrestaurant: ZABAQ",
-      "price": "₹180.00",
+      "price": "₹190.00",
       "pattern": "food,chicken manthi,",
       "unit": null,
       "retailer_id": "rf46",
@@ -4998,7 +5372,7 @@
     "rf50": {
       "id": "23868757866090629",
       "name": "Beef Mandi (FULL)",
-      "description": "Beef mandhi\nrestaurant:ZABAQ",
+      "description": "Beef mandhi Pre Order Only\nrestaurant:ZABAQ",
       "price": "₹820.00",
       "pattern": "mandhi, mandi, beef mandhi",
       "unit": null,
@@ -5010,8 +5384,8 @@
       "id": "24188709637414340",
       "name": "Poratta",
       "description": "Poratta\nrestaurant: ZABAQ",
-      "price": "₹12.00",
-      "pattern": "zabaq,Kuboos",
+      "price": "₹14.00",
+      "pattern": "zabaq,poratta",
       "unit": null,
       "retailer_id": "rf54",
       "availability": "in stock",
@@ -5047,7 +5421,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf68",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf64": {
@@ -5157,7 +5531,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf73",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf74": {
@@ -5168,7 +5542,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf74",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf70": {
@@ -5179,7 +5553,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf70",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf79": {
@@ -5256,7 +5630,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf71",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf84": {
@@ -5296,7 +5670,7 @@
       "id": "24159366330382139",
       "name": "Kaada Biriyani Half",
       "description": "Kaada Biriyani                          restaurant: BIRIYANI SOUCK",
-      "price": "₹140.00",
+      "price": "₹155.00",
       "pattern": "lunch,biriyani",
       "unit": null,
       "retailer_id": "rf89",
@@ -5417,12 +5791,12 @@
       "id": "24671251125812547",
       "name": "Thalassery Dum Biriyani",
       "description": "Thalassery Biriyani restaurant: Thalassery Biriyani",
-      "price": "₹189.00",
+      "price": "₹199.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf99",
       "availability": "in stock",
-      "sale_price": "₹169.00"
+      "sale_price": "₹189.00"
     },
     "rf91": {
       "id": "30304416429202311",
@@ -5697,7 +6071,7 @@
       "name": "ഉള്ളിവട (ulli vada)",
       "description": "ഉള്ളിവട",
       "price": "₹15.00",
-      "pattern": "ulli vada",
+      "pattern": "ulli vada,snacks",
       "unit": null,
       "retailer_id": "sn15",
       "availability": "in stock",
