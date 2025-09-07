@@ -73,67 +73,67 @@ def get_orders_insights():
 
 
 
-@insights_blueprint.route("/orders/insights/saleSummary", methods=["GET"])
-def get_orders_insights():
-    try:
-        # Query params
-        userid = request.args.get("userid", None)
+# @insights_blueprint.route("/orders/insights/saleSummary", methods=["GET"])
+# def get_orders_insights():
+#     try:
+#         # Query params
+#         userid = request.args.get("userid", None)
 
-        # Calculate last 10 days range
-        today = datetime.today().date()
-        start_date = today - timedelta(days=9)  # include today
+#         # Calculate last 10 days range
+#         today = datetime.today().date()
+#         start_date = today - timedelta(days=9)  # include today
 
-        with get_db_connection() as conn:
-            with conn.cursor(cursor_factory=DictCursor) as cur:
-                # Build WHERE clause
-                where_clauses = ["created_at >= %s"]
-                params = [start_date]
+#         with get_db_connection() as conn:
+#             with conn.cursor(cursor_factory=DictCursor) as cur:
+#                 # Build WHERE clause
+#                 where_clauses = ["created_at >= %s"]
+#                 params = [start_date]
 
-                if userid:
-                    where_clauses.append("userid = %s")
-                    params.append(userid)
+#                 if userid:
+#                     where_clauses.append("userid = %s")
+#                     params.append(userid)
 
-                where_clause = " AND ".join(where_clauses)
+#                 where_clause = " AND ".join(where_clauses)
 
-                # Query to fetch count of orders grouped by date
-                query = f"""
-                    SELECT DATE(created_at) AS order_date, COUNT(*) AS total_orders
-                    FROM orders
-                    WHERE {where_clause}
-                    GROUP BY order_date
-                    ORDER BY order_date ASC;
-                """
+#                 # Query to fetch count of orders grouped by date
+#                 query = f"""
+#                     SELECT DATE(created_at) AS order_date, COUNT(*) AS total_orders
+#                     FROM orders
+#                     WHERE {where_clause}
+#                     GROUP BY order_date
+#                     ORDER BY order_date ASC;
+#                 """
 
-                cur.execute(query, params)
-                results = cur.fetchall()
+#                 cur.execute(query, params)
+#                 results = cur.fetchall()
 
-                # Prepare data for last 10 days (ensure zero counts for missing dates)
-                date_counts = {r["order_date"]: r["total_orders"] for r in results}
+#                 # Prepare data for last 10 days (ensure zero counts for missing dates)
+#                 date_counts = {r["order_date"]: r["total_orders"] for r in results}
 
-                categories = []
-                counts = []
+#                 categories = []
+#                 counts = []
 
-                # Detect platform-specific formatting
-                day_format = "%-d %b" if platform.system() != "Windows" else "%#d %b"
+#                 # Detect platform-specific formatting
+#                 day_format = "%-d %b" if platform.system() != "Windows" else "%#d %b"
 
-                for i in range(10):
-                    date = start_date + timedelta(days=i)
-                    formatted_date = date.strftime(day_format)  # Example: 2 Jul
-                    categories.append(formatted_date)
-                    counts.append(date_counts.get(date, 0))
+#                 for i in range(10):
+#                     date = start_date + timedelta(days=i)
+#                     formatted_date = date.strftime(day_format)  # Example: 2 Jul
+#                     categories.append(formatted_date)
+#                     counts.append(date_counts.get(date, 0))
 
-        # ApexCharts compatible response
-        response = {
-            "series": [
-                {
-                    "name": "Orders",
-                    "data": counts
-                }
-            ],
-            "categories": categories
-        }
-        return jsonify(response), 200
+#         # ApexCharts compatible response
+#         response = {
+#             "series": [
+#                 {
+#                     "name": "Orders",
+#                     "data": counts
+#                 }
+#             ],
+#             "categories": categories
+#         }
+#         return jsonify(response), 200
 
-    except Exception as e:
-        print(f"Error: {str(e)}")
-        return jsonify({"status": "error", "message": str(e)}), 400
+#     except Exception as e:
+#         print(f"Error: {str(e)}")
+#         return jsonify({"status": "error", "message": str(e)}), 400
