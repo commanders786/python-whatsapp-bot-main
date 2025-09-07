@@ -6,6 +6,7 @@ from app.utils.sse import register_sse_endpoint
 from .views import webhook_blueprint
 from .crud import crud_blueprint
 from .auth import auth_bp
+from .insights import insights_blueprint
 from flask_cors import CORS
 
 
@@ -24,7 +25,8 @@ def create_app():
     # Import and register blueprints, if any
     app.register_blueprint(webhook_blueprint)
     app.register_blueprint(crud_blueprint)
-    app.register_blueprint(auth_bp) 
+    app.register_blueprint(auth_bp)
+    app.register_blueprint(insights_blueprint) 
     fetch_and_categorize_products()
     filter_main()
     

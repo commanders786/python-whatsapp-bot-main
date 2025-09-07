@@ -5,7 +5,7 @@ import psycopg2
 import queue
 from app.services.crud_services import clear_payment_service, de_map_products_service, get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, insert_vendor_service, map_products_service, update_availability_service, update_order_items_service, update_order_items_service_new, update_price_service, update_product_details_service, update_vendor_price_service, user_exists, vendor_account_updation_service
 from app.services.product_service import fetch_and_categorize_products, send_whatsapp_product_list
-
+from datetime import datetime, timedelta
 
 crud_blueprint = Blueprint("crud", __name__)
 
@@ -89,7 +89,6 @@ def add_order():
     response, status_code = insert_order(data)
     return jsonify(response), status_code
 
-
 @crud_blueprint.route("/orders", methods=["GET"])
 def get_orders():
     try:
@@ -108,7 +107,6 @@ def get_orders():
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 400
     
-
 @crud_blueprint.route("/orders/<int:order_id>", methods=["PUT"])
 def update_order_status(order_id):
     try:

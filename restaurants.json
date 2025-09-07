@@ -17,6 +17,7 @@
   "Zabaq": [
     "rf132",
     "rf133",
+    "rf145",
     "rf131",
     "rf136",
     "rf130",
@@ -81,6 +82,12 @@
     "rf107",
     "rf109",
     "rf110"
+  ],
+  "Thalassery Biriyani": [
+    "rf151",
+    "rf152",
+    "rf150",
+    "rf99"
   ],
   "Sharadha Dosa": [
     "rf127",
@@ -147,8 +154,5 @@
     "rf92",
     "rf93",
     "rf91"
-  ],
-  "Thalassery Biriyani": [
-    "rf99"
   ]
 }

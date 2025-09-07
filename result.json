@@ -48,7 +48,7 @@
       "id": "9543733689047575",
       "name": "തക്കാളി (Tomato) 500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹19.00",
+      "price": "₹20.00",
       "pattern": "thakkali",
       "unit": null,
       "retailer_id": "veg05",
@@ -70,7 +70,7 @@
       "id": "9654115898043657",
       "name": "മുരിങ്ങക്ക 500g (drumstick)",
       "description": "muringakka",
-      "price": "₹35.00",
+      "price": "₹40.00",
       "pattern": "muringa,drumstick",
       "unit": null,
       "retailer_id": "veg30",
@@ -169,7 +169,7 @@
       "id": "9920166378090442",
       "name": "കുമ്പളങ്ങ 1kg (kumbalanga)",
       "description": "kumbalanga, ash gourd",
-      "price": "₹40.00",
+      "price": "₹50.00",
       "pattern": "kumbalanga, eleven,ash gourd",
       "unit": null,
       "retailer_id": "veg31",
@@ -180,12 +180,12 @@
       "id": "9959451564146381",
       "name": "കക്കിരി 500g (cucumber)",
       "description": "cucumber",
-      "price": "₹30.00",
+      "price": "₹25.00",
       "pattern": "kakkiri, cucumber,",
       "unit": null,
       "retailer_id": "veg23",
       "availability": "in stock",
-      "sale_price": "₹25.00"
+      "sale_price": "₹15.00"
     },
     "veg33": {
       "id": "10038674232877250",
@@ -246,7 +246,7 @@
       "id": "24140665278853086",
       "name": "കോളിഫ്ലവർ 1kg",
       "description": "cauliflower",
-      "price": "₹60.00",
+      "price": "₹50.00",
       "pattern": "cauliflower, flower, veg",
       "unit": null,
       "retailer_id": "veg19",
@@ -268,7 +268,7 @@
       "id": "24195410233456060",
       "name": "പയർ 250g (Beans Small)",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹20.00",
+      "price": "₹30.00",
       "pattern": "veg,vegetable,payar",
       "unit": null,
       "retailer_id": "veg36",
@@ -290,7 +290,7 @@
       "id": "24633109229640095",
       "name": "മധുരക്കിഴങ്ങ് 1kg (Sweet Potato)",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹30.00",
+      "price": "₹40.00",
       "pattern": "veg,vegetable",
       "unit": null,
       "retailer_id": "veg34",
@@ -301,7 +301,7 @@
       "id": "24644470158486794",
       "name": "വഴുതന 500g (vazhuthana)",
       "description": "vazhuthana",
-      "price": "₹20.00",
+      "price": "₹30.00",
       "pattern": "vazhuthana, veg",
       "unit": null,
       "retailer_id": "veg25",
@@ -393,14 +393,14 @@
       "pattern": "veg,vegetable,payar",
       "unit": null,
       "retailer_id": "veg37",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "veg27": {
       "id": "33285653517700071",
       "name": "പടവലങ്ങ 500g (padavalam)",
       "description": "padavalanga",
-      "price": "₹25.00",
+      "price": "₹30.00",
       "pattern": "padavalam, veg",
       "unit": null,
       "retailer_id": "veg27",
@@ -831,7 +831,7 @@
       "id": "23960092033641597",
       "name": "മുളക് പൊടി (Red Chilli Powder)",
       "description": "Red Chilli Powder\nNet Quantity : 100g",
-      "price": "₹34.00",
+      "price": "₹26.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "gr162",
@@ -1045,7 +1045,7 @@
       "unit": null,
       "retailer_id": "gr145",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹40.00"
     },
     "gr119": {
       "id": "24109517278739335",
@@ -1106,7 +1106,7 @@
       "id": "24235186532779097",
       "name": "ഉണക്ക മുന്തിരി 50g (dried grape)",
       "description": "raisins (dried grape) \nഉണക്ക മുന്തിരി\nNet Weight : 50g",
-      "price": "₹25.00",
+      "price": "₹30.00",
       "pattern": "Raisins,Dry Fruits",
       "unit": null,
       "retailer_id": "gr174",
@@ -1320,7 +1320,7 @@
       "unit": null,
       "retailer_id": "gr146",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹10.00"
     },
     "gr161": {
       "id": "24611847798422608",
@@ -1441,7 +1441,7 @@
       "unit": null,
       "retailer_id": "gr166",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹35.00"
     },
     "gr165": {
       "id": "24983510707906207",
@@ -1711,12 +1711,12 @@
       "id": "9707724209283250",
       "name": "വെളിച്ചെണ്ണ 500ml (Coconut oil)",
       "description": "multi brand available",
-      "price": "₹195.00",
+      "price": "₹200.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr29",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹200.00"
     },
     "gr23": {
       "id": "9753938961310323",
@@ -1733,12 +1733,12 @@
       "id": "9832591353524058",
       "name": "ചുവന്ന മുളക് 200g",
       "description": "red chilli",
-      "price": "₹30.00",
+      "price": "₹34.00",
       "pattern": "mulak, chilli, red",
       "unit": null,
       "retailer_id": "gr26",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹32.00"
     },
     "gr21": {
       "id": "9832658336772032",
@@ -1782,7 +1782,7 @@
       "unit": null,
       "retailer_id": "gr27",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹28.00"
     },
     "gr212": {
       "id": "23865572006472034",
@@ -1986,12 +1986,12 @@
       "id": "29462530646728840",
       "name": "വെളിച്ചെണ്ണ  1L (Coconut oil)",
       "description": "multi brand available",
-      "price": "₹395.00",
+      "price": "₹400.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr28",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹400.00"
     },
     "gr201": {
       "id": "30553303680982308",
@@ -2151,7 +2151,7 @@
       "id": "23996421606610538",
       "name": "Sunflower Oil 500ml",
       "description": "sunflower oil",
-      "price": "₹75.00",
+      "price": "₹78.00",
       "pattern": "sunflower, oil",
       "unit": null,
       "retailer_id": "gr34",
@@ -2228,12 +2228,12 @@
       "id": "9886218224767079",
       "name": "Maggi Noodils 70g",
       "description": "noodils",
-      "price": "₹12.00",
+      "price": "₹15.00",
       "pattern": "maggi,noodils",
       "unit": null,
       "retailer_id": "gr43",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹15.00"
     },
     "gr42": {
       "id": "9898191613583973",
@@ -2404,7 +2404,7 @@
       "id": "29887124124219345",
       "name": "wayanad Milk",
       "description": "Rs:28",
-      "price": "₹28.00",
+      "price": "₹30.00",
       "pattern": "paal,milk,പാൽ",
       "unit": null,
       "retailer_id": "gr50",
@@ -2514,7 +2514,7 @@
       "id": "24543436648596733",
       "name": "ജമന്തി അരി 1kg (Jamanthi Rice)",
       "description": "Jamanthi Rice",
-      "price": "₹49.00",
+      "price": "₹48.00",
       "pattern": "rice,jamanthi rice",
       "unit": null,
       "retailer_id": "gr63",
@@ -2635,7 +2635,7 @@
       "id": "9682878441818822",
       "name": "ഗ്രീൻ പീസ് 500g (Green Peas)",
       "description": "500g Green Peas",
-      "price": "₹80.00",
+      "price": "₹85.00",
       "pattern": "Green Peas",
       "unit": null,
       "retailer_id": "gr83",
@@ -2846,12 +2846,12 @@
       "id": "8859924704110242",
       "name": "മൈസൂര്‍ പഴം 500g ( MYSORE PAZHAM)",
       "description": "mysore pazham",
-      "price": "₹21.00",
+      "price": "₹22.00",
       "pattern": "pazham,mysore pazham",
       "unit": null,
       "retailer_id": "fr04",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹22.00"
     },
     "fr08": {
       "id": "9530881703698827",
@@ -2905,7 +2905,7 @@
       "pattern": "munthiri",
       "unit": null,
       "retailer_id": "fr05",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "fr09": {
@@ -2972,7 +2972,7 @@
       "unit": null,
       "retailer_id": "fr16",
       "availability": "in stock",
-      "sale_price": "₹60.00"
+      "sale_price": "₹55.00"
     },
     "fr18": {
       "id": "24020908464194575",
@@ -3000,12 +3000,12 @@
       "id": "29413555341593593",
       "name": "കക്കിരിക്ക 500g (Cucumbar)",
       "description": "Cucumber",
-      "price": "₹30.00",
+      "price": "₹20.00",
       "pattern": "kakkiri, cucumbar",
       "unit": null,
       "retailer_id": "fr19",
       "availability": "in stock",
-      "sale_price": "₹25.00"
+      "sale_price": "₹20.00"
     },
     "fr11": {
       "id": "30537408062524729",
@@ -3070,7 +3070,7 @@
       "pattern": "passion fruit,vellinaranga,musolikkayi, sarbathumkaayi",
       "unit": null,
       "retailer_id": "fr21",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": "₹70.00"
     },
     "fr26": {
@@ -3139,7 +3139,7 @@
       "unit": null,
       "retailer_id": "ch04",
       "availability": "in stock",
-      "sale_price": "₹60.00"
+      "sale_price": null
     },
     "ch03": {
       "id": "9662187900529950",
@@ -3226,7 +3226,7 @@
       "pattern": "കാട, KAADA, meet",
       "unit": null,
       "retailer_id": "kd01",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "kd02": {
@@ -3237,7 +3237,7 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "kd02",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "sk8q2yaim7": {
@@ -4632,6 +4632,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf145": {
+      "id": "24053031584395628",
+      "name": "Nool Poratta",
+      "description": "Nool Poratta\nrestaurant: ZABAQ",
+      "price": "₹20.00",
+      "pattern": "zabaq,poratta",
+      "unit": null,
+      "retailer_id": "rf145",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf104": {
       "id": "24068419622791203",
       "name": "CRISPY CHICKEN  Pizza  -M",
@@ -4686,6 +4697,17 @@
       "retailer_id": "rf124",
       "availability": "in stock",
       "sale_price": null
+    },
+    "rf151": {
+      "id": "24113948568308205",
+      "name": "Thalassery Beef Dum Biriyani Half",
+      "description": "Thalassery Biriyani restaurant: Thalassery Biriyani",
+      "price": "₹140.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf151",
+      "availability": "in stock",
+      "sale_price": "₹125.00"
     },
     "rf136": {
       "id": "24133114759632799",
@@ -4764,6 +4786,17 @@
       "availability": "in stock",
       "sale_price": "₹999.00"
     },
+    "rf152": {
+      "id": "24320338074294860",
+      "name": "Thalassery Beef Dum Biriyani",
+      "description": "Thalassery Biriyani restaurant: Thalassery Biriyani",
+      "price": "₹199.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf152",
+      "availability": "in stock",
+      "sale_price": "₹179.00"
+    },
     "rf137": {
       "id": "24323290030657301",
       "name": "Peri Peri  Mandi (FULL)",
@@ -4838,7 +4871,7 @@
       "pattern": "snacks",
       "unit": null,
       "retailer_id": "rf127",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": "₹15.00"
     },
     "rf142": {
@@ -4995,6 +5028,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf150": {
+      "id": "31258847450429541",
+      "name": "Thalassery Dum Biriyani Half",
+      "description": "Thalassery Biriyani restaurant: Thalassery Biriyani",
+      "price": "₹140.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf150",
+      "availability": "in stock",
+      "sale_price": "₹125.00"
+    },
     "rf139": {
       "id": "31874743985458141",
       "name": "Honey Alfaham Mandi (HALF)",
@@ -5124,7 +5168,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf31",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf30": {
@@ -5796,7 +5840,7 @@
       "unit": null,
       "retailer_id": "rf99",
       "availability": "in stock",
-      "sale_price": "₹189.00"
+      "sale_price": "₹179.00"
     },
     "rf91": {
       "id": "30304416429202311",
@@ -5828,7 +5872,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf97",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     }
   },
@@ -5932,6 +5976,17 @@
       "availability": "in stock",
       "sale_price": "₹50.00"
     },
+    "gn12": {
+      "id": "24492927220375111",
+      "name": "Palada payasam 1 Litre",
+      "description": "payasam",
+      "price": "₹250.00",
+      "pattern": "payasam",
+      "unit": null,
+      "retailer_id": "gn12",
+      "availability": "in stock",
+      "sale_price": "₹230.00"
+    },
     "gn10": {
       "id": "24557362487204893",
       "name": "പിസ്ത കുനാഫ 75g (Pistachio Kunafa)",
@@ -5942,6 +5997,17 @@
       "retailer_id": "gn10",
       "availability": "in stock",
       "sale_price": "₹200.00"
+    },
+    "gn11": {
+      "id": "31015158151461748",
+      "name": "Palada payasam Half Litre",
+      "description": "payasam",
+      "price": "₹150.00",
+      "pattern": "payasam",
+      "unit": null,
+      "retailer_id": "gn11",
+      "availability": "in stock",
+      "sale_price": "₹120.00"
     }
   },
   "snacks": {
