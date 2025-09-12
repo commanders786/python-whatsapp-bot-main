@@ -1,6 +1,7 @@
 from datetime import datetime, timezone,time
 import logging
 import threading
+import unicodedata
 from zoneinfo import ZoneInfo
 from flask import current_app, jsonify
 import json
@@ -47,6 +48,8 @@ def generate_response(name,response,session):
     return AI.chatGemini(name,response,session)
 
 
+def remove_emojis(text):
+    return re.sub(r'[^\w\s]', '', text)
 
 
 def process_text_for_whatsapp(text):
@@ -165,6 +168,7 @@ def process_whatsapp_message(body):
                 return
 
             response,items = generate_response(name, message_body,user_sessions[wa_id])
+            print("kkkkkkk",response,items)
             if items and isinstance(items[0], dict):
              user_sessions[wa_id]['items'].extend(items)
             
@@ -199,13 +203,20 @@ def process_whatsapp_message(body):
         
       
         elif message["type"] == "interactive":
+
+            
             
             if message["interactive"]['type']=='list_reply':
                 button_id = message["interactive"]["list_reply"]["id"]
            
             else:
                 button_id = message["interactive"]["button_reply"]["id"]
+
+            button_id_clean = remove_emojis(button_id)
             
+            # Build map: cleaned key -> original key
+            restaurants = load_restaurants()
+            cleaned_map = {remove_emojis(k): k for k in restaurants.keys()}
             
             if button_id in ['food','backfood']:
             
@@ -253,15 +264,23 @@ def process_whatsapp_message(body):
             
             elif button_id == "opt2":
                send_whatsapp_product_list("oth",wa_id)
+               response ="Please Type and search for more 🛍🛒 \n \nദയവായി കൂടുതൽ സാധനങ്ങൾക്കായി ടൈപ്പ് ചെയ്ത് തിരയൂ 🛍🛒 "
+               data = get_text_message_input(wa_id, response)
+               send_message(data)
                return
              
             # elif button_id == "rfs":
             # #    send_whatsapp_product_list("rfs",wa_id)
             #      send_restaurants()
             #      return
-            elif button_id in list(load_restaurants().keys()):
+            
+            elif button_id in list(load_restaurants().keys()) or button_id_clean in cleaned_map:
              
-                send_whatsapp_product_list(button_id,wa_id,button_id)
+                if button_id_clean in cleaned_map:
+                    matched_key = cleaned_map[button_id_clean]
+                    send_whatsapp_product_list(matched_key,wa_id,matched_key)
+                else:
+                    send_whatsapp_product_list(button_id,wa_id,button_id)
                 return
           
             elif button_id=='opt4':
@@ -277,9 +296,16 @@ def process_whatsapp_message(body):
                 send_whatsapp_product_list("bakeries",wa_id)
                 return
             
-            elif button_id=='rest':
+            elif button_id=='rest' or button_id in ['9','18']:
 
-                send_restaurants(wa_id, user_sessions[wa_id]['language'])
+                try:
+                    offset = int(button_id)
+                    if offset == 0:
+                        offset = 0
+                except (ValueError, TypeError):
+                    offset = 0
+
+                send_restaurants(wa_id, user_sessions[wa_id]['language'],offset)
              
                 # send_whatsapp_product_list("food",wa_id)
                 return

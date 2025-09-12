@@ -413,7 +413,7 @@
       "id": "9006605912778960",
       "name": "Sugar (പഞ്ചസാര ) 500g",
       "description": "Quality groceries from trusted outlet",
-      "price": "₹24.00",
+      "price": "₹23.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "gr01",
@@ -1711,12 +1711,12 @@
       "id": "9707724209283250",
       "name": "വെളിച്ചെണ്ണ 500ml (Coconut oil)",
       "description": "multi brand available",
-      "price": "₹200.00",
+      "price": "₹210.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr29",
       "availability": "in stock",
-      "sale_price": "₹200.00"
+      "sale_price": "₹210.00"
     },
     "gr23": {
       "id": "9753938961310323",
@@ -1733,12 +1733,12 @@
       "id": "9832591353524058",
       "name": "ചുവന്ന മുളക് 200g",
       "description": "red chilli",
-      "price": "₹34.00",
+      "price": "₹36.00",
       "pattern": "mulak, chilli, red",
       "unit": null,
       "retailer_id": "gr26",
       "availability": "in stock",
-      "sale_price": "₹32.00"
+      "sale_price": "₹36.00"
     },
     "gr21": {
       "id": "9832658336772032",
@@ -1986,12 +1986,12 @@
       "id": "29462530646728840",
       "name": "വെളിച്ചെണ്ണ  1L (Coconut oil)",
       "description": "multi brand available",
-      "price": "₹400.00",
+      "price": "₹420.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr28",
       "availability": "in stock",
-      "sale_price": "₹400.00"
+      "sale_price": "₹420.00"
     },
     "gr201": {
       "id": "30553303680982308",
@@ -3178,12 +3178,12 @@
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹100.00",
+      "price": "₹105.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
       "availability": "in stock",
-      "sale_price": "₹95.00"
+      "sale_price": "₹105.00"
     },
     "ch15": {
       "id": "9714611515291014",
@@ -4489,6 +4489,17 @@
       "availability": "in stock",
       "sale_price": "₹99.00"
     },
+    "rf169": {
+      "id": "9898984000203078",
+      "name": "Kinder Loua",
+      "description": "Kinder restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf169",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf119": {
       "id": "9926988624072715",
       "name": "AFC Veg Wrap Meal",
@@ -4497,6 +4508,17 @@
       "pattern": "Wrap,shawarama",
       "unit": null,
       "retailer_id": "rf119",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf164": {
+      "id": "9987289138038747",
+      "name": "Aseerathul Pistachio",
+      "description": "Aseerathul Pistachio restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹150.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf164",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4632,6 +4654,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf177": {
+      "id": "24025094210502241",
+      "name": "Nutella Hazlnut Qashtuta",
+      "description": "Nutella Hazlnut restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf177",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf145": {
       "id": "24053031584395628",
       "name": "Nool Poratta",
@@ -4764,6 +4797,39 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf176": {
+      "id": "24187129927655779",
+      "name": "Lotus Ambalyh",
+      "description": "Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf176",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf167": {
+      "id": "24190640370631560",
+      "name": "Nutella Loua",
+      "description": "Nutella restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf167",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf184": {
+      "id": "24195366250158907",
+      "name": "Pistachio Qashtuta",
+      "description": "Pistachio restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf184",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf128": {
       "id": "24197457113245897",
       "name": "Chicken Noodles",
@@ -4841,6 +4907,50 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf171": {
+      "id": "24361065416911009",
+      "name": "Lotus Loua",
+      "description": "Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf171",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf190": {
+      "id": "24368950079443403",
+      "name": "Lotus Halibo",
+      "description": "Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹320.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf190",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf183": {
+      "id": "24378999531783885",
+      "name": "Mango + Banana Qashtuta",
+      "description": "Mango + Banana restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf183",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf157": {
+      "id": "24401121819580990",
+      "name": "Pistachio + Lotus Salankatia",
+      "description": "Pistachio + Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf157",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf115": {
       "id": "24411659795140806",
       "name": "AFC Shawarama",
@@ -4852,6 +4962,28 @@
       "availability": "in stock",
       "sale_price": "₹89.00"
     },
+    "rf186": {
+      "id": "24418980157724203",
+      "name": "Mango Bambooza",
+      "description": "Mango restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf186",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf154": {
+      "id": "24422161734104438",
+      "name": "Nutella Salankatia",
+      "description": "Nutella restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf154",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf18": {
       "id": "24423818480539491",
       "name": "Shawai with Arabian Rice (Half)",
@@ -4860,6 +4992,17 @@
       "pattern": "shawai,rice,food,manthi",
       "unit": null,
       "retailer_id": "rf18",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf178": {
+      "id": "24434939479491083",
+      "name": "Lotus Qashtuta",
+      "description": "Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf178",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4874,6 +5017,61 @@
       "availability": "out of stock",
       "sale_price": "₹15.00"
     },
+    "rf185": {
+      "id": "24458447380490418",
+      "name": "Pistachio Bambooza",
+      "description": "Pistachio restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf185",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf165": {
+      "id": "24463086546684888",
+      "name": "Aseerathul Nutella",
+      "description": "Aseerathul Nutella restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹150.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf165",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf189": {
+      "id": "24470060212653047",
+      "name": "Nutella Halibo",
+      "description": "Nutella restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹320.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf189",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf158": {
+      "id": "24492126227147626",
+      "name": "Dubai Choco Burger",
+      "description": "Dubai Choco Burger restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf158",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf192": {
+      "id": "24540772008883751",
+      "name": "Pistachio Bolglium Chocolate Heba Cake",
+      "description": "Pistachio Bolglium Chocolate restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf192",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf142": {
       "id": "24551002511190655",
       "name": "Chicken Madhooth (Half)",
@@ -4885,6 +5083,50 @@
       "availability": "in stock",
       "sale_price": "₹380.00"
     },
+    "rf153": {
+      "id": "24558829930439409",
+      "name": "Pistachio Salankatia",
+      "description": "Pistachio restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf153",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf159": {
+      "id": "24559411150365203",
+      "name": "Mango Salankatia",
+      "description": "Mango restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf159",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf162": {
+      "id": "24559905547005503",
+      "name": "Nutella Hazelnut Koushri",
+      "description": "Nutella Hazelnut restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf162",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf170": {
+      "id": "24580265581610626",
+      "name": "Nutella Pistachio Loua",
+      "description": "Nutella Pistachio restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf170",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf135": {
       "id": "24597755253182168",
       "name": "Peri Peri  Mandi (QUATER)",
@@ -4893,6 +5135,50 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf135",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf179": {
+      "id": "24613887434967522",
+      "name": "Mango Qashtuta",
+      "description": "Mango restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf179",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf161": {
+      "id": "24640890888900457",
+      "name": "Pistachio Koushri",
+      "description": "Pistachio restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf161",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf166": {
+      "id": "24646823281618135",
+      "name": "Aseerathul Lotus",
+      "description": "Aseerathul Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹150.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf166",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf160": {
+      "id": "24654272117567331",
+      "name": "Lotus Koushri",
+      "description": "Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf160",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4907,6 +5193,17 @@
       "availability": "in stock",
       "sale_price": "₹120.00"
     },
+    "rf191": {
+      "id": "24669449296030440",
+      "name": "Pistachio Halibo",
+      "description": "Pistachio restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹320.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf191",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf143": {
       "id": "24672627932362735",
       "name": "Chicken Madhooth (Full)",
@@ -4918,6 +5215,17 @@
       "availability": "in stock",
       "sale_price": "₹740.00"
     },
+    "rf188": {
+      "id": "24719576757655545",
+      "name": "Nutella Bambooza",
+      "description": "Nutella restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf188",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf140": {
       "id": "24734467332812506",
       "name": "Honey Alfaham Mandi (FULL)",
@@ -4926,6 +5234,50 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf140",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf155": {
+      "id": "24749248014712449",
+      "name": "Lotus Salankatia",
+      "description": "Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf155",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf181": {
+      "id": "24862740316653413",
+      "name": "Mango + Strawberry Qashtuta",
+      "description": "Mango + Strawberry restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf181",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf182": {
+      "id": "24876060512006988",
+      "name": "Anar With Tender Coconut Qashtuta",
+      "description": "Anar With Tender Coconut restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf182",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf187": {
+      "id": "24958578227079414",
+      "name": "Lotus Bambooza",
+      "description": "Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf187",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4940,6 +5292,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf193": {
+      "id": "25026693160256374",
+      "name": "Pistachio Kinder Chocolate Heba Cake",
+      "description": "Pistachio Kinder Chocolate restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf193",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf134": {
       "id": "25185227047732511",
       "name": "Wheat Poratta",
@@ -4948,6 +5311,17 @@
       "pattern": "zabaq,poratta",
       "unit": null,
       "retailer_id": "rf134",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf180": {
+      "id": "25391789207090763",
+      "name": "Banana + Strawberry Qashtuta",
+      "description": "Banana + Strawberry restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf180",
       "availability": "in stock",
       "sale_price": null
     },
@@ -5017,6 +5391,28 @@
       "availability": "in stock",
       "sale_price": "₹200.00"
     },
+    "rf156": {
+      "id": "31085287731114779",
+      "name": "Pistachio + Nutella Salankatia",
+      "description": "Pistachio + Nutella restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf156",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf175": {
+      "id": "31189592320685297",
+      "name": "Mango Ambalyh",
+      "description": "Mango restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf175",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf129": {
       "id": "31225691673688517",
       "name": "Egg Noodles",
@@ -5039,6 +5435,50 @@
       "availability": "in stock",
       "sale_price": "₹125.00"
     },
+    "rf163": {
+      "id": "31312462535035924",
+      "name": "Kabsa",
+      "description": "Kabsa restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹380.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf163",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf173": {
+      "id": "31322746754037860",
+      "name": "Chocolate Ambalyh",
+      "description": "Chocolate restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf173",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf172": {
+      "id": "31507557312193536",
+      "name": "Pistachio Loua",
+      "description": "Pistachio restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf172",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf168": {
+      "id": "31524275720549962",
+      "name": "Pistachio Lotus Loua",
+      "description": "Pistachio Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf168",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf139": {
       "id": "31874743985458141",
       "name": "Honey Alfaham Mandi (HALF)",
@@ -5047,6 +5487,17 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf139",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf174": {
+      "id": "32444749335124590",
+      "name": "Oreo Ambalyh",
+      "description": "Oreo restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf174",
       "availability": "in stock",
       "sale_price": null
     },
@@ -5168,7 +5619,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf31",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf30": {
@@ -5465,7 +5916,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf68",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf64": {
@@ -5575,7 +6026,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf73",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf74": {
@@ -5586,7 +6037,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf74",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf70": {
@@ -5597,7 +6048,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf70",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf79": {
@@ -5674,7 +6125,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf71",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf84": {
@@ -5872,7 +6323,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf97",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     }
   },

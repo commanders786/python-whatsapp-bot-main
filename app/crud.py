@@ -92,19 +92,91 @@ def add_order():
 @crud_blueprint.route("/orders", methods=["GET"])
 def get_orders():
     try:
+        # Get query params
+        page = int(request.args.get("page", 1))
+        per_page = int(request.args.get("per_page", 10))
+        search = request.args.get("search", "")
+        feedback = request.args.get("feedback", "")
+        start_date = request.args.get("start_date", "")
+        end_date = request.args.get("end_date", "")
+        offset = (page - 1) * per_page
+
+        print(f"Received query params: page={page}, per_page={per_page}, search={search}, feedback={feedback}, start_date={start_date}, end_date={end_date}")  # Debug
+
         with get_db_connection() as conn:
             with conn.cursor() as cur:
-                cur.execute("SELECT id, created_at, feedback, receipt, bill_amount, userid,status,is_offline FROM orders order by created_at desc;")
+                # Build the WHERE clause for filtering
+                where_clauses = []
+                params = []
+
+                if search:
+                    where_clauses.append("(id ILIKE %s OR userid ILIKE %s)")
+                    params.extend([f"%{search}%", f"%{search}%"])
+                if feedback:
+                    where_clauses.append("feedback = %s")
+                    params.append(feedback)
+                if start_date:
+                    where_clauses.append("created_at >= %s")
+                    params.append(start_date)
+                if end_date:
+                    # Extend end_date to end of day
+                    try:
+                        end_date_dt = datetime.strptime(end_date, "%Y-%m-%d")
+                        end_date_dt = end_date_dt.replace(hour=23, minute=59, second=59, microsecond=999999)
+                        where_clauses.append("created_at <= %s")
+                        params.append(end_date_dt)
+                    except ValueError:
+                        return jsonify({"status": "error", "message": "Invalid end_date format"}), 400
+
+                where_clause = " AND ".join(where_clauses) if where_clauses else "1=1"
+
+                # Fetch total count with filters
+                cur.execute(f"SELECT COUNT(*) FROM orders WHERE {where_clause};", params)
+                total_count = cur.fetchone()[0]
+
+                # Fetch total sales (sum of bill_amount) with filters
+                cur.execute(f"SELECT COALESCE(SUM(bill_amount), 0) FROM orders WHERE {where_clause};", params)
+                total_sales = float(cur.fetchone()[0])
+
+                # Fetch paginated data with filters
+                query = f"""
+                    SELECT id, created_at, feedback, receipt, bill_amount, userid, status, is_offline
+                    FROM orders
+                    WHERE {where_clause}
+                    ORDER BY created_at DESC
+                    LIMIT %s OFFSET %s;
+                """
+                print(f"Executing query: {query} with params: {params + [per_page, offset]}")  # Debug
+                params.extend([per_page, offset])
+                cur.execute(query, params)
                 orders = cur.fetchall()
+
                 result = [
                     {
-                        "id": o[0], "created_at": o[1], "feedback": o[2],
-                        "receipt": o[3], "bill_amount": o[4], "user": o[5],"status":o[6],"is_offline":o[7]
+                        "id": o[0],
+                        "created_at": o[1].isoformat(),
+                        "feedback": o[2],
+                        "receipt": o[3],
+                        "bill_amount": float(o[4]),
+                        "user": o[5],
+                        "status": o[6],
+                        "is_offline": o[7]
                     }
                     for o in orders
                 ]
-        return jsonify(result), 200
+
+        response = {
+            "page": page,
+            "per_page": per_page,
+            "total": total_count,
+            "total_sales": total_sales,
+            "total_pages": (total_count + per_page - 1) // per_page,
+            "data": result
+        }
+        return jsonify(response), 200
+
     except Exception as e:
+        print(f"Error: {str(e)}")  # Debug
         return jsonify({"status": "error", "message": str(e)}), 400
     
 @crud_blueprint.route("/orders/<int:order_id>", methods=["PUT"])

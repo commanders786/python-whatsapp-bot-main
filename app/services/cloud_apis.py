@@ -310,6 +310,7 @@ def request_location_message(recipient_phone_number):
 def send_po(recipient_phone_number,response,language):
     """Sends an interactive button message."""
     url = base_url
+    alert="Please click on proceed to confirm " if language=='en' else 'ഓർഡർ സ്ഥിരീകരിക്കാൻ ദയവായി തുടരുക '
     payload = {
         "messaging_product": "whatsapp",
         "recipient_type": "individual",
@@ -318,7 +319,7 @@ def send_po(recipient_phone_number,response,language):
         "interactive": {
             "type": "button",
             "body": {
-                "text": f'''{response} \n '''
+                "text": f'''{response} \n \n {alert} '''
             },
             "action": {
                 "buttons": [
@@ -503,20 +504,97 @@ def send_options(recipient_phone_number,language):
             print(f"Response body: {response.text}")
 
 
-def send_restaurants(recipient_phone_number, language):
+# def send_restaurants(recipient_phone_number, language):
+#     restaurant_keys = sorted(list(load_restaurants().keys()))
+#     # Get restaurant names
+#     url = base_url
+
+#     # Dynamically generate rows for each restaurant
+#     restaurant_rows = [
+#         {
+#             "id": restaurant_name,           # Unique ID
+#             "title": restaurant_name,          # Restaurant name as title
+#             "description": f"Tastes of {restaurant_name}"
+#         }
+#         for i, restaurant_name in enumerate(restaurant_keys)
+#     ]
+
+#     payload = {
+#         "messaging_product": "whatsapp",
+#         "recipient_type": "individual",
+#         "to": recipient_phone_number,
+#         "type": "interactive",
+#         "interactive": {
+#             "type": "list",
+#             "header": {
+#                 "type": "text",
+#                 "text": messages.optmsgs["header"][language]
+#             },
+#             "body": {
+#                 "text": messages.optmsgs["food_body"][language]
+#             },
+#             "footer": {
+#                 "text": messages.optmsgs["footer"][language]
+#             },
+#             "action": {
+#                 "button": messages.optmsgs["button"][language],
+#                 "sections": [
+#                     {
+#                         "title": "Restaurants",
+#                         "rows": restaurant_rows
+#                     }
+#                 ]
+#             }
+#         }
+#     }
+
+#     try:
+#         response = requests.post(url, headers=headers, json=payload)
+#         response.raise_for_status()
+#         print("Interactive button message sent successfully!")
+#         print(response.json())
+#     except requests.exceptions.RequestException as e:
+#         print(f"Error sending interactive button message: {e}")
+#         if response is not None:
+#             print(f"Response status code: {response.status_code}")
+#             print(f"Response body: {response.text}")
+def send_restaurants(recipient_phone_number, language, offset=0):
     restaurant_keys = sorted(list(load_restaurants().keys()))
-    # Get restaurant names
     url = base_url
 
-    # Dynamically generate rows for each restaurant
+    # Take 9 restaurants starting from offset
+    restaurants_slice = restaurant_keys[offset:offset + 9]
+
+    # Build restaurant rows
     restaurant_rows = [
         {
-            "id": restaurant_name,           # Unique ID
-            "title": restaurant_name,          # Restaurant name as title
+            "id": restaurant_name,
+            "title": restaurant_name,
             "description": f"Tastes of {restaurant_name}"
         }
-        for i, restaurant_name in enumerate(restaurant_keys)
+        for restaurant_name in restaurants_slice
     ]
+
+    # Sections list (always one for Restaurants)
+    sections = [
+        {
+            "title": messages.optmsgs["rest_title"][language],
+            "rows": restaurant_rows
+        }
+    ]
+
+    # Add "Next" section if more restaurants exist
+    if offset + 9 < len(restaurant_keys):
+        sections.append({
+            "title": "More Options",
+            "rows": [
+                {
+                    "id": offset+9,  # unique ID with new offset
+                    "title": "Next ➡️",
+                    "description": messages.optmsgs["see_more_rest"][language]
+                }
+            ]
+        })
 
     payload = {
         "messaging_product": "whatsapp",
@@ -536,13 +614,8 @@ def send_restaurants(recipient_phone_number, language):
                 "text": messages.optmsgs["footer"][language]
             },
             "action": {
-                "button": messages.optmsgs["button"][language],
-                "sections": [
-                    {
-                        "title": "Restaurants",
-                        "rows": restaurant_rows
-                    }
-                ]
+                "button": messages.optmsgs["button_rest"][language],
+                "sections": sections
             }
         }
     }
@@ -557,7 +630,6 @@ def send_restaurants(recipient_phone_number, language):
         if response is not None:
             print(f"Response status code: {response.status_code}")
             print(f"Response body: {response.text}")
-
 
 
 
