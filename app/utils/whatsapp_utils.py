@@ -70,7 +70,19 @@ def process_text_for_whatsapp(text):
     return whatsapp_style_text
 
 def call_last_login_update(user_id):
-    threading.Thread(target=update_user_lastlogin, args=(user_id,)).start()
+    # threading.Thread(target=update_user_lastlogin, args=(user_id,)).start()
+    start = datetime.now()
+    try:
+        logging.info(f"[last_login] Updating last login for user_id={user_id}")
+        
+        # 👇 your actual DB update logic here
+        update_user_lastlogin(user_id)
+        
+        duration = (datetime.now() - start).total_seconds()
+        logging.info(f"[last_login] Done for user_id={user_id} in {duration:.3f}s")
+    except Exception as e:
+        duration = datetime.now() - start
+        logging.exception(f"[last_login] Failed for user_id={user_id} after {duration:.3f}s")
 
 def process_whatsapp_message(body):
     wa_id = body["entry"][0]["changes"][0]["value"]["contacts"][0]["wa_id"]

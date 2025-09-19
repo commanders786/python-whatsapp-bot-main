@@ -1685,6 +1685,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr246": {
+      "id": "9325382307586978",
+      "name": "Chaat Masala Bakers 100g",
+      "description": "Chaat Masala Bakers",
+      "price": "₹80.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr246",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr203": {
       "id": "9398826066887050",
       "name": "Toothbrush Ultra Soft",
@@ -1695,6 +1706,17 @@
       "retailer_id": "gr203",
       "availability": "in stock",
       "sale_price": "₹80.00"
+    },
+    "gr254": {
+      "id": "9424560387669032",
+      "name": "Crisp & Shine  200g",
+      "description": "Ujala Crisp & Shine",
+      "price": "₹70.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr254",
+      "availability": "in stock",
+      "sale_price": null
     },
     "gr20": {
       "id": "9611088565655864",
@@ -1808,7 +1830,7 @@
     },
     "gr210": {
       "id": "23986904377646506",
-      "name": "Vim 120ml",
+      "name": "Vim 115ml",
       "description": "Vim wash",
       "price": "₹20.00",
       "pattern": "washing",
@@ -1861,6 +1883,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr243": {
+      "id": "24134540999558564",
+      "name": "Green Chilly Sauce 700g",
+      "description": "Mother Birds Green Chilli Sauce",
+      "price": "₹70.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr243",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr253": {
+      "id": "24151892577826664",
+      "name": "Vim 750ml",
+      "description": "Vim",
+      "price": "₹199.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr253",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr226": {
       "id": "24153709094284330",
       "name": "Transparent Tape",
@@ -1905,6 +1949,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr250": {
+      "id": "24242117898804121",
+      "name": "Colin Cleaner 25ml",
+      "description": "Colin Glass Multisurface Cleaner",
+      "price": "₹75.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr250",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr235": {
+      "id": "24249472534737787",
+      "name": "Exo Steel Scrubber",
+      "description": "Exo Steel Scrubber 1",
+      "price": "₹15.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr235",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr208": {
       "id": "24265852003048389",
       "name": "Multi Purpose Cleaner 5.kg",
@@ -1924,6 +1990,72 @@
       "pattern": "Soap",
       "unit": null,
       "retailer_id": "gr215",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr257": {
+      "id": "24386145591045565",
+      "name": "Crisp & Shine  500g",
+      "description": "Ujala Crisp & Shine",
+      "price": "₹150.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr257",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr245": {
+      "id": "24389431727404243",
+      "name": "Mandi Masala 5 Star 50g",
+      "description": "Mandi Masala 5 Star",
+      "price": "₹50.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr245",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr251": {
+      "id": "24445344668459749",
+      "name": "Colin Cleaner 500ml",
+      "description": "Colin Glass Multisurface Cleaner",
+      "price": "₹115.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr251",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr238": {
+      "id": "24474867622156138",
+      "name": "Happy Dark Sauce 90g",
+      "description": "Happy Dark Sauce",
+      "price": "₹20.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr238",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr242": {
+      "id": "24539129002412952",
+      "name": "Red Chilli Sauce 650g",
+      "description": "Mother Birds Red Chilli Sauce",
+      "price": "₹73.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr242",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr256": {
+      "id": "24557360697292226",
+      "name": "Ujala 75ml",
+      "description": "Ujala",
+      "price": "₹37.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr256",
       "availability": "in stock",
       "sale_price": null
     },
@@ -1949,6 +2081,72 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr232": {
+      "id": "24604895989167251",
+      "name": "Vim 250ml",
+      "description": "Vim",
+      "price": "₹58.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr232",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr236": {
+      "id": "24742020498822424",
+      "name": "Kissan Tomato Ketchup 415g",
+      "description": "Kissan Fresh Tomato Ketchup",
+      "price": "₹50.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr236",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr249": {
+      "id": "24752083541091327",
+      "name": "Broast Powder 5 Star 100g",
+      "description": "Broast Powder 5 Star",
+      "price": "₹46.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr249",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr239": {
+      "id": "24762645610057871",
+      "name": "Happy Tomato Sauce",
+      "description": "Happy Tomato Sauces",
+      "price": "₹20.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr239",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr252": {
+      "id": "24886583314298463",
+      "name": "Ginger Garlic Paste 200g",
+      "description": "Ginger Garlic Paste",
+      "price": "₹70.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr252",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr233": {
+      "id": "24920586640878599",
+      "name": "Parachute Oil 175ml",
+      "description": "Parachute Coconut Oil",
+      "price": "₹89.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr233",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr205": {
       "id": "24987690224198603",
       "name": "കഞ്ഞി അരി 500g (Kanji Rice)",
@@ -1971,6 +2169,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr248": {
+      "id": "25079237001662331",
+      "name": "Katta Kayam 120g",
+      "description": "Katta Kayam",
+      "price": "₹195.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr248",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr213": {
       "id": "25135767682692025",
       "name": "Santoor (Soap)",
@@ -1979,6 +2188,39 @@
       "pattern": "Soap",
       "unit": null,
       "retailer_id": "gr213",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr237": {
+      "id": "25354714844131526",
+      "name": "Mulla Dish Wash 500ml",
+      "description": "Mulla Dish Wash",
+      "price": "₹130.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr237",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr255": {
+      "id": "25545140368407046",
+      "name": "Ujala 250ml",
+      "description": "Ujala",
+      "price": "₹85.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr255",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr240": {
+      "id": "25603487979241984",
+      "name": "Saico Synthetic Vinegar 1ltr",
+      "description": "Saico Synthetic Vinegar",
+      "price": "₹45.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr240",
       "availability": "in stock",
       "sale_price": null
     },
@@ -2048,6 +2290,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr247": {
+      "id": "31174952878819001",
+      "name": "Kayam Powder 60g",
+      "description": "Kayam Powder",
+      "price": "₹102.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr247",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr241": {
+      "id": "31219142297729163",
+      "name": "Saico Synthetic Vinegar 500ml",
+      "description": "Saico Synthetic Vinegar",
+      "price": "₹30.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr241",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr207": {
       "id": "31476329988633069",
       "name": "Ragi Rusi Semiyam 1kg",
@@ -2081,11 +2345,33 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "gr234": {
+      "id": "31762046963393915",
+      "name": "Parachute Oil 38ml",
+      "description": "Parachute Coconut Oil",
+      "price": "₹20.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr234",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "gr244": {
+      "id": "32363857349879772",
+      "name": "Kabsa Masala 5 Star 50g",
+      "description": "Kabsa Masala 5 Star",
+      "price": "₹45.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "gr244",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "gr37": {
       "id": "8463239320467865",
       "name": "Pampers (SMALL)",
       "description": "Picture only for reference",
-      "price": "₹22.00",
+      "price": "₹23.00",
       "pattern": "pampers,baby",
       "unit": null,
       "retailer_id": "gr37",
@@ -2107,7 +2393,7 @@
       "id": "9785575811524234",
       "name": "Pampers (MEDIUM)",
       "description": "Picture only for reference",
-      "price": "₹28.00",
+      "price": "₹29.00",
       "pattern": "pampers,baby",
       "unit": null,
       "retailer_id": "gr38",
@@ -2173,7 +2459,7 @@
       "id": "24451146437809008",
       "name": "Pampers (LARGE)",
       "description": "Picture only for reference",
-      "price": "₹35.00",
+      "price": "₹36.00",
       "pattern": "pampers,baby",
       "unit": null,
       "retailer_id": "gr39",
@@ -2250,7 +2536,7 @@
       "id": "9903230056464185",
       "name": "Pampers (X LARGE)",
       "description": "Picture only for reference",
-      "price": "₹38.00",
+      "price": "₹39.00",
       "pattern": "pampers,baby",
       "unit": null,
       "retailer_id": "gr40",
@@ -2972,13 +3258,13 @@
       "unit": null,
       "retailer_id": "fr16",
       "availability": "in stock",
-      "sale_price": "₹55.00"
+      "sale_price": "₹45.00"
     },
     "fr18": {
       "id": "24020908464194575",
       "name": "കാരാച്ചി തണ്ണിമത്തൻ 2kg (Karachi Watermelon)",
       "description": "karaachi watermelon",
-      "price": "₹80.00",
+      "price": "₹70.00",
       "pattern": "vathakka, watermelon",
       "unit": null,
       "retailer_id": "fr18",
@@ -3178,7 +3464,7 @@
       "id": "30322533087346221",
       "name": "കോഴി (Chicken) 500g",
       "description": "Normal chicken",
-      "price": "₹105.00",
+      "price": "₹110.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
@@ -3743,12 +4029,12 @@
       "id": "10022129114531079",
       "name": "പൂള കൊള്ളി 500gm (Kappa Kolly)",
       "description": "Kappa Kolly From Nice Bakery",
-      "price": "₹110.00",
+      "price": "₹150.00",
       "pattern": "kappa chips,chips,bakery,kappa kolly",
       "unit": null,
       "retailer_id": "bk23",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹140.00"
     },
     "bk24": {
       "id": "24136098236029740",
@@ -3996,7 +4282,7 @@
       "id": "24576281425305862",
       "name": "കപ്പ കൊള്ളി 500g (Kappa Kolli)",
       "description": "500g Kappa Kolli",
-      "price": "₹110.00",
+      "price": "₹150.00",
       "pattern": "bakery,nurukk",
       "unit": null,
       "retailer_id": "bk47",
@@ -4676,6 +4962,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf199": {
+      "id": "24068024516233801",
+      "name": "Cheese Bomb",
+      "description": "Cheese Bomb restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹290.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf199",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf104": {
       "id": "24068419622791203",
       "name": "CRISPY CHICKEN  Pizza  -M",
@@ -4838,6 +5135,17 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf128",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf197": {
+      "id": "24277672378521614",
+      "name": "Pistachio + Nutella",
+      "description": "Pistachio + Nutella restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf197",
       "availability": "in stock",
       "sale_price": null
     },
@@ -5014,7 +5322,7 @@
       "pattern": "snacks",
       "unit": null,
       "retailer_id": "rf127",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": "₹15.00"
     },
     "rf185": {
@@ -5036,6 +5344,17 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf165",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf196": {
+      "id": "24468015212867900",
+      "name": "Lotus",
+      "description": "Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf196",
       "availability": "in stock",
       "sale_price": null
     },
@@ -5314,6 +5633,28 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf195": {
+      "id": "25253702510904712",
+      "name": "Nutella",
+      "description": "Nutella restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf195",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf198": {
+      "id": "25358130423773968",
+      "name": "Pistachio + Lotus",
+      "description": "Pistachio + Lotus restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf198",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf180": {
       "id": "25391789207090763",
       "name": "Banana + Strawberry Qashtuta",
@@ -5479,6 +5820,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf194": {
+      "id": "31565101556469274",
+      "name": "Pistachio",
+      "description": "Pistachio restaurant: Sign Laban🍮🍨🥧",
+      "price": "₹350.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf194",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf139": {
       "id": "31874743985458141",
       "name": "Honey Alfaham Mandi (HALF)",
@@ -5567,6 +5919,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf208": {
+      "id": "23891474833864651",
+      "name": "Alfaham Mandi (Full)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹780.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf208",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf20": {
       "id": "24154751550783286",
       "name": "Felafel Roll",
@@ -5589,6 +5952,138 @@
       "availability": "in stock",
       "sale_price": "₹149.00"
     },
+    "rf212": {
+      "id": "24364477909889355",
+      "name": "Honey Chilli Mandi (Quater)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹230.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf212",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf211": {
+      "id": "24526707603644802",
+      "name": "Veg Fried Rice",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹180.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf211",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf210": {
+      "id": "24578836111758280",
+      "name": "Egg Fried Rice",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹190.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf210",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf209": {
+      "id": "24592081280401120",
+      "name": "Chicken Fried Rice",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹200.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf209",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf206": {
+      "id": "24648593688086223",
+      "name": "Alfaham Mandi (Quater)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹220.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf206",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf203": {
+      "id": "24661745796824840",
+      "name": "Peri Peri Mandi (Quater)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹230.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf203",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf205": {
+      "id": "24762955079996794",
+      "name": "Peri Peri Mandi (Full)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹840.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf205",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf214": {
+      "id": "24838116905805842",
+      "name": "Honey Chilli Mandi (Full)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹840.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf214",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf213": {
+      "id": "24860902110201260",
+      "name": "Honey Chilli Mandi (Half)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹440.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf213",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf200": {
+      "id": "24948552318096407",
+      "name": "Peri Peri Alfaham (Quater)",
+      "description": "Peri Peri Chicken Only\nrestaurant: Foodkeys 🍽🥘",
+      "price": "₹180.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf200",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf207": {
+      "id": "25125864203673067",
+      "name": "Alfaham Mandi (Half)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹410.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf207",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf204": {
+      "id": "25549174324682936",
+      "name": "Peri Peri Mandi (Half)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹440.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf204",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf28": {
       "id": "29911075291839338",
       "name": "Shawrma Roll",
@@ -5608,6 +6103,28 @@
       "pattern": "felafel, food, sandwich",
       "unit": null,
       "retailer_id": "rf22",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf202": {
+      "id": "31473816345596466",
+      "name": "Peri Peri Alfaham (Full)",
+      "description": "Peri Peri Chicken Only\nrestaurant: Foodkeys 🍽🥘",
+      "price": "₹600.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf202",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf201": {
+      "id": "32575745885357722",
+      "name": "Peri Peri Alfaham (Half)",
+      "description": "Peri Peri Chicken Only\nrestaurant: Foodkeys 🍽🥘",
+      "price": "₹320.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf201",
       "availability": "in stock",
       "sale_price": null
     },
@@ -5632,6 +6149,17 @@
       "retailer_id": "rf30",
       "availability": "in stock",
       "sale_price": "₹149.00"
+    },
+    "rf34": {
+      "id": "9883732651681494",
+      "name": "Masala Shawai (Full)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹500.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf34",
+      "availability": "in stock",
+      "sale_price": null
     },
     "rf37": {
       "id": "9959274287520803",
@@ -5666,6 +6194,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf33": {
+      "id": "24310130535259494",
+      "name": "Masala Shawai (Half)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹270.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf33",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf35": {
       "id": "24426844400251092",
       "name": "Normal Alfahm (FULL)",
@@ -5674,6 +6213,17 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf35",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf32": {
+      "id": "29773562008955219",
+      "name": "Masala Shawai (Quater)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹150.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf32",
       "availability": "in stock",
       "sale_price": null
     },
