@@ -140,7 +140,7 @@ def get_orders():
 
                 # Fetch paginated data with filters
                 query = f"""
-                    SELECT id, created_at, feedback, receipt, bill_amount, userid, status, is_offline
+                    SELECT id, created_at, feedback, receipt, COALESCE(bill_amount, 0), userid, status, is_offline
                     FROM orders
                     WHERE {where_clause}
                     ORDER BY created_at DESC

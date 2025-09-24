@@ -48,7 +48,7 @@
       "id": "9543733689047575",
       "name": "തക്കാളി (Tomato) 500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹20.00",
+      "price": "₹17.00",
       "pattern": "thakkali",
       "unit": null,
       "retailer_id": "veg05",
@@ -64,13 +64,13 @@
       "unit": null,
       "retailer_id": "veg01",
       "availability": "in stock",
-      "sale_price": "₹45.00"
+      "sale_price": "₹40.00"
     },
     "veg30": {
       "id": "9654115898043657",
       "name": "മുരിങ്ങക്ക 500g (drumstick)",
       "description": "muringakka",
-      "price": "₹40.00",
+      "price": "₹50.00",
       "pattern": "muringa,drumstick",
       "unit": null,
       "retailer_id": "veg30",
@@ -169,7 +169,7 @@
       "id": "9920166378090442",
       "name": "കുമ്പളങ്ങ 1kg (kumbalanga)",
       "description": "kumbalanga, ash gourd",
-      "price": "₹50.00",
+      "price": "₹30.00",
       "pattern": "kumbalanga, eleven,ash gourd",
       "unit": null,
       "retailer_id": "veg31",
@@ -180,7 +180,7 @@
       "id": "9959451564146381",
       "name": "കക്കിരി 500g (cucumber)",
       "description": "cucumber",
-      "price": "₹25.00",
+      "price": "₹20.00",
       "pattern": "kakkiri, cucumber,",
       "unit": null,
       "retailer_id": "veg23",
@@ -202,7 +202,7 @@
       "id": "23916657167965615",
       "name": "കയ്പക്ക 500g (Kayppa)",
       "description": "kayppa",
-      "price": "₹40.00",
+      "price": "₹30.00",
       "pattern": "kayppa, veg",
       "unit": null,
       "retailer_id": "veg32",
@@ -224,7 +224,7 @@
       "id": "23998523573073859",
       "name": "വെള്ളരിക്ക 1kg (VELLARIKKA)",
       "description": "vellari",
-      "price": "₹50.00",
+      "price": "₹40.00",
       "pattern": "vellari, vellarikka,vegitable",
       "unit": null,
       "retailer_id": "veg16",
@@ -257,7 +257,7 @@
       "id": "24161141980136598",
       "name": "മത്തൻ 1kg",
       "description": "mathan",
-      "price": "₹25.00",
+      "price": "₹35.00",
       "pattern": "mathan, veg",
       "unit": null,
       "retailer_id": "veg22",
@@ -273,7 +273,7 @@
       "unit": null,
       "retailer_id": "veg36",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹15.00"
     },
     "veg09": {
       "id": "24334515559483451",
@@ -339,13 +339,13 @@
       "unit": null,
       "retailer_id": "veg10",
       "availability": "in stock",
-      "sale_price": "₹14.00"
+      "sale_price": "₹11.00"
     },
     "veg21": {
       "id": "29466562389657054",
       "name": "ചേന 500g",
       "description": "cheena",
-      "price": "₹40.00",
+      "price": "₹30.00",
       "pattern": "cheena,veg",
       "unit": null,
       "retailer_id": "veg21",
@@ -383,7 +383,7 @@
       "unit": null,
       "retailer_id": "veg35",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹15.00"
     },
     "veg37": {
       "id": "30884165871198151",
@@ -400,7 +400,7 @@
       "id": "33285653517700071",
       "name": "പടവലങ്ങ 500g (padavalam)",
       "description": "padavalanga",
-      "price": "₹30.00",
+      "price": "₹25.00",
       "pattern": "padavalam, veg",
       "unit": null,
       "retailer_id": "veg27",
@@ -3258,7 +3258,7 @@
       "unit": null,
       "retailer_id": "fr16",
       "availability": "in stock",
-      "sale_price": "₹45.00"
+      "sale_price": "₹55.00"
     },
     "fr18": {
       "id": "24020908464194575",
@@ -3407,12 +3407,12 @@
       "id": "24383293601300297",
       "name": "നാരങ്ങ 500g (Orange)",
       "description": "Orange",
-      "price": "₹90.00",
+      "price": "₹70.00",
       "pattern": "fruits",
       "unit": null,
       "retailer_id": "fr30",
       "availability": "in stock",
-      "sale_price": "₹70.00"
+      "sale_price": "₹50.00"
     }
   },
   "meat": {
@@ -3420,12 +3420,12 @@
       "id": "9589655301147089",
       "name": "Chicken Parts 500g (കോഴി പാർട്സ് )",
       "description": "parts seperated",
-      "price": "₹60.00",
+      "price": "₹70.00",
       "pattern": "കോഴി പാർട്സ് ,chicken parts",
       "unit": null,
       "retailer_id": "ch04",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹60.00"
     },
     "ch03": {
       "id": "9662187900529950",
@@ -3469,7 +3469,7 @@
       "unit": null,
       "retailer_id": "ch09",
       "availability": "in stock",
-      "sale_price": "₹105.00"
+      "sale_price": "₹90.00"
     },
     "ch15": {
       "id": "9714611515291014",
@@ -3875,7 +3875,7 @@
       "id": "29898927606417500",
       "name": "മധുര വര്‍ത്തായി 500gm (Sweet Chips)",
       "description": "Sweet Chips From Nice Bakery",
-      "price": "₹180.00",
+      "price": "₹200.00",
       "pattern": "banana chips,chips,bakery,sweet chips",
       "unit": null,
       "retailer_id": "bk021",
@@ -6466,7 +6466,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf68",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     },
     "rf64": {
@@ -6977,6 +6977,17 @@
       "availability": "in stock",
       "sale_price": "₹50.00"
     },
+    "gn14": {
+      "id": "24209527102083797",
+      "name": "Detergent Liquid 5ltr",
+      "description": "Lailac Detergent Liquid 5ltr",
+      "price": "₹299.00",
+      "pattern": "Home Care",
+      "unit": null,
+      "retailer_id": "gn14",
+      "availability": "in stock",
+      "sale_price": "₹270.00"
+    },
     "gn12": {
       "id": "24492927220375111",
       "name": "Palada payasam 1 Litre",
@@ -6999,6 +7010,17 @@
       "availability": "in stock",
       "sale_price": "₹200.00"
     },
+    "gn16": {
+      "id": "24610457648615184",
+      "name": "Hand Wash Liquid 1ltr",
+      "description": "Lailac Hand Wash Liquid 1ltr",
+      "price": "₹119.00",
+      "pattern": "Home Care",
+      "unit": null,
+      "retailer_id": "gn16",
+      "availability": "in stock",
+      "sale_price": "₹110.00"
+    },
     "gn11": {
       "id": "31015158151461748",
       "name": "Palada payasam Half Litre",
@@ -7009,6 +7031,39 @@
       "retailer_id": "gn11",
       "availability": "in stock",
       "sale_price": "₹120.00"
+    },
+    "gn17": {
+      "id": "31240013445644574",
+      "name": "Toilet Cleaning Liquid 1ltr",
+      "description": "Lailac Toilet Cleaning Liquid 1ltr",
+      "price": "₹119.00",
+      "pattern": "Home Care",
+      "unit": null,
+      "retailer_id": "gn17",
+      "availability": "in stock",
+      "sale_price": "₹110.00"
+    },
+    "gn13": {
+      "id": "31312482351729124",
+      "name": "Detergent Liquid 5ltr",
+      "description": "Lailac Detergent Liquid 5ltr",
+      "price": "₹549.00",
+      "pattern": "Home Care",
+      "unit": null,
+      "retailer_id": "gn13",
+      "availability": "in stock",
+      "sale_price": "₹330.00"
+    },
+    "gn15": {
+      "id": "31348209441493407",
+      "name": "Dish Wash Liquid 1ltr",
+      "description": "Lailac Dish Wash Liquid 1ltr",
+      "price": "₹119.00",
+      "pattern": "Home Care",
+      "unit": null,
+      "retailer_id": "gn15",
+      "availability": "in stock",
+      "sale_price": "₹110.00"
     }
   },
   "snacks": {
