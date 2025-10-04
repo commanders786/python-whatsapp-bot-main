@@ -248,6 +248,7 @@ def send_whatsapp_product_list(category: str, to_number: str,restaurant=None):
     elif restaurant:
         product_items=load_restaurants(restaurant)
         product_items = [{"product_retailer_id": rid} for rid in product_items]
+        print(7777777)
         senditems(to_number,product_items)
         
     else:

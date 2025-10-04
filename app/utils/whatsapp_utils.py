@@ -16,7 +16,7 @@ from app.services.audio_service import transcribe_audio_from_facebook
 from app.services.crud_services import insert_order, insert_user, update_order_bill_amount,update_order_items_service, update_user_lastlogin, user_exists
 from app.services.product_service import load_restaurants, send_whatsapp_product_list
 from app.utils.messages import get_text_message_input, po_template
-from app.utils.validations import is_within_radius
+from app.utils.validations import fuzzy_best_match, is_within_radius
 from ..sessions import user_sessions
 
 from app.services.cloud_apis import get_language, get_notes, get_notes_pharmacist, request_location_message, send_bsc, send_food_category, send_gbc, send_message, send_options, send_po, send_restaurants, send_template_message, send_vfc, send_whatsapp_image
@@ -154,7 +154,8 @@ def process_whatsapp_message(body):
         if message["type"] == "text":
             
             message_body = message["text"]["body"]
-
+            rest_name_check=fuzzy_best_match(message_body.lower() ,list(load_restaurants().keys()),score_cutoff=90)
+            
 
 
             if  user_sessions[wa_id]['level']=="M2":
@@ -178,6 +179,8 @@ def process_whatsapp_message(body):
                 send_message(data)
                 send_options(wa_id,user_sessions[wa_id]['language'])
                 return
+            
+            
 
             response,items = generate_response(name, message_body,user_sessions[wa_id])
             print("kkkkkkk",response,items)
@@ -208,11 +211,27 @@ def process_whatsapp_message(body):
             
                 return None
             
+            # elif  rest_name_check:
+            #     print("matched",rest_name_check)
+            #     matched_restaurant = rest_name_check
+            #     send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
+            #     return
+            
+
+            elif  rest_name_check:
+                print("matched",rest_name_check)
+                matched_restaurant = rest_name_check
+                send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
+                return
+
+
             elif 'searchresult'==response:
                
                 send_whatsapp_product_list(list(items),wa_id)
                 return
-        
+            
+            
+            
       
         elif message["type"] == "interactive":
 

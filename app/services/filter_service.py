@@ -1,6 +1,7 @@
 import os
 import pickle
 import json
+import threading
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -11,6 +12,12 @@ from app.utils.messages import get_text_message_input
 PICKLE_FILE = "product_embeddings.pkl"
 JSON_FILE = "result.json"
 ALWAYS_CREATE=True
+
+# Global variables for lazy loading
+model = None
+products = None
+product_embeddings = None
+_model_lock = threading.Lock()
 
 # ✅ Load and flatten product data from result.json
 def load_products_from_json(json_path):
@@ -24,9 +31,16 @@ def load_products_from_json(json_path):
             flat_products.append(product)
     return flat_products
 
-model = SentenceTransformer('all-MiniLM-L6-v2')
-
-# ✅ Load the model ONCE
+def get_model():
+    """Lazy load the model with thread safety"""
+    global model
+    if model is None:
+        with _model_lock:
+            if model is None:
+                print("Loading SentenceTransformer model...")
+                model = SentenceTransformer('all-MiniLM-L6-v2')
+                print("Model loaded successfully")
+    return model
 
 
 
@@ -34,31 +48,42 @@ model = SentenceTransformer('all-MiniLM-L6-v2')
 
 
 def get_product_embeddings():
+    global products, product_embeddings
+    
     if os.path.exists(PICKLE_FILE) and not ALWAYS_CREATE:
-            
-            print("✅ Loading embeddings from file...")
-            with open(PICKLE_FILE, "rb") as f:
-                data = pickle.load(f)
-                product_embeddings = data["embeddings"]
-                products = data["products"]
+        print("✅ Loading embeddings from file...")
+        with open(PICKLE_FILE, "rb") as f:
+            data = pickle.load(f)
+            product_embeddings = data["embeddings"]
+            products = data["products"]
+        return products, product_embeddings
     else:
-            print("⚡ Embeddings not found — generating now...")
-            products = load_products_from_json(JSON_FILE)
-            product_texts = [
-                f"{p['retailer_id']} {p['name']} {p['description']}   {p['pattern']}"
-                for p in products
-            ]
-            product_embeddings = model.encode(product_texts)
-            with open(PICKLE_FILE, "wb") as f:
-                pickle.dump({
-                    "products": products,
-                    "embeddings": product_embeddings
-                }, f)
-            return products, product_embeddings
+        print("⚡ Embeddings not found — generating now...")
+        # Ensure model is loaded before using it
+        model = get_model()
+        products = load_products_from_json(JSON_FILE)
+        product_texts = [
+            f"{p['retailer_id']} {p['name']} {p['description']}   {p['pattern']}"
+            for p in products
+        ]
+        product_embeddings = model.encode(product_texts)
+        with open(PICKLE_FILE, "wb") as f:
+            pickle.dump({
+                "products": products,
+                "embeddings": product_embeddings
+            }, f)
+        return products, product_embeddings
         
 
 # ✅ Product search function
-def search_products(query,session, top_k=15):
+def search_products(query,session=None, top_k=20):
+    global products, product_embeddings
+    
+    # Ensure model and data are loaded
+    model = get_model()
+    if products is None or product_embeddings is None:
+        products, product_embeddings = get_product_embeddings()
+    
     query=query.strip()
     nothing=0
     query_embedding = model.encode([query])

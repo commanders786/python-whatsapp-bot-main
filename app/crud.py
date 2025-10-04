@@ -185,7 +185,7 @@ def update_order_status(order_id):
         data = request.get_json()
         status = data.get("status")
         
-        if not status or status not in ["pending", "delivered"]:
+        if not status or status not in ["pending", "delivered","cancelled","picked up"]:
             return jsonify({"status": "error", "message": "Invalid or missing status. Must be 'pending' or 'delivered'"}), 400
         
         with get_db_connection() as conn:

@@ -1,7 +1,12 @@
 FROM python:3.11-slim-bullseye
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1
+    PYTHONUNBUFFERED=1 \
+    OMP_NUM_THREADS=4 \
+    MKL_NUM_THREADS=4 \
+    OPENBLAS_NUM_THREADS=4 \
+    NUMEXPR_NUM_THREADS=4 \
+    WAITRESS_THREADS=8
 
 WORKDIR /app
 
@@ -18,6 +23,6 @@ RUN pip install --no-cache-dir torch==2.1.0+cpu -f https://download.pytorch.org/
 # Copy app source
 COPY . .
 
-EXPOSE 5000
+EXPOSE 8000
 
 CMD ["python", "run.py"]

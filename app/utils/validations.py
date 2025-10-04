@@ -75,3 +75,81 @@ def check_product_mix(items):
         return 5
     else:
         return 0
+
+
+
+# import re
+# from rapidfuzz import fuzz, process
+
+# def remove_emojis_and_specials(text: str) -> str:
+#     # Remove emojis and special characters, keep alphanumeric + spaces
+#     return re.sub(r'[^a-zA-Z0-9\s]', '', text)
+
+# def fuzzy_best_match(query: str, choices: list[str], score_cutoff: int = 70) -> str | None:
+#     # Clean the query
+#     clean_query = remove_emojis_and_specials(query).lower()
+
+#     # Build mapping of cleaned -> original
+#     cleaned_choices = {remove_emojis_and_specials(c).lower(): c for c in choices}
+
+   
+#     # Step 1: try full ratio
+#     result = process.extractOne(
+#         clean_query,
+#         list(cleaned_choices.keys()),
+#         scorer=fuzz.ratio,
+#         score_cutoff=score_cutoff
+#     )
+
+#     # Step 2: fallback to partial ratio if no strong match
+#     if result is None:
+#         result = process.extractOne(
+#             clean_query,
+#             list(cleaned_choices.keys()),
+#             scorer=fuzz.partial_ratio,
+#             score_cutoff=score_cutoff
+#         )
+
+#     if result is None:
+#         return None
+
+#     match, score, _ = result
+#     return cleaned_choices[match]
+
+
+
+
+import re
+from rapidfuzz import fuzz, process
+
+# special cases where partial match should be applied
+PARTIAL_MATCH_WORDS = {"afc", "dominos", "mcd"}
+
+def remove_emojis_and_specials(text: str) -> str:
+    return re.sub(r'[^a-zA-Z0-9\s]', '', text)
+
+def fuzzy_best_match(query: str, choices: list[str], score_cutoff: int = 90) -> str | None:
+    clean_query = remove_emojis_and_specials(query).lower().strip()
+    cleaned_choices = {remove_emojis_and_specials(c).lower().strip(): c for c in choices}
+
+    # default: full ratio
+    scorer = fuzz.ratio  
+
+    # ✅ Only switch to partial if query is exactly in the special words list
+    if clean_query in PARTIAL_MATCH_WORDS:
+        scorer = fuzz.partial_ratio
+
+    result = process.extractOne(
+        clean_query,
+        list(cleaned_choices.keys()),
+        scorer=scorer,
+        score_cutoff=score_cutoff
+    )
+
+    if result is None:
+        return None
+
+    match, score, _ = result
+    return cleaned_choices[match]
+
+
