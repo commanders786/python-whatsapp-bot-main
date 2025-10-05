@@ -18,7 +18,9 @@ DB_CONFIG = {
     "password": "Kamsaf@786",
     "host": "aws-0-ap-south-1.pooler.supabase.com",
     "port": "6543",
-    "dbname": "postgres"
+    "dbname": "postgres","connect_timeout": 5,
+    "options": "-c statement_timeout=5000 -c idle_in_transaction_session_timeout=5000",
+
 }
 def get_db_connection():
     return psycopg2.connect(**DB_CONFIG)
@@ -130,8 +132,16 @@ def update_order_items_service(orderId, items):
         logging.info(e)
         return {"status": "error", "message": str(e)}, 500
     
+
+
+
+
 def get_order_items_service(order_id=None, product_id=None):
     try:
+        # Load restaurant mapping from JSON
+        with open("restaurants.json", "r", encoding="utf-8") as f:
+            restaurant_data = json.load(f)
+
         with get_db_connection() as conn:
             with conn.cursor() as cur:
                 query = """
@@ -153,20 +163,75 @@ def get_order_items_service(order_id=None, product_id=None):
                 cur.execute(query, tuple(params))
                 rows = cur.fetchall()
 
-                result = [
-                    {
-                        "order_id": row[0],
-                        "product_id": row[1],
-                        "quantity": row[2],
-                        "total": row[3]
-                    } for row in rows
-                ]
+                result = []
+                for row in rows:
+                    order_id_val, product_id_val, qty, total = row
+
+                    # Default rest_name
+                    rest_name = None
+
+                    # Find restaurant name if product_id matches
+                    for name, product_ids in restaurant_data.items():
+                        if product_id_val in product_ids:
+                            rest_name = name
+                            break
+
+                    record = {
+                        "order_id": order_id_val,
+                        "product_id": product_id_val,
+                        "quantity": qty,
+                        "total": total
+                    }
+
+                    # Add restaurant name only if found
+                    if rest_name:
+                        record["rest_name"] = rest_name
+
+                    result.append(record)
 
         return {"status": "success", "data": result}, 200
 
     except Exception as e:
         logging.error("Error fetching order items: %s", str(e))
         return {"status": "error", "message": str(e)}, 500
+    
+# def get_order_items_service(order_id=None, product_id=None):
+#     try:
+#         with get_db_connection() as conn:
+#             with conn.cursor() as cur:
+#                 query = """
+#                     SELECT order_id, product_id, qty, total
+#                     FROM order_items
+#                 """
+#                 params = []
+
+#                 # Apply filters
+#                 if order_id and product_id:
+#                     query += " WHERE order_id = %s AND product_id LIKE %s"
+#                     params.extend([order_id, product_id[:2] + '%'])
+#                 elif order_id:
+#                     query += " WHERE order_id = %s"
+#                     params.append(order_id)
+
+#                 query += " ORDER BY order_id"
+
+#                 cur.execute(query, tuple(params))
+#                 rows = cur.fetchall()
+
+#                 result = [
+#                     {
+#                         "order_id": row[0],
+#                         "product_id": row[1],
+#                         "quantity": row[2],
+#                         "total": row[3]
+#                     } for row in rows
+#                 ]
+
+#         return {"status": "success", "data": result}, 200
+
+#     except Exception as e:
+#         logging.error("Error fetching order items: %s", str(e))
+#         return {"status": "error", "message": str(e)}, 500
 
 
 def get_order_summary_service(vendor=None):
