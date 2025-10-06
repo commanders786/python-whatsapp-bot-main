@@ -540,243 +540,223 @@ def update_user_lastlogin(user_id):
 
 
 def get_vendor_products(user):
-    conn = get_db_connection()
-    cur = conn.cursor()
-
-    cur.execute("SELECT vendor_products FROM role_users WHERE username = %s", (user,))
-    row = cur.fetchone()
-    cur.close()
-    conn.close()
-
-   
-
-    
-    return {"products": row[0] ,"status": 200}
+    with get_db_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT vendor_products FROM role_users WHERE username = %s", (user,))
+            row = cur.fetchone()
+            
+            return {"products": row[0] ,"status": 200}
 
 def get_vendor_service():
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                query = """
+               SELECT v.id,username,shop_name,phone,commission FROM role_users r JOIN vendors v ON r.phone = v.id;
+                """
+                cursor.execute(query)
+                rows = cursor.fetchall()
 
-        query = """
-       SELECT v.id,username,shop_name,phone,commission FROM role_users r JOIN vendors v ON r.phone = v.id;
-        """
-        cursor.execute(query)
-        rows = cursor.fetchall()
+                # Optional: convert to list of dicts
+                columns = [desc[0] for desc in cursor.description]
+                result = [dict(zip(columns, row)) for row in rows]
 
-        # Optional: convert to list of dicts
-        columns = [desc[0] for desc in cursor.description]
-        result = [dict(zip(columns, row)) for row in rows]
-
-        return result, 200
+                return result, 200
 
     except Exception as e:
         return {"error": str(e)}, 500
-
-    finally:
-        # cursor.close()
-        conn.close()
 
 
 import pandas as pd
 
 def get_products_service_new(data):
-    conn = None
-    cursor = None
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        vendor = data.get("vendorId")
-        is_paid = True if data.get("type") == "paid" else False
-        
-        if is_paid:
-            response = {
-                "transactions": [],
-                "cleared_amount": 0
-            }
-            return jsonify(response), 200
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                vendor = data.get("vendorId")
+                is_paid = True if data.get("type") == "paid" else False
+                
+                if is_paid:
+                    response = {
+                        "transactions": [],
+                        "cleared_amount": 0
+                    }
+                    return jsonify(response), 200
 
-        # Step 1: Get vendor data
-        vendor_query = """
-            SELECT product_type, commission, meta_group_id,dbp FROM vendors WHERE id = %s
-        """
-        cursor.execute(vendor_query, (vendor,))
-        vendor_result = cursor.fetchone()
+                # Step 1: Get vendor data
+                vendor_query = """
+                    SELECT product_type, commission, meta_group_id,dbp FROM vendors WHERE id = %s
+                """
+                cursor.execute(vendor_query, (vendor,))
+                vendor_result = cursor.fetchone()
 
-        if not vendor_result:
-            return jsonify({"error": "Vendor not found"}), 404
+                if not vendor_result:
+                    return jsonify({"error": "Vendor not found"}), 404
 
-        product_type, commission, meta_group_id ,dbp= vendor_result
-        if commission is None:
-            commission = 0
-        
+                product_type, commission, meta_group_id ,dbp= vendor_result
+                if commission is None:
+                    commission = 0
+                
 
-        if product_type == 'multi':
-            # Margin category
-            order_query_margin = """
-                SELECT 
-                    oi.order_id, SUM(oi.total) AS sold_amount,
-                    SUM(oi.vendor_price) AS vendor_price
-                FROM orders o
-                JOIN order_items oi ON o.id = oi.order_id
-                JOIN products p ON p.retailer_id = oi.product_id
-                JOIN vendors v ON v.id = p.vendor_id
-                WHERE 
-                    oi.payment_done = FALSE AND 
-                    oi.is_cancelled = FALSE AND 
-                    v.id = %s
-                GROUP BY oi.order_id
-                ORDER BY MAX(o.created_at) DESC
-            """
-            cursor.execute(order_query_margin, (vendor,))
-            margin_rows = cursor.fetchall()
-            df_margin = pd.DataFrame(margin_rows, columns=['order_id', 'sold_amount', 'vendor_price'])
-            df_margin['commission_amount'] = df_margin['sold_amount'] - df_margin['vendor_price']
-            total_sale_margin = float(df_margin['sold_amount'].sum())
-            df_margin['payable'] = df_margin['vendor_price']
-            total_margin_commission = float(df_margin['commission_amount'].sum())
-            total_margin_payable = float(df_margin['payable'].sum())
-            margin_orders = df_margin.drop(columns=['commission_amount', 'payable']).to_dict(orient='records')
+                if product_type == 'multi':
+                    # Margin category
+                    order_query_margin = """
+                        SELECT 
+                            oi.order_id, SUM(oi.total) AS sold_amount,
+                            SUM(oi.vendor_price) AS vendor_price
+                        FROM orders o
+                        JOIN order_items oi ON o.id = oi.order_id
+                        JOIN products p ON p.retailer_id = oi.product_id
+                        JOIN vendors v ON v.id = p.vendor_id
+                        WHERE 
+                            oi.payment_done = FALSE AND 
+                            oi.is_cancelled = FALSE AND 
+                            v.id = %s
+                        GROUP BY oi.order_id
+                        ORDER BY MAX(o.created_at) DESC
+                    """
+                    cursor.execute(order_query_margin, (vendor,))
+                    margin_rows = cursor.fetchall()
+                    df_margin = pd.DataFrame(margin_rows, columns=['order_id', 'sold_amount', 'vendor_price'])
+                    df_margin['commission_amount'] = df_margin['sold_amount'] - df_margin['vendor_price']
+                    total_sale_margin = float(df_margin['sold_amount'].sum())
+                    df_margin['payable'] = df_margin['vendor_price']
+                    total_margin_commission = float(df_margin['commission_amount'].sum())
+                    total_margin_payable = float(df_margin['payable'].sum())
+                    margin_orders = df_margin.drop(columns=['commission_amount', 'payable']).to_dict(orient='records')
 
-            if dbp:
-                 df_margin['commission_amount'] = df_margin['sold_amount'] * commission / 100
-                 df_margin['payable'] = df_margin['sold_amount'] - df_margin['commission_amount']
-                 total_margin_commission = float(df_margin['commission_amount'].sum())
-                 total_margin_payable = float(df_margin['payable'].sum())
+                    if dbp:
+                         df_margin['commission_amount'] = df_margin['sold_amount'] * commission / 100
+                         df_margin['payable'] = df_margin['sold_amount'] - df_margin['commission_amount']
+                         total_margin_commission = float(df_margin['commission_amount'].sum())
+                         total_margin_payable = float(df_margin['payable'].sum())
 
-            # Percentage category
-            order_query_percentage = """
-                SELECT 
-                    oi.order_id, SUM(oi.total) AS sold_amount
-                FROM orders o
-                JOIN order_items oi ON o.id = oi.order_id
-                WHERE 
-                    oi.payment_done = FALSE AND    
-                    oi.is_cancelled = FALSE AND 
-                    oi.product_id LIKE %s AND 
-                    oi.product_id NOT IN (
-                        SELECT retailer_id
-                        FROM products 
-                        WHERE retailer_id IS NOT NULL AND vendor_id = %s
-                    )
-                GROUP BY oi.order_id
-                ORDER BY MAX(o.created_at) DESC
-            """
-            cursor.execute(order_query_percentage, (f"%{meta_group_id}%", vendor))
-            percentage_rows = cursor.fetchall()
-            df_percentage = pd.DataFrame(percentage_rows, columns=['order_id', 'sold_amount'])
-            df_percentage['commission_amount'] = df_percentage['sold_amount'] * commission / 100
-            df_percentage['payable'] = df_percentage['sold_amount'] - df_percentage['commission_amount']
-            total_percentage_commission = float(df_percentage['commission_amount'].sum())
-            total_sale_percentage = float(df_percentage['sold_amount'].sum())
-            total_percentage_payable = float(df_percentage['payable'].sum())
-            percentage_orders = df_percentage.drop(columns=['commission_amount', 'payable']).to_dict(orient='records')
+                    # Percentage category
+                    order_query_percentage = """
+                        SELECT 
+                            oi.order_id, SUM(oi.total) AS sold_amount
+                        FROM orders o
+                        JOIN order_items oi ON o.id = oi.order_id
+                        WHERE 
+                            oi.payment_done = FALSE AND    
+                            oi.is_cancelled = FALSE AND 
+                            oi.product_id LIKE %s AND 
+                            oi.product_id NOT IN (
+                                SELECT retailer_id
+                                FROM products 
+                                WHERE retailer_id IS NOT NULL AND vendor_id = %s
+                            )
+                        GROUP BY oi.order_id
+                        ORDER BY MAX(o.created_at) DESC
+                    """
+                    cursor.execute(order_query_percentage, (f"%{meta_group_id}%", vendor))
+                    percentage_rows = cursor.fetchall()
+                    df_percentage = pd.DataFrame(percentage_rows, columns=['order_id', 'sold_amount'])
+                    df_percentage['commission_amount'] = df_percentage['sold_amount'] * commission / 100
+                    df_percentage['payable'] = df_percentage['sold_amount'] - df_percentage['commission_amount']
+                    total_percentage_commission = float(df_percentage['commission_amount'].sum())
+                    total_sale_percentage = float(df_percentage['sold_amount'].sum())
+                    total_percentage_payable = float(df_percentage['payable'].sum())
+                    percentage_orders = df_percentage.drop(columns=['commission_amount', 'payable']).to_dict(orient='records')
 
-            # Final response for 'multi'
-            response = {
-                "margin": {
-                    "total_sale": total_sale_margin,
-                    "commission_amount": total_margin_commission,
-                    "payable": total_margin_payable,
-                    "orders": margin_orders
-                },
-                "percentage": {
-                    "total_sale": total_sale_percentage,
-                    "commission_amount": total_percentage_commission,
-                    "payable": total_percentage_payable,
-                    "orders": percentage_orders
-                }
-            }
-            return jsonify(response), 200  # Fixed: Use jsonify for consistency
+                    # Final response for 'multi'
+                    response = {
+                        "margin": {
+                            "total_sale": total_sale_margin,
+                            "commission_amount": total_margin_commission,
+                            "payable": total_margin_payable,
+                            "orders": margin_orders
+                        },
+                        "percentage": {
+                            "total_sale": total_sale_percentage,
+                            "commission_amount": total_percentage_commission,
+                            "payable": total_percentage_payable,
+                            "orders": percentage_orders
+                        }
+                    }
+                    return jsonify(response), 200  # Fixed: Use jsonify for consistency
 
-        else:
-            # Non-multi product_type logic
-            order_query = """
-                SELECT 
-                    oi.order_id, SUM(oi.total) AS sold_amount
-                FROM orders o
-                JOIN order_items oi ON o.id = oi.order_id
-                WHERE 
-                    oi.product_id LIKE %s AND 
-                    oi.payment_done = FALSE AND 
-                    oi.is_cancelled = FALSE
-                GROUP BY oi.order_id
-                ORDER BY MAX(o.created_at) DESC
-            """
-            cursor.execute(order_query, (f"%{product_type}%",))
-            order_rows = cursor.fetchall()
-            df = pd.DataFrame(order_rows, columns=['order_id', 'sold_amount'])
+                else:
+                    # Non-multi product_type logic
+                    order_query = """
+                        SELECT 
+                            oi.order_id, SUM(oi.total) AS sold_amount
+                        FROM orders o
+                        JOIN order_items oi ON o.id = oi.order_id
+                        WHERE 
+                            oi.product_id LIKE %s AND 
+                            oi.payment_done = FALSE AND 
+                            oi.is_cancelled = FALSE
+                        GROUP BY oi.order_id
+                        ORDER BY MAX(o.created_at) DESC
+                    """
+                    cursor.execute(order_query, (f"%{product_type}%",))
+                    order_rows = cursor.fetchall()
+                    df = pd.DataFrame(order_rows, columns=['order_id', 'sold_amount'])
 
-            if df.empty:
-                return jsonify({
-                    "total_sale": 0,
-                    "commission": 0,
-                    "payable": 0,
-                    "orders": [],
-                }), 200
+                    if df.empty:
+                        return jsonify({
+                            "total_sale": 0,
+                            "commission": 0,
+                            "payable": 0,
+                            "orders": [],
+                        }), 200
 
-            df['sold_amount'] = pd.to_numeric(df['sold_amount'])
-            total_pending = float(df['sold_amount'].sum())
-            commission_value = total_pending * commission / 100
-            payable = float(total_pending - commission_value)
-            orders = df.to_dict(orient='records')
+                    df['sold_amount'] = pd.to_numeric(df['sold_amount'])
+                    total_pending = float(df['sold_amount'].sum())
+                    commission_value = total_pending * commission / 100
+                    payable = float(total_pending - commission_value)
+                    orders = df.to_dict(orient='records')
 
-            response = {
-                "total_sale": total_pending,
-                "commission": commission_value,
-                "payable": payable,
-                "orders": orders,
-            }
-            return jsonify(response), 200
+                    response = {
+                        "total_sale": total_pending,
+                        "commission": commission_value,
+                        "payable": payable,
+                        "orders": orders,
+                    }
+                    return jsonify(response), 200
 
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({"error": str(e)}), 500
 
-    finally:
-        if cursor:
-            cursor.close()
-        if conn:
-            conn.close()
-
 
 def get_vendor_products_service(data):
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                vendor_id = data.get("vendorId")
 
-        vendor_id = data.get("vendorId")
+                # Step 1: Check if vendor exists
+                vendor_query = """
+                    SELECT product_type FROM vendors WHERE id = %s
+                """
+                cursor.execute(vendor_query, (vendor_id,))
+                vendor_result = cursor.fetchone()
 
-        # Step 1: Check if vendor exists
-        vendor_query = """
-            SELECT product_type FROM vendors WHERE id = %s
-        """
-        cursor.execute(vendor_query, (vendor_id,))
-        vendor_result = cursor.fetchone()
+                if not vendor_result:
+                    return jsonify({"error": "Vendor not found"}), 404
 
-        if not vendor_result:
-            return jsonify({"error": "Vendor not found"}), 404
+                # Step 2: Get products by vendor
+                order_query = """
+                    SELECT 
+                        p.p_id, p.retailer_id, p.name, p.vendors_price, p.percentage_on_category
+                    FROM products p
+                    JOIN vendors v ON v.id = p.vendor_id
+                    WHERE v.id = %s
+                """
+                cursor.execute(order_query, (vendor_id,))
+                order_rows = cursor.fetchall()
+                print(order_rows)
 
-        # Step 2: Get products by vendor
-        order_query = """
-            SELECT 
-                p.p_id, p.retailer_id, p.name, p.vendors_price, p.percentage_on_category
-            FROM products p
-            JOIN vendors v ON v.id = p.vendor_id
-            WHERE v.id = %s
-        """
-        cursor.execute(order_query, (vendor_id,))
-        order_rows = cursor.fetchall()
-        print(order_rows)
-
-        # Step 3: Fetch additional product details from Facebook Graph API
-        products = []
-        for row in order_rows:
-            product_id = row[0]
-            print(product_id)
-            if not product_id:
-                logger.warning(f"Skipping product with null ID: {row[2]}")
-                products.append({
+                # Step 3: Fetch additional product details from Facebook Graph API
+                products = []
+                for row in order_rows:
+                    product_id = row[0]
+                    print(product_id)
+                    if not product_id:
+                        logger.warning(f"Skipping product with null ID: {row[2]}")
+                        products.append({
                     "id": row[0],
                     "retailer_id": row[1],
                     "name": row[2],
@@ -785,7 +765,7 @@ def get_vendor_products_service(data):
                     "price": "N/A",
                     "description": "N/A"
                 })
-                continue
+                        continue
 
             # Make API call to Facebook Graph API
             api_url = f"https://graph.facebook.com/v22.0/{product_id}?fields=id,name,description,price,retailer_id,availability,sale_price"
@@ -819,179 +799,214 @@ def get_vendor_products_service(data):
                     "description": "N/A"
                 })
 
-        return jsonify(products), 200
+                return jsonify(products), 200
 
     except Exception as e:
         logger.error(f"Error in get_vendor_products_service: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-    finally:
-        cursor.close()
-        conn.close()
-
 def update_order_items_service_new(data):
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                order_id = data.get("order_id")
+                items = data.get("items", [])
 
-        order_id = data.get("order_id")
-        items = data.get("items", [])
+                if not order_id:
+                    return jsonify({"error": "Missing order_id"}), 400
 
-        if not order_id:
-            return jsonify({"error": "Missing order_id"}), 400
+                for item in items:
+                    product_id = item.get("product_id")
+                    action = item.get("action")
 
-        for item in items:
-            product_id = item.get("product_id")
-            action = item.get("action")
+                    if not product_id or not action:
+                        continue  # Skip invalid item
 
-            if not product_id or not action:
-                continue  # Skip invalid item
+                    if action == "insert":
+                        qty = item.get("qty", 1)
+                        vendor_price = item.get("vendor_price", 0)
+                        cursor.execute("""
+                            INSERT INTO order_items (order_id, product_id, qty, vendor_price)
+                            VALUES (%s, %s, %s, %s)
+                        """, (order_id, product_id, qty, vendor_price))
 
-            if action == "insert":
-                qty = item.get("qty", 1)
-                vendor_price = item.get("vendor_price", 0)
-                cursor.execute("""
-                    INSERT INTO order_items (order_id, product_id, qty, vendor_price)
-                    VALUES (%s, %s, %s, %s)
-                """, (order_id, product_id, qty, vendor_price))
+                    elif action == "update":
+                        qty = item.get("qty")
+                        vendor_price = item.get("vendor_price")
+                        cursor.execute("""
+                            UPDATE order_items
+                            SET qty = %s, vendor_price = %s
+                            WHERE order_id = %s AND product_id = %s
+                        """, (qty, vendor_price, order_id, product_id))
 
-            elif action == "update":
-                qty = item.get("qty")
-                vendor_price = item.get("vendor_price")
-                cursor.execute("""
-                    UPDATE order_items
-                    SET qty = %s, vendor_price = %s
-                    WHERE order_id = %s AND product_id = %s
-                """, (qty, vendor_price, order_id, product_id))
+                    elif action == "delete":
+                        cursor.execute("""
+                            DELETE FROM order_items
+                            WHERE order_id = %s AND product_id = %s
+                        """, (order_id, product_id))
 
-            elif action == "delete":
-                cursor.execute("""
-                    DELETE FROM order_items
-                    WHERE order_id = %s AND product_id = %s
-                """, (order_id, product_id))
-
-        conn.commit()
-        return jsonify({"message": "Order items updated successfully"}), 200
+                conn.commit()
+                return jsonify({"message": "Order items updated successfully"}), 200
 
     except Exception as e:
-        conn.rollback()
         return jsonify({"error": str(e)}), 500
-
-    finally:
-        cursor.close()
         
 
 def get_order_details_service(data):
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                order_id = data.get("order_id")
 
-        order_id = data.get("order_id")
+                if not order_id:
+                    return jsonify({"error": "Missing order_id"}), 400
 
-        if not order_id:
-            return jsonify({"error": "Missing order_id"}), 400
+                # Step 1: Get order info
+                order_query = """
+                    SELECT id, userid, bill_amount, status, created_at, feedback, receipt
+                    FROM orders
+                    WHERE id = %s
+                """
+                cursor.execute(order_query, (order_id,))
+                order = cursor.fetchone()
 
-        # Step 1: Get order info
-        order_query = """
-            SELECT id, userid, bill_amount, status, created_at, feedback, receipt
-            FROM orders
-            WHERE id = %s
-        """
-        cursor.execute(order_query, (order_id,))
-        order = cursor.fetchone()
+                if not order:
+                    return jsonify({"error": "Order not found"}), 404
 
-        if not order:
-            return jsonify({"error": "Order not found"}), 404
+                order_info = {
+                    "id": order[0],
+                    "userid": order[1],
+                    "bill_amount": order[2],
+                    "status": order[3],
+                    "created_at": order[4],
+                    "feedback": order[5],
+                    "receipt": order[6]
+                }
 
-        order_info = {
-            "id": order[0],
-            "userid": order[1],
-            "bill_amount": order[2],
-            "status": order[3],
-            "created_at": order[4],
-            "feedback": order[5],
-            "receipt": order[6]
-        }
+                # Step 2: Get order items
+                items_query = """
+                    SELECT product_id, qty, vendor_price, total, unit, payment_done, is_cancelled
+                    FROM order_items
+                    WHERE order_id = %s
+                """
+                cursor.execute(items_query, (order_id,))
+                items = cursor.fetchall()
 
-        # Step 2: Get order items
-        items_query = """
-            SELECT product_id, qty, vendor_price, total, unit, payment_done, is_cancelled
-            FROM order_items
-            WHERE order_id = %s
-        """
-        cursor.execute(items_query, (order_id,))
-        items = cursor.fetchall()
+                item_list = [
+                    {
+                        "product_id": i[0],
+                        "qty": i[1],
+                        "vendor_price": i[2],
+                        "total": i[3],
+                        "unit": i[4],
+                        "payment_done": i[5],
+                        "is_cancelled": i[6]
+                    }
+                    for i in items
+                ]
 
-        item_list = [
-            {
-                "product_id": i[0],
-                "qty": i[1],
-                "vendor_price": i[2],
-                "total": i[3],
-                "unit": i[4],
-                "payment_done": i[5],
-                "is_cancelled": i[6]
-            }
-            for i in items
-        ]
-
-        return jsonify({
-            "order": order_info,
-            "items": item_list
-        }), 200
+                return jsonify({
+                    "order": order_info,
+                    "items": item_list
+                }), 200
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-    finally:
-        cursor.close()
-        conn.close()
 
+# def map_products_service(data):
+#     try:
+#       with get_db_connection() as conn:
+            
+#         with conn.cursor() as cursor:
+
+#         # Extract relevant fields from the incoming data
+#         name = data.get("name")
+#         vendor_id = data.get("vendor_id")
+#         category = data.get("category")
+#         percentage_on_category = data.get("percentage_on_category")
+#         vendors_price = data.get("vendors_price")
+#         retailer_id = data.get("retailer_id")
+#         p_id = data.get("p_id")
+
+#         insert_query = """
+#             INSERT INTO products (
+#                 name,
+#                 vendor_id,
+#                 category,
+#                 percentage_on_category,
+#                 vendors_price,
+#                 retailer_id,
+#                 p_id
+#             ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+#         """
+
+#         cursor.execute(insert_query, (
+#             name,
+#             vendor_id,
+#             category,
+#             percentage_on_category,
+#             vendors_price,
+#             retailer_id,
+#             p_id
+#         ))
+
+#         conn.commit()
+#         return {"message": "Product mapped successfully"}, 201
+
+#     except Exception as e:
+#         return {"error": str(e)}, 500
+
+#     finally:
+#         conn.close()
 
 def map_products_service(data):
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                # Extract relevant fields from the incoming data
+                name = data.get("name")
+                vendor_id = data.get("vendor_id")
+                category = data.get("category")
+                percentage_on_category = data.get("percentage_on_category")
+                vendors_price = data.get("vendors_price")
+                retailer_id = data.get("retailer_id")
+                p_id = data.get("p_id")
 
-        # Extract relevant fields from the incoming data
-        name = data.get("name")
-        vendor_id = data.get("vendor_id")
-        category = data.get("category")
-        percentage_on_category = data.get("percentage_on_category")
-        vendors_price = data.get("vendors_price")
-        retailer_id = data.get("retailer_id")
-        p_id = data.get("p_id")
+                insert_query = """
+                    INSERT INTO products (
+                        name,
+                        vendor_id,
+                        category,
+                        percentage_on_category,
+                        vendors_price,
+                        retailer_id,
+                        p_id
+                    ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+                """
 
-        insert_query = """
-            INSERT INTO products (
-                name,
-                vendor_id,
-                category,
-                percentage_on_category,
-                vendors_price,
-                retailer_id,
-                p_id
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s)
-        """
+                cursor.execute(insert_query, (
+                    name,
+                    vendor_id,
+                    category,
+                    percentage_on_category,
+                    vendors_price,
+                    retailer_id,
+                    p_id
+                ))
 
-        cursor.execute(insert_query, (
-            name,
-            vendor_id,
-            category,
-            percentage_on_category,
-            vendors_price,
-            retailer_id,
-            p_id
-        ))
-
-        conn.commit()
-        return {"message": "Product mapped successfully"}, 201
+                conn.commit()
+                return {"message": "Product mapped successfully"}, 201
 
     except Exception as e:
         return {"error": str(e)}, 500
 
     finally:
-        conn.close()
+        try:
+            conn.close()
+        except:
+            pass
+
 
 
 def de_map_products_service(data):
@@ -1233,9 +1248,6 @@ def update_vendor_price_service(data):
         print(e)
         return jsonify({"error": str(e)}), 500
 
-    finally:
-        cursor.close()
-        conn.close()
 
 
 
@@ -1350,31 +1362,27 @@ def update_product_details_service(data):
 
 def update_order_bill_amount(data):
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                # Extract order ID from input
+                order_id = data.get("order_id")
+                if not order_id:
+                    return {"error": "Missing order_id"}, 400
 
-        # Extract order ID from input
-        order_id = data.get("order_id")
-        if not order_id:
-            return {"error": "Missing order_id"}, 400
+                update_query = """
+                    UPDATE orders
+                    SET bill_amount = (
+                        SELECT SUM(total)
+                        FROM order_items
+                        WHERE order_items.order_id = orders.id
+                    )
+                    WHERE orders.id = %s;
+                """
 
-        update_query = """
-            UPDATE orders
-            SET bill_amount = (
-                SELECT SUM(total)
-                FROM order_items
-                WHERE order_items.order_id = orders.id
-            )
-            WHERE orders.id = %s;
-        """
+                cursor.execute(update_query, (order_id,))
+                conn.commit()
 
-        cursor.execute(update_query, (order_id,))
-        conn.commit()
-
-        return {"message": "Order bill amount updated successfully"}, 200
+                return {"message": "Order bill amount updated successfully"}, 200
 
     except Exception as e:
         return {"error": str(e)}, 500
-
-    finally:
-        conn.close()
