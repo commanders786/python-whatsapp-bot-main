@@ -1011,108 +1011,80 @@ def map_products_service(data):
     except Exception as e:
         return {"error": str(e)}, 500
 
-    finally:
-        try:
-            conn.close()
-        except:
-            pass
-
 
 
 def de_map_products_service(data):
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                # Extract relevant fields from the incoming data
+                vendor_id = data.get("vendor_id")
+                retailer_id = data.get("retailer_id")
 
-        # Extract relevant fields from the incoming data
-      
-        vendor_id = data.get("vendor_id")
-        
-        
-        retailer_id = data.get("retailer_id")
-       
+                delete_query = """
+                    delete from products
+                           where retailer_id=%s and vendor_id=%s
+                """
 
-        delete_query = """
-            delete from products
-                   where retailer_id=%s and vendor_id=%s
-        """
+                cursor.execute(delete_query, (retailer_id,vendor_id,))
 
-        cursor.execute(delete_query, (retailer_id,vendor_id,))
-
-        conn.commit()
-        return {"message": "Product removed successfully"}, 201
+                conn.commit()
+                return {"message": "Product removed successfully"}, 201
 
     except Exception as e:
         return {"error": str(e)}, 500
 
-    finally:
-        conn.close()
-
 def insert_vendor_service(data):
-    conn = None
-    cursor = None
     try:
         logger.debug("Attempting to insert vendor with data: %s", data)
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                id = data.get("id")
+                name = data.get("name")
+                product_type = data.get("product_type")
+                commission=data.get("commission")
 
-        id = data.get("id")
-        name = data.get("name")
-        product_type = data.get("product_type")
-        commission=data.get("commission")
+                if not all([id, name, product_type]):
+                    logger.warning("Missing required fields: id=%s, name=%s, product_type=%s", id, name, product_type)
+                    return {"error": "Missing required fields: id, name, and product_type"}, 400
 
-        if not all([id, name, product_type]):
-            logger.warning("Missing required fields: id=%s, name=%s, product_type=%s", id, name, product_type)
-            return {"error": "Missing required fields: id, name, and product_type"}, 400
+                # Insert query
+                insert_query = """
+                    INSERT INTO vendors (id, shop_name, product_type, created_at,commission)
+                    VALUES (%s, %s, %s, %s,%s)
+                    RETURNING id, shop_name, product_type, created_at,commission
+                """
+                current_time = datetime.now()
+                cursor.execute(insert_query, (id, name, product_type, current_time,commission))
 
-        # Insert query
-        insert_query = """
-            INSERT INTO vendors (id, shop_name, product_type, created_at,commission)
-            VALUES (%s, %s, %s, %s,%s)
-            RETURNING id, shop_name, product_type, created_at,commission
-        """
-        current_time = datetime.now()
-        cursor.execute(insert_query, (id, name, product_type, current_time,commission))
+                vendor_row = cursor.fetchone()
+                conn.commit()
 
-        vendor_row = cursor.fetchone()
-        conn.commit()
+                if not vendor_row:
+                    logger.error("No vendor row returned after insert")
+                    return {"error": "Failed to insert vendor"}, 500
 
-        if not vendor_row:
-            logger.error("No vendor row returned after insert")
-            return {"error": "Failed to insert vendor"}, 500
-
-        response = {
-            "id": vendor_row[0],
-            "name": vendor_row[1],
-            "product_type": vendor_row[2],
-            "created_at": vendor_row[3].isoformat()
-        }
-        logger.info("Successfully inserted vendor: %s", response)
-        return response, 201
+                response = {
+                    "id": vendor_row[0],
+                    "name": vendor_row[1],
+                    "product_type": vendor_row[2],
+                    "created_at": vendor_row[3].isoformat()
+                }
+                logger.info("Successfully inserted vendor: %s", response)
+                return response, 201
 
     except psycopg2.IntegrityError as e:
-        conn.rollback()
         logger.error("IntegrityError during vendor insert: %s", str(e))
         return {"error": f"Database error: {str(e)}"}, 400
     except Exception as e:
-        if conn:
-            conn.rollback()
         logger.error("Unexpected error during vendor insert: %s", str(e))
         return {"error": str(e)}, 500
-
-    finally:
-        if cursor:
-            cursor.close()
-        if conn:
-            conn.close()
-        logger.debug("Database connection closed")
 
 
 
 
 
 def clear_payment_service(data):
-
     vendor_id = data.get("vendorId")
     transaction_id = data.get("transactionId")
     description = data.get("description")
@@ -1122,101 +1094,89 @@ def clear_payment_service(data):
             "error": "vendorId, transactionId, and description are required"
         }), 400
 
-    conn = None
-    cursor = None
-
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                # Step 1: Get vendor product type
+                cursor.execute("SELECT product_type FROM vendors WHERE id = %s", (vendor_id,))
+                result = cursor.fetchone()
+                if not result:
+                    return jsonify({"error": "Vendor not found"}), 404
 
-        # Step 1: Get vendor product type
-        cursor.execute("SELECT product_type FROM vendors WHERE id = %s", (vendor_id,))
-        result = cursor.fetchone()
-        if not result:
-            return jsonify({"error": "Vendor not found"}), 404
+                product_type = result[0]
 
-        product_type = result[0]
+                # Step 2: Get unpaid order_ids
+                if product_type == 'multi':
+                    query = """
+                        SELECT oi.order_id, SUM(oi.total) AS bill_amount
+                        FROM orders o
+                        JOIN order_items oi ON o.id = oi.order_id
+                        JOIN products p ON p.retailer_id = oi.product_id
+                        JOIN vendors v ON v.id = p.vendor_id
+                        WHERE 
+                            oi.payment_done = FALSE AND 
+                            oi.is_cancelled = FALSE AND 
+                            v.id = %s
+                        GROUP BY oi.order_id
+                        ORDER BY MAX(o.created_at) DESC
+                    """
+                    cursor.execute(query, (vendor_id,))
+                else:
+                    query = """
+                        SELECT oi.order_id, SUM(oi.total) AS bill_amount
+                        FROM orders o
+                        JOIN order_items oi ON o.id = oi.order_id
+                        WHERE 
+                            oi.product_id LIKE %s AND 
+                            oi.payment_done = FALSE AND 
+                            oi.is_cancelled = FALSE
+                        GROUP BY oi.order_id
+                        ORDER BY MAX(o.created_at) DESC
+                    """
+                    cursor.execute(query, (f"%{product_type}%",))
 
-        # Step 2: Get unpaid order_ids
-        if product_type == 'multi':
-            query = """
-                SELECT oi.order_id, SUM(oi.total) AS bill_amount
-                FROM orders o
-                JOIN order_items oi ON o.id = oi.order_id
-                JOIN products p ON p.retailer_id = oi.product_id
-                JOIN vendors v ON v.id = p.vendor_id
-                WHERE 
-                    oi.payment_done = FALSE AND 
-                    oi.is_cancelled = FALSE AND 
-                    v.id = %s
-                GROUP BY oi.order_id
-                ORDER BY MAX(o.created_at) DESC
-            """
-            cursor.execute(query, (vendor_id,))
-        else:
-            query = """
-                SELECT oi.order_id, SUM(oi.total) AS bill_amount
-                FROM orders o
-                JOIN order_items oi ON o.id = oi.order_id
-                WHERE 
-                    oi.product_id LIKE %s AND 
-                    oi.payment_done = FALSE AND 
-                    oi.is_cancelled = FALSE
-                GROUP BY oi.order_id
-                ORDER BY MAX(o.created_at) DESC
-            """
-            cursor.execute(query, (f"%{product_type}%",))
+                order_rows = cursor.fetchall()
+                if not order_rows:
+                    return jsonify({"message": "No unpaid orders found"}), 200
 
-        order_rows = cursor.fetchall()
-        if not order_rows:
-            return jsonify({"message": "No unpaid orders found"}), 200
+                order_ids = [row[0] for row in order_rows]
+                total_amount = sum([float(row[1]) for row in order_rows])
 
-        order_ids = [row[0] for row in order_rows]
-        total_amount = sum([float(row[1]) for row in order_rows])
+                # Step 3: Insert into transactions table
+                insert_tx = """
+                    INSERT INTO transactions (transaction_id, amount, description)
+                    VALUES (%s, %s, %s)
+                """
+                cursor.execute(insert_tx, (transaction_id, total_amount, description))
 
-        # Step 3: Insert into transactions table
-        insert_tx = """
-            INSERT INTO transactions (transaction_id, amount, description)
-            VALUES (%s, %s, %s)
-        """
-        cursor.execute(insert_tx, (transaction_id, total_amount, description))
+                # Step 4: Update order_items
+                update_items = """
+                    UPDATE order_items
+                    SET payment_done = TRUE,
+                        transaction_id = %s
+                    WHERE order_id = ANY(%s)
+                      AND is_cancelled = FALSE
+                """
+                cursor.execute(update_items, (transaction_id, order_ids))
 
-        # Step 4: Update order_items
-        update_items = """
-            UPDATE order_items
-            SET payment_done = TRUE,
-                transaction_id = %s
-            WHERE order_id = ANY(%s)
-              AND is_cancelled = FALSE
-        """
-        cursor.execute(update_items, (transaction_id, order_ids))
+                conn.commit()
 
-        conn.commit()
-
-        return jsonify({
-            "message": "Payment recorded and orders updated",
-            "transaction_id": transaction_id,
-            "order_ids": order_ids,
-            "total_amount": total_amount
-        }), 200
+                return jsonify({
+                    "message": "Payment recorded and orders updated",
+                    "transaction_id": transaction_id,
+                    "order_ids": order_ids,
+                    "total_amount": total_amount
+                }), 200
 
     except Exception as e:
-        if conn:
-            conn.rollback()
         return jsonify({"error": str(e)}), 500
 
-    finally:
-        if cursor:
-            cursor.close()
-        if conn:
-            conn.close()
 
 def update_vendor_price_service(data):
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
-
-        retailer_id = data.get("retailer_id")
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                retailer_id = data.get("retailer_id")
         vendor_price = data.get("vendor_price")
         commission = data.get("commission")
         vendor_id = data.get("vendor_id")
@@ -1264,45 +1224,42 @@ def update_vendor_price_service(data):
 
 def vendor_account_updation_service(data):
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+        with get_db_connection() as conn:
+            with conn.cursor() as cursor:
+                order_id = data.get("order_id")
+                vendor_id = data.get("vendor_id")
 
-        order_id = data.get("order_id")
-        vendor_id = data.get("vendor_id")
+                if order_id:
+                    items_query = '''
+                        SELECT orders.id, order_items.product_id, order_items.qty, products.vendors_price
+                        FROM order_items
+                        JOIN orders ON order_items.order_id = orders.id
+                        JOIN products ON products.retailer_id = order_items.product_id
+                        WHERE orders.id = %s
+                        AND products.percentage_on_category = FALSE;
+                    '''
+                    cursor.execute(items_query, (order_id,))
+                    items = cursor.fetchall()
 
-        if order_id:
-            items_query = '''
-                SELECT orders.id, order_items.product_id, order_items.qty, products.vendors_price
-                FROM order_items
-                JOIN orders ON order_items.order_id = orders.id
-                JOIN products ON products.retailer_id = order_items.product_id
-                WHERE orders.id = %s
-                AND products.percentage_on_category = FALSE;
-            '''
-            cursor.execute(items_query, (order_id,))
-            items = cursor.fetchall()
+                    for i in items:
+                        vendor_amount = i[2] * i[3] if i[3] else 0.0  # handle None vendors_price
+                        vendor_amount_update_query = '''
+                            UPDATE order_items
+                            SET vendor_price = %s
+                            WHERE order_id = %s AND product_id = %s
+                        '''
+                        cursor.execute(vendor_amount_update_query, (vendor_amount, order_id, i[1]))
 
-            for i in items:
-                vendor_amount = i[2] * i[3] if i[3] else 0.0  # handle None vendors_price
-                vendor_amount_update_query = '''
-                    UPDATE order_items
-                    SET vendor_price = %s
-                    WHERE order_id = %s AND product_id = %s
-                '''
-                cursor.execute(vendor_amount_update_query, (vendor_amount, order_id, i[1]))
+                if vendor_id:
+                    # TODO: Add vendor-specific logic
+                    pass
 
-        if vendor_id:
-            # TODO: Add vendor-specific logic
-            pass
-
-        conn.commit()
-        return {"message": "Vendor price updated successfully"}, 201
+                conn.commit()
+                return {"message": "Vendor price updated successfully"}, 201
 
     except Exception as e:
         return {"error": str(e)}, 500
 
-    finally:
-        conn.close()
 
 
 

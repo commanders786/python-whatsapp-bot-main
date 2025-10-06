@@ -72,7 +72,6 @@ def get_orders_insights():
         return jsonify({"status": "error", "message": str(e)}), 400
 
 
-
 @insights_blueprint.route("/orders/insights/saleSummary", methods=["GET"])
 def get_orders_insights_sum():
     try:
@@ -95,9 +94,9 @@ def get_orders_insights_sum():
 
                 where_clause = " AND ".join(where_clauses)
 
-                # Query to fetch count of orders grouped by date
+                # Query to fetch total sales grouped by date
                 query = f"""
-                    SELECT DATE(created_at) AS order_date, SUM(bill_amount) AS Total_sale
+                    SELECT DATE(created_at) AS order_date, COALESCE(SUM(bill_amount), 0) AS total_sale
                     FROM orders
                     WHERE {where_clause}
                     GROUP BY order_date
@@ -107,11 +106,11 @@ def get_orders_insights_sum():
                 cur.execute(query, params)
                 results = cur.fetchall()
 
-                # Prepare data for last 10 days (ensure zero counts for missing dates)
-                date_counts = {r["order_date"]: r["total_orders"] for r in results}
+                # Prepare data for last 10 days (ensure zero for missing dates)
+                date_sales = {r["order_date"]: r["total_sale"] for r in results}
 
                 categories = []
-                counts = []
+                sales = []
 
                 # Detect platform-specific formatting
                 day_format = "%-d %b" if platform.system() != "Windows" else "%#d %b"
@@ -120,14 +119,14 @@ def get_orders_insights_sum():
                     date = start_date + timedelta(days=i)
                     formatted_date = date.strftime(day_format)  # Example: 2 Jul
                     categories.append(formatted_date)
-                    counts.append(date_counts.get(date, 0))
+                    sales.append(float(date_sales.get(date, 0)))
 
         # ApexCharts compatible response
         response = {
             "series": [
                 {
-                    "name": "Orders",
-                    "data": counts
+                    "name": "Sales",
+                    "data": sales
                 }
             ],
             "categories": categories
