@@ -89,7 +89,7 @@ def process_whatsapp_message(body):
     name = body["entry"][0]["changes"][0]["value"]["contacts"][0]["profile"]["name"]
     message = body["entry"][0]["changes"][0]["value"]["messages"][0]
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
+    logging.info(f"Received message from {wa_id}: {message}")
 
     call_last_login_update(wa_id)  
     if wa_id not in user_sessions:
@@ -109,10 +109,6 @@ def process_whatsapp_message(body):
                  
     
     response = ""  # Default response
-    print("Recieved message :",message)
-    print("\n \n User Session ----",user_sessions[wa_id])
-    print("\n\n")
-    print("Rests",list(load_restaurants().keys()))
     try:
         # If it's a regular text message
         ts = int(message['timestamp'])
@@ -183,7 +179,6 @@ def process_whatsapp_message(body):
             
 
             response,items = generate_response(name, message_body,user_sessions[wa_id])
-            print("kkkkkkk",response,items)
             if items and isinstance(items[0], dict):
              user_sessions[wa_id]['items'].extend(items)
             
@@ -196,7 +191,7 @@ def process_whatsapp_message(body):
                 return 
             
             elif 'hi' in response.lower() or 'ഹായ്' in response.lower() or '?' in response.lower():
-                print("-----")
+                
                 data = get_text_message_input(wa_id, response)
                 send_message(data)
                 user=user_exists(wa_id)[0]
@@ -219,7 +214,7 @@ def process_whatsapp_message(body):
             
 
             elif  rest_name_check:
-                print("matched",rest_name_check)
+                
                 matched_restaurant = rest_name_check
                 send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
                 return
@@ -264,7 +259,7 @@ def process_whatsapp_message(body):
             elif button_id =='en':
               new_user = {"id": wa_id, "phone": wa_id, "name": name, "lastlogin": current_time, "language": "en"}
               response_status = insert_user(new_user)
-              print(response_status)
+              
               user_sessions[wa_id]['language']='en' 
               send_options(wa_id,user_sessions[wa_id]['language'])
               return   
@@ -272,7 +267,7 @@ def process_whatsapp_message(body):
             elif button_id =='ml':
               new_user = {"id": wa_id, "phone": wa_id, "name": name, "lastlogin": current_time, "language": "ml"}
               response_status = insert_user(new_user)
-              print(response_status)
+              
               user_sessions[wa_id]['language']='ml' 
               send_options(wa_id,user_sessions[wa_id]['language'])
               return
@@ -509,7 +504,7 @@ def process_whatsapp_message(body):
     # Send text message back
     if response:
      data = get_text_message_input(wa_id, response)
-     print(data)
+     
      send_message(data)
      send_options(wa_id,user_sessions[wa_id]['language'])
      return
@@ -518,7 +513,7 @@ def process_whatsapp_message(body):
     if   user_sessions[wa_id] != {}:
     #  send_interactive_button_message(wa_id)
     #  send_options(wa_id)
-     print("session",user_sessions[wa_id])
+     logging.info("session",user_sessions[wa_id])
 
 
 def is_valid_whatsapp_message(body):

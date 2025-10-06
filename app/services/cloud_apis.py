@@ -13,6 +13,8 @@ load_dotenv()
 # Replace with your actual access token and business account ID
 access_token = os.getenv("ACCESS_TOKEN")
 business_account_id = "579242655280457"
+version=os.getenv("VERSION")
+PHONE_NUMBER_ID=os.getenv("PHONE_NUMBER_ID")
 
 if not access_token:
     print("Error: FACEBOOK_ACCESS_TOKEN environment variable not set.")
@@ -191,7 +193,7 @@ def get_notes(recipient_phone_number,language):
         "interactive": {
             "type": "button",
             "body": {
-                "text":  "Please add your notes if any \n Eg: Chicken curry cut" if language=='en' else "ദയവായി കുറിപ്പ്  ചേർക്കുക (ഉണ്ടെങ്കിൽ) \n Eg: ചിക്കൻ കറി കട്ട്"
+                "text":  "Please add your notes if any \n Eg: Additional items" if language=='en' else "ദയവായി കുറിപ്പ്  ചേർക്കുക (ഉണ്ടെങ്കിൽ) \n Eg: "
             },
             "action": {
                 "buttons": [
@@ -717,11 +719,11 @@ def send_whatsapp_image(recipient_phone_number, image_id, caption):
 def send_message(data):
     headers = {
         "Content-type": "application/json",
-        "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
+        "Authorization": f"Bearer {access_token}",
     }
     
-    print(current_app.config['ACCESS_TOKEN'])
-    url = f"https://graph.facebook.com/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
+    
+    url = f"https://graph.facebook.com/{version}/{PHONE_NUMBER_ID}/messages"
 
     try:
         response = requests.post(
@@ -763,10 +765,10 @@ def send_template_message(template_name, receipt, phone_number):
     """
     headers = {
         "Content-type": "application/json",
-        "Authorization": f"Bearer {current_app.config['ACCESS_TOKEN']}",
+        "Authorization": f"Bearer {access_token}",
     }
     
-    url = f"https://graph.facebook.com/{current_app.config['VERSION']}/{current_app.config['PHONE_NUMBER_ID']}/messages"
+    url = f"https://graph.facebook.com/{version}/{PHONE_NUMBER_ID}/messages"
     
     payload = {
         "messaging_product": "whatsapp",

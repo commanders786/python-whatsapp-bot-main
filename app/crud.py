@@ -217,7 +217,9 @@ def update_order_status(order_id):
                     "UPDATE orders SET status = %s WHERE id = %s::varchar RETURNING id, status;",
                     (status, str(order_id))
                 )
+                
                 updated_order = cur.fetchone()
+
                 
                 if not updated_order:
                     return jsonify({"status": "error", "message": "Order not found"}), 404
@@ -505,17 +507,17 @@ def clear_payment():
     return clear_payment_service(data) 
 
 
-# clients=[]
-# @crud_blueprint.get("/events")
-# def sse_stream():
-#     def event_stream(q):
-#         try:
-#             while True:
-#                 data = q.get()
-#                 yield f"data: {json.dumps(data)}\n\n"
-#         except GeneratorExit:
-#             print("Client disconnected")
+clients=[]
+@crud_blueprint.get("/events")
+def sse_stream():
+    def event_stream(q):
+        try:
+            while True:
+                data = q.get()
+                yield f"data: {json.dumps(data)}\n\n"
+        except GeneratorExit:
+            print("Client disconnected")
 
-#     q = queue.Queue()
-#     clients.append(q)
-#     return Response(event_stream(q), mimetype="text/event-stream")
+    q = queue.Queue()
+    clients.append(q)
+    return Response(event_stream(q), mimetype="text/event-stream")

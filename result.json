@@ -3431,7 +3431,7 @@
       "id": "9662187900529950",
       "name": "Leghorn Chicken 1kg (ലെഗോൺ കോഴി)",
       "description": "ലെഗോൺ കോഴി",
-      "price": "₹170.00",
+      "price": "₹190.00",
       "pattern": "Leghorn Chicken, ലെഗോൺ കോഴി,kozhi",
       "unit": null,
       "retailer_id": "ch03",
@@ -3469,7 +3469,7 @@
       "unit": null,
       "retailer_id": "ch09",
       "availability": "in stock",
-      "sale_price": "₹90.00"
+      "sale_price": "₹95.00"
     },
     "ch15": {
       "id": "9714611515291014",
@@ -3620,7 +3620,7 @@
       "id": "24548397954753040",
       "name": "മത്തി/ചാള 500g  (MATHI/CHAALA)",
       "description": "മത്തി വലുത്",
-      "price": "₹150.00",
+      "price": "₹50.00",
       "pattern": "മത്തി,ചാള,മത്സ്യം,fish",
       "unit": null,
       "retailer_id": "fs01",

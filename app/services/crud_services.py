@@ -297,7 +297,7 @@ def get_order_summary_service(vendor=None):
              query=f"""
                     SELECT 
                         o.id AS order_id,
-                        COUNT(oi.product_id) AS item_count,
+                        COUNT(*) OVER() AS total_count
                         o.created_at,
                         o.status
                     FROM orders o
@@ -726,89 +726,185 @@ def get_products_service_new(data):
         return jsonify({"error": str(e)}), 500
 
 
+# def get_vendor_products_service(data):
+#     try:
+#         with get_db_connection() as conn:
+#             with conn.cursor() as cursor:
+#                 vendor_id = data.get("vendorId")
+
+#                 # Step 1: Check if vendor exists
+#                 vendor_query = """
+#                     SELECT product_type FROM vendors WHERE id = %s
+#                 """
+#                 cursor.execute(vendor_query, (vendor_id,))
+#                 vendor_result = cursor.fetchone()
+
+#                 if not vendor_result:
+#                     return jsonify({"error": "Vendor not found"}), 404
+
+#                 # Step 2: Get products by vendor
+#                 order_query = """
+#                     SELECT 
+#                         p.p_id, p.retailer_id, p.name, p.vendors_price, p.percentage_on_category
+#                     FROM products p
+#                     JOIN vendors v ON v.id = p.vendor_id
+#                     WHERE v.id = %s
+#                 """
+#                 cursor.execute(order_query, (vendor_id,))
+#                 order_rows = cursor.fetchall()
+#                 print(order_rows)
+
+#                 # Step 3: Fetch additional product details from Facebook Graph API
+#                 products = []
+#                 for row in order_rows:
+#                     product_id = row[0]
+#                     print(product_id)
+#                     if not product_id:
+#                         logger.warning(f"Skipping product with null ID: {row[2]}")
+#                         products.append({
+#                     "id": row[0],
+#                     "retailer_id": row[1],
+#                     "name": row[2],
+#                     "vendors_price": row[3],
+#                     "is_percentage": row[4],
+#                     "price": "N/A",
+#                     "description": "N/A"
+#                 })
+#                         continue
+
+#             # Make API call to Facebook Graph API
+#             api_url = f"https://graph.facebook.com/v22.0/{product_id}?fields=id,name,description,price,retailer_id,availability,sale_price"
+#             headers = {
+#                 "Authorization": "Bearer EAAQKF56ZAbJQBO3eHvyzD8AERlnLM7hAvtAIZCcSYubLA7JqPq7iv2NGlzlgDfX1DnJ9CJl9ZANyHdiHYNztdvAjf2C4XKWXFMBCjqTagNJDV4VYV59VhzLQ76kZBjrVP3XDsa2UeqBmT9lr01zgImVXPcmeDsyf6KXOaDk61yFzMKS5BkFZBhDX4tsMfuJ4ZA5QZDZD"  # Replace with actual token
+#             }
+#             response = requests.get(api_url, headers=headers)
+            
+#             if response.status_code == 200:
+#                 api_data = response.json()
+#                 products.append({
+#                     "id": row[0],
+#                     "retailer_id": row[1],
+#                     "name": row[2],
+#                     "vendors_price": row[3],
+#                     "is_percentage": row[4],
+#                     "price": api_data.get("price", "N/A"),
+#                     # "description": api_data.get("description", "N/A"),
+#                     "availability":api_data.get("availability", "N/A"),
+#                     "sale_price":api_data.get("sale_price", "-")
+#                 })
+#             else:
+#                 # logger.error(f"API call failed for product ID {product_id}: {response.status_code} - {response.text}")
+#                 products.append({
+#                     "id": row[0],
+#                     "retailer_id": row[1],
+#                     "name": row[2],
+#                     "vendors_price": row[3],
+#                     "is_percentage": row[4],
+#                     "price": "N/A",
+#                     "description": "N/A"
+#                 })
+
+#                 return jsonify(products), 200
+
+#     except Exception as e:
+#         logger.error(f"Error in get_vendor_products_service: {str(e)}")
+#         return jsonify({"error": str(e)}), 500
+
+
+import logging
+import requests
+import os
+from flask import jsonify
+
+logger = logging.getLogger(__name__)
+
 def get_vendor_products_service(data):
     try:
         with get_db_connection() as conn:
             with conn.cursor() as cursor:
                 vendor_id = data.get("vendorId")
 
-                # Step 1: Check if vendor exists
-                vendor_query = """
-                    SELECT product_type FROM vendors WHERE id = %s
-                """
-                cursor.execute(vendor_query, (vendor_id,))
+                # Step 1: Check vendor exists
+                cursor.execute("SELECT product_type FROM vendors WHERE id = %s", (vendor_id,))
                 vendor_result = cursor.fetchone()
-
                 if not vendor_result:
                     return jsonify({"error": "Vendor not found"}), 404
 
-                # Step 2: Get products by vendor
+                # Step 2: Fetch products for vendor
                 order_query = """
-                    SELECT 
-                        p.p_id, p.retailer_id, p.name, p.vendors_price, p.percentage_on_category
+                    SELECT p.p_id, p.retailer_id, p.name, p.vendors_price, p.percentage_on_category
                     FROM products p
                     JOIN vendors v ON v.id = p.vendor_id
                     WHERE v.id = %s
                 """
                 cursor.execute(order_query, (vendor_id,))
                 order_rows = cursor.fetchall()
-                print(order_rows)
 
-                # Step 3: Fetch additional product details from Facebook Graph API
                 products = []
+                token = os.getenv("FACEBOOK_ACCESS_TOKEN")
+
                 for row in order_rows:
                     product_id = row[0]
-                    print(product_id)
                     if not product_id:
-                        logger.warning(f"Skipping product with null ID: {row[2]}")
+                        logging.warning(f"Skipping product with null ID: {row[2]}")
                         products.append({
-                    "id": row[0],
-                    "retailer_id": row[1],
-                    "name": row[2],
-                    "vendors_price": row[3],
-                    "is_percentage": row[4],
-                    "price": "N/A",
-                    "description": "N/A"
-                })
+                            "id": row[0],
+                            "retailer_id": row[1],
+                            "name": row[2],
+                            "vendors_price": row[3],
+                            "is_percentage": row[4],
+                            "price": "N/A",
+                            "description": "N/A"
+                        })
                         continue
 
-            # Make API call to Facebook Graph API
-            api_url = f"https://graph.facebook.com/v22.0/{product_id}?fields=id,name,description,price,retailer_id,availability,sale_price"
-            headers = {
-                "Authorization": "Bearer EAAQKF56ZAbJQBO3eHvyzD8AERlnLM7hAvtAIZCcSYubLA7JqPq7iv2NGlzlgDfX1DnJ9CJl9ZANyHdiHYNztdvAjf2C4XKWXFMBCjqTagNJDV4VYV59VhzLQ76kZBjrVP3XDsa2UeqBmT9lr01zgImVXPcmeDsyf6KXOaDk61yFzMKS5BkFZBhDX4tsMfuJ4ZA5QZDZD"  # Replace with actual token
-            }
-            response = requests.get(api_url, headers=headers)
-            
-            if response.status_code == 200:
-                api_data = response.json()
-                products.append({
-                    "id": row[0],
-                    "retailer_id": row[1],
-                    "name": row[2],
-                    "vendors_price": row[3],
-                    "is_percentage": row[4],
-                    "price": api_data.get("price", "N/A"),
-                    # "description": api_data.get("description", "N/A"),
-                    "availability":api_data.get("availability", "N/A"),
-                    "sale_price":api_data.get("sale_price", "-")
-                })
-            else:
-                logger.error(f"API call failed for product ID {product_id}: {response.status_code} - {response.text}")
-                products.append({
-                    "id": row[0],
-                    "retailer_id": row[1],
-                    "name": row[2],
-                    "vendors_price": row[3],
-                    "is_percentage": row[4],
-                    "price": "N/A",
-                    "description": "N/A"
-                })
+                    # Step 3: Fetch details from Facebook Graph API
+                    try:
+                        api_url = f"https://graph.facebook.com/v22.0/{product_id}?fields=id,name,description,price,retailer_id,availability,sale_price"
+                        headers = {"Authorization": f"Bearer EAAQKF56ZAbJQBO3eHvyzD8AERlnLM7hAvtAIZCcSYubLA7JqPq7iv2NGlzlgDfX1DnJ9CJl9ZANyHdiHYNztdvAjf2C4XKWXFMBCjqTagNJDV4VYV59VhzLQ76kZBjrVP3XDsa2UeqBmT9lr01zgImVXPcmeDsyf6KXOaDk61yFzMKS5BkFZBhDX4tsMfuJ4ZA5QZDZD"}
+                        response = requests.get(api_url, headers=headers)
 
-                return jsonify(products), 200
+                        if response.status_code == 200:
+                            api_data = response.json()
+                            products.append({
+                                "id": row[0],
+                                "retailer_id": row[1],
+                                "name": row[2],
+                                "vendors_price": row[3],
+                                "is_percentage": row[4],
+                                "price": api_data.get("price", "N/A"),
+                                "availability": api_data.get("availability", "N/A"),
+                                "sale_price": api_data.get("sale_price", "-")
+                            })
+                        else:
+                            logging.error(f"API call failed for product {product_id}: {response.status_code}")
+                            products.append({
+                                "id": row[0],
+                                "retailer_id": row[1],
+                                "name": row[2],
+                                "vendors_price": row[3],
+                                "is_percentage": row[4],
+                                "price": "N/A",
+                                "description": "N/A"
+                            })
+                    except Exception as api_err:
+                        logging.error(f"Error fetching product {product_id} from API: {api_err}")
+                        products.append({
+                            "id": row[0],
+                            "retailer_id": row[1],
+                            "name": row[2],
+                            "vendors_price": row[3],
+                            "is_percentage": row[4],
+                            "price": "N/A",
+                            "description": "N/A"
+                        })
+
+        return jsonify(products), 200
 
     except Exception as e:
         logger.error(f"Error in get_vendor_products_service: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
 
 def update_order_items_service_new(data):
     try:

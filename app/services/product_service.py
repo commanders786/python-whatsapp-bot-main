@@ -207,7 +207,8 @@ def fetch_and_categorize_products():
 
 WHATSAPP_API_URL = "https://graph.facebook.com/v22.0/579242655280457/messages"
 WHATSAPP_TOKEN = "EAAQKF56ZAbJQBO3eHvyzD8AERlnLM7hAvtAIZCcSYubLA7JqPq7iv2NGlzlgDfX1DnJ9CJl9ZANyHdiHYNztdvAjf2C4XKWXFMBCjqTagNJDV4VYV59VhzLQ76kZBjrVP3XDsa2UeqBmT9lr01zgImVXPcmeDsyf6KXOaDk61yFzMKS5BkFZBhDX4tsMfuJ4ZA5QZDZD"
-print("hii",WHATSAPP_TOKEN)
+
+
 def load_products_by_category(category: str):
     try:
         with open("result.json", "r", encoding="utf-8") as f:
@@ -217,6 +218,7 @@ def load_products_by_category(category: str):
     except Exception as e:
         print("hhh",e)
         return {}
+
 def load_restaurants(restaurant=None):
     try:
         with open("restaurants.json", "r", encoding="utf-8") as f:
@@ -224,7 +226,7 @@ def load_restaurants(restaurant=None):
             
         return data.get(restaurant, []) if restaurant else data
     except Exception as e:
-        print("hhh",e)
+        
         return {}
 def send_whatsapp_product_list(category: str, to_number: str,restaurant=None):
     
