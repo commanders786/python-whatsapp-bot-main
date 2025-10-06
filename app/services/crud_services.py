@@ -78,6 +78,7 @@ def user_exists(user_id=None, phone=None):
                     return {"exists": False, "message": "User does not exist."}, 200
     except Exception as e:
         return {"status": "error", "message": str(e)}, 400
+    
 
 def insert_user(user_data):
     try:
@@ -93,6 +94,7 @@ def insert_user(user_data):
                     user_data['lastlogin'],
                     user_data['language']
                 ))
+                conn.commit()
         return {"status": "success", "message": "User added."}, 201
     except Exception as e:
         return {"status": "error", "message": str(e)}, 400
@@ -115,6 +117,7 @@ def insert_order(data):
                     INSERT INTO orders (id, receipt, bill_amount, userid, created_at, is_offline)
                     VALUES (%s, %s, %s, %s, NOW(), %s);
                 """, (order_id, data['receipt'], data['bill_amount'], data['userid'], is_offline))
+                conn.commit()
 
             for q in get_clients():
                q.put({
@@ -146,6 +149,7 @@ def update_order_items_service(orderId, items):
                         item['quantity'],
                         item['item_price'] * item['quantity']  # Total = unit * qty
                     ))
+                conn.commit()
         logging.info("order items updated")
         return {"status": "success", "message": "Order items updated."}, 200
 
@@ -527,8 +531,9 @@ def update_user_lastlogin(user_id):
                     SET lastlogin = %s
                     WHERE id = %s;
                 """, (now_gmt, user_id))
+                conn.commit()
                 if cur.rowcount == 0:
-                    
+
                     
                     logging.warning(f"User not found for ID: {user_id}")
                     return
@@ -829,6 +834,9 @@ def update_order_items_service_new(data):
                             INSERT INTO order_items (order_id, product_id, qty, vendor_price)
                             VALUES (%s, %s, %s, %s)
                         """, (order_id, product_id, qty, vendor_price))
+                        conn.commit()
+
+
 
                     elif action == "update":
                         qty = item.get("qty")
@@ -838,14 +846,16 @@ def update_order_items_service_new(data):
                             SET qty = %s, vendor_price = %s
                             WHERE order_id = %s AND product_id = %s
                         """, (qty, vendor_price, order_id, product_id))
+                        conn.commit()
 
                     elif action == "delete":
                         cursor.execute("""
                             DELETE FROM order_items
                             WHERE order_id = %s AND product_id = %s
                         """, (order_id, product_id))
+                        conn.commit()
 
-                conn.commit()
+                
                 return jsonify({"message": "Order items updated successfully"}), 200
 
     except Exception as e:
