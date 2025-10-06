@@ -297,7 +297,7 @@ def get_order_summary_service(vendor=None):
              query=f"""
                     SELECT 
                         o.id AS order_id,
-                        COUNT(*) OVER() AS total_count,
+                        COUNT(oi.product_id) AS item_count,
                         o.created_at,
                         o.status
                     FROM orders o
