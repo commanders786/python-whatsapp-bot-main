@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 import json
 import logging
+from contextlib import contextmanager
 
 from app.services.product_service import fetch_and_categorize_products
 from app.utils.sse import get_clients
@@ -11,6 +12,7 @@ logger = logging.getLogger(__name__)
 
 from flask import jsonify
 import psycopg2
+from psycopg2 import pool
 
 
 DB_CONFIG = {
@@ -18,12 +20,31 @@ DB_CONFIG = {
     "password": "Kamsaf@786",
     "host": "aws-0-ap-south-1.pooler.supabase.com",
     "port": "6543",
-    "dbname": "postgres","connect_timeout": 5,
+    "dbname": "postgres",
+    "connect_timeout": 5,
     "options": "-c statement_timeout=5000 -c idle_in_transaction_session_timeout=5000",
-
 }
+
+# Connection pool
+connection_pool = None
+
+def init_connection_pool():
+    global connection_pool
+    if connection_pool is None:
+        connection_pool = psycopg2.pool.SimpleConnectionPool(
+            minconn=1,
+            maxconn=10,  # Adjust based on your DB limits
+            **DB_CONFIG
+        )
+
+@contextmanager
 def get_db_connection():
-    return psycopg2.connect(**DB_CONFIG)
+    init_connection_pool()
+    conn = connection_pool.getconn()
+    try:
+        yield conn
+    finally:
+        connection_pool.putconn(conn)
 
 
 def user_exists(user_id=None, phone=None):

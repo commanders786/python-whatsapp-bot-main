@@ -18,8 +18,29 @@ DB_CONFIG = {
     "dbname": "postgres"
 }
 
+from contextlib import contextmanager
+from psycopg2 import pool
+
+# Connection pool
+connection_pool = None
+
+def init_connection_pool():
+    global connection_pool
+    if connection_pool is None:
+        connection_pool = psycopg2.pool.SimpleConnectionPool(
+            minconn=1,
+            maxconn=10,  # Adjust based on your DB limits
+            **DB_CONFIG
+        )
+
+@contextmanager
 def get_db_connection():
-    return psycopg2.connect(**DB_CONFIG)
+    init_connection_pool()
+    conn = connection_pool.getconn()
+    try:
+        yield conn
+    finally:
+        connection_pool.putconn(conn)
 
 # ------------------ USERS ------------------
 
