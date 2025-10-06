@@ -84,6 +84,8 @@ def update_lastlogin(phone):
                     SET lastlogin = %s
                     WHERE phone = %s;
                 """, (new_lastlogin, phone))
+                print(f"Executed UPDATE for phone={phone} with lastlogin={new_lastlogin}")  # Debug
+                conn.commit()
 
                 if cur.rowcount == 0:
                     return jsonify({"status": "error", "message": "User not found."}), 404
