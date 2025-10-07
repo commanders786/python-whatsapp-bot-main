@@ -107,8 +107,8 @@ from .utils.whatsapp_utils import (
 # ----------------------------------------------------------------------
 # 🌟 Executor setup — handle WhatsApp messages asynchronously
 # ----------------------------------------------------------------------
-MAX_WORKERS = 10
-QUEUE_LIMIT = 50
+MAX_WORKERS = 32
+QUEUE_LIMIT = 120
 
 executor = ThreadPoolExecutor(max_workers=MAX_WORKERS)
 

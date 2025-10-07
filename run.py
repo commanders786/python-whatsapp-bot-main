@@ -1,3 +1,39 @@
+# import logging
+# import os
+# import uvicorn
+# from app import create_app
+
+# # Environment: limit thread use by libraries
+# os.environ["OMP_NUM_THREADS"] = "4"
+# os.environ["MKL_NUM_THREADS"] = "4"
+# os.environ["OPENBLAS_NUM_THREADS"] = "4"
+# os.environ["NUMEXPR_NUM_THREADS"] = "4"
+
+# # Initialize app
+# app = create_app()
+
+# if __name__ == "__main__":
+#     logging.basicConfig(level=logging.INFO)
+
+#     port = int(os.getenv("PORT", 8000))
+#     reload = os.getenv("RELOAD", "true").lower() == "true"
+
+#     logging.info(f"🚀 Starting Flask app with Uvicorn on http://0.0.0.0:{port}")
+#     logging.info(
+#         f"Thread limits → OMP={os.environ.get('OMP_NUM_THREADS')}, MKL={os.environ.get('MKL_NUM_THREADS')}"
+#     )
+
+#     uvicorn.run(
+#         "run:app", 
+#         host="0.0.0.0",
+#         port=port,
+#         reload=reload,
+#         log_level="info",
+#         workers=1,              # Increase to e.g. 2–4 in production
+#         timeout_keep_alive=30,  # Good for SSE
+#     )
+
+
 import logging
 import os
 import sys
