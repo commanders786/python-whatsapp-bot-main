@@ -816,6 +816,59 @@ def send_template_message(template_name, receipt, phone_number):
         return jsonify({"status": "error", "message": "Failed to send message"}), 500
 
 
+
+
+def send_feedback_buttons(recipient_phone_number: str, language: str = "en"):
+    """
+    Sends a WhatsApp interactive button message asking for user feedback.
+    Supports English and Malayalam.
+    """
+
+    # Localized text
+    body_text = (
+        "*Please share your experience with us* 📝"
+        if language == "en"
+        else "*നിങ്ങൾ ഡെലിവറി ലഭിച്ചതായി ഞങ്ങൾ പ്രതീക്ഷിക്കുന്നു. ദയവായി നിങ്ങളുടെ അഭിപ്രായം ഞങ്ങളുമായി പങ്കിടൂ.* 📝"
+    )
+
+    payload = {
+        "messaging_product": "whatsapp",
+        "recipient_type": "individual",
+        "to": recipient_phone_number,
+        "type": "interactive",
+        "interactive": {
+            "type": "button",
+            "body": {"text": body_text},
+            "action": {
+                "buttons": [
+                    {
+                        "type": "reply",
+                        "reply": {"id": "5", "title": "Excellent 🤩✨"},
+                    },
+                    {
+                        "type": "reply",
+                        "reply": {"id": "3", "title": "Okay 😊👌"},
+                    },
+                    {
+                        "type": "reply",
+                        "reply": {"id": "0", "title": "Not Satisfied 😞👎"},
+                    },
+                ]
+            },
+        },
+    }
+
+    try:
+        response = requests.post(base_url, headers=headers, json=payload)
+        response.raise_for_status()
+        print("✅ Feedback button message sent successfully!")
+        print(response.json())
+    except requests.exceptions.RequestException as e:
+        print(f"❌ Error sending interactive button message: {e}")
+        if 'response' in locals() and response is not None:
+            print(f"Status code: {response.status_code}")
+            print(f"Response body: {response.text}")
+
 # if __name__ == "__main__":
 #     recipient_number = "919961575781"  # Replace with the actual recipient number
     

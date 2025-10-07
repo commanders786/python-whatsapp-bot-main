@@ -3,6 +3,7 @@ import logging
 from flask import Blueprint, request, jsonify,Response
 import psycopg2
 import queue
+from app.services.cloud_apis import send_feedback_buttons
 from app.services.crud_services import clear_payment_service, de_map_products_service, get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, insert_vendor_service, map_products_service, update_availability_service, update_order_items_service, update_order_items_service_new, update_price_service, update_product_details_service, update_vendor_price_service, user_exists, vendor_account_updation_service
 from app.services.product_service import fetch_and_categorize_products, send_whatsapp_product_list
 from datetime import datetime, timedelta
@@ -223,15 +224,29 @@ def update_order_status(order_id):
                 
                 if not updated_order:
                     return jsonify({"status": "error", "message": "Order not found"}), 404
+                # 2️⃣ Fetch userid (phone number) for this order
+                cur.execute("SELECT userid FROM orders WHERE id = %s::varchar", (str(order_id),))
+                user_row = cur.fetchone()
+                user_phone = user_row[0] if user_row else None
+
+                conn.commit()
+
+        # 3️⃣ If delivered, trigger WhatsApp feedback message
+        if status == "delivered" and user_phone:
+            try:
+                send_feedback_buttons(user_phone, language="ml")
+            except Exception as send_err:
+                print(f"⚠️ Failed to send feedback message: {send_err}")
                     
                 conn.commit()
-                return jsonify({
+            return jsonify({
                     "status": "success",
                     "order": {
                         "id": updated_order[0],
                         "status": updated_order[1]
                     }
                 }), 200
+        
                 
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 400

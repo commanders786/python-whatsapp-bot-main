@@ -1449,3 +1449,33 @@ def update_order_bill_amount(data):
 
     except Exception as e:
         return {"error": str(e)}, 500
+
+
+def update_order_feedback(userid, feedback):
+    """
+    Updates the feedback column for the most recent order of the given user.
+    """
+    try:
+        with get_db_connection() as conn:
+            with conn.cursor() as cur:
+                # Find the most recent order for the user
+                cur.execute("""
+                    UPDATE orders
+                    SET feedback = %s
+                    WHERE id = (
+                        SELECT id FROM orders
+                        WHERE userid = %s
+                        ORDER BY id DESC
+                        LIMIT 1
+                    );
+                """, (feedback, userid))
+
+                if cur.rowcount == 0:
+                    return {"status": "error", "message": "No orders found for this user."}, 404
+
+                conn.commit()
+
+        return {"status": "success", "message": "Feedback updated successfully."}, 200
+
+    except Exception as e:
+        return {"status": "error", "message": str(e)}, 400

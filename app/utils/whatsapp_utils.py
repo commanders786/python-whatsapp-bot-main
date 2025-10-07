@@ -13,7 +13,7 @@ import re
 
 # from app.services.audio_service import transcribe_audio_from_facebook
 from app.services.audio_service import transcribe_audio_from_facebook
-from app.services.crud_services import insert_order, insert_user, update_order_bill_amount,update_order_items_service, update_user_lastlogin, user_exists
+from app.services.crud_services import insert_order, insert_user, update_order_bill_amount, update_order_feedback,update_order_items_service, update_user_lastlogin, user_exists
 from app.services.product_service import load_restaurants, send_whatsapp_product_list
 from app.utils.messages import get_text_message_input, po_template
 from app.utils.validations import fuzzy_best_match, is_within_radius
@@ -344,7 +344,12 @@ def process_whatsapp_message(body):
               
                 send_whatsapp_product_list("bakeries",wa_id)
                 return
-           
+            elif button_id in ['5','3','0']:
+                update_order_feedback(wa_id, button_id)
+                response =   "നിങ്ങളുടെ പ്രതികരണത്തിന് നന്ദി! 🙏\nഞങ്ങളുടെ സേവനം മെച്ചപ്പെടുത്തുന്നതിൽ സഹായിക്കുന്നതിന് നിങ്ങളുടെ സമയം, ശ്രമം എന്നിവയ്ക്ക് ഞങ്ങൾ നന്ദി പറയുന്നു. 😊"
+                data = get_text_message_input(wa_id, response)
+                send_message(data)
+                return
             
                
             elif button_id=="oc" :
