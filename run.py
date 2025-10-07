@@ -63,7 +63,7 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
     
     # Get thread count from environment or use safe default
-    thread_count = int(os.getenv('WAITRESS_THREADS', 32))
+    thread_count = int(os.getenv('WAITRESS_THREADS', 16))
     
     logging.info(f"Starting Flask app with Waitress on http://0.0.0.0:8000 with {thread_count} threads")
     logging.info(f"Thread limits: OMP={os.environ.get('OMP_NUM_THREADS')}, MKL={os.environ.get('MKL_NUM_THREADS')}")
