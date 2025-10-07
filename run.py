@@ -68,4 +68,4 @@ if __name__ == "__main__":
     logging.info(f"Starting Flask app with Waitress on http://0.0.0.0:8000 with {thread_count} threads")
     logging.info(f"Thread limits: OMP={os.environ.get('OMP_NUM_THREADS')}, MKL={os.environ.get('MKL_NUM_THREADS')}")
     
-    serve(app, host="0.0.0.0", port=8000, threads=thread_count, channel_timeout=120)
+    serve(app, host="0.0.0.0", port=8000, threads=thread_count, channel_timeout=15)
