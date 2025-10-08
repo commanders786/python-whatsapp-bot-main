@@ -24,7 +24,7 @@ def signup_user(phone, email, password):
         return {"message": "User registered successfully", "status": 201}
 
     except Exception as e:
-        logging.exception("Error in signup_user")
+        print(e)
         return {"message": "Internal server error", "status": 500}
 def login_user(email, password):
     try:

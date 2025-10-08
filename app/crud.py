@@ -239,7 +239,7 @@ def update_order_status(order_id):
                 print(f"⚠️ Failed to send feedback message: {send_err}")
                     
                 conn.commit()
-            return jsonify({
+        return jsonify({
                     "status": "success",
                     "order": {
                         "id": updated_order[0],

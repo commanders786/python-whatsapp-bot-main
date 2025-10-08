@@ -184,7 +184,11 @@ def fetch_and_categorize_products():
                         restaurant = desc[index + len(key):].strip().title()
                         if restaurant not in restaurants:
                             restaurants[restaurant] = []
-                        restaurants[restaurant].append(rid)
+                        # temporarily store name for sorting
+                        restaurants[restaurant].append({
+                            "retailer_id": rid,
+                            "name": item.get("name", "").strip()
+                        })
                     else:
                         print("Restaurant not found.", rid)
 
@@ -192,8 +196,20 @@ def fetch_and_categorize_products():
             url = data.get("paging", {}).get("next")
             params = None  # after first call, use full URL with "next"
 
+          # --- Sort inside each restaurant alphabetically by name ---
+        # --- Sort inside each restaurant alphabetically by name ---
+        sorted_restaurants = {}
+        for restaurant_name, items in restaurants.items():
+            sorted_items = sorted(
+                items,
+                key=lambda x: x["name"].strip().lower() if x["name"] else ""
+            )
+            sorted_restaurants[restaurant_name] = [item["retailer_id"] for item in sorted_items]
+
+        # --- Optionally, sort restaurants alphabetically too ---
+        sorted_restaurants = dict(sorted(sorted_restaurants.items(), key=lambda x: x[0].lower()))
         with open("restaurants.json", "w", encoding="utf-8") as f:
-            json.dump(restaurants, f, ensure_ascii=False, indent=2)
+            json.dump(sorted_restaurants, f, ensure_ascii=False, indent=2)
         with open("result.json", "w", encoding="utf-8") as f:
             json.dump(categorized, f, ensure_ascii=False, indent=2)
 
