@@ -1,4 +1,3 @@
-from flask import logging
 from app.utils.auth_util import hash_password, verify_password, generate_jwt
 from app.services.crud_services import get_db_connection
 
