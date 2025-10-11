@@ -52,5 +52,5 @@ def login_user(email, password):
         }
 
     except Exception as e:
-        logging.error(f"Error in login_user: {str(e)}")
+        
         return {"message": "Internal server error", "status": 500}
