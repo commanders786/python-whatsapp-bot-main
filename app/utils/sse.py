@@ -5,7 +5,7 @@ import logging
 from flask import Response, make_response
 
 clients = []
-MAX_CLIENTS = 10  # cap concurrent SSE clients to avoid thread exhaustion
+MAX_CLIENTS = 20  # cap concurrent SSE clients to avoid thread exhaustion
 
 def get_clients():
     return clients

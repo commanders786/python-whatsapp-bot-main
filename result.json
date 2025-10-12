@@ -7368,7 +7368,7 @@
       "id": "9567582903335144",
       "name": "ചട്ടിപത്തിരി ( Cake) 1.5kg",
       "description": "ലൈവ് ആയി ചെയ്യുന്നതോണ്ട് 3 മണിക്കൂർ വരേ എടുക്കാം",
-      "price": "₹450.00",
+      "price": "₹470.00",
       "pattern": "chattipathiri,home made cake,snacks",
       "unit": null,
       "retailer_id": "SN03",
@@ -7496,6 +7496,17 @@
       "availability": "in stock",
       "sale_price": "₹240.00"
     },
+    "SN133": {
+      "id": "23897462533263939",
+      "name": "ചട്ടിപത്തിരി ( Cake) 1 kg",
+      "description": "ലൈവ് ആയി ചെയ്യുന്നതോണ്ട് 3 മണിക്കൂർ വരേ എടുക്കാം",
+      "price": "₹350.00",
+      "pattern": "Sarees Kitchen,chattipathiri,irachpathiri",
+      "unit": null,
+      "retailer_id": "SN133",
+      "availability": "in stock",
+      "sale_price": "₹330.00"
+    },
     "sn17": {
       "id": "24093670490326386",
       "name": "ഉണ്ണിയപ്പം 8 pcs (Unni appam)",
@@ -7517,6 +7528,28 @@
       "retailer_id": "sn19",
       "availability": "in stock",
       "sale_price": null
+    },
+    "SN132": {
+      "id": "25193024716971778",
+      "name": "ഇറച്ചി പത്തിരി  ( Cake) 1 kg",
+      "description": "ലൈവ് ആയി ചെയ്യുന്നതോണ്ട് 3 മണിക്കൂർ വരേ എടുക്കാം",
+      "price": "₹350.00",
+      "pattern": "Sarees Kitchen,chattipathiri,irachipathiri",
+      "unit": null,
+      "retailer_id": "SN132",
+      "availability": "in stock",
+      "sale_price": "₹340.00"
+    },
+    "SN134": {
+      "id": "25925929013662152",
+      "name": "ഇറച്ചി പത്തിരി  ( Cake) 1.5 kg",
+      "description": "ലൈവ് ആയി ചെയ്യുന്നതോണ്ട് 3 മണിക്കൂർ വരേ എടുക്കാം",
+      "price": "₹480.00",
+      "pattern": "Sarees Kitchen,chattipathiri,irachipathiri",
+      "unit": null,
+      "retailer_id": "SN134",
+      "availability": "in stock",
+      "sale_price": "₹470.00"
     },
     "sn12": {
       "id": "29641612152152766",
