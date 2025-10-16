@@ -3462,14 +3462,14 @@
     },
     "ch09": {
       "id": "30322533087346221",
-      "name": "കോഴി (Chicken) 500g",
+      "name": "Chicken (കോഴി) 500g",
       "description": "Normal chicken",
-      "price": "₹110.00",
+      "price": "₹90.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
       "availability": "in stock",
-      "sale_price": "₹95.00"
+      "sale_price": null
     },
     "ch15": {
       "id": "9714611515291014",
@@ -4662,6 +4662,28 @@
       "retailer_id": "bk73",
       "availability": "in stock",
       "sale_price": null
+    },
+    "bk80": {
+      "id": "25843186231934891",
+      "name": "Diwali Sweets Box 500g",
+      "description": "Normal Diwali Sweets from nice bakery",
+      "price": "₹200.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "bk80",
+      "availability": "in stock",
+      "sale_price": "₹180.00"
+    },
+    "bk81": {
+      "id": "32438071809124689",
+      "name": "Diwali Sweets Box 1kg",
+      "description": "Normal Diwali Sweets from nice bakery",
+      "price": "₹400.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "bk81",
+      "availability": "in stock",
+      "sale_price": "₹350.00"
     }
   },
   "food": {
@@ -5952,6 +5974,17 @@
       "availability": "in stock",
       "sale_price": "₹149.00"
     },
+    "rf246": {
+      "id": "24265153583163405",
+      "name": "Veg Biriyani",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹160.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf246",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf215": {
       "id": "24305189352511022",
       "name": "Chicken 65 (Quater)",
@@ -5976,12 +6009,23 @@
     },
     "rf237": {
       "id": "24420847287614669",
-      "name": "Chicken Pollichath (Quater)",
+      "name": "Chicken Pollichath With Rice (Quater)",
       "description": "restaurant: Foodkeys 🍽🥘",
       "price": "₹270.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf237",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf251": {
+      "id": "24434339989598835",
+      "name": "Fried Chicken (Half)",
+      "description": "6 pcs Chicken,2 Kuboos and Fries\nrestaurant: Foodkeys 🍽🥘",
+      "price": "₹210.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf251",
       "availability": "in stock",
       "sale_price": null
     },
@@ -6051,6 +6095,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf242": {
+      "id": "24596213163407920",
+      "name": "Chicken biriyani (Full)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹209.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf242",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf219": {
       "id": "24617333561293651",
       "name": "Grilled Beef Mandi (Half)",
@@ -6095,12 +6150,23 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf249": {
+      "id": "24656562570667261",
+      "name": "ഊൺ  (Thali Meals)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹140.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf249",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf203": {
       "id": "24661745796824840",
       "name": "Peri Peri Mandi (Quater)",
       "description": "restaurant: Foodkeys 🍽🥘",
       "price": "₹250.00",
-      "pattern": null,
+      "pattern": "mandhi",
       "unit": null,
       "retailer_id": "rf203",
       "availability": "in stock",
@@ -6128,6 +6194,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf241": {
+      "id": "24703160136016776",
+      "name": "Chicken biriyani (Half)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹150.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf241",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf240": {
       "id": "24745098755180820",
       "name": "Mutton Biriyani",
@@ -6144,7 +6221,7 @@
       "name": "Peri Peri Mandi (Full)",
       "description": "restaurant: Foodkeys 🍽🥘",
       "price": "₹940.00",
-      "pattern": null,
+      "pattern": "mandhi",
       "unit": null,
       "retailer_id": "rf205",
       "availability": "in stock",
@@ -6152,7 +6229,7 @@
     },
     "rf238": {
       "id": "24767093709588007",
-      "name": "Chicken Pollichath (Half)",
+      "name": "Chicken Pollichath With Rice (Half)",
       "description": "restaurant: Foodkeys 🍽🥘",
       "price": "₹520.00",
       "pattern": null,
@@ -6163,7 +6240,7 @@
     },
     "rf239": {
       "id": "24780187484967409",
-      "name": "Chicken Pollichath (Full)",
+      "name": "Chicken Pollichath With Rice (Full)",
       "description": "restaurant: Foodkeys 🍽🥘",
       "price": "₹990.00",
       "pattern": null,
@@ -6191,6 +6268,17 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf220",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf250": {
+      "id": "24819778670964362",
+      "name": "Fried Chicken (Quater)",
+      "description": "3 pcs Chicken,1 Kuboos and Fries\nrestaurant: Foodkeys 🍽🥘",
+      "price": "₹210.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf250",
       "availability": "in stock",
       "sale_price": null
     },
@@ -6232,9 +6320,20 @@
       "name": "Peri Peri Alfaham (Quater)",
       "description": "Peri Peri Chicken Only\nrestaurant: Foodkeys 🍽🥘",
       "price": "₹189.00",
-      "pattern": null,
+      "pattern": "mandhi",
       "unit": null,
       "retailer_id": "rf200",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf245": {
+      "id": "24964706559860442",
+      "name": "Chicken 65 Biriyani",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹210.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf245",
       "availability": "in stock",
       "sale_price": null
     },
@@ -6249,6 +6348,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf247": {
+      "id": "25005290095770065",
+      "name": "Fish Biriyani (Seasonal)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹0.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf247",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf233": {
       "id": "25039860588941089",
       "name": "Chemballi Fish (1Kg)",
@@ -6257,6 +6367,17 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf233",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf248": {
+      "id": "25071759802443560",
+      "name": "ഊൺ  (Veg Thali Meals)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹130.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf248",
       "availability": "in stock",
       "sale_price": null
     },
@@ -6279,6 +6400,17 @@
       "pattern": null,
       "unit": null,
       "retailer_id": "rf221",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf244": {
+      "id": "25211430421782682",
+      "name": "Beef Biriyani (Half)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹150.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf244",
       "availability": "in stock",
       "sale_price": null
     },
@@ -6320,9 +6452,20 @@
       "name": "Peri Peri Mandi (Half)",
       "description": "restaurant: Foodkeys 🍽🥘",
       "price": "₹490.00",
-      "pattern": null,
+      "pattern": "mandhi",
       "unit": null,
       "retailer_id": "rf204",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "rf243": {
+      "id": "25566268622976035",
+      "name": "Beef Biriyani (Full)",
+      "description": "restaurant: Foodkeys 🍽🥘",
+      "price": "₹209.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf243",
       "availability": "in stock",
       "sale_price": null
     },
@@ -6364,7 +6507,7 @@
       "name": "Peri Peri Alfaham (Full)",
       "description": "Peri Peri Chicken Only\nrestaurant: Foodkeys 🍽🥘",
       "price": "₹680.00",
-      "pattern": null,
+      "pattern": "mandhi",
       "unit": null,
       "retailer_id": "rf202",
       "availability": "in stock",
@@ -6392,6 +6535,17 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "rf252": {
+      "id": "32064543699856014",
+      "name": "Fried Chicken (Full)",
+      "description": "12 pcs Chicken,4 Kuboos and Fries\nrestaurant: Foodkeys 🍽🥘",
+      "price": "₹720.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf252",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "rf229": {
       "id": "32549811887939207",
       "name": "Butter Chicken (Full)",
@@ -6408,7 +6562,7 @@
       "name": "Peri Peri Alfaham (Half)",
       "description": "Peri Peri Chicken Only\nrestaurant: Foodkeys 🍽🥘",
       "price": "₹360.00",
-      "pattern": null,
+      "pattern": "mandhi",
       "unit": null,
       "retailer_id": "rf201",
       "availability": "in stock",
@@ -6441,7 +6595,7 @@
       "name": "Masala Shawai (Full)",
       "description": "restaurant: Foodkeys 🍽🥘",
       "price": "₹570.00",
-      "pattern": null,
+      "pattern": "shawaya",
       "unit": null,
       "retailer_id": "rf34",
       "availability": "in stock",
@@ -6463,7 +6617,7 @@
       "name": "Peri Peri Alfahm (FULL)",
       "description": "Alfahm\nrestaurant: ZABAQ",
       "price": "₹520.00",
-      "pattern": "food,alfahm chicken",
+      "pattern": "food,alfahm chicken,alfam",
       "unit": null,
       "retailer_id": "rf38",
       "availability": "in stock",
@@ -6474,7 +6628,7 @@
       "name": "Peri Peri Alfahm (HALF)",
       "description": "Alfahm\nrestaurant: ZABAQ",
       "price": "₹300.00",
-      "pattern": "food,alfahm chicken",
+      "pattern": "food,alfahm chicken,alfam",
       "unit": null,
       "retailer_id": "rf39",
       "availability": "in stock",
@@ -6485,7 +6639,7 @@
       "name": "Masala Shawai (Half)",
       "description": "restaurant: Foodkeys 🍽🥘",
       "price": "₹300.00",
-      "pattern": null,
+      "pattern": "shawaya",
       "unit": null,
       "retailer_id": "rf33",
       "availability": "in stock",
@@ -6507,7 +6661,7 @@
       "name": "Masala Shawai (Quater)",
       "description": "restaurant: Foodkeys 🍽🥘",
       "price": "₹160.00",
-      "pattern": null,
+      "pattern": "shawaya",
       "unit": null,
       "retailer_id": "rf32",
       "availability": "in stock",
@@ -6573,7 +6727,7 @@
       "name": "Peri Peri Alfahm (QUATER)",
       "description": "Alfahm\nrestaurant: ZABAQ",
       "price": "₹160.00",
-      "pattern": "food,alfahm chicken",
+      "pattern": "food,alfahm chicken,alfam",
       "unit": null,
       "retailer_id": "rf40",
       "availability": "in stock",
@@ -6752,7 +6906,7 @@
       "pattern": "dosa,masala dosa, neirost",
       "unit": null,
       "retailer_id": "rf68",
-      "availability": "out of stock",
+      "availability": "in stock",
       "sale_price": null
     },
     "rf64": {
@@ -7159,7 +7313,7 @@
       "pattern": "oon,sadya,meals,ഊൺ,lunch",
       "unit": null,
       "retailer_id": "rf97",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null
     }
   },
@@ -7500,12 +7654,12 @@
       "id": "23897462533263939",
       "name": "ചട്ടിപത്തിരി ( Cake) 1 kg",
       "description": "ലൈവ് ആയി ചെയ്യുന്നതോണ്ട് 3 മണിക്കൂർ വരേ എടുക്കാം",
-      "price": "₹350.00",
+      "price": "₹330.00",
       "pattern": "Sarees Kitchen,chattipathiri,irachpathiri",
       "unit": null,
       "retailer_id": "SN133",
       "availability": "in stock",
-      "sale_price": "₹330.00"
+      "sale_price": null
     },
     "sn17": {
       "id": "24093670490326386",
@@ -7538,7 +7692,7 @@
       "unit": null,
       "retailer_id": "SN132",
       "availability": "in stock",
-      "sale_price": "₹340.00"
+      "sale_price": null
     },
     "SN134": {
       "id": "25925929013662152",
@@ -7599,7 +7753,7 @@
       "id": "23966689346296043",
       "name": "പൊറോട്ട  1pc (porotta)",
       "description": "Kerala layer porotta",
-      "price": "₹12.00",
+      "price": "₹14.00",
       "pattern": "breakfast",
       "unit": null,
       "retailer_id": "sn30",

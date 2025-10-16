@@ -151,9 +151,14 @@ def process_whatsapp_message(body):
             
             message_body = message["text"]["body"]
             rest_name_check=fuzzy_best_match(message_body.lower() ,list(load_restaurants().keys()),score_cutoff=90)
+            print("matched",rest_name_check)
+
+            if  rest_name_check:
+                print("asdfghjkl")
+                matched_restaurant = rest_name_check
+                send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
+                return
             
-
-
             if  user_sessions[wa_id]['level']=="M2":
                 user_sessions[wa_id]['level']="M3"
                 user_sessions[wa_id]['notes']=message_body
@@ -213,15 +218,15 @@ def process_whatsapp_message(body):
             #     return
             
 
-            elif  rest_name_check:
-                
-                matched_restaurant = rest_name_check
-                send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
-                return
+            # elif  rest_name_check:
+            #     print("asdfghjkl")
+            #     matched_restaurant = rest_name_check
+            #     send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
+            #     return
 
 
             elif 'searchresult'==response:
-               
+                print("hii")
                 send_whatsapp_product_list(list(items),wa_id)
                 return
             
