@@ -268,6 +268,10 @@ Examples:
 - "detergent" -> oth
 -coke ,pepsi,fanta,sprite etc -> oth
 
+diwali ->bakeries
+
+
+
 NB:just dont adhere to only thease examples if any item comes out of thease check it is in which category
    meat inclues only raw meat not ready to cook items
 
