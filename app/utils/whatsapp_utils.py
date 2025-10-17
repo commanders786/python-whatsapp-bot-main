@@ -182,8 +182,9 @@ def process_whatsapp_message(body):
                 return
             
             
-
+            print("Generating response for:", message_body)
             response,items = generate_response(name, message_body,user_sessions[wa_id])
+            print("Generated response:", response)
             if items and isinstance(items[0], dict):
              user_sessions[wa_id]['items'].extend(items)
             

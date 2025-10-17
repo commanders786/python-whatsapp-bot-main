@@ -171,7 +171,7 @@ def search_products(query, session=None, top_k=40):
         
 
         # Replace the original condition with this fuzzy match version
-        if fuzz.ratio(query.lower(), (product.get('name') or '').lower()) > 30 or fuzz.ratio(query.lower(), (product.get('pattern') or '').lower()) > 30:
+        if fuzz.partial_ratio(query.lower(), (product.get('name') or '').lower()) > 30  or fuzz.partial_ratio(query.lower(), (product.get('pattern') or '').lower()) > 30:
              score += 0.5
         print(product['name'], score)
         if score < 0.45:
