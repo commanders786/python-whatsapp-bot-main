@@ -4,7 +4,7 @@ import json
 import threading
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-from thefuzz import fuzz
+from rapidfuzz import fuzz
 from app.services.cloud_apis import send_message
 from app.utils.messages import get_text_message_input
 
