@@ -267,6 +267,7 @@ Examples:
 - "soap" -> oth
 - "detergent" -> oth
 -coke ,pepsi,fanta,sprite etc -> oth
+-rice,eggs,grains,pulses -> oth
 
 diwali ->bakeries
 
