@@ -131,7 +131,7 @@ def remove_emojis_and_specials(text: str) -> str:
 def fuzzy_best_match(query: str, choices: list[str], score_cutoff: int = 90) -> str | None:
     clean_query = remove_emojis_and_specials(query).lower().strip()
     cleaned_choices = {remove_emojis_and_specials(c).lower().strip(): c for c in choices}
-
+    print("cleaned_choices:", cleaned_choices)
     # default: full ratio
     scorer = fuzz.ratio  
 
@@ -150,6 +150,7 @@ def fuzzy_best_match(query: str, choices: list[str], score_cutoff: int = 90) -> 
         return None
 
     match, score, _ = result
+    print("score:", score)
     return cleaned_choices[match]
 
 

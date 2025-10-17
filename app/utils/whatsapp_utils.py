@@ -150,7 +150,7 @@ def process_whatsapp_message(body):
         if message["type"] == "text":
             
             message_body = message["text"]["body"]
-            rest_name_check=fuzzy_best_match(message_body.lower() ,list(load_restaurants().keys()),score_cutoff=90)
+            rest_name_check=fuzzy_best_match(message_body.lower() ,list(load_restaurants().keys()),score_cutoff=60)
             print("matched",rest_name_check)
 
             if  rest_name_check:

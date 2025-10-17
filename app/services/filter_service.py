@@ -128,32 +128,30 @@ def get_product_embeddings():
 #      data = get_text_message_input(session.get('number'), response)
 #      send_message(data)
 #     return output,nothing
-
 def search_products(query, session=None, top_k=40):
     global products, product_embeddings
-    
+
     model = get_model()
     if products is None or product_embeddings is None:
         products, product_embeddings = get_product_embeddings()
-    
+
     query = query.strip()
 
-    # 🧠 Use Gemini to detect category
-    detected_category = detect_category_with_gemini(query)
-    print(f"🧭 Gemini-detected category: {detected_category}")
+    # 🧠 Detect one or more likely categories using Gemini
+    detected_categories = detect_category_with_gemini(query)
+    print(f"🧭 Gemini-detected categories: {detected_categories}")
 
-    # 🔍 Filter based on category
-    filtered_indices = []
-    if detected_category:
+    # 🔍 Filter indices based on one or more categories
+    if detected_categories:
         filtered_indices = [
             i for i, p in enumerate(products)
-            if p.get("fb_product_category") == detected_category
+            if p.get("fb_product_category") in detected_categories
         ]
     else:
         filtered_indices = list(range(len(products)))
 
     if not filtered_indices:
-        return f"No products found in category {detected_category or 'all'}", 0
+        return f"No products found in categories {detected_categories or 'all'}", 0
 
     query_embedding = model.encode([query])
     subset_embeddings = [product_embeddings[i] for i in filtered_indices]
@@ -163,17 +161,15 @@ def search_products(query, session=None, top_k=40):
     output = f"\n🔍 Search Results for: '{query}'"
     found_any = 0
 
-    print("top_indices:", top_indices)
-
     for idx in top_indices:
         product = products[filtered_indices[idx]]
         score = similarities[idx]
-        
 
-        # Replace the original condition with this fuzzy match version
-        if fuzz.partial_ratio(query.lower(), (product.get('name') or '').lower()) > 30  or fuzz.partial_ratio(query.lower(), (product.get('pattern') or '').lower()) > 30:
-             score += 0.5
-        print(product['name'], score)
+        # ⚡ Use RapidFuzz for substring-like fuzzy matching
+        if fuzz.partial_ratio(query.lower(), (product.get('name') or '').lower()) > 30 or \
+           fuzz.partial_ratio(query.lower(), (product.get('pattern') or '').lower()) > 30:
+            score += 0.5
+
         if score < 0.45:
             continue
 
@@ -194,8 +190,8 @@ def search_products(query, session=None, top_k=40):
         data = get_text_message_input(session.get('number'), response)
         send_message(data)
 
-
     return output, found_any
+
 
 
 
@@ -230,11 +226,10 @@ CATEGORIES = [
     "vegetables", "fruits", "meat", "fish",
     "snacks", "bakeries", "food", "nuts", "general", "oth"
 ]
-
 def detect_category_with_gemini(query):
     """
     Use Gemini API directly (without importing from gemini_service)
-    to classify grocery item category.
+    to classify grocery item category or multiple likely categories.
     """
     try:
         load_dotenv()
@@ -242,66 +237,58 @@ def detect_category_with_gemini(query):
         if not api_key:
             raise ValueError("GOOGLE_API_KEY environment variable not set")
 
-        # Configure Gemini
         genai.configure(api_key=api_key)
         model = genai.GenerativeModel("gemini-2.0-flash")
 
         prompt = f"""
 You are a classification assistant for a grocery shopping bot.
 
-Your task:
-Given a user query, identify which product category it belongs to.
-Choose ONLY from these categories:
+Given a product query, identify which grocery product categories it could belong to.
+Return 1–3 **most likely** categories separated by commas.
+
+Choose only from:
 {', '.join(CATEGORIES)}.
 
 Examples:
 - "chicken" -> meat
-- "കോഴി" -> meat
-- "beef" -> meat
-- "apple" -> fruits
-- "garlic" -> vegetables
+- "bread" -> bakeries, oth
+- "fish masala" -> food, fish
 - "biryani" -> food
-- "bread" -> bakeries
-- "fish" -> fish
 - "cashew" -> nuts
 - "soap" -> oth
-- "detergent" -> oth
--coke ,pepsi,fanta,sprite etc -> oth
--rice,eggs,grains,pulses -> oth
-
-diwali ->bakeries
-
-
-
-NB:just dont adhere to only thease examples if any item comes out of thease check it is in which category
-   meat inclues only raw meat not ready to cook items
-
-   food inclues lot of items arabian ,chinease so please understand query and map it corectly
-
-Now, classify the following query:
+- "apple" -> fruits
+- "beef" -> meat
+- "cake" -> bakeries
+-"pepesi,coke etc" -> oth
+- "eggs" -> oth
+- "rice","grains","pulses" -> oth
+Now classify the following query:
 "{query}"
 
-Return only the category name, nothing else.
+
+food mainly include restaurant foods not the entire food and supermarket items will be in oth
+
+Return only the category names, comma separated. No explanation.
 """
 
         response = model.generate_content(
             contents=prompt,
             generation_config={
-                "max_output_tokens": 10,
+                "max_output_tokens": 20,
                 "temperature": 0.2,
-                "top_p": 0.95
-            }
+                "top_p": 0.9,
+            },
         )
 
-        category = response.text.strip().lower()
+        raw_text = (response.text or "").strip().lower()
+        categories = [c.strip() for c in raw_text.split(",") if c.strip() in CATEGORIES]
 
-        # Validate
-        if category not in CATEGORIES:
-            print(f"⚠️ Gemini returned invalid category '{category}', defaulting to None")
+        if not categories:
+            print(f"⚠️ Gemini returned invalid category list '{raw_text}', defaulting to None")
             return None
 
-        print(f"✅ Gemini detected category: {category}")
-        return category
+        print(f"✅ Gemini detected categories: {categories}")
+        return categories
 
     except Exception as e:
         print(f"❌ Error detecting category with Gemini: {e}")

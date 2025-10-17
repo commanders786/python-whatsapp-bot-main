@@ -70,7 +70,7 @@ def chatGemini(name,query,session):
     # '''
     
 
-    query = call_gemini(clean_query.format(query=query))
+    # query = call_gemini(clean_query.format(query=query))
     print("cleaned query",query)
     filtered_items=search_products(query,session)
     

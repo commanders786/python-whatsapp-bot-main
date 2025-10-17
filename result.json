@@ -3948,6 +3948,17 @@
       "availability": "out of stock",
       "sale_price": null
     },
+    "bk101": {
+      "id": "24619467451070568",
+      "name": "Mini Falooda",
+      "description": "Juices from nice bakery",
+      "price": "₹100.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk101",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk12": {
       "id": "24669190279338141",
       "name": "Butter Scotch 500g",
@@ -3956,6 +3967,61 @@
       "pattern": "cake,Butter Scotch",
       "unit": null,
       "retailer_id": "bk12",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk103": {
+      "id": "24751558421203007",
+      "name": "Nice Special Avil Milk",
+      "description": "Juices from nice bakery",
+      "price": "₹50.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk103",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk106": {
+      "id": "24821007914230255",
+      "name": "Tender Coconut & Dates Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹120.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk106",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk109": {
+      "id": "24941851292090690",
+      "name": "Dry Fruits Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹140.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk109",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk104": {
+      "id": "25100109989606700",
+      "name": "Dry Fruits Avil Milk",
+      "description": "Juices from nice bakery",
+      "price": "₹100.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk104",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk107": {
+      "id": "25375775202027889",
+      "name": "Strawberry & Almond Milk Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹130.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk107",
       "availability": "in stock",
       "sale_price": null
     },
@@ -3989,6 +4055,50 @@
       "pattern": "banana chips,chips,bakery items",
       "unit": null,
       "retailer_id": "bk19",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk105": {
+      "id": "31789919117320369",
+      "name": "Nuts & Dates Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹130.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk105",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk108": {
+      "id": "31805078239138275",
+      "name": "Mango Mastani Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹100.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk108",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk102": {
+      "id": "31814864774825201",
+      "name": "Fruit Salad Falooda",
+      "description": "Juices from nice bakery",
+      "price": "₹100.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk102",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk100": {
+      "id": "31915145954795603",
+      "name": "Nice Special Falooda",
+      "description": "Juices from nice bakery",
+      "price": "₹150.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk100",
       "availability": "in stock",
       "sale_price": null
     },
@@ -4663,6 +4773,72 @@
       "availability": "in stock",
       "sale_price": null
     },
+    "bk85": {
+      "id": "9133367470120186",
+      "name": "Strawberry Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹80.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk85",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk83": {
+      "id": "24482289441469962",
+      "name": "Oreo Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹100.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk83",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk86": {
+      "id": "24580135371608862",
+      "name": "Avacado Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹70.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk86",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk87": {
+      "id": "24891969387121976",
+      "name": "Chikku Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹70.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk87",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk84": {
+      "id": "24898061316547863",
+      "name": "Kitkat Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹100.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk84",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk82": {
+      "id": "25509206418681639",
+      "name": "Nuttella Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹140.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk82",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk80": {
       "id": "25843186231934891",
       "name": "Diwali Sweets Box 500g",
@@ -4674,6 +4850,28 @@
       "availability": "in stock",
       "sale_price": "₹180.00"
     },
+    "bk89": {
+      "id": "31864936293121577",
+      "name": "Snickers Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹100.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk89",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk88": {
+      "id": "32357600880520669",
+      "name": "Tender Coconut Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹70.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk88",
+      "availability": "in stock",
+      "sale_price": null
+    },
     "bk81": {
       "id": "32438071809124689",
       "name": "Diwali Sweets Box 1kg",
@@ -4684,6 +4882,116 @@
       "retailer_id": "bk81",
       "availability": "in stock",
       "sale_price": "₹350.00"
+    },
+    "bk93": {
+      "id": "9393645860759944",
+      "name": "Watermelon Fresh Juice",
+      "description": "Juices from nice bakery",
+      "price": "₹70.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk93",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk91": {
+      "id": "24421004574267244",
+      "name": "Spanish Delight Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹100.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk91",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk98": {
+      "id": "24817859571210352",
+      "name": "Orange Fresh Juice",
+      "description": "Juices from nice bakery",
+      "price": "₹100.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk98",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk99": {
+      "id": "24832516126438119",
+      "name": "Royal Falooda",
+      "description": "Juices from nice bakery",
+      "price": "₹130.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk99",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk97": {
+      "id": "24849266451407272",
+      "name": "Orange Fresh Juice",
+      "description": "Juices from nice bakery",
+      "price": "₹70.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk97",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk90": {
+      "id": "24980284181591132",
+      "name": "Fig & Honey Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹100.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk90",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk92": {
+      "id": "25086134204332523",
+      "name": "Sharjah Shake",
+      "description": "Juices from nice bakery",
+      "price": "₹70.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk92",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk96": {
+      "id": "31619741147673906",
+      "name": "Pappaya Fresh Juice",
+      "description": "Juices from nice bakery",
+      "price": "₹70.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk96",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk95": {
+      "id": "31855519710762856",
+      "name": "Pineapple Fresh Juice",
+      "description": "Juices from nice bakery",
+      "price": "₹70.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk95",
+      "availability": "in stock",
+      "sale_price": null
+    },
+    "bk94": {
+      "id": "33059802286940307",
+      "name": "Mussambi Fresh Juice",
+      "description": "Juices from nice bakery",
+      "price": "₹70.00",
+      "pattern": "Juice",
+      "unit": null,
+      "retailer_id": "bk94",
+      "availability": "in stock",
+      "sale_price": null
     }
   },
   "food": {
