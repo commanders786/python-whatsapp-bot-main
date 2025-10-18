@@ -250,6 +250,7 @@ Choose only from:
 {', '.join(CATEGORIES)}.
 
 Examples:
+-"cutlet","unnkaaya","samoosa" etc-> snacks
 - "chicken" -> meat
 - "bread" -> bakeries, oth
 - "fish masala" -> food, fish
@@ -258,16 +259,23 @@ Examples:
 - "soap" -> oth
 - "apple" -> fruits
 - "beef" -> meat
-- "cake" -> bakeries
+- "cake" "diwali " -> bakeries
 -"pepesi,coke etc" -> oth
 - "eggs" -> oth
+-kunafa and other sweets and cakes -> bakeries,snacks
 - "rice","grains","pulses" -> oth
+
+
+our retsurant names afc chicken ,kothiyanz,biriyani souk etc ->food
 Now classify the following query:
 "{query}"
 
-
+diwali related things are added in bakeries
 food mainly include restaurant foods not the entire food and supermarket items will be in oth
 
+if you have any confusion regarding any items category return all possible categories
+for sweets and bakery items pls return snacks and bakeries
+for cooked restauarnt food only food is required with bakeries some time some items can be from bakeries
 Return only the category names, comma separated. No explanation.
 """
 

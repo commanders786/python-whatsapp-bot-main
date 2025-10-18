@@ -123,7 +123,7 @@ import re
 from rapidfuzz import fuzz, process
 
 # special cases where partial match should be applied
-PARTIAL_MATCH_WORDS = {"afc", "dominos", "mcd"}
+PARTIAL_MATCH_WORDS = {"afc", "dominos", "mcd","Kodhiyanz","kothiyans","kodhiyans","kothiyanz"}
 
 def remove_emojis_and_specials(text: str) -> str:
     return re.sub(r'[^a-zA-Z0-9\s]', '', text)
