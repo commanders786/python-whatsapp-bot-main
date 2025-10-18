@@ -166,8 +166,8 @@ def search_products(query, session=None, top_k=40):
         score = similarities[idx]
 
         # ⚡ Use RapidFuzz for substring-like fuzzy matching
-        if fuzz.partial_ratio(query.lower(), (product.get('name') or '').lower()) > 30 or \
-           fuzz.partial_ratio(query.lower(), (product.get('pattern') or '').lower()) > 30:
+        if fuzz.partial_ratio(query.lower(), (product.get('name') or '').lower()) > 50 or \
+           fuzz.partial_ratio(query.lower(), (product.get('pattern') or '').lower()) > 50:
             score += 0.5
 
         if score < 0.45:
