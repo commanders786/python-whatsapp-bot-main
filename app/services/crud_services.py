@@ -12,8 +12,11 @@ logger = logging.getLogger(__name__)
 
 from flask import jsonify
 import psycopg2
-from psycopg2 import pool
+from psycopg2 import pool,extensions
 
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 DB_CONFIG = {
     "user": "postgres.dmepnqgumjlvwaqnaybp",
@@ -25,44 +28,57 @@ DB_CONFIG = {
     "options": "-c statement_timeout=5000 -c idle_in_transaction_session_timeout=5000",
 }
 
-# Connection pool
 connection_pool = None
 
+
 def init_connection_pool():
+    """Initialize global connection pool once."""
     global connection_pool
     if connection_pool is None:
         connection_pool = psycopg2.pool.SimpleConnectionPool(
             minconn=1,
-            maxconn=10,  # Adjust based on your DB limits
+            maxconn=10,
             **DB_CONFIG
         )
+        logger.info("✅ PostgreSQL connection pool initialized.")
+
+
 @contextmanager
 def get_db_connection():
+    """Get a clean connection from pool and ensure rollback on errors."""
     init_connection_pool()
     conn = connection_pool.getconn()
     try:
-        # 🔥 Ensure connection is clean before use
-        if conn.status != psycopg2.extensions.STATUS_READY:
+        # Ensure connection is in a ready state before use
+        if conn.status != extensions.STATUS_READY:
             conn.rollback()
 
-        conn.autocommit = True
+        conn.autocommit = False  # ❗ Use transaction control manually
+
         yield conn
 
+        # If all good, commit changes
+        conn.commit()
+
     except Exception as e:
-        logging.error("Database error in connection context: %s", e)
+        logger.error("❌ Database error in connection context: %s", e)
         try:
-            conn.rollback()  # ensure connection reset after error
+            conn.rollback()
+            logger.info("🔄 Transaction rolled back due to error.")
         except Exception as rollback_err:
-            logging.error("Rollback failed: %s", rollback_err)
+            logger.error("Rollback failed: %s", rollback_err)
         raise
 
     finally:
         try:
-            # 🔥 Double-safety: rollback before returning to pool
-            if conn.status != psycopg2.extensions.STATUS_READY:
+            # Always reset to ready state before returning to pool
+            if conn.status != extensions.STATUS_READY:
                 conn.rollback()
         except Exception:
             pass
+
+        # Turn off autocommit (ensures consistent reuse)
+        conn.autocommit = False
         connection_pool.putconn(conn)
 
 def user_exists(user_id=None, phone=None):
