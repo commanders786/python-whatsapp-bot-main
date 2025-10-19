@@ -36,27 +36,34 @@ def init_connection_pool():
             maxconn=10,  # Adjust based on your DB limits
             **DB_CONFIG
         )
-
 @contextmanager
 def get_db_connection():
     init_connection_pool()
     conn = connection_pool.getconn()
     try:
+        # 🔥 Ensure connection is clean before use
         if conn.status != psycopg2.extensions.STATUS_READY:
             conn.rollback()
 
         conn.autocommit = True
         yield conn
+
     except Exception as e:
         logging.error("Database error in connection context: %s", e)
         try:
-            conn.rollback()  # just in case something fails inside
-        except:
-            pass
+            conn.rollback()  # ensure connection reset after error
+        except Exception as rollback_err:
+            logging.error("Rollback failed: %s", rollback_err)
         raise
-    finally:
-        connection_pool.putconn(conn)
 
+    finally:
+        try:
+            # 🔥 Double-safety: rollback before returning to pool
+            if conn.status != psycopg2.extensions.STATUS_READY:
+                conn.rollback()
+        except Exception:
+            pass
+        connection_pool.putconn(conn)
 
 def user_exists(user_id=None, phone=None):
 
@@ -269,13 +276,15 @@ def get_order_items_service(order_id=None, product_id=None):
 #         logging.error("Error fetching order items: %s", str(e))
 #         return {"status": "error", "message": str(e)}, 500
 
+
 def get_order_summary_service(vendor=None):
-    conn = None
     try:
+
+       
         if vendor:
-            if len(vendor) > 3:
-                vendor = tuple(vendor.split(","))
-                query = f"""
+                if len(vendor)>3:
+                    vendor=tuple(vendor.split(","))
+                    query=f"""
                     SELECT 
                         o.id AS order_id,
                         COUNT(oi.product_id) AS item_count,
@@ -283,65 +292,62 @@ def get_order_summary_service(vendor=None):
                         o.status
                     FROM orders o
                     JOIN order_items oi ON o.id = oi.order_id
-                    WHERE oi.product_id IN {vendor}
+                    where oi.product_id in {vendor}
                     GROUP BY o.id, o.created_at, o.status
                     ORDER BY o.created_at DESC
                     LIMIT 100;
                 """
-            else:
-                query = f"""
-                    SELECT 
+                else:
+                   query=f"""
+                      SELECT 
                         o.id AS order_id,
                         COUNT(oi.product_id) AS item_count,
                         o.created_at,
                         o.status
                     FROM orders o
                     JOIN order_items oi ON o.id = oi.order_id
-                    WHERE oi.product_id LIKE '{vendor}%'
+                    where oi.product_id like '{vendor}%'
                     GROUP BY o.id, o.created_at, o.status
                     ORDER BY o.created_at DESC
                     LIMIT 100;
                 """
         else:
-            query = """
-                SELECT 
-                    o.id AS order_id,
-                    COUNT(oi.product_id) AS item_count,
-                    o.created_at,
-                    o.status
-                FROM orders o
-                JOIN order_items oi ON o.id = oi.order_id
-                GROUP BY o.id, o.created_at, o.status
-                ORDER BY o.created_at DESC
-                LIMIT 100;
-            """
-
+             query=f"""
+                    SELECT 
+                        o.id AS order_id,
+                        COUNT(oi.product_id) AS item_count,
+                        o.created_at,
+                        o.status
+                    FROM orders o
+                    JOIN order_items oi ON o.id = oi.order_id
+                    GROUP BY o.id, o.created_at, o.status
+                    ORDER BY o.created_at DESC
+                    LIMIT 100;
+                """
+             
+        print(query)
         with get_db_connection() as conn:
+            
             with conn.cursor() as cur:
                 cur.execute(query)
                 rows = cur.fetchall()
+
                 result = [
                     {
                         "order_id": row[0],
                         "item_count": row[1],
                         "created_at": row[2],
                         "status": row[3]
-                    }
-                    for row in rows
+                    } for row in rows
                 ]
 
         return {"status": "success", "data": result}, 200
 
     except Exception as e:
-        # rollback only if connection is open
-        if conn:
-            try:
-                conn.rollback()
-            except Exception:
-                pass
-
-        logging.exception("Error fetching order summary")
+        logging.error("Error fetching order summary: %s", str(e))
+        conn.rollback()
         return {"status": "error", "message": str(e)}, 500
+
 
 
 import requests
