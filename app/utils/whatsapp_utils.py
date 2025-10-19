@@ -189,12 +189,6 @@ def process_whatsapp_message(body):
              user_sessions[wa_id]['items'].extend(items)
             
            
-            elif 'po' in response.lower() :
-                send_po(wa_id,response)
-                user_sessions[wa_id]['po'].append(message_body)
-                
-                
-                return 
             
             elif 'hi' in response.lower() or 'ഹായ്' in response.lower() or '?' in response.lower():
                 
