@@ -44,7 +44,7 @@ def get_db_connection():
     try:
         if conn.status != psycopg2.extensions.STATUS_READY:
             conn.rollback()
-            
+
         conn.autocommit = True
         yield conn
     except Exception as e:
@@ -269,15 +269,13 @@ def get_order_items_service(order_id=None, product_id=None):
 #         logging.error("Error fetching order items: %s", str(e))
 #         return {"status": "error", "message": str(e)}, 500
 
-
 def get_order_summary_service(vendor=None):
+    conn = None
     try:
-
-       
         if vendor:
-                if len(vendor)>3:
-                    vendor=tuple(vendor.split(","))
-                    query=f"""
+            if len(vendor) > 3:
+                vendor = tuple(vendor.split(","))
+                query = f"""
                     SELECT 
                         o.id AS order_id,
                         COUNT(oi.product_id) AS item_count,
@@ -285,61 +283,65 @@ def get_order_summary_service(vendor=None):
                         o.status
                     FROM orders o
                     JOIN order_items oi ON o.id = oi.order_id
-                    where oi.product_id in {vendor}
+                    WHERE oi.product_id IN {vendor}
                     GROUP BY o.id, o.created_at, o.status
                     ORDER BY o.created_at DESC
                     LIMIT 100;
                 """
-                else:
-                   query=f"""
-                      SELECT 
+            else:
+                query = f"""
+                    SELECT 
                         o.id AS order_id,
                         COUNT(oi.product_id) AS item_count,
                         o.created_at,
                         o.status
                     FROM orders o
                     JOIN order_items oi ON o.id = oi.order_id
-                    where oi.product_id like '{vendor}%'
+                    WHERE oi.product_id LIKE '{vendor}%'
                     GROUP BY o.id, o.created_at, o.status
                     ORDER BY o.created_at DESC
                     LIMIT 100;
                 """
         else:
-             query=f"""
-                    SELECT 
-                        o.id AS order_id,
-                        COUNT(oi.product_id) AS item_count,
-                        o.created_at,
-                        o.status
-                    FROM orders o
-                    JOIN order_items oi ON o.id = oi.order_id
-                    GROUP BY o.id, o.created_at, o.status
-                    ORDER BY o.created_at DESC
-                    LIMIT 100;
-                """
-             
-        print(query)
+            query = """
+                SELECT 
+                    o.id AS order_id,
+                    COUNT(oi.product_id) AS item_count,
+                    o.created_at,
+                    o.status
+                FROM orders o
+                JOIN order_items oi ON o.id = oi.order_id
+                GROUP BY o.id, o.created_at, o.status
+                ORDER BY o.created_at DESC
+                LIMIT 100;
+            """
+
         with get_db_connection() as conn:
-            
             with conn.cursor() as cur:
                 cur.execute(query)
                 rows = cur.fetchall()
-
                 result = [
                     {
                         "order_id": row[0],
                         "item_count": row[1],
                         "created_at": row[2],
                         "status": row[3]
-                    } for row in rows
+                    }
+                    for row in rows
                 ]
 
         return {"status": "success", "data": result}, 200
 
     except Exception as e:
-        logging.error("Error fetching order summary: %s", str(e))
-        return {"status": "error", "message": str(e)}, 500
+        # rollback only if connection is open
+        if conn:
+            try:
+                conn.rollback()
+            except Exception:
+                pass
 
+        logging.exception("Error fetching order summary")
+        return {"status": "error", "message": str(e)}, 500
 
 
 import requests

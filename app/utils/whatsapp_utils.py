@@ -174,7 +174,7 @@ def process_whatsapp_message(body):
                 return
            
 
-            if message_body.lower() in ['hi','hello','h']:
+            if message_body.lower() in ['hi','hello','h','hlo','hii']:
                 response =f"Hi {name} 👋🏻, Koduvally Anghadi-ലേക്ക് സ്വാഗതം🛒, ഞങ്ങൾ 30 മിനിറ്റിനുള്ളിൽ പലചരക്ക് സാധനങ്ങൾ 🍗🍅🫑🦈🥩🌾 ഡെലിവർ ചെയ്യുന്നു "
                 data = get_text_message_input(wa_id, response)
                 send_message(data)
@@ -507,7 +507,8 @@ def process_whatsapp_message(body):
     except Exception as e:
         response = "Please contact customer care and report this issue  \n +917306723535"
         logging.info("xxxxxxxxx",e)
-        warning ="some thing happened with "+wa_id 
+         # Construct warning message safely
+        warning = f"Something happened with {wa_id}: {str(e)}"
         data= get_text_message_input("919645846341",warning)
         send_message(data)
       
