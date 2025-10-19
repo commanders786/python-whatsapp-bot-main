@@ -42,7 +42,18 @@ def get_db_connection():
     init_connection_pool()
     conn = connection_pool.getconn()
     try:
+        if conn.status != psycopg2.extensions.STATUS_READY:
+            conn.rollback()
+            
+        conn.autocommit = True
         yield conn
+    except Exception as e:
+        logging.error("Database error in connection context: %s", e)
+        try:
+            conn.rollback()  # just in case something fails inside
+        except:
+            pass
+        raise
     finally:
         connection_pool.putconn(conn)
 

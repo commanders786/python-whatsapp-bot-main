@@ -4842,9 +4842,9 @@
     "bk80": {
       "id": "25843186231934891",
       "name": "Diwali Sweets Box 500g",
-      "description": "Normal Diwali Sweets from nice bakery",
+      "description": "Diwali Sweets from nice bakery",
       "price": "₹200.00",
-      "pattern": null,
+      "pattern": "diwali,sweets,",
       "unit": null,
       "retailer_id": "bk80",
       "availability": "in stock",
@@ -4875,9 +4875,9 @@
     "bk81": {
       "id": "32438071809124689",
       "name": "Diwali Sweets Box 1kg",
-      "description": "Normal Diwali Sweets from nice bakery",
+      "description": "Diwali Sweets from nice bakery",
       "price": "₹400.00",
-      "pattern": null,
+      "pattern": "diwali,sweets,",
       "unit": null,
       "retailer_id": "bk81",
       "availability": "in stock",
