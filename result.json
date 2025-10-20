@@ -3464,12 +3464,12 @@
       "id": "30322533087346221",
       "name": "Chicken (കോഴി) 500g",
       "description": "Normal chicken",
-      "price": "₹90.00",
+      "price": "₹100.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
       "availability": "in stock",
-      "sale_price": null
+      "sale_price": "₹95.00"
     },
     "ch15": {
       "id": "9714611515291014",
