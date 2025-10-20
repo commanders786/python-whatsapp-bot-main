@@ -37,8 +37,9 @@ def reset_connection_pool():
     init_connection_pool()
 
     print("♻️ Connection pool reset")
-
     
+
+
 def init_connection_pool():
     global connection_pool
     if connection_pool is None:
