@@ -40,6 +40,8 @@ import sys
 from app import create_app
 from waitress import serve
 
+from app.crud import reset_connection_pool
+
 # Set environment variables to limit threading
 os.environ['OMP_NUM_THREADS'] = '4'
 os.environ['MKL_NUM_THREADS'] = '4'
@@ -58,6 +60,7 @@ else:
     logging.info("Running on Windows - resource limits not applicable")
 
 app = create_app()
+reset_connection_pool()
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)

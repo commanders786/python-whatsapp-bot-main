@@ -25,6 +25,20 @@ from psycopg2 import pool
 # Connection pool
 connection_pool = None
 
+
+def reset_connection_pool():
+    """
+    Reset the connection pool completely. Use in case of persistent errors.
+    """
+    global connection_pool
+    if connection_pool:
+        connection_pool.closeall()
+    connection_pool = None
+    init_connection_pool()
+
+    print("♻️ Connection pool reset")
+
+    
 def init_connection_pool():
     global connection_pool
     if connection_pool is None:
@@ -40,6 +54,11 @@ def get_db_connection():
     conn = connection_pool.getconn()
     try:
         yield conn
+        conn.commit()  # commit successful queries
+    except Exception as e:
+        conn.rollback()  # rollback on any exception
+        print(f"❌ DB error, rolled back transaction: {e}")
+        raise
     finally:
         connection_pool.putconn(conn)
 
