@@ -370,7 +370,7 @@ def get_order_summary_service(vendor=None):
 
     except Exception as e:
         logging.error("Error fetching order summary: %s", str(e))
-        conn.rollback()
+        
         return {"status": "error", "message": str(e)}, 500
 
 
