@@ -297,38 +297,38 @@ def get_order_summary_service(vendor=None):
     try:
 
        
-        if vendor:
-                if len(vendor)>3:
-                    vendor=tuple(vendor.split(","))
-                    query=f"""
-                    SELECT 
-                        o.id AS order_id,
-                        COUNT(oi.product_id) AS item_count,
-                        o.created_at,
-                        o.status
-                    FROM orders o
-                    JOIN order_items oi ON o.id = oi.order_id
-                    where oi.product_id in {vendor}
-                    GROUP BY o.id, o.created_at, o.status
-                    ORDER BY o.created_at DESC
-                    LIMIT 100;
-                """
-                else:
-                   query=f"""
-                      SELECT 
-                        o.id AS order_id,
-                        COUNT(oi.product_id) AS item_count,
-                        o.created_at,
-                        o.status
-                    FROM orders o
-                    JOIN order_items oi ON o.id = oi.order_id
-                    where oi.product_id like '{vendor}%'
-                    GROUP BY o.id, o.created_at, o.status
-                    ORDER BY o.created_at DESC
-                    LIMIT 100;
-                """
-        else:
-             query=f"""
+        # if vendor:
+        #         if len(vendor)>3:
+        #             vendor=tuple(vendor.split(","))
+        #             query=f"""
+        #             SELECT 
+        #                 o.id AS order_id,
+        #                 COUNT(oi.product_id) AS item_count,
+        #                 o.created_at,
+        #                 o.status
+        #             FROM orders o
+        #             JOIN order_items oi ON o.id = oi.order_id
+        #             where oi.product_id in {vendor}
+        #             GROUP BY o.id, o.created_at, o.status
+        #             ORDER BY o.created_at DESC
+        #             LIMIT 100;
+        #         """
+        #         else:
+        #            query=f"""
+        #               SELECT 
+        #                 o.id AS order_id,
+        #                 COUNT(oi.product_id) AS item_count,
+        #                 o.created_at,
+        #                 o.status
+        #             FROM orders o
+        #             JOIN order_items oi ON o.id = oi.order_id
+        #             where oi.product_id like '{vendor}%'
+        #             GROUP BY o.id, o.created_at, o.status
+        #             ORDER BY o.created_at DESC
+        #             LIMIT 100;
+        #         """
+        # else:
+        query=f"""
                     SELECT 
                         o.id AS order_id,
                         COUNT(oi.product_id) AS item_count,
