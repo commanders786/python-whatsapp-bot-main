@@ -31,6 +31,18 @@ DB_CONFIG = {
 connection_pool = None
 
 
+def reset_connection_pool():
+    """
+    Reset the connection pool completely. Use in case of persistent errors.
+    """
+    global connection_pool
+    if connection_pool:
+        connection_pool.closeall()
+    connection_pool = None
+    init_connection_pool()
+
+    print("♻️ Connection pool reset")
+
 def init_connection_pool():
     """Initialize global connection pool once."""
     global connection_pool
@@ -71,15 +83,12 @@ def get_db_connection():
 
     finally:
         try:
-            # Always reset to ready state before returning to pool
             if conn.status != extensions.STATUS_READY:
-                conn.rollback()
+                connection_pool.putconn(conn, close=True)  # discard broken connection
+            else:
+                connection_pool.putconn(conn)
         except Exception:
             pass
-
-        # Turn off autocommit (ensures consistent reuse)
-        conn.autocommit = False
-        connection_pool.putconn(conn)
 
 def user_exists(user_id=None, phone=None):
 

@@ -4,64 +4,64 @@ from flask import Blueprint, request, jsonify,Response
 import psycopg2
 import queue
 from app.services.cloud_apis import send_feedback_buttons
-from app.services.crud_services import clear_payment_service, de_map_products_service, get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, insert_vendor_service, map_products_service, update_availability_service, update_order_items_service, update_order_items_service_new, update_price_service, update_product_details_service, update_vendor_price_service, user_exists, vendor_account_updation_service
+from app.services.crud_services import clear_payment_service, de_map_products_service, get_db_connection, get_order_details_service, get_order_items_service, get_order_summary_service, get_product_by_retailerid_service, get_products_service, get_products_service_new, get_reciept_service, get_vendor_products_service, get_vendor_service, insert_order, insert_user, insert_vendor_service, map_products_service, update_availability_service, update_order_items_service, update_order_items_service_new, update_price_service, update_product_details_service, update_vendor_price_service, user_exists, vendor_account_updation_service
 from app.services.product_service import fetch_and_categorize_products, send_whatsapp_product_list
 from datetime import datetime, timedelta
 
 crud_blueprint = Blueprint("crud", __name__)
 
-# Connection config - You can later refactor this into a separate config file
-DB_CONFIG = {
-    "user": "postgres.dmepnqgumjlvwaqnaybp",
-    "password": "Kamsaf@786",
-    "host": "aws-0-ap-south-1.pooler.supabase.com",
-    "port": "6543",
-    "dbname": "postgres"
-}
+# # Connection config - You can later refactor this into a separate config file
+# DB_CONFIG = {
+#     "user": "postgres.dmepnqgumjlvwaqnaybp",
+#     "password": "Kamsaf@786",
+#     "host": "aws-0-ap-south-1.pooler.supabase.com",
+#     "port": "6543",
+#     "dbname": "postgres"
+# }
 
-from contextlib import contextmanager
-from psycopg2 import pool
+# from contextlib import contextmanager
+# from psycopg2 import pool
 
-# Connection pool
-connection_pool = None
-
-
-def reset_connection_pool():
-    """
-    Reset the connection pool completely. Use in case of persistent errors.
-    """
-    global connection_pool
-    if connection_pool:
-        connection_pool.closeall()
-    connection_pool = None
-    init_connection_pool()
-
-    print("♻️ Connection pool reset")
-    
+# # Connection pool
+# connection_pool = None
 
 
-def init_connection_pool():
-    global connection_pool
-    if connection_pool is None:
-        connection_pool = psycopg2.pool.SimpleConnectionPool(
-            minconn=1,
-            maxconn=10,  # Adjust based on your DB limits
-            **DB_CONFIG
-        )
+# def reset_connection_pool():
+#     """
+#     Reset the connection pool completely. Use in case of persistent errors.
+#     """
+#     global connection_pool
+#     if connection_pool:
+#         connection_pool.closeall()
+#     connection_pool = None
+#     init_connection_pool()
 
-@contextmanager
-def get_db_connection():
-    init_connection_pool()
-    conn = connection_pool.getconn()
-    try:
-        yield conn
-        conn.commit()  # commit successful queries
-    except Exception as e:
-        conn.rollback()  # rollback on any exception
-        print(f"❌ DB error, rolled back transaction: {e}")
-        raise
-    finally:
-        connection_pool.putconn(conn)
+#     print("♻️ Connection pool reset")
+
+
+
+# def init_connection_pool():
+#     global connection_pool
+#     if connection_pool is None:
+#         connection_pool = psycopg2.pool.SimpleConnectionPool(
+#             minconn=1,
+#             maxconn=10,  # Adjust based on your DB limits
+#             **DB_CONFIG
+#         )
+
+# @contextmanager
+# def get_db_connection():
+#     init_connection_pool()
+#     conn = connection_pool.getconn()
+#     try:
+#         yield conn
+#         conn.commit()  # commit successful queries
+#     except Exception as e:
+#         conn.rollback()  # rollback on any exception
+#         print(f"❌ DB error, rolled back transaction: {e}")
+#         raise
+#     finally:
+#         connection_pool.putconn(conn)
 
 # ------------------ USERS ------------------
 

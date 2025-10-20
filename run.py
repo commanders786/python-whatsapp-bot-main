@@ -40,7 +40,7 @@ import sys
 from app import create_app
 from waitress import serve
 
-from app.crud import reset_connection_pool
+from app.services.crud_services import reset_connection_pool
 
 # Set environment variables to limit threading
 os.environ['OMP_NUM_THREADS'] = '4'
