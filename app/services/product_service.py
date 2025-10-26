@@ -123,7 +123,8 @@ def fetch_and_categorize_products():
         "food": {},
         "general": {},
         "snacks": {},
-        "nuts": {}
+        "nuts": {},
+        "childcare": {}
     }
 
     try:
@@ -175,6 +176,8 @@ def fetch_and_categorize_products():
                     categorized["general"][item["retailer_id"]] = product_info
                 elif rid.startswith("nuts"):
                     categorized["nuts"][item["retailer_id"]] = product_info
+                elif rid.startswith("cp"):
+                    categorized["childcare"][item["retailer_id"]] = product_info
                 elif rid.startswith("rf"):
                     categorized["food"][item["retailer_id"]] = product_info
                     key = "restaurant:"

@@ -224,7 +224,7 @@ import google.generativeai as genai
 
 CATEGORIES = [
     "vegetables", "fruits", "meat", "fish",
-    "snacks", "bakeries", "food", "nuts", "general", "oth"
+    "snacks", "bakeries", "food", "nuts", "general", "oth","childcare"
 ]
 def detect_category_with_gemini(query):
     """
@@ -264,6 +264,7 @@ Examples:
 - "eggs" -> oth
 -kunafa and other sweets and cakes -> bakeries,snacks
 - "rice","grains","pulses" -> oth
+-kids toys and study materials -> childcare all others like diapers, baby food etc -> oth
 
 
 our retsurant names afc chicken ,kothiyanz,biriyani souk etc ->food

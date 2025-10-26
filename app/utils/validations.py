@@ -61,7 +61,7 @@ def check_product_mix(items):
 
     has_rf = 'rf' in prefixes
     has_bk = 'bk' in prefixes or 'sn' in prefixes
-    has_other = bool(prefixes - {'rf', 'bk'})  # others like sn, veg, gr, etc.
+    has_other = bool(prefixes - {'rf', 'bk','sn'})  # others like sn, veg, gr, etc.
 
     
     if len(items) > 10:
