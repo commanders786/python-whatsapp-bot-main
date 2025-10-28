@@ -87,8 +87,8 @@ def chatGemini(name,query,session):
         language=session.get('language')
     )
      
-    #  with open("prompt.txt", 'w', encoding='utf-8') as f:
-    #       f.write(formatted_prompt)
+     with open("prompt.txt", 'w', encoding='utf-8') as f:
+          f.write(formatted_prompt)
 
     except KeyError as e:
      print(f"⚠️ Missing key in prompt template: {e}")

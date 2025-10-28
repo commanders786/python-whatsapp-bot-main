@@ -128,10 +128,18 @@ def get_product_embeddings():
 #      data = get_text_message_input(session.get('number'), response)
 #      send_message(data)
 #     return output,nothing
+model = get_model()
 def search_products(query, session=None, top_k=40):
+    response = (
+            "Anghadi AI ⚡ may take few seconds (5–10) to process your request"
+            if session.get('language') == 'en'
+            else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (5–10) എടുത്തേക്കാം"
+        )
+    data = get_text_message_input(session.get('number'), response)
+    send_message(data)
     global products, product_embeddings
 
-    model = get_model()
+   
     if products is None or product_embeddings is None:
         products, product_embeddings = get_product_embeddings()
 
@@ -147,6 +155,7 @@ def search_products(query, session=None, top_k=40):
             i for i, p in enumerate(products)
             if p.get("fb_product_category") in detected_categories
         ]
+        
     else:
         filtered_indices = list(range(len(products)))
 
@@ -163,11 +172,12 @@ def search_products(query, session=None, top_k=40):
 
     for idx in top_indices:
         product = products[filtered_indices[idx]]
+        
         score = similarities[idx]
+        
 
         # ⚡ Use RapidFuzz for substring-like fuzzy matching
-        if fuzz.partial_ratio(query.lower(), (product.get('name') or '').lower()) > 50 or \
-           fuzz.partial_ratio(query.lower(), (product.get('pattern') or '').lower()) > 50:
+        if fuzz.partial_ratio(query.lower(), (product.get('name') or '').lower()) > 50 or fuzz.partial_ratio(query.lower(), (product.get('pattern') or '').lower()) > 50 or query.lower() in (product.get('pattern') or '').lower() :
             score += 0.5
 
         if score < 0.45:
@@ -177,18 +187,17 @@ def search_products(query, session=None, top_k=40):
         output += f"\n\n🛒 {product['name']}"
         output += f"\n💰 itemId: {product['retailer_id']}"
         output += f"\n💰 Price: {product['price']}"
-        output += f"\n💰 Unit: {product['unit']}"
         output += f"\n💰 Other names: {product['pattern']}"
         output += f"\n🔗 Match Score: {score:.2f}"
 
-    if found_any and session:
-        response = (
-            "Anghadi AI ⚡ may take few seconds (5–10) to process your request"
-            if session.get('language') == 'en'
-            else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (5–10) എടുത്തേക്കാം"
-        )
-        data = get_text_message_input(session.get('number'), response)
-        send_message(data)
+    # if found_any and session:
+    #     response = (
+    #         "Anghadi AI ⚡ may take few seconds (5–10) to process your request"
+    #         if session.get('language') == 'en'
+    #         else "അങ്ങാടി AI ⚡ താങ്കളുടെ അഭ്യർത്ഥന പ്രോസസ്സ് ചെയ്യാൻ കുറച്ച് സെക്കന്റുകൾ (5–10) എടുത്തേക്കാം"
+    #     )
+    #     data = get_text_message_input(session.get('number'), response)
+    #     send_message(data)
 
     return output, found_any
 
@@ -249,8 +258,8 @@ Return 1–3 **most likely** categories separated by commas.
 Choose only from:
 {', '.join(CATEGORIES)}.
 
-Examples:
--"cutlet","unnkaaya","samoosa" etc-> snacks
+Guidelines and examples:
+- "cutlet","unnkaaya","samoosa" etc -> snacks
 - "chicken" -> meat
 - "bread" -> bakeries, oth
 - "fish masala" -> food, fish
@@ -259,24 +268,26 @@ Examples:
 - "soap" -> oth
 - "apple" -> fruits
 - "beef" -> meat
-- "cake" "diwali " -> bakeries
--"pepesi,coke etc" -> oth
+- "cake", "diwali" -> bakeries
+- "pepsi", "coke" etc -> oth
 - "eggs" -> oth
--kunafa and other sweets and cakes -> bakeries,snacks
+- "juice", "juices", "milkshake", "falooda", "avil milk" etc -> bakeries, food
+- "kunafa" and other sweets or cakes -> bakeries, snacks
 - "rice","grains","pulses" -> oth
--kids toys and study materials -> childcare all others like diapers, baby food etc -> oth
+- Kids toys and study materials -> childcare; all others like diapers, baby food etc -> oth
+- If the query is related to snacks, also include bakeries because some products are shared.
 
+Restaurant names like "AFC Chicken", "Kothiyanz", "Biryani Souk" etc -> food
 
-our retsurant names afc chicken ,kothiyanz,biriyani souk etc ->food
 Now classify the following query:
 "{query}"
 
-diwali related things are added in bakeries
-food mainly include restaurant foods not the entire food and supermarket items will be in oth
-
-if you have any confusion regarding any items category return all possible categories
-for sweets and bakery items pls return snacks and bakeries
-for cooked restauarnt food only food is required with bakeries some time some items can be from bakeries
+Note:
+- Diwali-related items are added in bakeries.
+- "food" mainly includes restaurant meals, not supermarket items.
+- Supermarket items usually belong to "oth".
+- For juices, shakes, milk-based drinks, sweets, or bakery-related beverages, always include "bakeries" along with "food".
+- If unsure, return all possible categories.
 Return only the category names, comma separated. No explanation.
 """
 

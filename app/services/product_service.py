@@ -124,7 +124,7 @@ def fetch_and_categorize_products():
         "general": {},
         "snacks": {},
         "nuts": {},
-        "childcare": {}
+        "childcare":{}
     }
 
     try:
@@ -158,27 +158,39 @@ def fetch_and_categorize_products():
                     "sale_price": item.get("sale_price"),
                 }
 
+                 # 🧩 Add fb_product_category while categorizing
                 if rid.startswith("veg"):
+                    product_info["fb_product_category"] = "vegetables"
                     categorized["vegetables"][item["retailer_id"]] = product_info
                 elif rid.startswith("gr"):
+                    product_info["fb_product_category"] = "oth"
                     categorized["oth"][item["retailer_id"]] = product_info
                 elif rid.startswith("fr"):
+                    product_info["fb_product_category"] = "fruits"
                     categorized["fruits"][item["retailer_id"]] = product_info
                 elif rid.startswith("sn"):
+                    product_info["fb_product_category"] = "snacks"
                     categorized["snacks"][item["retailer_id"]] = product_info
                 elif rid.startswith("bk"):
+                    product_info["fb_product_category"] = "bakeries"
                     categorized["bakeries"][item["retailer_id"]] = product_info
                 elif rid.startswith(("ch", "kd", "wp", "sk")):
+                    product_info["fb_product_category"] = "meat"
                     categorized["meat"][item["retailer_id"]] = product_info
                 elif rid.startswith("fs"):
+                    product_info["fb_product_category"] = "fish"
                     categorized["fish"][item["retailer_id"]] = product_info
                 elif rid.startswith("gn"):
+                    product_info["fb_product_category"] = "general"
                     categorized["general"][item["retailer_id"]] = product_info
                 elif rid.startswith("nuts"):
+                    product_info["fb_product_category"] = "nuts"
                     categorized["nuts"][item["retailer_id"]] = product_info
                 elif rid.startswith("cp"):
+                    product_info["fb_product_category"] = "childcare"
                     categorized["childcare"][item["retailer_id"]] = product_info
                 elif rid.startswith("rf"):
+                    product_info["fb_product_category"] = "food"
                     categorized["food"][item["retailer_id"]] = product_info
                     key = "restaurant:"
                     desc = item.get("description", "")
