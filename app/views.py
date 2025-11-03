@@ -91,6 +91,7 @@
 #     return handle_message()
 
 
+import asyncio
 import logging
 import json
 import threading
@@ -161,7 +162,7 @@ def handle_message():
                 return jsonify({"status": "busy"}), 429
 
             # Submit task to background thread
-            executor.submit(process_whatsapp_message, body)
+            executor.submit(asyncio.run, process_whatsapp_message(body))
             logging.info("✅ Message queued for background processing.")
 
             # Respond instantly to WhatsApp

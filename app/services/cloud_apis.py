@@ -1,4 +1,6 @@
+import asyncio
 import logging
+import aiohttp
 from flask import current_app, jsonify
 import requests
 import json
@@ -744,6 +746,34 @@ def send_message(data):
         print(response)
         return response
     
+# def send_message(data):
+#     headers = {
+#         "Content-type": "application/json",
+#         "Authorization": f"Bearer {access_token}",
+#     }
+
+#     url = f"https://graph.facebook.com/{version}/{PHONE_NUMBER_ID}/messages"
+
+#     try:
+#         async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=10)) as session:
+#             async with session.post(url, json=data, headers=headers) as response:
+#                 # Read the response text or JSON
+#                 if response.status >= 400:
+#                     text = await response.text()
+#                     logging.error(f"Request failed with status {response.status}: {text}")
+#                     return jsonify({"status": "error", "message": "Failed to send message"}), 500
+                
+#                 result = await response.json()
+#                 print("✅ Message sent:", result)
+#                 return result
+
+#     except asyncio.TimeoutError:
+#         logging.error("Timeout occurred while sending message")
+#         return jsonify({"status": "error", "message": "Request timed out"}), 408
+#     except aiohttp.ClientError as e:
+#         logging.error(f"Request failed due to: {e}")
+#         print("data:", data)
+#         return jsonify({"status": "error", "message": "Failed to send message"}), 500
     
 
 

@@ -88,7 +88,7 @@
       "id": "9675713172524329",
       "name": "ബീറ്റ്റൂട്ട് 500 g (beetroot)",
       "description": "beetroot",
-      "price": "₹25.00",
+      "price": "₹30.00",
       "pattern": "beetaroot,vegitable",
       "unit": null,
       "retailer_id": "veg12",
@@ -201,14 +201,14 @@
       "unit": null,
       "retailer_id": "veg23",
       "availability": "in stock",
-      "sale_price": "₹15.00",
+      "sale_price": "₹20.00",
       "fb_product_category": "vegetables"
     },
     "veg33": {
       "id": "10038674232877250",
       "name": "ചെറിയ ഉള്ളി 500g (Cheriya ulli)",
       "description": "Cheriya ulli",
-      "price": "₹40.00",
+      "price": "₹45.00",
       "pattern": "cheriya ulli, veg",
       "unit": null,
       "retailer_id": "veg33",
@@ -232,12 +232,12 @@
       "id": "23937784799251695",
       "name": "നേന്ത്രപഴം500g ( NENTRA PAZHAM)",
       "description": "nentra pazham",
-      "price": "₹30.00",
+      "price": "₹25.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "veg38",
       "availability": "in stock",
-      "sale_price": null,
+      "sale_price": "₹30.00",
       "fb_product_category": "vegetables"
     },
     "veg16": {
@@ -340,12 +340,12 @@
       "id": "29112643818384302",
       "name": "ഉരുളക്കിഴങ്ങ് (Potato)  500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹15.00",
+      "price": "₹18.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "veg06",
       "availability": "in stock",
-      "sale_price": "₹15.00",
+      "sale_price": "₹18.00",
       "fb_product_category": "vegetables"
     },
     "veg02": {
@@ -369,7 +369,7 @@
       "unit": null,
       "retailer_id": "veg10",
       "availability": "in stock",
-      "sale_price": "₹11.00",
+      "sale_price": "₹13.00",
       "fb_product_category": "vegetables"
     },
     "veg21": {
@@ -412,7 +412,7 @@
       "id": "30316340884675944",
       "name": "പയർ 250g (Beans Big)",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹18.00",
+      "price": "₹20.00",
       "pattern": "veg,vegetable,payar",
       "unit": null,
       "retailer_id": "veg35",
@@ -3757,7 +3757,7 @@
       "unit": null,
       "retailer_id": "fr30",
       "availability": "in stock",
-      "sale_price": "₹50.00",
+      "sale_price": "₹45.00",
       "fb_product_category": "fruits"
     }
   },
@@ -3814,12 +3814,12 @@
       "id": "30322533087346221",
       "name": "Chicken (കോഴി) 500g",
       "description": "Normal chicken",
-      "price": "₹110.00",
+      "price": "₹120.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
       "availability": "in stock",
-      "sale_price": "₹100.00",
+      "sale_price": "₹110.00",
       "fb_product_category": "meat"
     },
     "ch15": {
@@ -3831,7 +3831,7 @@
       "unit": null,
       "retailer_id": "ch15",
       "availability": "in stock",
-      "sale_price": null,
+      "sale_price": "₹190.00",
       "fb_product_category": "meat"
     },
     "ch10": {
@@ -3891,7 +3891,7 @@
       "unit": null,
       "retailer_id": "sk8q2yaim7",
       "availability": "in stock",
-      "sale_price": "₹170.00",
+      "sale_price": "₹160.00",
       "fb_product_category": "meat"
     },
     "wph1a21c06": {
@@ -6014,14 +6014,14 @@
     },
     "rf111": {
       "id": "24309156638717124",
-      "name": "AFC 14pc Chicken Combo",
-      "description": "14pc Chicken,3 Kubboos,\nMayonise,Ketchup.\nRestaurant: AFC Chicken",
-      "price": "₹1,499.00",
-      "pattern": null,
+      "name": "AFC 4pc Chicken Combo (Quarter)",
+      "description": "4pc Chicken,2 Kubboos, Mayonise,Ketchup Restaurant: AFC Chicken",
+      "price": "₹279.00",
+      "pattern": "Fried chicken",
       "unit": null,
       "retailer_id": "rf111",
-      "availability": "out of stock",
-      "sale_price": "₹749.00",
+      "availability": "in stock",
+      "sale_price": "₹249.00",
       "fb_product_category": "food"
     },
     "rf152": {
@@ -6614,26 +6614,26 @@
     },
     "rf109": {
       "id": "30575773318737571",
-      "name": "AFC 3pc Chicken Combo",
-      "description": "3pc Chicken,1 Kubboos,\nMayonise,Ketchup\nRestaurant: AFC Chicken",
-      "price": "₹349.00",
-      "pattern": null,
+      "name": "AFC 16pc Chicken Combo (Full Chicken)",
+      "description": "16pc Chicken,5 Kubboos, 3 Mayonise,Ketchup,Pepsi (1 Litre) Restaurant: AFC Chicken",
+      "price": "₹1,119.00",
+      "pattern": "Fried chicken",
       "unit": null,
       "retailer_id": "rf109",
-      "availability": "out of stock",
-      "sale_price": "₹199.00",
+      "availability": "in stock",
+      "sale_price": "₹999.00",
       "fb_product_category": "food"
     },
     "rf110": {
       "id": "30639907025656500",
-      "name": "AFC 6pc Chicken Combo",
-      "description": "6pc Chicken,2 Kubboos,\nMayonise,Ketchup.\nRestaurant: AFC Chicken",
-      "price": "₹699.00",
-      "pattern": null,
+      "name": "AFC 8pc Chicken Combo (Half Chicken)",
+      "description": "8pc Chicken,3 Kubboos, 2 Mayonise,Ketchup,Pepsi (250ml) Restaurant: AFC Chicken",
+      "price": "₹559.00",
+      "pattern": "Fried chicken",
       "unit": null,
       "retailer_id": "rf110",
-      "availability": "out of stock",
-      "sale_price": "₹359.00",
+      "availability": "in stock",
+      "sale_price": "₹499.00",
       "fb_product_category": "food"
     },
     "rf141": {
@@ -9550,7 +9550,7 @@
       "id": "24371107869179699",
       "name": "chia seeds 100g",
       "description": "chia seeds",
-      "price": "₹45.00",
+      "price": "₹60.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "nuts39",

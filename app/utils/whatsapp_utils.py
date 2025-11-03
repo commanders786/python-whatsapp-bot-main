@@ -14,7 +14,7 @@ import re
 # from app.services.audio_service import transcribe_audio_from_facebook
 from app.services.audio_service import transcribe_audio_from_facebook
 from app.services.crud_services import insert_order, insert_user, update_order_bill_amount, update_order_feedback,update_order_items_service, update_user_lastlogin, user_exists
-from app.services.product_service import load_restaurants, send_whatsapp_product_list
+from app.services.product_service import load_restaurants,  send_whatsapp_product_list
 from app.utils.messages import get_text_message_input, po_template
 from app.utils.validations import fuzzy_best_match, is_within_radius
 from ..sessions import user_sessions
@@ -84,7 +84,7 @@ def call_last_login_update(user_id):
         duration = datetime.now() - start
         logging.exception(f"[last_login] Failed for user_id={user_id} after {duration:.3f}s")
 
-def process_whatsapp_message(body):
+async def process_whatsapp_message(body):
     wa_id = body["entry"][0]["changes"][0]["value"]["contacts"][0]["wa_id"]
     name = body["entry"][0]["changes"][0]["value"]["contacts"][0]["profile"]["name"]
     message = body["entry"][0]["changes"][0]["value"]["messages"][0]
@@ -157,7 +157,7 @@ def process_whatsapp_message(body):
             if  rest_name_check:
                 print("asdfghjkl")
                 matched_restaurant = rest_name_check
-                send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
+                await send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
                 return
             
             if  user_sessions[wa_id]['level']=="M2":
@@ -210,20 +210,20 @@ def process_whatsapp_message(body):
             # elif  rest_name_check:
             #     print("matched",rest_name_check)
             #     matched_restaurant = rest_name_check
-            #     send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
+            #     await send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
             #     return
             
 
             # elif  rest_name_check:
             #     print("asdfghjkl")
             #     matched_restaurant = rest_name_check
-            #     send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
+            #     await send_whatsapp_product_list(matched_restaurant,wa_id,matched_restaurant)
             #     return
 
 
             elif 'searchresult'==response:
                 print("hii")
-                send_whatsapp_product_list(list(items),wa_id)
+                await send_whatsapp_product_list(list(items),wa_id)
                 return
             
             
@@ -286,18 +286,18 @@ def process_whatsapp_message(body):
                 return
 
             elif button_id == "opt1":
-                send_whatsapp_product_list("vegetables",wa_id)
+                await send_whatsapp_product_list("vegetables",wa_id)
                 return
             
             elif button_id == "opt2":
-               send_whatsapp_product_list("oth",wa_id)
+               await send_whatsapp_product_list("oth",wa_id)
                response ="Please Type and search for more 🛍🛒 \n \nദയവായി കൂടുതൽ സാധനങ്ങൾക്കായി ടൈപ്പ് ചെയ്ത് തിരയൂ 🛍🛒 "
                data = get_text_message_input(wa_id, response)
                send_message(data)
                return
              
             # elif button_id == "rfs":
-            # #    send_whatsapp_product_list("rfs",wa_id)
+            # #    await send_whatsapp_product_list("rfs",wa_id)
             #      send_restaurants()
             #      return
             
@@ -305,22 +305,22 @@ def process_whatsapp_message(body):
              
                 if button_id_clean in cleaned_map:
                     matched_key = cleaned_map[button_id_clean]
-                    send_whatsapp_product_list(matched_key,wa_id,matched_key)
+                    await send_whatsapp_product_list(matched_key,wa_id,matched_key)
                 else:
-                    send_whatsapp_product_list(button_id,wa_id,button_id)
+                    await send_whatsapp_product_list(button_id,wa_id,button_id)
                 return
           
             elif button_id=='opt4':
-               send_whatsapp_product_list("fruits",wa_id)
+               await send_whatsapp_product_list("fruits",wa_id)
                return
             elif button_id=='opt7':
-                send_whatsapp_product_list("meat",wa_id)
+                await send_whatsapp_product_list("meat",wa_id)
                 return
             elif button_id=='opt8':
-                send_whatsapp_product_list("fish",wa_id)
+                await send_whatsapp_product_list("fish",wa_id)
                 return
             elif button_id=='opt10':
-                send_whatsapp_product_list("bakeries",wa_id)
+                await send_whatsapp_product_list("bakeries",wa_id)
                 return
             
             elif button_id=='rest' or button_id in ['9','18']:
@@ -334,16 +334,16 @@ def process_whatsapp_message(body):
 
                 send_restaurants(wa_id, user_sessions[wa_id]['language'],offset)
              
-                # send_whatsapp_product_list("food",wa_id)
+                # await send_whatsapp_product_list("food",wa_id)
                 return
            
             elif button_id=='snacks':
               
-                send_whatsapp_product_list("snacks",wa_id)
+                await send_whatsapp_product_list("snacks",wa_id)
                 return
             elif button_id=='bakeries':
               
-                send_whatsapp_product_list("bakeries",wa_id)
+                await send_whatsapp_product_list("bakeries",wa_id)
                 return
             elif button_id in ['5','3','0']:
                 update_order_feedback(wa_id, button_id)

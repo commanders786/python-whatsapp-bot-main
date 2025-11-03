@@ -3,6 +3,8 @@ import logging
 import os
 import requests
 
+import aiohttp
+import asyncio
 
 
 
@@ -259,7 +261,7 @@ def load_restaurants(restaurant=None):
     except Exception as e:
         
         return {}
-def send_whatsapp_product_list(category: str, to_number: str,restaurant=None):
+async def send_whatsapp_product_list(category: str, to_number: str, restaurant=None):
     
     if isinstance(category, list) and not category[0] in ["vegetables","fruits","oth","meat","fish","bakeries"]:
         
@@ -270,19 +272,19 @@ def send_whatsapp_product_list(category: str, to_number: str,restaurant=None):
             common = list(set(ids) & set(category))
             if common:
                 product_items = [{"product_retailer_id": rid} for rid in common]
-                senditems(to_number,product_items,restaurant)
+                await senditems(to_number,product_items,restaurant)
                 # Remove matched IDs from category
                 category = list(set(category) - set(common))
         if category:
             product_items = [{"product_retailer_id": rid} for rid in category]
             print(8888888)
-            senditems(to_number,product_items)
+            await senditems(to_number,product_items)
 
     elif restaurant:
         product_items=load_restaurants(restaurant)
         product_items = [{"product_retailer_id": rid} for rid in product_items]
         print(7777777)
-        senditems(to_number,product_items)
+        await senditems(to_number,product_items)
         
     else:
         # Otherwise, load from file
@@ -298,68 +300,147 @@ def send_whatsapp_product_list(category: str, to_number: str,restaurant=None):
             return {"status": "error", "message": "Category not found or empty"}
         product_items = [{"product_retailer_id": rid} for rid in product_dict.keys()]
         # print(product_items)
-        senditems(to_number,product_items)
+        await senditems(to_number,product_items)
         
     return
 
-def senditems(to_number, product_items,restaurant=None):
- flag=0
+# def senditems(to_number, product_items,restaurant=None):
+#  flag=0
  
 
- print(len(product_items))
- if len(product_items)>60: 
-     flag=1
-     product_items=product_items[0:59]
- if len(product_items)>30: 
-       product_items= split_list(product_items)
- else:
-     product_items=[product_items]
+#  print(len(product_items))
+#  if len(product_items)>60: 
+#      flag=1
+#      product_items=product_items[0:59]
+#  if len(product_items)>30: 
+#        product_items= split_list(product_items)
+#  else:
+#      product_items=[product_items]
 
- for i in product_items:
-    payload = {
-        "messaging_product": "whatsapp",
-        "to": to_number,
-        "type": "interactive",
-        "interactive": {
-            "type": "product_list",
-            "header": {
-                "type": "text",
-                "text": "🛒 Anghadi Specials"
-            },
-            "body": {
-                "text": restaurant if restaurant else "Check out our  products! \n ഉത്പന്നങ്ങൾക്കായി  ലിസ്റ്റ്  പരിശോധിക്കുക !"
-            },
-            "footer": {
-                "text": "Tap a product to view more."
-            },
-            "action": {
-                "catalog_id": "1595768864475137",
-                "sections": [
-                    {
-                        "title": "Popular Items",
-                        "product_items": i
-                    }
-                ]
-            }
-        }
-    }
+#  for i in product_items:
+#     payload = {
+#         "messaging_product": "whatsapp",
+#         "to": to_number,
+#         "type": "interactive",
+#         "interactive": {
+#             "type": "product_list",
+#             "header": {
+#                 "type": "text",
+#                 "text": "🛒 Anghadi Specials"
+#             },
+#             "body": {
+#                 "text": restaurant if restaurant else "Check out our  products! \n ഉത്പന്നങ്ങൾക്കായി  ലിസ്റ്റ്  പരിശോധിക്കുക !"
+#             },
+#             "footer": {
+#                 "text": "Tap a product to view more."
+#             },
+#             "action": {
+#                 "catalog_id": "1595768864475137",
+#                 "sections": [
+#                     {
+#                         "title": "Popular Items",
+#                         "product_items": i
+#                     }
+#                 ]
+#             }
+#         }
+#     }
+
+#     headers = {
+#         "Authorization": f"Bearer {WHATSAPP_TOKEN}",
+#         "Content-Type": "application/json"
+#     }
+#     print(WHATSAPP_TOKEN)
+#     print("heey",payload)
+#     try:
+#         response = requests.post(WHATSAPP_API_URL, headers=headers, json=payload)
+#         response.raise_for_status()
+       
+#     except requests.exceptions.RequestException as e:
+#         print(e)
+#         return {"status": "error", "message": str(e)}
+    
+   
+#  return {"status": "success", "response": response.json()}
+
+
+
+async def senditems(to_number, product_items, restaurant=None):
+    flag = 0
+    print(len(product_items))
+
+    if len(product_items) > 60: 
+        flag = 1
+        product_items = product_items[0:59]
+
+    if len(product_items) > 30:
+        product_items = split_list(product_items)
+    else:
+        product_items = [product_items]
 
     headers = {
         "Authorization": f"Bearer {WHATSAPP_TOKEN}",
         "Content-Type": "application/json"
     }
-    print(WHATSAPP_TOKEN)
-    print("heey",payload)
-    try:
-        response = requests.post(WHATSAPP_API_URL, headers=headers, json=payload)
-        response.raise_for_status()
-       
-    except requests.exceptions.RequestException as e:
-        print(e)
-        return {"status": "error", "message": str(e)}
-    
-   
- return {"status": "success", "response": response.json()}
+
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        for i in product_items:
+            payload = {
+                "messaging_product": "whatsapp",
+                "to": to_number,
+                "type": "interactive",
+                "interactive": {
+                    "type": "product_list",
+                    "header": {"type": "text", "text": "🛒 Anghadi Specials"},
+                    "body": {
+                        "text": restaurant if restaurant else "Check out our products! \nഉത്പന്നങ്ങൾക്കായി ലിസ്റ്റ് പരിശോധിക്കുക !"
+                    },
+                    "footer": {"text": "Tap a product to view more."},
+                    "action": {
+                        "catalog_id": "1595768864475137",
+                        "sections": [
+                            {
+                                "title": "Popular Items",
+                                "product_items": i
+                            }
+                        ]
+                    }
+                }
+            }
+
+            print("heey", payload)
+            # Send all requests concurrently
+            tasks.append(session.post(WHATSAPP_API_URL, headers=headers, json=payload))
+
+        responses = await asyncio.gather(*tasks, return_exceptions=True)
+
+        results = []
+        for r in responses:
+            if isinstance(r, Exception):
+                print(f"Error: {r}")
+                results.append({"error": str(r)})
+            else:
+                try:
+                    resp_json = await r.json()
+                    results.append(resp_json)
+                except Exception as e:
+                    results.append({"error": str(e)})
+
+    return {"status": "success", "responses": results}
+
+
+
+
+
+
+
+
+
+
+
+
+
 def split_list(lst, chunk_size=30):
     return [lst[i:i + chunk_size] for i in range(0, len(lst), chunk_size)]
 

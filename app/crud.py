@@ -356,7 +356,7 @@ def get_categorized_products():
     return jsonify(result), 200
 
 @crud_blueprint.route('/sendCatalogueCategory', methods=['POST'])
-def post_whatsapp_product_list():
+async def post_whatsapp_product_list():
     # Get data from request
     data = request.get_json()
     
@@ -368,7 +368,7 @@ def post_whatsapp_product_list():
         return jsonify({"status": "error", "message": "Missing category or to_number"}), 400
     
     # Call the function to send WhatsApp product list
-    result = send_whatsapp_product_list(category, to_number)
+    result = await send_whatsapp_product_list(category, to_number)
     
     return jsonify(result)
 

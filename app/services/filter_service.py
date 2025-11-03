@@ -276,7 +276,7 @@ Guidelines and examples:
 - "rice","grains","pulses" -> oth
 - Kids toys and study materials -> childcare; all others like diapers, baby food etc -> oth
 - If the query is related to snacks, also include bakeries because some products are shared.
-
+-porotta /poratta ->snacks,oth,food
 Restaurant names like "AFC Chicken", "Kothiyanz", "Biryani Souk" etc -> food
 
 Now classify the following query:

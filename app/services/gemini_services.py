@@ -68,9 +68,24 @@ def chatGemini(name,query,session):
     # now generate output in a way that you talk to the user if the user query is something like a purchase order like tomoto 1kg onion 20rs you need to generate a sample po to send to the user to confirm the op
     # by the user just make it simple slno item quantity unit price total and grand total atlast hey always add emart  our company name in the header and po (just po in the generated po header) and always remember just create the po dont tell anything else
     # '''
-    
 
-    # query = call_gemini(clean_query.format(query=query))
+    prompt = f"""
+    You are a language detection and translation assistant.
+    If the following text is in Malayalam, append its English equivalent name of the product in brackets.
+    If it's already in English, just return it as is.
+
+    Example:
+    - "വാഴപ്പഴം" → "വാഴപ്പഴം (Banana)"
+    - "tomato" → "tomato"
+    - "ചെമ്മീൻ" → "ചെമ്മീൻ (Prawn)"
+    - "apple" → "apple"
+    -"ഊണ് ","oon" -> "ഊണ് (meals)"
+    -meals -> meals (ഊണ്) exception for meals
+    Text: "{query}"
+    """
+    
+ 
+    query = call_gemini(prompt)
     print("cleaned query",query)
     filtered_items=search_products(query,session)
     
