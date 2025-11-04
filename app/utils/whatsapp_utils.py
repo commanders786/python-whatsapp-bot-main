@@ -117,19 +117,19 @@ async def process_whatsapp_message(body):
         start_time = time(8, 0, 0)   # 8:00 AM
         end_time = time(22, 0, 0)    # 10:00 PM
         
-        if now < start_time or now > end_time :
-        # if True:
+        # if now < start_time or now > end_time :
+        # # if True:
 
-           if message["type"] == "interactive" and "button_reply" in message["interactive"]:
-                if message["interactive"]["button_reply"]["id"]  in ['en','ml']:
-                  pass
-           else:
+        #    if message["type"] == "interactive" and "button_reply" in message["interactive"]:
+        #         if message["interactive"]["button_reply"]["id"]  in ['en','ml']:
+        #           pass
+        #    else:
                 
-                response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു 🔒. ദയവായി രാവിലെ 8 മണി മുതൽ രാത്രി 10 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക. 🛍️\nFor Emergency +919961575781 "
-                # response="ഹാപ്പി ഓണം 🌸 നബിദിനാശംസകൾ 🌙 ഇന്ന് സ്റ്റോർ അവധിയാണ് 🛍️\nFor Emergency +919961575781 "
-                data = get_text_message_input(wa_id, response)
-                send_message(data)
-                return
+        #         response ="സ്റ്റോർ അടച്ചിരിക്കുന്നു 🔒. ദയവായി രാവിലെ 8 മണി മുതൽ രാത്രി 10 മണി വരെ ഷോപ്പിംഗ് ശ്രമിക്കുക. 🛍️\nFor Emergency +919961575781 "
+        #         # response="ഹാപ്പി ഓണം 🌸 നബിദിനാശംസകൾ 🌙 ഇന്ന് സ്റ്റോർ അവധിയാണ് 🛍️\nFor Emergency +919961575781 "
+        #         data = get_text_message_input(wa_id, response)
+        #         send_message(data)
+        #         return
 
 
 
