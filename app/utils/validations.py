@@ -49,10 +49,10 @@ def calculate_price(lat, lon):
     distance = R * c
     
     # Price calculation
-    if distance <= 3:
+    if distance <= 2:
         price = 30
     else:
-        price = 30 + (distance - 3) * 8
+        price = 30 + (distance - 2) * 8
     
     return round(price, 2)
 
