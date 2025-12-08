@@ -13,50 +13,68 @@ from app.services.filter_service import search_products
 from app.utils.messages import get_text_message_input
 from app.utils.whatsapp_utils import  process_order_message
 from .promptTemplate import prompt_template,clean_query
+def call_gemini(prompt, model_name="gemini-2.5-flash", max_tokens=5000, temperature=0.7):
+    """
+    Safe Gemini caller with full protection against:
+    - finish_reason = MAX_TOKENS
+    - No Part returned (response.text crash)
+    - Empty candidate content
+    """
 
-def call_gemini(prompt, model_name="gemini-2.5-flash", max_tokens=500, temperature=0.7):
-    """
-    Call Google's Gemini API (or similar generative AI API) with a prompt.
-    
-    Args:
-        prompt (str): The input text prompt
-        model_name (str): The model to use (e.g., 'gemini-pro')
-        max_tokens (int): Maximum number of tokens to generate
-        temperature (float): Controls randomness (0.0 to 1.0)
-    
-    Returns:
-        str: Generated response or error message
-    """
     try:
-
         load_dotenv()
-        # Configure API key (set this in your environment or directly here)
+
         api_key = os.getenv("GOOGLE_API_KEY")
         if not api_key:
             raise ValueError("GOOGLE_API_KEY environment variable not set")
-        
-        genai.configure(api_key=api_key)
-        
-        # Set up the model
-        model = genai.GenerativeModel(model_name)
-        
-        # Configure generation parameters
-        generation_config = {
-            "max_output_tokens": max_tokens,
-            "temperature": temperature,
-            "top_p": 0.95,
-        }
-        
-        # Generate content
-        response = model.generate_content(
-    contents=prompt,
-    generation_config=generation_config
-)
 
-        
-        # Return the generated text
-        return response.text.replace("```text","")
-        
+        genai.configure(api_key=api_key)
+
+        # Streaming ON (prevents token overflow)
+        model = genai.GenerativeModel(
+            model_name=model_name,
+            generation_config={
+                "max_output_tokens": max_tokens,
+                "temperature": temperature,
+                "top_p": 0.95
+            }
+        )
+
+        # ----- STREAMING RESPONSE (prevents MAX_TOKEN errors) -----
+        response = model.generate_content(prompt, stream=True)
+
+        final_text = ""
+
+        for chunk in response:
+            # Check candidate
+            if not chunk.candidates:
+                continue
+
+            candidate = chunk.candidates[0]
+
+            # Check parts
+            if not candidate.content.parts:
+                continue
+
+            # Extract only text parts
+            for part in candidate.content.parts:
+                if hasattr(part, "text"):
+                    final_text += part.text
+
+        # ----- FINAL SAFEGUARDS -----
+        if not final_text.strip():
+            # Model hit max token or returned nothing
+            finish_reason = ""
+            if hasattr(response, "candidates") and response.candidates:
+                finish_reason = response.candidates[0].finish_reason
+
+            return f"⚠️ No text returned. Finish reason: {finish_reason}"
+
+        # Clean
+        final_text = final_text.replace("```text", "").replace("```", "")
+
+        return final_text.strip()
+
     except Exception as e:
         return f"Error calling Gemini API: {str(e)}"
 
