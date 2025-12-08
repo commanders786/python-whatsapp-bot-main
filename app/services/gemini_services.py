@@ -14,7 +14,7 @@ from app.utils.messages import get_text_message_input
 from app.utils.whatsapp_utils import  process_order_message
 from .promptTemplate import prompt_template,clean_query
 
-def call_gemini(prompt, model_name="gemini-2.0-flash", max_tokens=500, temperature=0.7):
+def call_gemini(prompt, model_name="gemini-2.5-flash", max_tokens=500, temperature=0.7):
     """
     Call Google's Gemini API (or similar generative AI API) with a prompt.
     
