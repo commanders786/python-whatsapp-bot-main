@@ -295,13 +295,35 @@ Return only the category names, comma separated. No explanation.
         response = model.generate_content(
             contents=prompt,
             generation_config={
-                "max_output_tokens": 20,
+                "max_output_tokens": 1000,
                 "temperature": 0.2,
                 "top_p": 0.9,
-            },
+            
+            },stream=True
         )
 
-        raw_text = (response.text or "").strip().lower()
+        final_text = ""
+
+        # ✅ STREAM CORRECTLY
+        for chunk in response:
+            if not chunk.candidates:
+                continue
+
+            candidate = chunk.candidates[0]
+
+            if not candidate.content or not candidate.content.parts:
+                continue
+
+            for part in candidate.content.parts:
+                if hasattr(part, "text"):
+                    final_text += part.text
+
+        if not final_text.strip():
+            print("⚠️ Gemini returned no text (blocked or empty)")
+            return None
+
+        raw_text = final_text.lower().strip()
+
         categories = [c.strip() for c in raw_text.split(",") if c.strip() in CATEGORIES]
 
         if not categories:

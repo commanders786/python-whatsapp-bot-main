@@ -3819,7 +3819,7 @@
       "unit": null,
       "retailer_id": "ch03",
       "availability": "in stock",
-      "sale_price": "₹170.00",
+      "sale_price": "₹180.00",
       "fb_product_category": "meat"
     },
     "ch06": {
@@ -3855,7 +3855,7 @@
       "unit": null,
       "retailer_id": "ch09",
       "availability": "in stock",
-      "sale_price": "₹105.00",
+      "sale_price": "₹110.00",
       "fb_product_category": "meat"
     },
     "ch15": {
@@ -7608,6 +7608,18 @@
       "sale_price": null,
       "fb_product_category": "food"
     },
+    "rf282": {
+      "id": "25216126151390250",
+      "name": "റുമാലി റൊട്ടി (Rummali)",
+      "description": "restaurant: Berryz Shawai",
+      "price": "₹15.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf282",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
     "rf231": {
       "id": "25220298250896313",
       "name": "Mutton Mandi (Half)",
@@ -7668,6 +7680,30 @@
       "sale_price": null,
       "fb_product_category": "food"
     },
+    "rf279": {
+      "id": "25339361295713929",
+      "name": "Berryz Masala Shawai (Half)",
+      "description": "Kuboos : 2\nrestaurant: Berryz Shawai",
+      "price": "₹250.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf279",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "rf281": {
+      "id": "25369283742739068",
+      "name": "Kuboos",
+      "description": "restaurant: Berryz Shawai",
+      "price": "₹10.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf281",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
     "rf263": {
       "id": "25381229218180624",
       "name": "Chicken Kondattam (Half)",
@@ -7676,6 +7712,18 @@
       "pattern": "zabaq",
       "unit": null,
       "retailer_id": "rf263",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "rf278": {
+      "id": "25381556884804528",
+      "name": "Berryz Masala Shawai (Quater)",
+      "description": "Kuboos : 1\nrestaurant: Berryz Shawai",
+      "price": "₹140.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf278",
       "availability": "in stock",
       "sale_price": null,
       "fb_product_category": "food"
@@ -7762,6 +7810,18 @@
       "retailer_id": "rf271",
       "availability": "in stock",
       "sale_price": "₹60.00",
+      "fb_product_category": "food"
+    },
+    "rf280": {
+      "id": "25944356791837622",
+      "name": "Berryz Masala Shawai (Full)",
+      "description": "Kuboos : 4\nrestaurant: Berryz Shawai",
+      "price": "₹480.00",
+      "pattern": null,
+      "unit": null,
+      "retailer_id": "rf280",
+      "availability": "in stock",
+      "sale_price": null,
       "fb_product_category": "food"
     },
     "rf28": {
@@ -9176,7 +9236,7 @@
       "id": "24544508148555862",
       "name": "കാട മുട്ട (10Pc Plates)",
       "description": "Home Made snacks",
-      "price": "₹50.00",
+      "price": "₹60.00",
       "pattern": "egg fry",
       "unit": null,
       "retailer_id": "sn201",
