@@ -159,7 +159,7 @@ def fetch_and_categorize_products():
                     "availability": item.get("availability"),
                     "sale_price": item.get("sale_price"),
                 }
-
+                desc = item.get("description", "")
                  # 🧩 Add fb_product_category while categorizing
                 if rid.startswith("veg"):
                     product_info["fb_product_category"] = "vegetables"
@@ -170,10 +170,10 @@ def fetch_and_categorize_products():
                 elif rid.startswith("fr"):
                     product_info["fb_product_category"] = "fruits"
                     categorized["fruits"][item["retailer_id"]] = product_info
-                elif rid.startswith("sn"):
+                elif rid.startswith("sn") and not "restaurant:" in desc.lower():
                     product_info["fb_product_category"] = "snacks"
                     categorized["snacks"][item["retailer_id"]] = product_info
-                elif rid.startswith("bk"):
+                elif rid.startswith("bk") and not "restaurant:" in desc.lower():
                     product_info["fb_product_category"] = "bakeries"
                     categorized["bakeries"][item["retailer_id"]] = product_info
                 elif rid.startswith(("ch", "kd", "wp", "sk")):
@@ -191,7 +191,7 @@ def fetch_and_categorize_products():
                 elif rid.startswith("cp"):
                     product_info["fb_product_category"] = "childcare"
                     categorized["childcare"][item["retailer_id"]] = product_info
-                elif rid.startswith("rf"):
+                elif rid.startswith(("rf","bk","sn")):
                     product_info["fb_product_category"] = "food"
                     categorized["food"][item["retailer_id"]] = product_info
                     key = "restaurant:"

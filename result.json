@@ -4,7 +4,7 @@
       "id": "9209406235832373",
       "name": "വെളുത്തുള്ളി (Garlic) 100g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹13.00",
+      "price": "₹20.00",
       "pattern": "garlic, veluthulli,veg",
       "unit": null,
       "retailer_id": "veg04",
@@ -52,7 +52,7 @@
       "id": "9543733689047575",
       "name": "തക്കാളി (Tomato) 500g",
       "description": "Fresh and handpicked vegetables",
-      "price": "₹25.00",
+      "price": "₹27.50",
       "pattern": "thakkali",
       "unit": null,
       "retailer_id": "veg05",
@@ -100,7 +100,7 @@
       "id": "9781691291879273",
       "name": "ചുരങ്ങ 500g (churanga)",
       "description": "churanga",
-      "price": "₹20.00",
+      "price": "₹25.00",
       "pattern": "choranga, veg",
       "unit": null,
       "retailer_id": "veg17",
@@ -141,7 +141,7 @@
       "unit": null,
       "retailer_id": "veg20",
       "availability": "in stock",
-      "sale_price": "₹8.00",
+      "sale_price": "₹10.00",
       "fb_product_category": "vegetables"
     },
     "veg29": {
@@ -184,7 +184,7 @@
       "id": "9920166378090442",
       "name": "കുമ്പളങ്ങ 1kg (kumbalanga)",
       "description": "kumbalanga, ash gourd",
-      "price": "₹40.00",
+      "price": "₹45.00",
       "pattern": "kumbalanga, eleven,ash gourd",
       "unit": null,
       "retailer_id": "veg31",
@@ -244,7 +244,7 @@
       "id": "23998523573073859",
       "name": "വെള്ളരിക്ക 1kg (VELLARIKKA)",
       "description": "vellari",
-      "price": "₹35.00",
+      "price": "₹50.00",
       "pattern": "vellari, vellarikka,vegitable",
       "unit": null,
       "retailer_id": "veg16",
@@ -364,12 +364,12 @@
       "id": "29330952209886560",
       "name": "ഉള്ളി 500g (onion)",
       "description": "fresh to home",
-      "price": "₹14.00",
+      "price": "₹17.50",
       "pattern": "ഉള്ളി,സവാള,ulli,savaala",
       "unit": null,
       "retailer_id": "veg10",
       "availability": "in stock",
-      "sale_price": "₹13.00",
+      "sale_price": "₹15.00",
       "fb_product_category": "vegetables"
     },
     "veg21": {
@@ -450,7 +450,7 @@
       "id": "9006605912778960",
       "name": "Sugar (പഞ്ചസാര ) 500g",
       "description": "Quality groceries from trusted outlet",
-      "price": "₹23.50",
+      "price": "₹22.50",
       "pattern": null,
       "unit": null,
       "retailer_id": "gr01",
@@ -762,12 +762,12 @@
       "id": "10071002672936807",
       "name": "മുട്ട 5 units (Eggs)",
       "description": "Eggs 5 units",
-      "price": "₹35.00",
+      "price": "₹34.00",
       "pattern": "mutta",
       "unit": null,
       "retailer_id": "gr15",
       "availability": "in stock",
-      "sale_price": "₹37.50",
+      "sale_price": "₹34.00",
       "fb_product_category": "oth"
     },
     "gr116": {
@@ -1002,7 +1002,7 @@
       "id": "24015616184739099",
       "name": "Britannia 50 50 200g",
       "description": "Britannia 50 50 Sweet and Salty",
-      "price": "₹40.00",
+      "price": "₹35.00",
       "pattern": "Britannia 50 50,Biscuits",
       "unit": null,
       "retailer_id": "gr109",
@@ -1890,12 +1890,12 @@
       "id": "9707724209283250",
       "name": "വെളിച്ചെണ്ണ 500ml (Coconut oil)",
       "description": "multi brand available",
-      "price": "₹210.00",
+      "price": "₹180.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr29",
       "availability": "in stock",
-      "sale_price": "₹210.00",
+      "sale_price": "₹180.00",
       "fb_product_category": "oth"
     },
     "gr23": {
@@ -1914,12 +1914,12 @@
       "id": "9832591353524058",
       "name": "ചുവന്ന മുളക് 200g",
       "description": "red chilli",
-      "price": "₹40.00",
+      "price": "₹42.00",
       "pattern": "mulak, chilli, red",
       "unit": null,
       "retailer_id": "gr26",
       "availability": "in stock",
-      "sale_price": "₹40.00",
+      "sale_price": "₹42.00",
       "fb_product_category": "oth"
     },
     "gr21": {
@@ -1967,7 +1967,7 @@
       "unit": null,
       "retailer_id": "gr27",
       "availability": "in stock",
-      "sale_price": "₹28.00",
+      "sale_price": "₹30.00",
       "fb_product_category": "oth"
     },
     "gr212": {
@@ -2466,12 +2466,12 @@
       "id": "29462530646728840",
       "name": "വെളിച്ചെണ്ണ  1L (Coconut oil)",
       "description": "multi brand available",
-      "price": "₹420.00",
+      "price": "₹360.00",
       "pattern": "cocunut, oil, velichenna ,enna",
       "unit": null,
       "retailer_id": "gr28",
       "availability": "in stock",
-      "sale_price": "₹420.00",
+      "sale_price": "₹360.00",
       "fb_product_category": "oth"
     },
     "gr201": {
@@ -3541,7 +3541,7 @@
       "unit": null,
       "retailer_id": "fr02",
       "availability": "in stock",
-      "sale_price": "₹80.00",
+      "sale_price": "₹110.00",
       "fb_product_category": "fruits"
     },
     "fr10": {
@@ -3577,7 +3577,7 @@
       "unit": null,
       "retailer_id": "fr13",
       "availability": "in stock",
-      "sale_price": "₹70.00",
+      "sale_price": "₹80.00",
       "fb_product_category": "fruits"
     },
     "fr16": {
@@ -3757,7 +3757,7 @@
       "unit": null,
       "retailer_id": "fr30",
       "availability": "in stock",
-      "sale_price": "₹45.00",
+      "sale_price": "₹60.00",
       "fb_product_category": "fruits"
     },
     "fr32": {
@@ -3850,12 +3850,12 @@
       "id": "30322533087346221",
       "name": "Chicken (കോഴി) 500g",
       "description": "Normal chicken",
-      "price": "₹120.00",
+      "price": "₹135.00",
       "pattern": "chicken, kozhi",
       "unit": null,
       "retailer_id": "ch09",
       "availability": "in stock",
-      "sale_price": "₹110.00",
+      "sale_price": "₹135.00",
       "fb_product_category": "meat"
     },
     "ch15": {
@@ -4258,18 +4258,6 @@
       "sale_price": null,
       "fb_product_category": "bakeries"
     },
-    "bk022": {
-      "id": "24315941321322864",
-      "name": "പൂള പൊരി 500gm (Kappa Chips)",
-      "description": "Kappa Chips From Nice Bakery",
-      "price": "₹150.00",
-      "pattern": "kappa chips,chips,bakery",
-      "unit": null,
-      "retailer_id": "bk022",
-      "availability": "in stock",
-      "sale_price": "₹140.00",
-      "fb_product_category": "bakeries"
-    },
     "bk02": {
       "id": "24731091906479280",
       "name": "Nutty Bubble (cake)1kg",
@@ -4290,18 +4278,6 @@
       "pattern": "cake,Black Forest",
       "unit": null,
       "retailer_id": "bk04",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk021": {
-      "id": "29898927606417500",
-      "name": "മധുര വര്‍ത്തായി 500gm (Sweet Chips)",
-      "description": "Sweet Chips From Nice Bakery",
-      "price": "₹200.00",
-      "pattern": "banana chips,chips,bakery,sweet chips",
-      "unit": null,
-      "retailer_id": "bk021",
       "availability": "in stock",
       "sale_price": null,
       "fb_product_category": "bakeries"
@@ -4338,18 +4314,6 @@
       "pattern": "Cake,White Forest",
       "unit": null,
       "retailer_id": "bk16",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk18": {
-      "id": "24148605318109684",
-      "name": "മിക്സ്ചർ 500gm (Mixture)",
-      "description": "Mixture From Nice Bakery",
-      "price": "₹110.00",
-      "pattern": "mixture,bakery items",
-      "unit": null,
-      "retailer_id": "bk18",
       "availability": "in stock",
       "sale_price": null,
       "fb_product_category": "bakeries"
@@ -4498,18 +4462,6 @@
       "sale_price": null,
       "fb_product_category": "bakeries"
     },
-    "bk19": {
-      "id": "31122335647365673",
-      "name": "വര്‍ത്തായി 500gm (Banana Chips)",
-      "description": "Banana Chips From Nice Bakery",
-      "price": "₹200.00",
-      "pattern": "banana chips,chips,bakery items",
-      "unit": null,
-      "retailer_id": "bk19",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
     "bk105": {
       "id": "31789919117320369",
       "name": "Nuts & Dates Shake",
@@ -4602,42 +4554,6 @@
       "pattern": "jilebi,bakery,yellow jilebi",
       "unit": null,
       "retailer_id": "bk28",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk23": {
-      "id": "10022129114531079",
-      "name": "പൂള കൊള്ളി 500gm (Kappa Kolly)",
-      "description": "Kappa Kolly From Nice Bakery",
-      "price": "₹150.00",
-      "pattern": "kappa chips,chips,bakery,kappa kolly",
-      "unit": null,
-      "retailer_id": "bk23",
-      "availability": "in stock",
-      "sale_price": "₹140.00",
-      "fb_product_category": "bakeries"
-    },
-    "bk24": {
-      "id": "24136098236029740",
-      "name": "ഉരുളക്കിഴങ്ങ് പൊരി 500gm (Potato Chips)",
-      "description": "Potato Chips From Nice Bakery",
-      "price": "₹180.00",
-      "pattern": "potato chips,chips,bakery",
-      "unit": null,
-      "retailer_id": "bk24",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk20": {
-      "id": "24188729590723246",
-      "name": "വര്‍ത്തായി 500gm (Palakutty Chips)",
-      "description": "Banana Chips Special From Nice Bakery",
-      "price": "₹260.00",
-      "pattern": "banana chips,chips,special chips",
-      "unit": null,
-      "retailer_id": "bk20",
       "availability": "in stock",
       "sale_price": null,
       "fb_product_category": "bakeries"
@@ -4822,42 +4738,6 @@
       "sale_price": null,
       "fb_product_category": "bakeries"
     },
-    "bk45": {
-      "id": "9815045088604975",
-      "name": "Makrona Nurukk 500g",
-      "description": "500g Makrona Nurukk",
-      "price": "₹110.00",
-      "pattern": "bakery,nurukk",
-      "unit": null,
-      "retailer_id": "bk45",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk41": {
-      "id": "9929411670518260",
-      "name": "Arabian Baklava 250g",
-      "description": "Arabian Baklava\n250g",
-      "price": "₹300.00",
-      "pattern": "Arabian Baklava,bakery",
-      "unit": null,
-      "retailer_id": "bk41",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk43": {
-      "id": "23869783142663279",
-      "name": "Finger Nurukk 500g",
-      "description": "500g Finger Nurukk",
-      "price": "₹110.00",
-      "pattern": "bakery,nurukk",
-      "unit": null,
-      "retailer_id": "bk43",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
     "bk48": {
       "id": "23971376015844951",
       "name": "കറുത്തഅപ്പം 500g (Black Appam)",
@@ -4868,42 +4748,6 @@
       "retailer_id": "bk48",
       "availability": "in stock",
       "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk49": {
-      "id": "24515481441422005",
-      "name": "Doughnuts",
-      "description": "Chocolate Doughnuts",
-      "price": "₹50.00",
-      "pattern": "cakes,bakery",
-      "unit": null,
-      "retailer_id": "bk49",
-      "availability": "in stock",
-      "sale_price": "₹40.00",
-      "fb_product_category": "bakeries"
-    },
-    "bk47": {
-      "id": "24576281425305862",
-      "name": "കപ്പ കൊള്ളി 500g (Kappa Kolli)",
-      "description": "500g Kappa Kolli",
-      "price": "₹150.00",
-      "pattern": "bakery,nurukk",
-      "unit": null,
-      "retailer_id": "bk47",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk46": {
-      "id": "24625817830335771",
-      "name": "ചക്ക വറുത്തത് 500g (Jack Fruit Chips)",
-      "description": "500g Jack Fruit Chips",
-      "price": "₹245.00",
-      "pattern": "bakery,nurukk",
-      "unit": null,
-      "retailer_id": "bk46",
-      "availability": "in stock",
-      "sale_price": "₹225.00",
       "fb_product_category": "bakeries"
     },
     "bk40": {
@@ -4928,30 +4772,6 @@
       "retailer_id": "bk42",
       "availability": "in stock",
       "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk44": {
-      "id": "25512026821747156",
-      "name": "Polo Nurukk 500g",
-      "description": "500g Polo Nurukk",
-      "price": "₹100.00",
-      "pattern": "bakery,nurukk",
-      "unit": null,
-      "retailer_id": "bk44",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk53": {
-      "id": "23885932631105867",
-      "name": "Nuggets 6pcs",
-      "description": "Nuggets 6pcs from nice bakery",
-      "price": "₹120.00",
-      "pattern": "snacks,nuggets",
-      "unit": null,
-      "retailer_id": "bk53",
-      "availability": "in stock",
-      "sale_price": "₹100.00",
       "fb_product_category": "bakeries"
     },
     "bk59": {
@@ -4986,7 +4806,7 @@
       "pattern": "snacks",
       "unit": null,
       "retailer_id": "bk58",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null,
       "fb_product_category": "bakeries"
     },
@@ -5038,18 +4858,6 @@
       "sale_price": null,
       "fb_product_category": "bakeries"
     },
-    "bk54": {
-      "id": "30483316801316101",
-      "name": "Nuggets 12pcs",
-      "description": "Nuggets 12pcs from nice bakery",
-      "price": "₹220.00",
-      "pattern": "snacks,nuggets",
-      "unit": null,
-      "retailer_id": "bk54",
-      "availability": "in stock",
-      "sale_price": "₹180.00",
-      "fb_product_category": "bakeries"
-    },
     "bk51": {
       "id": "30615290171449052",
       "name": "ഈജിപ്ഷ്യൻ ഉംമ് അലി 1kg (Egyptian Ummali)",
@@ -5062,18 +4870,6 @@
       "sale_price": "₹650.00",
       "fb_product_category": "bakeries"
     },
-    "bk65": {
-      "id": "9910308092406545",
-      "name": "Club Sandwich Zinger",
-      "description": "Club Sandwich Zinger from nice bakery",
-      "price": "₹160.00",
-      "pattern": "snacks",
-      "unit": null,
-      "retailer_id": "bk65",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
     "bk62": {
       "id": "24005715395780272",
       "name": "French Fries (Large)",
@@ -5084,18 +4880,6 @@
       "retailer_id": "bk62",
       "availability": "in stock",
       "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk60": {
-      "id": "24091361590513995",
-      "name": "Pasta",
-      "description": "Pasta from nice bakery",
-      "price": "₹240.00",
-      "pattern": "snacks",
-      "unit": null,
-      "retailer_id": "bk60",
-      "availability": "in stock",
-      "sale_price": "₹200.00",
       "fb_product_category": "bakeries"
     },
     "bk61": {
@@ -5122,18 +4906,6 @@
       "sale_price": null,
       "fb_product_category": "bakeries"
     },
-    "bk66": {
-      "id": "24244716285182462",
-      "name": "Club Sandwich Chicken Classic",
-      "description": "Club Sandwich Zinger from nice bakery",
-      "price": "₹140.00",
-      "pattern": "snacks",
-      "unit": null,
-      "retailer_id": "bk66",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
     "bk68": {
       "id": "24333850462920359",
       "name": "Red Velvet Cup Cake 500g",
@@ -5146,30 +4918,6 @@
       "sale_price": null,
       "fb_product_category": "bakeries"
     },
-    "bk63": {
-      "id": "24493971053540568",
-      "name": "Chicken Kunafa Stick 5pcs",
-      "description": "Chicken Kunafa Stick 5pcs from nice bakery",
-      "price": "₹180.00",
-      "pattern": "snacks",
-      "unit": null,
-      "retailer_id": "bk63",
-      "availability": "in stock",
-      "sale_price": "₹150.00",
-      "fb_product_category": "bakeries"
-    },
-    "bk67": {
-      "id": "24512274021730300",
-      "name": "മുട്ട പഫ്സ് (Egg Puffs)",
-      "description": "Egg Puffs from nice bakery",
-      "price": "₹20.00",
-      "pattern": "snacks",
-      "unit": null,
-      "retailer_id": "bk67",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
     "bk64": {
       "id": "24946848988237710",
       "name": "Club Sandwich Veg",
@@ -5178,18 +4926,6 @@
       "pattern": "snacks",
       "unit": null,
       "retailer_id": "bk64",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk70": {
-      "id": "23919448977737455",
-      "name": "Chocolate Cup Cake 500g",
-      "description": "Chocolate Cup Cake from nice bakery",
-      "price": "₹120.00",
-      "pattern": "Cake,Cup Cake",
-      "unit": null,
-      "retailer_id": "bk70",
       "availability": "in stock",
       "sale_price": null,
       "fb_product_category": "bakeries"
@@ -5274,30 +5010,6 @@
       "pattern": "Biscuits",
       "unit": null,
       "retailer_id": "bk76",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk71": {
-      "id": "24568283666099954",
-      "name": "Tea Cake 500g",
-      "description": "Tea Cup Cake from nice bakery",
-      "price": "₹110.00",
-      "pattern": "Cake,Cup Cake",
-      "unit": null,
-      "retailer_id": "bk71",
-      "availability": "in stock",
-      "sale_price": null,
-      "fb_product_category": "bakeries"
-    },
-    "bk73": {
-      "id": "24643407128616113",
-      "name": "Plum Cake 500g",
-      "description": "Plum Cake from nice bakery",
-      "price": "₹120.00",
-      "pattern": "Cake,",
-      "unit": null,
-      "retailer_id": "bk73",
       "availability": "in stock",
       "sale_price": null,
       "fb_product_category": "bakeries"
@@ -5544,6 +5256,294 @@
     }
   },
   "food": {
+    "bk022": {
+      "id": "24315941321322864",
+      "name": "പൂള പൊരി 500gm (Kappa Chips)",
+      "description": "Kappa Chips From Nice Bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹150.00",
+      "pattern": "kappa chips,chips,bakery",
+      "unit": null,
+      "retailer_id": "bk022",
+      "availability": "in stock",
+      "sale_price": "₹140.00",
+      "fb_product_category": "food"
+    },
+    "bk021": {
+      "id": "29898927606417500",
+      "name": "മധുര വര്‍ത്തായി 500gm (Sweet Chips)",
+      "description": "Sweet Chips From Nice Bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹200.00",
+      "pattern": "banana chips,chips,bakery,sweet chips",
+      "unit": null,
+      "retailer_id": "bk021",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk18": {
+      "id": "24148605318109684",
+      "name": "മിക്സ്ചർ 500gm (Mixture)",
+      "description": "Mixture From Nice Bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹110.00",
+      "pattern": "mixture,bakery items",
+      "unit": null,
+      "retailer_id": "bk18",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk19": {
+      "id": "31122335647365673",
+      "name": "വര്‍ത്തായി 500gm (Banana Chips)",
+      "description": "Banana Chips From Nice Bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹200.00",
+      "pattern": "banana chips,chips,bakery items",
+      "unit": null,
+      "retailer_id": "bk19",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk23": {
+      "id": "10022129114531079",
+      "name": "പൂള കൊള്ളി 500gm (Kappa Kolly)",
+      "description": "Kappa Kolly From Nice Bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹150.00",
+      "pattern": "kappa chips,chips,bakery,kappa kolly",
+      "unit": null,
+      "retailer_id": "bk23",
+      "availability": "in stock",
+      "sale_price": "₹140.00",
+      "fb_product_category": "food"
+    },
+    "bk24": {
+      "id": "24136098236029740",
+      "name": "ഉരുളക്കിഴങ്ങ് പൊരി 500gm (Potato Chips)",
+      "description": "Potato Chips From Nice Bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹180.00",
+      "pattern": "potato chips,chips,bakery",
+      "unit": null,
+      "retailer_id": "bk24",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk20": {
+      "id": "24188729590723246",
+      "name": "വര്‍ത്തായി 500gm (Palakutty Chips)",
+      "description": "Banana Chips Special From Nice Bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹260.00",
+      "pattern": "banana chips,chips,special chips",
+      "unit": null,
+      "retailer_id": "bk20",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk45": {
+      "id": "9815045088604975",
+      "name": "Makrona Nurukk 500g",
+      "description": "500g Makrona Nurukk\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹110.00",
+      "pattern": "bakery,nurukk",
+      "unit": null,
+      "retailer_id": "bk45",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk41": {
+      "id": "9929411670518260",
+      "name": "Arabian Baklava 250g",
+      "description": "Arabian Baklava\n250g\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹300.00",
+      "pattern": "Arabian Baklava,bakery",
+      "unit": null,
+      "retailer_id": "bk41",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk43": {
+      "id": "23869783142663279",
+      "name": "Finger Nurukk 500g",
+      "description": "500g Finger Nurukk\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹110.00",
+      "pattern": "bakery,nurukk",
+      "unit": null,
+      "retailer_id": "bk43",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk49": {
+      "id": "24515481441422005",
+      "name": "Donut",
+      "description": "Chocolate Doughnuts\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹50.00",
+      "pattern": "cakes,bakery",
+      "unit": null,
+      "retailer_id": "bk49",
+      "availability": "in stock",
+      "sale_price": "₹40.00",
+      "fb_product_category": "food"
+    },
+    "bk47": {
+      "id": "24576281425305862",
+      "name": "കപ്പ കൊള്ളി 500g (Kappa Kolli)",
+      "description": "Kappa Kolli500g\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹150.00",
+      "pattern": "bakery,nurukk",
+      "unit": null,
+      "retailer_id": "bk47",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk46": {
+      "id": "24625817830335771",
+      "name": "ചക്ക വറുത്തത് 500g (Jack Fruit Chips)",
+      "description": "500g Jack Fruit Chips\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹245.00",
+      "pattern": "bakery,nurukk",
+      "unit": null,
+      "retailer_id": "bk46",
+      "availability": "in stock",
+      "sale_price": "₹225.00",
+      "fb_product_category": "food"
+    },
+    "bk44": {
+      "id": "25512026821747156",
+      "name": "Polo Nurukk 500g",
+      "description": "500g Polo Nurukk\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹100.00",
+      "pattern": "bakery,nurukk",
+      "unit": null,
+      "retailer_id": "bk44",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk53": {
+      "id": "23885932631105867",
+      "name": "Nuggets 6pcs",
+      "description": "Nuggets 6pcs from nice bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹120.00",
+      "pattern": "snacks,nuggets",
+      "unit": null,
+      "retailer_id": "bk53",
+      "availability": "in stock",
+      "sale_price": "₹100.00",
+      "fb_product_category": "food"
+    },
+    "bk54": {
+      "id": "30483316801316101",
+      "name": "Nuggets 12pcs",
+      "description": "Nuggets 12pcs from nice bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹220.00",
+      "pattern": "snacks,nuggets",
+      "unit": null,
+      "retailer_id": "bk54",
+      "availability": "in stock",
+      "sale_price": "₹180.00",
+      "fb_product_category": "food"
+    },
+    "bk65": {
+      "id": "9910308092406545",
+      "name": "Club Sandwich Zinger",
+      "description": "Club Sandwich Zinger from nice bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹160.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk65",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk60": {
+      "id": "24091361590513995",
+      "name": "Pasta",
+      "description": "Pasta from nice bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹240.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk60",
+      "availability": "in stock",
+      "sale_price": "₹200.00",
+      "fb_product_category": "food"
+    },
+    "bk66": {
+      "id": "24244716285182462",
+      "name": "Club Sandwich Chicken Classic",
+      "description": "Club Sandwich Zinger from nice bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹140.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk66",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk63": {
+      "id": "24493971053540568",
+      "name": "Chicken Kunafa Stick 5pcs",
+      "description": "Chicken Kunafa Stick 5pcs from nice bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹180.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk63",
+      "availability": "in stock",
+      "sale_price": "₹150.00",
+      "fb_product_category": "food"
+    },
+    "bk67": {
+      "id": "24512274021730300",
+      "name": "മുട്ട പഫ്സ് (Egg Puffs)",
+      "description": "Egg Puffs from nice bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹20.00",
+      "pattern": "snacks",
+      "unit": null,
+      "retailer_id": "bk67",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk70": {
+      "id": "23919448977737455",
+      "name": "Chocolate Cup Cake 500g",
+      "description": "Chocolate Cup Cake \nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹120.00",
+      "pattern": "Cake,Cup Cake",
+      "unit": null,
+      "retailer_id": "bk70",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk71": {
+      "id": "24568283666099954",
+      "name": "Tea Cake 500g",
+      "description": "Tea Cup Cake from nice bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹110.00",
+      "pattern": "Cake,Cup Cake",
+      "unit": null,
+      "retailer_id": "bk71",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "bk73": {
+      "id": "24643407128616113",
+      "name": "Plum Cake 500g",
+      "description": "Plum Cake from nice bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹120.00",
+      "pattern": "Cake,",
+      "unit": null,
+      "retailer_id": "bk73",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
     "rf08": {
       "id": "9882045685219063",
       "name": "Masala Shawai  (Quater)",
@@ -7648,7 +7648,7 @@
       "id": "25256045870692500",
       "name": "Ruh Hayati",
       "description": "Ruh Hayati restaurant: Sign Laban🍮🍨🥧",
-      "price": "₹410.00",
+      "price": "₹420.00",
       "pattern": null,
       "unit": null,
       "retailer_id": "rf272",
@@ -8048,6 +8048,30 @@
       "pattern": "food,alfahm chicken",
       "unit": null,
       "retailer_id": "rf35",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "rf311": {
+      "id": "25610526901912396",
+      "name": "ചീരാമുളക്  Chicken Biriyani",
+      "description": "restaurant: ചീരാമുളക് 🌶️",
+      "price": "₹160.00",
+      "pattern": "chicken biiyani,cb",
+      "unit": null,
+      "retailer_id": "rf311",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "food"
+    },
+    "rf312": {
+      "id": "25735302269430975",
+      "name": "ചീരാമുളക്  Beef Biriyani",
+      "description": "restaurant: ചീരാമുളക് 🌶️",
+      "price": "₹160.00",
+      "pattern": "beef biriyani ,bb",
+      "unit": null,
+      "retailer_id": "rf312",
       "availability": "in stock",
       "sale_price": null,
       "fb_product_category": "food"
@@ -8771,6 +8795,30 @@
       "availability": "out of stock",
       "sale_price": null,
       "fb_product_category": "food"
+    },
+    "sn01": {
+      "id": "9859269464141510",
+      "name": "കുനാഫ ചോക്ലേറ്റ് (KUNAFA CHOCOLATE ) 200g",
+      "description": "pistachio kunafa chocolate 200g\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹525.00",
+      "pattern": "kunafa,chocolate",
+      "unit": null,
+      "retailer_id": "sn01",
+      "availability": "in stock",
+      "sale_price": "₹400.00",
+      "fb_product_category": "food"
+    },
+    "sn20": {
+      "id": "23896986286563793",
+      "name": "Cheesy Kunafa",
+      "description": "Cheesy kunafa from Nice Bakery\nrestaurant: Nice Bakery🥯🧁",
+      "price": "₹350.00",
+      "pattern": "kunafa",
+      "unit": null,
+      "retailer_id": "sn20",
+      "availability": "in stock",
+      "sale_price": "₹290.00",
+      "fb_product_category": "food"
     }
   },
   "general": {
@@ -8909,7 +8957,7 @@
     "gn10": {
       "id": "24557362487204893",
       "name": "പിസ്ത കുനാഫ 75g (Pistachio Kunafa)",
-      "description": "Pistachio Kunafa \nZenziya Tasty Home Made\nNet Weight : 75g",
+      "description": "Pistachio Kunafa \nZenziya Tasty Home Made\nNet Weight : 75g\nrestaurant: Nice Bakery🥯🧁",
       "price": "₹250.00",
       "pattern": "Kunafa,chocolate,sweets",
       "unit": null,
@@ -9016,18 +9064,6 @@
       "sale_price": null,
       "fb_product_category": "snacks"
     },
-    "sn01": {
-      "id": "9859269464141510",
-      "name": "കുനാഫ ചോക്ലേറ്റ് (KUNAFA CHOCOLATE ) 200g",
-      "description": "pistachio kunafa chocolate 200g\nrestaurant: nice bakery",
-      "price": "₹525.00",
-      "pattern": "kunafa,chocolate",
-      "unit": null,
-      "retailer_id": "sn01",
-      "availability": "in stock",
-      "sale_price": "₹400.00",
-      "fb_product_category": "snacks"
-    },
     "SN05": {
       "id": "24086342784390060",
       "name": "Egg Pocket",
@@ -9056,7 +9092,7 @@
       "id": "29438708865743345",
       "name": "ഉന്നക്കാഴ (fried banana snack)",
       "description": "Home Made (banana,egg)",
-      "price": "₹18.00",
+      "price": "₹20.00",
       "pattern": "Sarees Kitchen",
       "unit": null,
       "retailer_id": "SN02",
@@ -9220,18 +9256,6 @@
       "sale_price": "₹15.00",
       "fb_product_category": "snacks"
     },
-    "sn20": {
-      "id": "23896986286563793",
-      "name": "Cheesy Kunafa",
-      "description": "Cheesy kunafa from Nice Bakery",
-      "price": "₹350.00",
-      "pattern": "kunafa",
-      "unit": null,
-      "retailer_id": "sn20",
-      "availability": "in stock",
-      "sale_price": "₹290.00",
-      "fb_product_category": "snacks"
-    },
     "sn201": {
       "id": "24544508148555862",
       "name": "കാട മുട്ട (10Pc Plates)",
@@ -9256,6 +9280,18 @@
       "sale_price": "₹80.00",
       "fb_product_category": "snacks"
     },
+    "sn205": {
+      "id": "25273939035593705",
+      "name": "ഇറച്ചി കേക്ക്",
+      "description": "Home Made snacks\n\nkunji pathal beef",
+      "price": "₹20.00",
+      "pattern": "Elus kitchen",
+      "unit": null,
+      "retailer_id": "sn205",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "snacks"
+    },
     "sn203": {
       "id": "25305617212425749",
       "name": "കുഞ്ഞി പത്തല്",
@@ -9264,7 +9300,7 @@
       "pattern": "pathiri",
       "unit": null,
       "retailer_id": "sn203",
-      "availability": "in stock",
+      "availability": "out of stock",
       "sale_price": null,
       "fb_product_category": "snacks"
     },
@@ -9272,10 +9308,34 @@
       "id": "25381289744842716",
       "name": "പയംപൊരി ബിഫ് Combo",
       "description": "Home Made snacks\npazham pori beef combo",
-      "price": "₹120.00",
+      "price": "₹130.00",
       "pattern": "beef ,snacks banana",
       "unit": null,
       "retailer_id": "sn202",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "snacks"
+    },
+    "sn206": {
+      "id": "25693785433567290",
+      "name": "കപ്പ ബീഫ്",
+      "description": "Home Made snacks\n\nkunji pathal beef",
+      "price": "₹60.00",
+      "pattern": "Elus kitchen",
+      "unit": null,
+      "retailer_id": "sn206",
+      "availability": "in stock",
+      "sale_price": null,
+      "fb_product_category": "snacks"
+    },
+    "sn204": {
+      "id": "33014553831493713",
+      "name": "ഈന്തു പിടി",
+      "description": "Home Made snacks\n\nkunji pathal beef",
+      "price": "₹110.00",
+      "pattern": "Elus kitchen",
+      "unit": null,
+      "retailer_id": "sn204",
       "availability": "in stock",
       "sale_price": null,
       "fb_product_category": "snacks"
@@ -9296,7 +9356,7 @@
       "id": "23966689346296043",
       "name": "പൊറോട്ട  1pc (porotta)",
       "description": "Kerala layer porotta",
-      "price": "₹14.00",
+      "price": "₹12.00",
       "pattern": "breakfast",
       "unit": null,
       "retailer_id": "sn30",
@@ -9332,7 +9392,7 @@
       "id": "24399449612972755",
       "name": "വെള്ളപ്പം 1pc (vellappam)",
       "description": "vellappam",
-      "price": "₹10.00",
+      "price": "₹12.00",
       "pattern": "breakfast,kadi",
       "unit": null,
       "retailer_id": "sn33",
